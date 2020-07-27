@@ -7,7 +7,7 @@ use Tests\TestCase;
 
 class ExampleTest extends TestCase
 {
-    public function test()
+    public function testSuccessResponse()
     {
         $response = $this->get('/activitats');
 
@@ -15,5 +15,6 @@ class ExampleTest extends TestCase
 
         $response->assertSeeText('Activitats');
     }
+
 
 }

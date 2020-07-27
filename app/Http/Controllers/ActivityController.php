@@ -10,7 +10,8 @@ class ActivityController extends Controller
 
     public function index()
     {
-        //
+        $activities = Activity::all();
+        return view('activity.index', compact('activities'));
     }
 
     public function create()
