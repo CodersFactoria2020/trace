@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('phone')->default(555);
             $table->integer('role_id')->default(3);
             $table->string('dni')->unique();
+            $table->string('tutor')->unique();
             $table->timestamps();
         });
     }
