@@ -23,7 +23,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        User::create($request->all());
+        $user = User::create($request->all());
+        $user->roles()->sync($request->get('roles'));
         return redirect(route('user.index'));
     }
 
@@ -42,6 +43,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
+        $user->roles()->sync($request->get('roles'));
         return redirect(route('user.index'));
     }
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Role;
+use App\Permission;
 use Illuminate\Http\Request;
 
 class RoleController extends Controller
@@ -15,12 +16,14 @@ class RoleController extends Controller
 
     public function create()
     {
-        return view('role.create');
+        $permissions=Permission::all();
+        return view('role.create',['permissions'=>$permissions]);
     }
 
     public function store(Request $request)
     {
-        role::create($request->all());
+        $role=Role::create($request->all());
+        $role->permissions()->sync($request->get('permission'));
         return redirect(route('role.index'));
     }
 
@@ -31,12 +34,14 @@ class RoleController extends Controller
 
     public function edit(role $role)
     {
-        return view('role.edit',['role'=>$role]);
+        $permissions=Permission::all();
+        return view('role.edit',['role'=>$role, 'permissions'=>$permissions]);
     }
 
     public function update(Request $request, role $role)
     {
         $role->update($request->all());
+        $role->permissions()->sync($request->get('permission'));
         return redirect(route('role.index'));
     }
 

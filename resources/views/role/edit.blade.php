@@ -19,6 +19,16 @@
                         <label for="name">Description</label>
                         <input type="text" name="description" class="form-control" value="{{$role->description}}"/>
                     </div>
+                    
+                @foreach ($permissions as $permission)
+                <div class="custom-control custom-checkbox">
+                    <input class="custom-control-input"  type="checkbox"  id="permission_{{$permission->id}}" value="{{$permission->id}}"  name="permission[]">
+                    <input class="custom-control-input"  type="checkbox"  id="permission_{{$permission->id}}" value="{{$permission->id}}"  name="permission[]">
+                    <label class="custom-control-label" for="permission_{{$permission->id}}" >{{$permission->id}} - {{$permission->name}}
+                    </label>
+                </div>
+                @endforeach
+
                     <input type="submit" value="Edit" class="btn btn-primary">
                 </form>
             </div>

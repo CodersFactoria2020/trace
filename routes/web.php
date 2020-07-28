@@ -7,10 +7,7 @@ Route::get('/', function () {
 });
 
 Route::resource('/role', 'RoleController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/user', 'UserController');
 
 Auth::routes();
 
