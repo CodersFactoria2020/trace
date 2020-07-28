@@ -13,7 +13,11 @@ class CreateActivitiesTable extends Migration
             $table->string('name');
             $table->string('description');
             $table->mediumText('file')->nullable();
+            $table->string('professional');
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
+
         });
     }
 

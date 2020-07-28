@@ -8,22 +8,22 @@ use App\User;
 
 class ActivitiesTest extends TestCase
 {
-    public function testSuccessResponseToUserAuthorized()
+    use RefreshDatabase;
+    public function test_success_response_to_user_authorized()
     {
-        $response = $this->get('/activitats');
+
         $user = factory(User::class)->make();
         $response = $this->actingAs($user)->get('/activitats');
-        
+
         $response->assertStatus(200);
         $response->assertSeeText('Activitats');
     }
 
-    public function testInfoToUserNotAuthorized()
+   public function test_info_to_user_not_authorized()
     {
         $response = $this->get('/activitats');
 
         $response->assertStatus(302);
-        $response->assertSeeText('login');
+        $response->assertRedirect('/login');
     }
-
 }

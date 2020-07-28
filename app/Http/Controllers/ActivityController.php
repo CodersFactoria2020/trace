@@ -16,12 +16,13 @@ class ActivityController extends Controller
 
     public function create()
     {
-        //
+        return view('activity.create');
     }
 
     public function store(Request $request)
     {
-        //
+        Activity::create($request->all());
+        return redirect('/activitats');
     }
 
     public function show(Activity $activity)
@@ -31,12 +32,13 @@ class ActivityController extends Controller
 
     public function edit(Activity $activity)
     {
-        //
-    }
+        return view('activity.edit', compact('activity'));
 
+    }
     public function update(Request $request, Activity $activity)
     {
-        //
+        $activity->update($request->all());
+        return redirect('/activitats');
     }
 
     public function destroy(Activity $activity)
