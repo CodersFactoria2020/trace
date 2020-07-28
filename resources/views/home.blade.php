@@ -1,23 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+<div class="modul-intro-bg">
+    <div class="text-white">
+        <h1>Associació Catalana de Traumàtics Cranioencefàlics i Dany Cerebral</h1>
+        <p>Des de 1988, treballem per a millorar les seqüeles de les persones afectades 
+        de dany cerebral sobrevingut i la qualitat de vida tant d’elles 
+        com de les seves famílies.</p>
     </div>
 </div>
 @endsection

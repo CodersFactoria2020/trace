@@ -1,0 +1,70 @@
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+    background: darken($secondary, 8);
+    color: $white;
+    font-size: 14px;
+
+    .footer-top {
+        display: flex;
+        align-items: center;
+        padding: 20px 0 20px 0;
+        background: darken($secondary, 10);
+        border-top: 1px solid darken($secondary, 5);
+        border-bottom: 1px solid darken($secondary, 5);
+
+        .footer-info {
+            p {
+                font-size: 14px;
+                line-height: 24px;
+                font-family: $font-primary;
+                color: $white;
+                padding: 10px 0 10px 0;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            a {
+                font-size: 18px;
+                display: inline-block;
+                background: $secondary;
+                color: $white;
+                line-height: 1;
+                padding: 0;
+                margin-right: 4px;
+                border-radius: 50%;
+                text-align: center;
+                width: 36px;
+                height: 36px;
+                transition: 0.3s;
+                &:hover {
+                    background: $primary;
+                    color: #fff;
+                    text-decoration: none;
+                }
+            }
+            p {
+                padding: 0 20px 0 0;
+                margin: 0;
+            }
+        }
+    }
+
+    .copyright {
+        text-align: center;
+        padding: 10px 0;
+        p {
+            font-size: 14px;
+        }
+    }
+
+    .credits {
+        padding-top: 10px;
+        text-align: center;
+        font-size: 13px;
+        color: $white;
+    }
+}
