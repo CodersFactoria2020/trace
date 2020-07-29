@@ -3,6 +3,12 @@
 --------------------------------------------------------------*/
 section {
     padding: 0 0 80px 0;
+    a {
+        font-weight: 700;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 .section-bg {
@@ -12,6 +18,7 @@ section {
 .section-title {
     text-align: center;
     padding-bottom: 30px;
+    padding-top: 30px;
     h2 {
         font-size: 28px;
         font-weight: 600;
@@ -34,6 +41,7 @@ section {
 
     p {
         margin-bottom: 0;
+        padding-bottom: 30px;
     }
 }
 
@@ -155,10 +163,19 @@ section {
 # Our Services
 --------------------------------------------------------------*/
 .services {
-    .icon-box {
+    .flex-container {
+        display: flex;
+        justify-content: center;
         text-align: center;
-        border: 1px solid lighten($secondary, 60);
-        padding: 80px 20px;
+
+        .box {
+            text-align: center;
+            padding: 0 30px;
+        }
+    }
+    .icon-box {
+        width: 300px;
+        text-align: center;
         transition: all ease-in-out 0.3s;
 
         .icon {
@@ -186,17 +203,14 @@ section {
                 top: -8px;
                 height: 100%;
                 width: 100%;
-                background: lighten($primary, 30);
-                border-radius: 5px;
                 transition: all 0.3s ease-out 0s;
                 transform: translateZ(-1px);
             }
         }
 
         h4 {
-            font-weight: 700;
+            font-weight: 300;
             margin-bottom: 15px;
-            font-size: 24px;
             a {
                 color: $secondary;
             }
@@ -204,29 +218,7 @@ section {
 
         p {
             line-height: 24px;
-            font-size: 14px;
             margin-bottom: 0;
-        }
-
-        &:hover {
-            background: $primary;
-            border-color: $primary;
-
-            .icon {
-                background: #fff;
-
-                i {
-                    color: $primary;
-                }
-
-                &::before {
-                    background: lighten($primary, 10);
-                }
-            }
-            h4 a,
-            p {
-                color: $white;
-            }
         }
     }
 }
@@ -235,41 +227,13 @@ section {
 # Our Clients
 --------------------------------------------------------------*/
 .clients {
-    .owl-item {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 20px;
-
+    text-align: center;
+    .flex-container {
         img {
-            opacity: 0.5;
-            width: 80%;
-            transition: 0.3s;
-            filter: grayscale(100);
-            &:hover {
-                filter: none;
-                opacity: 1;
-            }
+            width: auto;
+            height: 120px;
+            padding: 10px;
         }
-    }
-
-    .owl-nav,
-    .owl-dots {
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    .owl-dot {
-        display: inline-block;
-        margin: 0 5px;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        background-color: #ddd !important;
-    }
-
-    .owl-dot.active {
-        background-color: $primary !important;
     }
 }
 
@@ -669,166 +633,44 @@ section {
 }
 
 /*--------------------------------------------------------------
-# Pricing
---------------------------------------------------------------*/
-.pricing {
-    .row {
-        padding-top: 40px;
-    }
-
-    .box {
-        padding: 40px;
-        margin-bottom: 30px;
-        box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
-        background: #fff;
-        text-align: center;
-    }
-
-    h3 {
-        font-weight: 300;
-        margin-bottom: 15px;
-        font-size: 28px;
-    }
-
-    h4 {
-        font-size: 46px;
-        color: $primary;
-        font-weight: 400;
-        font-family: $font-default;
-        margin-bottom: 25px;
-
-        span {
-            color: #bababa;
-            font-size: 18px;
-            display: block;
-        }
-    }
-
-    ul {
-        padding: 0;
-        list-style: none;
-        color: #999;
-        text-align: left;
-        line-height: 20px;
-
-        li {
-            padding-bottom: 12px;
-        }
-
-        i {
-            color: $primary;
-            font-size: 18px;
-            padding-right: 4px;
-        }
-        .na {
-            color: #ccc;
-            i {
-                color: #ccc;
-            }
-            span {
-                text-decoration: line-through;
-            }
-        }
-    }
-
-    .buy-btn {
-        background: $secondary;
-        display: inline-block;
-        padding: 8px 30px;
-        border-radius: 20px;
-        color: #fff;
-        transition: none;
-        font-size: 14px;
-        font-weight: 400;
-        font-family: $font-primary;
-        transition: 0.3s;
-        &:hover {
-            background: $default;
-        }
-    }
-
-    .featured {
-        z-index: 10;
-        margin: -30px -5px 0 -5px;
-        .buy-btn {
-            background: $primary;
-            &:hover {
-                background: lighten($primary, 8);
-            }
-        }
-    }
-
-    @media (max-width: 992px) {
-        .box {
-            max-width: 60%;
-            margin: 0 auto 30px auto;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .box {
-            max-width: 80%;
-            margin: 0 auto 30px auto;
-        }
-    }
-
-    @media (max-width: 420px) {
-        .box {
-            max-width: 100%;
-            margin: 0 auto 30px auto;
-        }
-    }
-}
-
-/*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
 .team {
-    .member {
+    .flex-container {
+        display: flex;
+        justify-content: center;
         text-align: center;
-        margin-bottom: 20px;
-        box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.1);
-        padding: 30px 20px;
-        background: $white;
 
-        img {
-            max-width: 60%;
-            border-radius: 50%;
-            margin: 0 0 30px 0;
-        }
+        .member {
+            text-align: center;
+            background: $white;
+            padding: 0 40px;
 
-        h4 {
-            font-weight: 700;
-            margin-bottom: 2px;
-            font-size: 18px;
-        }
-
-        span {
-            font-style: italic;
-            display: block;
-            font-size: 13px;
-        }
-
-        p {
-            padding-top: 10px;
-            font-size: 14px;
-            font-style: italic;
-            color: lighten($default, 40);
-        }
-
-        .social {
-            margin-top: 15px;
-            a {
-                color: lighten($default, 30%);
-                transition: 0.3s;
-                &:hover {
-                    color: $primary;
-                }
+            img {
+                width: 160px;
+                border-radius: 50%;
+                margin: 0 0 20px 0;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
             }
 
-            i {
+            h4 {
+                font-weight: 700;
+                margin-bottom: 2px;
                 font-size: 18px;
-                margin: 0 2px;
+            }
+
+            span {
+                font-style: italic;
+                display: block;
+                font-size: 13px;
+            }
+
+            p {
+                padding-top: 10px;
+                font-size: 14px;
+                font-style: italic;
+                color: lighten($default, 40);
             }
         }
     }

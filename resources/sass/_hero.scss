@@ -44,9 +44,13 @@
 
     .carousel-content {
         text-align: center;
+        display: flex;
+        flex-direction: column;
     }
 
     h2 {
+        text-align: center;
+        margin: 0;
         color: darken($secondary, 15);
         margin-bottom: 30px;
         font-size: 48px;
@@ -57,7 +61,6 @@
     }
 
     p {
-        width: 80%;
         animation-delay: 0.4s;
         margin: 0 auto 30px auto;
         color: arken($secondary, 15);

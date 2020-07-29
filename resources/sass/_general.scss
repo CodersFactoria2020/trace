@@ -8,26 +8,16 @@ body {
 
 a {
     color: $primary;
+    text-decoration: none;
 }
 
 a:hover {
-    color: darken($primary, 5);
+    color: $black;
     text-decoration: none;
 }
 
 header {
     padding: 10px 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: $font-primary;
-    margin: 0;
-    padding: 0;
 }
 
 .cta {
@@ -42,11 +32,29 @@ h6 {
     font-family: $font-primary;
     transition: 0.3s;
     &:hover {
-        background: $default;
+        background: $black;
         color: #fff;
     }
 }
 
+.cta-line {
+    border: 1px solid $white;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 20px;
+    color: $white;
+    transition: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: $font-primary;
+    transition: 0.3s;
+
+    &:hover {
+        color: $default;
+        background-color: $white;
+        text-decoration: none !important;
+    }
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

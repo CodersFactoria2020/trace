@@ -6,10 +6,17 @@
     padding: 10px 0;
     font-size: 14px;
 
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
     .contact-info {
         color: #fff;
+
         a {
-            line-height: 1;
+            font-weight: 700;
             color: $white;
             transition: 0.3s;
             &:hover {
@@ -19,19 +26,24 @@
 
         i {
             color: $primary;
-            padding: 4px;
+            padding: 0 10px;
         }
+
         .icofont-phone {
             padding-left: 20px;
         }
     }
 
     .social-links {
+        padding-left: 40px;
+        display: flex;
+        align-items: center;
         a {
             color: $white;
-            padding: 4px 0 4px 0px;
+            padding: 10px 0 10px 0px;
             display: flex;
-            line-height: 1px;
+            font-weight: 500;
+
             transition: 0.3s;
             &:hover {
                 color: $primary;
@@ -44,6 +56,14 @@
             color: $white;
             margin: 0;
             padding: 0;
+            font-size: 14px;
+        }
+        i {
+            padding: 0 10px;
+            transition: 0.3s;
+            &:hover {
+                color: $primary;
+            }
         }
     }
 }
