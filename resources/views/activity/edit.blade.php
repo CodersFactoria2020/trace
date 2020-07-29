@@ -35,7 +35,9 @@
 
                         <div class="text-right">
                             <div class="text-right">
-                                <input type="submit" value="Actualitzar" class="btn btn-primary">
+                                <a href="{{Route('activity.update', $activity->id)}}" >
+                                    <input type="submit" value="Edit" class="btn btn-primary">
+                                </a>
                             </div>
                         </div>
                     </div>

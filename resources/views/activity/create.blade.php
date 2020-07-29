@@ -33,9 +33,7 @@
                         </div>
 
                         <div class="text-right">
-                            <a href="{{Route('activity.create')}}" >
                                 <input type="submit" value="Crear" class="btn btn-primary">
-                            </a>
                         </div>
                     </div>
                 </form>
