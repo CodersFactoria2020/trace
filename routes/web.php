@@ -20,4 +20,4 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/activitats', 'ActivityController')->names('activity');//->middleware('auth');
+Route::resource('/activitats', 'ActivityController')->names('activity')->middleware('auth');

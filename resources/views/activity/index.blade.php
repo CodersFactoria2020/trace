@@ -22,7 +22,13 @@
                                 Editar
                                 <i class="fas fa-plus"></i>
                             </a>
+                            <form action="{{Route('activity.destroy', $activity->id)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <input type="submit" value="Eliminar">
+                            </form>
                         </div>
+                    </div>
                         @endforeach
                 </div>
             </div>

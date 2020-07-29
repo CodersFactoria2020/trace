@@ -19,11 +19,12 @@ class ActivitiesTest extends TestCase
         $response->assertSeeText('Activitats');
     }
 
-   public function test_info_to_user_not_authorized()
+    public function test_info_to_user_not_authorized()
     {
         $response = $this->get('/activitats');
 
         $response->assertStatus(302);
         $response->assertRedirect('/login');
     }
+
 }
