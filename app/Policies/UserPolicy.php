@@ -13,35 +13,49 @@ class UserPolicy
     {
         //
     }
-
+    public function view(User $user, User $model)
+    {
+        //
+    }
     public function create(User $user)
     {
         //
     }*/
-    
-    public function view(User $user, User $model)
+
+    public function update(User $user, User $model, $permissionRequired=null)
     {
-        if ($user->id === $model->id OR $user->roles[0]->name === 'admin')
+        $adminPermission = $permissionRequired[0];
+        $ownPermission = $permissionRequired[1];
+
+        if ($user->havePermission($adminPermission))
         {
             return true;
+        }
+        if ($user->havePermission($ownPermission))
+        {
+            if ($user->id === $model->id)
+            {
+                return true;
+            }
         }
         return false;
     }
 
-    public function update(User $user, User $model)
+    public function delete(User $user, User $model, $permissionRequired=null)
     {
-        if ($user->id === $model->id OR $user->roles[0]->name === 'admin')
+        $adminPermission = $permissionRequired[0];
+        $ownPermission = $permissionRequired[1];
+
+        if ($user->havePermission($adminPermission))
         {
             return true;
         }
-        return false;
-    }
-
-    public function delete(User $user, User $model)
-    {
-        if ($user->id === $model->id OR $user->roles[0]->name === 'admin')
+        if ($user->havePermission($ownPermission))
         {
-            return true;
+            if ($user->id === $model->id)
+            {
+                return true;
+            }
         }
         return false;
     }

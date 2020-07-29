@@ -7,8 +7,8 @@ class PermissionRoleSeeder extends Seeder
 {
     public function run()
     {
-      $professional_permissions = [4,11,12,13,14,15,19];
-      $associated_permissions = [11,14];
+      $professional_permissions = [4,11,12,13,14,15,19,21,22];
+      $associated_permissions = [11,14,21,22];
 
         for ($i=2; $i<=30; $i++){
             if (Role::find($i)){
@@ -25,7 +25,7 @@ class PermissionRoleSeeder extends Seeder
             $role= Role::find(1);
             if ($role->name == 'admin'){
                 $permissions=[];
-                for ($x=1; $x<=20; $x++){                
+                for ($x=1; $x<=22; $x++){                
                     if(Permission::find($x)){
                         array_push($permissions, $x);
                     }

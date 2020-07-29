@@ -30,5 +30,8 @@ class PermissionSeeder extends Seeder
         factory(Permission::class)->create(['name'=>'Edit category', 'slug'=>'category.edit']);      
         factory(Permission::class)->create(['name'=>'Show category', 'slug'=>'category.show']);
         factory(Permission::class)->create(['name'=>'Delete category', 'slug'=>'category.destroy']);
+
+        factory(Permission::class)->create(['name'=>'Edit own user', 'slug'=>'user.ownedit']);
+        factory(Permission::class)->create(['name'=>'Delete own user', 'slug'=>'user.owndestroy']);
     }
 }
