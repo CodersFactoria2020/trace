@@ -9,19 +9,6 @@ class UserPolicy
 {
     use HandlesAuthorization;
 
-    /*public function viewAny(User $user)
-    {
-        //
-    }
-    public function view(User $user, User $model)
-    {
-        //
-    }
-    public function create(User $user)
-    {
-        //
-    }*/
-
     public function update(User $user, User $model, $permissionRequired=null)
     {
         $adminPermission = $permissionRequired[0];

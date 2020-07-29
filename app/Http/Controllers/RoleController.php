@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\Permission;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\gate;
+use Illuminate\Support\Facades\Gate;
 
 class RoleController extends Controller
 {
@@ -13,7 +13,7 @@ class RoleController extends Controller
     {
         Gate::authorize('haveaccess', 'role.index');
         $roles=role::all();
-        return view('role.index', ['roles'=>$roles]);
+        return view('role.index',compact('roles'));
     }
 
     public function create()
@@ -46,11 +46,16 @@ class RoleController extends Controller
 
     public function update(Request $request, role $role)
     {
-        Gate::authorize('haveaccess', 'role.edit');
+        Gate::authorize('haveaccess','role.edit');
         $role->update($request->all());
         $role->permissions()->sync($request->get('permission'));
-        return redirect(route('role.index'));
+        return redirect()->route('role.index');
     }
 
-
+    public function destroy(role $role)
+    {
+        Gate::authorize('haveaccess','role.destroy');
+        $role->delete();
+        return redirect (route('role.index'));
+    }
 }
