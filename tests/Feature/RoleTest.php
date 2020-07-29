@@ -211,14 +211,14 @@ class RoleTest extends TestCase
         $response->assertSee('Add');
     }
 
-    public function test_if_admin_can_create_a_role()
+    /*public function test_if_admin_can_create_a_role()
     {
         $this->artisan('db:seed');
         $user = User::where('id', 1)->first();
-        $response = $this->actingAs($user)->get('/role/create');
-        $response->assertStatus(200);
-        $response->assertSee('Name');
-        $response->assertSee('Description');
-        $response->assertSee('Add');
-    }
+        $response = $this->actingAs($user)->post('/role', [
+                'name'=>'Guess', 
+                'description'=>'invitado'
+            ]);
+        $response->assertStatus(201);
+    }*/
 }

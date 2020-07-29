@@ -30,18 +30,21 @@ class UserController extends Controller
 
     public function show(User $user)
     {
+        $this->authorize('view', $user);
         $roles = Role::all();
         return view('user.show', ['user' => $user], compact('roles'));
     }
 
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         $roles = Role::all();
         return view('user.edit', ['user' => $user], compact('roles'));
     }
 
     public function update(Request $request, User $user)
     {
+        $this->authorize('update', $user);
         $user->update($request->all());
         $user->roles()->sync($request->get('roles'));
         return redirect(route('user.index'));
@@ -49,6 +52,7 @@ class UserController extends Controller
 
     public function destroy(User $user)
     {
+        $this->authorize('delete', $user);
         $user->delete();
         return redirect(route('user.index'));
     }

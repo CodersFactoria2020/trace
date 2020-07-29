@@ -13,9 +13,3 @@ Route::resource('/user', 'UserController')->middleware('auth');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/test', function()
-{
-    Gate::authorize('haveaccess','role.index');
-    return 'hi';
-});
