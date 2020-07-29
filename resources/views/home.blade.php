@@ -13,8 +13,10 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    <h1>Bienvenido {{Auth::User()->first_name}}</h1>
+                    <h2>Cruds:</h2>
+                    <a href="{{Route('user.index')}}" class="btn btn-secondary">Users</a>
+                    <a href="{{Route('role.index')}}" class="btn btn-secondary">Roles</a>
                 </div>
             </div>
         </div>

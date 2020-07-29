@@ -5,11 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Traits\UserTrait;
 use App\Role;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, UserTrait;
 
     protected $fillable = [
         'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor'
@@ -23,21 +24,5 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function roles()
-    {
-        return $this->belongsToMany(Role::class);
-    }
-
-    public function actualRoles()
-    {
-        $userRoles=[];
-        $totalRoles=$this->roles;
-        $count=count($totalRoles);
-        for ($i=0; $i<$count; $i++) {
-            $currentRole=$this->roles[$i]->name;
-            array_push($userRoles, $currentRole);
-        }
-        return $userRoles;
-    }
 
 }

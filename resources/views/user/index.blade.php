@@ -6,6 +6,7 @@
             <div class="card-header">
                 <h1>Your users</h1><hr>
                 <a href="{{Route('user.create')}}" class="btn btn-secondary">Add New</a>
+                <a href="{{Route('home')}}" class="btn btn-secondary">Back Home</a>
             </div>
             <table class="table table-triped">
                 <thead>
