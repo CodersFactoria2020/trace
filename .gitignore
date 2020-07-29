@@ -20,3 +20,4 @@ tests/TestCase.php
 .idea/
 .vscode/settings.json
 .vscode/
+composer.lock

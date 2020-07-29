@@ -15,5 +15,6 @@ $factory->define(User::class, function (Faker $faker) {
         'phone' => $faker->phoneNumber(),
         'dni' => $faker->dni(),
         'tutor' => $faker->name()
+
     ];
 });

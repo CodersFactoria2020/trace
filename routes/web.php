@@ -16,3 +16,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('usuaris');
+Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
+Route::get('customactivityers/{id}/edit/','CustomerController@edit');
