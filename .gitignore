@@ -17,3 +17,4 @@ composer.lock
 tests/Feature/ExampleTest.php
 tests/Unit/ExampleTest.php
 tests/TestCase.php
+.idea/
