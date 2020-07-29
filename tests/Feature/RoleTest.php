@@ -211,14 +211,24 @@ class RoleTest extends TestCase
         $response->assertSee('Add');
     }
 
-    /*public function test_if_admin_can_create_a_role()
+    public function test_if_admin_can_create_a_role()
     {
         $this->artisan('db:seed');
         $user = User::where('id', 1)->first();
         $response = $this->actingAs($user)->post('/role', [
-                'name'=>'Guess', 
+                'name'=>'Guest', 
                 'description'=>'invitado'
             ]);
-        $response->assertStatus(201);
-    }*/
+        $this->assertDatabaseHas('roles', ['name'=>'Guest', 'description'=>'invitado']);
+        $response->assertStatus(302);
+    }
+
+    public function test_if_admin_can_delete_a_role()
+    {
+        $this->artisan('db:seed');
+        $user = User::where('id', 1)->first();
+        $response = $this->actingAs($user)->delete('/role', [4]);
+        $this->assertDatabaseMissing('roles', ['name'=>'Guest', 'description'=>'invitado']);
+        $response->assertStatus(302);
+    }
 }
