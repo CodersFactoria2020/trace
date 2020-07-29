@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/activity/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/activity/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/ActivityFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/ActivityFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_27_084151_create_activities_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_27_084151_create_activities_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/activity/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" afterDir="false" />
@@ -220,6 +216,8 @@
       <workItem from="1595838381424" duration="755000" />
       <workItem from="1595839169609" duration="3078000" />
       <workItem from="1595870810310" duration="1075000" />
+      <workItem from="1595949798153" duration="572000" />
+      <workItem from="1596003471939" duration="3430000" />
     </task>
     <servers />
   </component>
@@ -258,31 +256,31 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="371" y="40" key="#ExampleTest/0.23.1440.801@0.23.1440.801" timestamp="1595839943398" />
-    <state width="1398" height="451" key="GridCell.Tab.0.bottom" timestamp="1595942625672">
+    <state width="1398" height="451" key="GridCell.Tab.0.bottom" timestamp="1595944432589">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="451" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595942625672" />
+    <state width="1398" height="451" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1595944432589" />
     <state width="1398" height="2" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1595859317789" />
     <state width="1398" height="442" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1595927314386" />
     <state width="1398" height="309" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1595843027749" />
-    <state width="1398" height="451" key="GridCell.Tab.0.center" timestamp="1595942625670">
+    <state width="1398" height="451" key="GridCell.Tab.0.center" timestamp="1595944432585">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="451" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595942625670" />
+    <state width="1398" height="451" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1595944432585" />
     <state width="1398" height="2" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1595859317788" />
     <state width="1398" height="442" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1595927314385" />
     <state width="1398" height="309" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1595843027748" />
-    <state width="1398" height="451" key="GridCell.Tab.0.left" timestamp="1595942625669">
+    <state width="1398" height="451" key="GridCell.Tab.0.left" timestamp="1595944432584">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="451" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595942625669" />
+    <state width="1398" height="451" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1595944432584" />
     <state width="1398" height="2" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1595859317788" />
     <state width="1398" height="442" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1595927314384" />
     <state width="1398" height="309" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1595843027747" />
-    <state width="1398" height="451" key="GridCell.Tab.0.right" timestamp="1595942625671">
+    <state width="1398" height="451" key="GridCell.Tab.0.right" timestamp="1595944432587">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="451" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595942625671" />
+    <state width="1398" height="451" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1595944432587" />
     <state width="1398" height="2" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1595859317789" />
     <state width="1398" height="442" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1595927314386" />
     <state width="1398" height="309" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1595843027748" />
