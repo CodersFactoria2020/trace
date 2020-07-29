@@ -18,10 +18,14 @@
                                     {{$activity->date}}
                                     {{$activity->time}}
                             </p>
-                            <a class="btn btn-secondary" data-toggle="modal" data-target="#edit-activity">
-                                Editar
-                                <i class="fas fa-plus"></i>
-                            </a>
+
+                        <a class="btn btn-secondary" data-toggle="modal" data-target="#edit-activity{{$activity->id}}">
+                            Editar
+                            <i class="fas fa-plus"></i>
+                        </a>
+                        @include('activity.edit')
+                        
+                           
 
                             <form action="{{route('activity.destroy', $activity->id)}}" method="post">
                                 @csrf
@@ -32,14 +36,16 @@
                                     class="btn btn-danger"
                                 >
                             </form>
-                            
+
                         </div>
                     </div>
-                        @endforeach
+                    @endforeach
+                    
                 </div>
             </div>
         </div>
     </div>
 @endsection
 @include('activity.create')
-@include('activity.edit')
+
+
