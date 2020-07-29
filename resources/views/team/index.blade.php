@@ -14,6 +14,9 @@
                     <li>
                         {{$team->profession}}
                     </li>
+                    <li>
+                        {{$team->photo}}
+                    </li>
                 @endforeach
             </ul>
         </div>

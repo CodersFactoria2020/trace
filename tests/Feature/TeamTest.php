@@ -36,8 +36,9 @@ class TeamTest extends TestCase
             'profession' =>'Pedagogo',
             'photo' => UploadedFile::fake()->image('image.jpg',50,50)
         ];
+
         $this->postJson(route('team.store'),$data)
-            ->assertStatus(200);
+            ->assertStatus(302);
 
     }
 }

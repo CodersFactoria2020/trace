@@ -10,7 +10,7 @@ $factory->define(Team::class, function (Faker $faker) {
     return [
         'fullname' => $faker->sentence($nbWords = 6, $variableNbWords = true),
         'profession' => $faker->jobTitle(),
-        'photo' => $faker->image('public/storage/images',640,480, null, false)
+        'photo' => $faker->image('images',640,480, null, false)
 
     ];
 });

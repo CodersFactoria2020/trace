@@ -17,7 +17,7 @@ class CreateTeamsTable extends Migration
             $table->id();
             $table->string('fullname',100);
             $table->string('profession');
-            $table->string('photo_path')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

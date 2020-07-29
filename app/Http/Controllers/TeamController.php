@@ -22,15 +22,19 @@ class TeamController extends Controller
 
     public function store(Request $request, Team $team)
     {
-        $data=request()->validate([
-            'fullname'=>'required|string|max:255',
-            'profession' => 'required|string',
-            'photo'=>'mimes:jpg,png|nullable'
+
+        $this->validate($request, [
+            'photo' => 'required|image|mimetypes:image/jpeg,image/png,image/jpg'
         ]);
-        $team = Team::create($data);
-        if (isset($data['photo'])) {
-            $data['photo_path']= $data['photo']->store('team');
-        }
+
+        $team = Team::create([
+            'fullname' => $request->fullname,
+            'profession' => $request->profession,
+            'photo' => $request->photo,
+        ]);
+
+        $upload = $request->file('photo');
+        $photo = $upload->storeAs('/team/',$team->id.'.jpg');
         return redirect('/team/'.$team->id);
     }
 
