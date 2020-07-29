@@ -1,5 +1,11 @@
 {
     "workbench.colorCustomizations": {
     
+    },
+    "[git-commit]": {
+    
+        "editor.rulers": [
+            72
+        ]
     }
 }

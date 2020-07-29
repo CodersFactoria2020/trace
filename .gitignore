@@ -18,3 +18,5 @@ tests/Feature/ExampleTest.php
 tests/Unit/ExampleTest.php
 tests/TestCase.php
 .idea/
+.vscode/settings.json
+.vscode/
