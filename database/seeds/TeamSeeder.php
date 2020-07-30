@@ -12,7 +12,7 @@ class TeamSeeder extends Seeder
      */
     public function run()
     {
-        factory(Team::class)->create(['fullname' => 'Santiago Ramon y Cajal', 'profession' => 'Director']);
-        factory(\App\Team::class,22)->create();
+        factory(Team::class)->create(['first_name' => 'Santiago','last_name'=>'Ramon y Cajal', 'position' => 'Director', 'photo'=>'photo.jpg']);
+        factory(\App\Team::class,4)->create();
     }
 }

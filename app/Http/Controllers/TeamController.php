@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TeamController extends Controller
 {
@@ -11,52 +12,59 @@ class TeamController extends Controller
     public function index()
     {
         $teams = Team::all();
-        return view('team.index',['teams'=>$teams]);
+        return view('team.index',compact('teams'));
     }
 
     public function create(Request $request)
     {
+        $teams = Team::all();
+        return view('team.create', compact('teams'));
 
-        return view('team.create', compact('request'));
     }
 
     public function store(Request $request, Team $team)
     {
 
-        $this->validate($request, [
-            'photo' => 'required|image|mimetypes:image/jpeg,image/png,image/jpg'
+        $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'position' => 'required',
+            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $team = Team::create([
-            'fullname' => $request->fullname,
-            'profession' => $request->profession,
-            'photo' => $request->photo,
-        ]);
 
-        $upload = $request->file('photo');
-        $photo = $upload->storeAs('/team/',$team->id.'.jpg');
-        return redirect('/team/'.$team->id);
+        if ($files = $request->file('photo')) {
+            $team['photo'] = $request->file('photo')->store('images', 'public');
+        }
+
+        $insert['first_name'] = $request->get('first_name');
+        $insert['last_name'] = $request->get('last_name');
+        $insert['position'] = $request->get('position');
+
+        Team::create($request->all());
+
+        return redirect(route('team.index'));
     }
 
     public function show(Team $team)
     {
-        //
+        return view('team.show',compact('team'));
     }
 
     public function edit(Team $team)
     {
-        return view('team.edit', ['team' => $team], compact('request'));
+        return view('team.edit',compact('team'));
     }
 
     public function update(Request $request, Team $team)
     {
-        $team->update($request->all());
-        return redirect(route('team.index'));
+
     }
 
     public function destroy(Team $team)
     {
+
         $team->delete();
-        return redirect(route('user.index'));
+        return redirect()->route('team.index');
     }
 }
