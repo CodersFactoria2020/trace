@@ -11076,6 +11076,26 @@ header {
   padding-left: 50px;
 }
 
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap !important;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+  list-style: none;
+  background-color: white !important;
+  border-radius: 0 !important;
+}
+
+.breadcrumb i,
+.breadcrumb li {
+  font-size: 14px !important;
+  color: #bdbec0 !important;
+}
+
+.breadcrumb .breadcrumb-item {
+  color: #bdbec0;
+}
+
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/

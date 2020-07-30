@@ -93,3 +93,21 @@ header {
 .left {
     padding-left: 50px;
 }
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap !important;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: white !important;
+    border-radius: 0 !important;
+    i,
+    li {
+        font-size: 14px !important;
+        color: $gray !important;
+    }
+    .breadcrumb-item {
+        color: $gray;
+    }
+}
