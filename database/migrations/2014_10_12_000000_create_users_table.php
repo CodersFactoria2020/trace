@@ -18,9 +18,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->string('phone')->default(555);
             $table->string('dni')->unique();
-            $table->string('tutor')->nullable();
-            $table->foreignId('role_id')->default(3);
-            $table->foreign('role_id')->references('id')->on('roles');
+            $table->string('tutor')->unique();
             $table->timestamps();
         });
     }
