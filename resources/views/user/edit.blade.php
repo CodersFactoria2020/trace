@@ -1,61 +1,58 @@
-<div class="modal fade" id="edit-user{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar usuari</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+@extends('layouts.app')
+
+@section('content')
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Users</h1>
+                <hr>
             </div>
-            <div class="modal-body">
-                <form action="{{Route('user.update', $user->id)}}" method="post">
+            <div class="card-body">
+                <form action="{{Route('user.update',$user->id)}}" method="POST">
                     @csrf
                     @method('put')
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Nom</label>
-                            <input type="text" name="first_name" class="form-control" value="{{$user->first_name}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Cognom</label>
-                            <input type="text" name="last_name" class="form-control" value="{{$user->last_name}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="text" name="email" class="form-control" value="{{$user->email}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Telèfon</label>
-                            <input type="text" name="phone" class="form-control" value="{{$user->phone}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>DNI</label>
-                            <input type="text" name="dni" class="form-control" value="{{$user->dni}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Tutor(a)</label>
-                            <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Rol</label>
+
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->first_name}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Last Name</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->last_name}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Email</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->email}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Phone</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->phone}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">DNI</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->dni}}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Tutor</label>
+                    <input type="text" name="owner" class="form-control" value="{{$user->tutor}}"/>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="roles"><h3>Rol:</h3></label>
                             <select class="form-control" name="roles" id="roles">
-                                @foreach ($user->roles as $role)
+                                @foreach ($roles as $role)
                                     <option value="{{$role->id}}"
                                     >{{$role->name}}</option>
                                 @endforeach
                             </select>
-                        </div>
-
-                        <div class="text-right">
-                            <div class="text-right">
-                                <a href="{{Route('user.update', $user->id)}}" >
-                                    <input type="submit" value="Actualitzar" class="btn btn-primary">
-                                </a>
-                            </div>
-                        </div>
                     </div>
+
+                    <input type="submit" value="Edit" class="btn btn-primary">
                 </form>
+            </div>
+            <div class="card-footer">
+                <a href="{{Route('user.index')}}" class="btn btn-secondary">Back</a>
             </div>
         </div>
     </div>
-</div>
+@endsection
