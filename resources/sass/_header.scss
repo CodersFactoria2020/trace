@@ -2,9 +2,28 @@
 # Top Bar
 --------------------------------------------------------------*/
 #topbar {
-    background: $secondary;
-    padding: 10px 0;
+    background: $primary;
     font-size: 14px;
+    padding: 10px 0 10px 0;
+    .cta {
+        background: $yellow;
+        display: inline-block;
+        padding: 8px 30px;
+        border-radius: 20px;
+        color: $primary;
+        transition: none;
+        font-size: 14px;
+        font-weight: 400;
+        font-family: $font-primary;
+        transition: 0.3s;
+        &:hover {
+            background: $white;
+            color: $primary;
+        }
+    }
+    i {
+        font-size: 20px;
+    }
 
     .container {
         display: flex;
@@ -13,23 +32,20 @@
     }
 
     .contact-info {
-        color: #fff;
-
         a {
-            font-weight: 700;
-            color: $white;
+            color: $yellow;
+            font-weight: 600;
             transition: 0.3s;
             &:hover {
-                color: $primary;
+                color: $white;
             }
         }
 
         i {
-            color: $primary;
-            padding: 0 10px;
+            color: $yellow;
+            padding-right: 10px;
         }
-
-        .icofont-phone {
+        .icofont-envelope {
             padding-left: 20px;
         }
     }
@@ -39,14 +55,14 @@
         display: flex;
         align-items: center;
         a {
-            color: $white;
+            color: $yellow;
             padding: 10px 0 10px 0px;
             display: flex;
             font-weight: 500;
 
             transition: 0.3s;
             &:hover {
-                color: $primary;
+                color: $white;
             }
             &:first-child {
                 border-left: 0;
@@ -62,7 +78,7 @@
             padding: 0 10px;
             transition: 0.3s;
             &:hover {
-                color: $primary;
+                color: $white;
             }
         }
     }

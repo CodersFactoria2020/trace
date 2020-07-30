@@ -6,9 +6,6 @@ section {
     a {
         font-weight: 700;
     }
-    a:hover {
-        text-decoration: underline;
-    }
 }
 
 .section-bg {
@@ -17,7 +14,7 @@ section {
 
 .section-title {
     text-align: center;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     padding-top: 30px;
     h2 {
         font-size: 28px;
@@ -41,7 +38,7 @@ section {
 
     p {
         margin-bottom: 0;
-        padding-bottom: 30px;
+        padding-bottom: 10px;
     }
 }
 
@@ -53,12 +50,7 @@ section {
     background: lighten($secondary, 64);
     border-bottom: 1px solid lighten($secondary, 60);
     margin-bottom: 40px;
-
-    h2 {
-        font-size: 28px;
-        font-weight: 700;
-        color: $secondary;
-    }
+    font-size: 14px;
 
     ol {
         display: flex;
@@ -139,23 +131,15 @@ section {
             font-weight: 600;
             font-size: 26px;
             color: $secondary;
+            padding-bottom: 20px;
         }
 
-        ul {
-            list-style: none;
-            padding: 0;
-            li {
-                padding-bottom: 10px;
-            }
-            i {
-                font-size: 20px;
-                padding-right: 4px;
-                color: $primary;
-            }
-        }
         p:last-child {
             margin-bottom: 0;
         }
+    }
+    .box-cta {
+        padding-top: 10px;
     }
 }
 
@@ -242,24 +226,14 @@ section {
 --------------------------------------------------------------*/
 .counts {
     .count-box {
-        box-shadow: -10px -5px 40px 0 rgba(0, 0, 0, 0.1);
         padding: 30px;
-        width: 100%;
-
-        i {
-            display: block;
-            font-size: 30px;
-            color: $primary;
-            float: left;
-        }
 
         span {
             font-size: 42px;
             line-height: 24px;
             display: block;
-            font-weight: 700;
-            color: $secondary;
-            margin-left: 50px;
+            font-weight: 200;
+            color: $primary;
         }
 
         p {

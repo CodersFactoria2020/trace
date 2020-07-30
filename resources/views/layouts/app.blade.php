@@ -27,6 +27,41 @@
     <!-- Template Main CSS File -->
     <link href="css/app.css" rel="stylesheet">
 
+    <!-- Theme skin -->
+    <link href="color/default.css" rel="stylesheet" />
+
+    <!-- Fav and touch icons -->
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="144x144"
+      href="ico/apple-touch-icon-144-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="114x114"
+      href="ico/apple-touch-icon-114-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      sizes="72x72"
+      href="ico/apple-touch-icon-72-precomposed.png"
+    />
+    <link
+      rel="apple-touch-icon-precomposed"
+      href="ico/apple-touch-icon-57-precomposed.png"
+    />
+    <link rel="shortcut icon" href="ico/favicon.png" />
+
+
+      <!-- css -->
+    <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="css/flexslider.css" rel="stylesheet" />
+    <link href="css/prettyPhoto.css" rel="stylesheet" />
+    <link href="css/jquery.bxslider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
     <!-- LARAVEL -->
     <!-- CSRF Token -->
     <!-- Scripts -->
@@ -34,60 +69,65 @@
 </head>
 
 <body>
+    <div id="topbar" class="d-none d-lg-block">
+        <div class="container d-flex align-items-center justify-content-between">
+          
+          <div class="contact-info">
+              <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
+              <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
+          </div>
 
-    <section id="topbar" class="d-none d-lg-block">
-        <div class="container">
-          <div class="d-flex align-items-center">
-            <div class="contact-info mr-auto">
-                <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
-                <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
-            </div>
-            <div class="social-links">
-                <p>Segueix-nos:</p>
-                <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
-                <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
-                <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
-                <a href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
-            </div>
-          </div> 
+          <div class="social-links">
+              <p>Segueix-nos:</p>
+              <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
+              <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
+              <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
+          </div>
+          
           <div class="user">
-            <a href="" target="_blank" class="cta-line">Àrea usuari</a>
+            <a href="" target="_blank" class="cta">Àrea usuari</a>
           </div>
         </div>
-    </section>
+    </div>
+    <!-- class="sticky-wrapper is-sticky" style="height: 70px; -->
+    <div id="header-sticky-wrapper">
+    <!-- style="width: 1399px; position: fixed; top: 0; z-index: 50;" -->
+      <header id="header" >
 
-    <header id="header">
-      <div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
 
-        <div class="mr auto">
-          <h1 class=""><a href="">traCE</a></h1>
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        </div>
-        <div>
-          <nav class="nav-menu d-none d-lg-block">
-            <ul>
-              <li class="active"><a href="">Inici</a></li>
-              <li><a href="">Dany Cerebral</a></li>
-              <li class="drop-down"><a href="#">Coneix-nos</a>
-                <ul>
-                  <li><a href="">Qui som i què fem</a></li>
-                  <li><a href="">Filosofia</a></li>
-                  <li><a href="">Equip</a></li>
-                  <li><a href="">Transparència</a></li>
-                </ul>
-              </li>
-              <li><a href="">Col·laboradors</a></li>
-              <li><a href="">Recursos</a></li>
-              <li><a href="">Contacte</a></li>
-            </ul>
-          </nav>
-        </div>
-        <div class="">
-          <a href="" class="cta">Col·labora</a>
-        </div>
+          <div class="mr auto">
+            <h1 class=""><a href="{{url('/home')}}">traCE</a></h1>
+          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+          </div>
+          <div>
+            <nav class="nav-menu d-none d-lg-block">
+              <ul>
+                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/home')}}">Inici</a></li>
+                <li {% if page == "dany_cerebral" %}class="active" {% endif %}><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
+                <li class="drop-down"><a href="#">Coneix-nos</a>
+                  <ul>
+                    <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
+                    <li><a href="">Filosofia</a></li>
+                    <li><a href="">Equip</a></li>
+                    <li><a href="">Transparència</a></li>
+                  </ul>
+                </li>
+                <li><a href="">Col·laboradors</a></li>
+                <li><a href="">Recursos</a></li>
+                <li><a href="">Contacte</a></li>
+              </ul>
+            </nav>
+          </div>
+          <div class="">
+            <a href="" class="cta-line">Col·labora</a>
+          </div>
 
-      </div>
-    </header>
+        </div>
+      </header>
+      
+    <div>
 
     <main class="">
         @yield('content')

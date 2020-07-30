@@ -11,4 +11,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function dany_cerebral()
+    {
+        return view('dany_cerebral');
+    }
+
+    public function qui_som()
+    {
+        return view('qui_som');
+    }
 }

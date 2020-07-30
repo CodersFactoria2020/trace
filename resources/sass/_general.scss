@@ -38,11 +38,11 @@ header {
 }
 
 .cta-line {
-    border: 1px solid $white;
+    border: 1px solid $primary;
     display: inline-block;
     padding: 8px 30px;
     border-radius: 20px;
-    color: $white;
+    color: $primary;
     transition: none;
     font-size: 14px;
     font-weight: 400;
@@ -50,8 +50,9 @@ header {
     transition: 0.3s;
 
     &:hover {
-        color: $default;
-        background-color: $white;
+        background: $primary;
+        color: $white;
+
         text-decoration: none !important;
     }
 }
@@ -81,4 +82,14 @@ header {
             color: #fff;
         }
     }
+}
+
+.half {
+    width: 50%;
+}
+.right {
+    padding-right: 50px;
+}
+.left {
+    padding-left: 50px;
 }
