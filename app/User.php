@@ -53,4 +53,20 @@ class User extends Authenticatable
             }
         }
     }
+
+    public function getRoleAttribute($value)
+    {
+        if ($value === 1)
+        {
+            return "Admin";
+        }
+        if ($value === 2)
+        {
+            return "Professional";
+        }
+        if ($value === 3)
+        {
+            return "Soci";
+        }
+    }
 }
