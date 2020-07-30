@@ -65,6 +65,8 @@
     <!-- LARAVEL -->
     <!-- CSRF Token -->
     <!-- Scripts -->
+    <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+
 
 </head>
 
@@ -86,12 +88,14 @@
           </div>
 
           <div class="user">
-            <a href="" target="_blank" class="cta">Àrea usuari</a>
+            <a href="" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea usuari</a>
           </div>
         </div>
     </div>
+
     <!-- class="sticky-wrapper is-sticky" style="height: 70px; -->
     <div id="header-sticky-wrapper">
+
     <!-- style="width: 1399px; position: fixed; top: 0; z-index: 50;" -->
       <header id="header" >
 
@@ -101,6 +105,7 @@
             <h1 class=""><a href="{{url('/home')}}">traCE</a></h1>
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
           </div>
+          
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
@@ -120,11 +125,13 @@
               </ul>
             </nav>
           </div>
-          <div class="">
+
+          <div>
             <a href="" class="cta-line">Col·labora</a>
           </div>
 
         </div>
+        
       </header>
 
     <div>

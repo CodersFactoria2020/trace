@@ -28,12 +28,17 @@ header {
     color: #fff;
     transition: none;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     font-family: $font-primary;
     transition: 0.3s;
     &:hover {
         background: $black;
         color: #fff;
+    }
+    i {
+        font-size: 20px;
+        height: auto;
+        padding-right: 10px;
     }
 }
 
@@ -45,7 +50,7 @@ header {
     color: $primary;
     transition: none;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 700;
     font-family: $font-primary;
     transition: 0.3s;
 
@@ -54,6 +59,11 @@ header {
         color: $white;
 
         text-decoration: none !important;
+    }
+    i {
+        font-size: 20px;
+        height: auto;
+        padding-right: 10px;
     }
 }
 /*--------------------------------------------------------------
@@ -92,4 +102,22 @@ header {
 }
 .left {
     padding-left: 50px;
+}
+
+.breadcrumb {
+    display: flex;
+    flex-wrap: wrap !important;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
+    list-style: none;
+    background-color: white !important;
+    border-radius: 0 !important;
+    i,
+    li {
+        font-size: 14px !important;
+        color: $gray !important;
+    }
+    .breadcrumb-item {
+        color: $gray;
+    }
 }
