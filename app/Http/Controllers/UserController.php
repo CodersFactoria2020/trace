@@ -6,6 +6,7 @@ use App\User;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\gate;
+// use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -62,6 +63,7 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $this->authorize('destroy',[$user, ['user.destroy', 'user.owndestroy']]);
+        // $auth_user = Auth::user();
         $user->delete();
         return redirect(route('user.index'));
     }
