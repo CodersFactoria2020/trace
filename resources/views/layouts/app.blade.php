@@ -73,7 +73,7 @@
 <body>
     <div id="topbar" class="d-none d-lg-block">
         <div class="container d-flex align-items-center justify-content-between">
-          
+
           <div class="contact-info">
               <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
               <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
@@ -86,7 +86,7 @@
               <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
               <a href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
           </div>
-          
+
           <div class="user">
             <a href="" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea usuari</a>
           </div>
@@ -133,15 +133,29 @@
         </div>
         
       </header>
-      
+
     <div>
 
     <main class="">
         @yield('content')
     </main>
-   
+
 </body>
 
+<!-- Vendor JS Files -->
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
+<script src="vendor/php-email-form/validate.js"></script>
+<script src="vendor/jquery-sticky/jquery.sticky.js"></script>
+<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+<script src="vendor/waypoints/jquery.waypoints.min.js"></script>
+<script src="vendor/counterup/counterup.min.js"></script>
+<script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="vendor/venobox/venobox.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="js/main.js"></script>
 
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
