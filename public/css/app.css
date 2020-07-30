@@ -11539,6 +11539,10 @@ header {
   color: arken(#545454, 15);
 }
 
+#hero .carousel-inner {
+  height: 70vh;
+}
+
 #hero .carousel-inner .carousel-item {
   transition-property: opacity;
   background-position: center top;
@@ -11876,6 +11880,7 @@ section a {
 
 .clients {
   text-align: center;
+  background-color: #fff;
 }
 
 .clients .flex-container img {

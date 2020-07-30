@@ -67,6 +67,8 @@
     }
 
     .carousel-inner {
+        height: 70vh;
+
         .carousel-item {
             transition-property: opacity;
             background-position: center top;
