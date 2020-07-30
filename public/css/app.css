@@ -11005,7 +11005,7 @@ header {
   color: #fff;
   transition: none;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
@@ -11013,6 +11013,12 @@ header {
 .cta:hover {
   background: #343a40;
   color: #fff;
+}
+
+.cta i {
+  font-size: 20px;
+  height: auto;
+  padding-right: 10px;
 }
 
 .cta-line {
@@ -11023,7 +11029,7 @@ header {
   color: #3c8760;
   transition: none;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
   font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
@@ -11032,6 +11038,12 @@ header {
   background: #3c8760;
   color: #fff;
   text-decoration: none !important;
+}
+
+.cta-line i {
+  font-size: 20px;
+  height: auto;
+  padding-right: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -11114,7 +11126,6 @@ header {
   color: #3c8760;
   transition: none;
   font-size: 14px;
-  font-weight: 400;
   font-family: "Open Sans", sans-serif;
   transition: 0.3s;
 }
