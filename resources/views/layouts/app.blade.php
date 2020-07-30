@@ -105,7 +105,7 @@
             <h1 class=""><a href="{{url('/home')}}">traCE</a></h1>
           <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
           </div>
-          
+
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
@@ -115,7 +115,7 @@
                   <ul>
                     <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
                     <li><a href="">Filosofia</a></li>
-                    <li><a href="">Equip</a></li>
+                    <li><a href="{{url('/equip/')}}">Equip</a></li>
                     <li><a href="">Transparència</a></li>
                   </ul>
                 </li>
@@ -131,7 +131,7 @@
           </div>
 
         </div>
-        
+
       </header>
 
     <div>

@@ -28,3 +28,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/dany_cerebral', 'HomeController@dany_cerebral')->name('dany_cerebral');
 Route::get('/qui_som', 'HomeController@qui_som')->name('qui_som');
+Route::get('/equip', 'HomeController@equip')->name('equip');

@@ -21,4 +21,9 @@ class HomeController extends Controller
     {
         return view('qui_som');
     }
+
+    public function equip()
+    {
+        return view('equip');
+    }
 }
