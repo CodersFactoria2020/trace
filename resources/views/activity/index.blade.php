@@ -24,8 +24,8 @@
                             <i class="fas fa-plus"></i>
                         </a>
                         @include('activity.edit')
-                        
-                           
+
+
 
                             <form action="{{route('activity.destroy', $activity->id)}}" method="post">
                                 @csrf
@@ -36,11 +36,15 @@
                                     class="btn btn-danger"
                                 >
                             </form>
-
+                            <a href="{{Route('download-document', $activity->id)}}">
+                                <button type="button" class="btn btn-primary text-right">
+                                    Download
+                                </button>
+                            </a>
                         </div>
                     </div>
                     @endforeach
-                    
+
                 </div>
             </div>
         </div>
