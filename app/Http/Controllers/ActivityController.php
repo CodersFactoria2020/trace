@@ -39,15 +39,17 @@ class ActivityController extends Controller
         ]);
 
         if($activity['file']) {
-            $name = $activity->getClientOriginalName();
             $upload = $request->file('file');
-            $document = $upload->storeAs('/activities/', $name . '.pdf');
+            $document = $upload->storeAs('/activities/', $activity->id. '.pdf');
         }
         return redirect('/activity');
     }
     public function download(Request $request, Activity $activity)
     {
+
         return Storage::download('/activities/'.$activity->id.'.pdf', $activity->name.'.pdf');
+
+
     }
 
     public function show(Activity $activity)
