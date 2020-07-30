@@ -16,14 +16,14 @@
         <tr>
             <th>Nom i Cognom</th>
             <th>Professio</th>
-            <th>Foto</th>
+            <th>Imatge</th>
             <th width="280px">Action</th>
         </tr>
         @foreach ($teams as $team)
             <tr>
                 <td>{{$team->first_name}}, {{$team->last_name}}</td>
                 <td>{{ $team->position }}</td>
-                <td>{{ $team->photo }}</td>
+                <td> <img src="images/{{$team->photo}}" width="150" height="150"></td>
                 <td>
                     <form action="{{ route('team.destroy',$team->id) }}" method="POST">
 

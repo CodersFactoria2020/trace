@@ -25,23 +25,18 @@ class TeamController extends Controller
     public function store(Request $request, Team $team)
     {
 
-        $request->validate([
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'position' => 'required',
-            'photo' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-        ]);
+        $team=$request->all();
 
 
-        if ($files = $request->file('photo')) {
-            $team['photo'] = $request->file('photo')->store('images', 'public');
+        if ($photo = $request->file('photo')) {
+            $name_photo = $photo->getClientOriginalName();
+            $photo->storeAs('/team/', $name_photo);
+            $team['photo'] = $name_photo;
         }
 
-        $insert['first_name'] = $request->get('first_name');
-        $insert['last_name'] = $request->get('last_name');
-        $insert['position'] = $request->get('position');
 
-        Team::create($request->all());
+        Team::create($team);
+
 
         return redirect(route('team.index'));
     }
@@ -59,12 +54,20 @@ class TeamController extends Controller
     public function update(Request $request, Team $team)
     {
 
+        if ($photo = $request->file('photo')) {
+            $name_photo = $photo->getClientOriginalName();
+            $photo->move('images', $name_photo);
+            $team['photo'] = $name_photo;
+        }
+        $team->update($request->all());
+        return redirect('/team');
     }
 
     public function destroy(Team $team)
     {
 
         $team->delete();
+        Storage::delete('images');
         return redirect()->route('team.index');
     }
 }

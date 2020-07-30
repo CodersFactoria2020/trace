@@ -18,7 +18,7 @@
 
         <div class="row">
 
-                <<div class="form-group">
+                <div class="form-group">
                     <label for="name">Nom</label>
                     <input type="text" name="first_name" class="form-control" placeholder="First Name"/>
                 </div>
@@ -31,6 +31,7 @@
                     <input type="text" name="position" class="form-control" placeholder="Position"/>
                 </div>
                 <div class="form-group">
+                    <label for="name">Imatge</label>
                     <input type="file" name="photo" class="form-control" >
                 </div>
 

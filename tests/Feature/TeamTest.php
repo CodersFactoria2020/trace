@@ -21,12 +21,82 @@ class TeamTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_create_team()
+    public function test_create_member_team_with_image()
     {
-        $response = $this->get('/team/create');
-        $response->assertStatus(200);
+        $photo = UploadedFile::fake()->image('image.jpg');
+        $response=$this->post('/team', [
+            'first_name'=>'Kevin',
+            'last_name'=>'Hidalgo',
+            'position' =>'Doctor',
+            'photo'=>$photo,
+    ]);
+        $this->assertDatabaseHas('teams',[
+        "first_name"=> "Kevin",
+        "last_name"=> "Hidalgo",
+        "position"=> "Doctor",
+        "photo"=> "image.jpg",
+        ]);
+        $response->assertStatus(302);
+        $response->assertRedirect('/team');
     }
 
 
 
+    public function test_delate_member_team()
+    {
+        $photo = UploadedFile::fake()->image('image.jpg');
+        $team=factory(Team::class)->create([
+            'id'=>1,
+            'first_name'=>'Kevin',
+            'last_name'=>'Hidalgo',
+            'position' =>'Doctor',
+            'photo'=>$photo,
+            ]);
+        $this->assertDatabaseHas('teams',[
+            'id'=> 1 ,
+            "first_name"=> "Kevin",
+            "last_name"=> "Hidalgo",
+            "position"=> "Doctor",
+            "photo"=> $photo,
+        ]);
+        $response= $this->delete('team/'.$team->id);
+        $this->assertDatabaseMissing('teams',[
+            'id'=> 1,
+            "first_name"=> "Kevin",
+            "last_name"=> "Hidalgo",
+            "position"=> "Scrum Master",
+            "photo"=> $photo,
+
+        ]);
+        $response->assertStatus(302);
+        $response->assertRedirect('/team');
+    }
+
+    public function test_update_member_team_with_image()
+    {
+        $photo = $file = UploadedFile::fake()->image('image.jpg');
+        $team=factory(Team::class)->create([
+            'id'=> 1,
+            'first_name'=>'Kevin',
+            'last_name'=>'Hidalgo',
+            'position' =>'Doctor',
+            'photo'=>$photo,
+        ]);
+        $response=$this->patch('/team/'. $team->id, [
+            'id'=> 1 ,
+            'first_name'=>'Kevin',
+            'last_name'=>'Vivar',
+            'position' =>'Doctor',
+            'photo'=>$photo,
+        ]);
+        $this->assertDatabaseHas('teams',[
+            "id"=> 1 ,
+            "first_name"=> "Kevin",
+            "last_name"=> "Vivar",
+            "position"=> "Doctor",
+            "photo"=> $photo,
+        ]);
+        $response->assertStatus(302);
+        $response->assertRedirect('/team');
+    }
 }

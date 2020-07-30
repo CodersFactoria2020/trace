@@ -1,43 +1,38 @@
+@extends('layouts.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Edit Product</h2>
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h1>Membre de l'equip</h1>
+                <hr>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('team.index') }}"> Back</a>
+            <div class="card-body">
+                <form action="{{Route('team.update',$team->id)}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('put')
+                    <div class="form-group">
+                        <label for="name">Nom</label>
+                        <input type="text" name="first_name" class="form-control" placeholder="First Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Cognom</label>
+                        <input type="text" name="last_name" class="form-control" placeholder="Last Name"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Posicio</label>
+                        <input type="text" name="position" class="form-control" placeholder="Position"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Imatge</label>
+                        <input type="file" name="photo" class="form-control" >
+                    </div>
+                    <input type="submit" value="Edit" class="btn btn-primary" href="{{Route('team.index')}}">
+                </form>
+            </div>
+            <div class="card-footer">
+                <a v class="btn btn-secondary">Back</a>
             </div>
         </div>
     </div>
-
-
-    <form action="{{ route('team.update',$team->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
-
-        <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Nom y Cognom:</strong>
-                    <input type="text" name="fullname" value="{{ $team->fullname }}" class="form-control" placeholder="fullname">
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Profecio:</strong>
-                    <input type="text" name="fullname" value="{{ $team->profession }}" class="form-control" placeholder="profession">
-                </div>
-                <div class="col-md-6">
-                    <strong>Profecio:</strong>
-                    <input type="file" name="image" class="form-control" value="{{ $team->photo }}">
-                </div>
-
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
-        </div>
-
-    </form>
 @endsection
