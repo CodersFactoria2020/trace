@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,19 +25,12 @@ class TeamController extends Controller
 
     public function store(Request $request, Team $team)
     {
-
-        $team=$request->all();
-
+        $data = $request->all();
+        $team = Team::create($data);
 
         if ($photo = $request->file('photo')) {
-            $name_photo = $photo->getClientOriginalName();
-            $photo->storeAs('/team/', $name_photo);
-            $team['photo'] = $name_photo;
+           $team->upload_photo($photo);
         }
-
-
-        Team::create($team);
-
 
         return redirect(route('team.index'));
     }
@@ -53,13 +47,12 @@ class TeamController extends Controller
 
     public function update(Request $request, Team $team)
     {
+        $team->update($request->all());
 
         if ($photo = $request->file('photo')) {
-            $name_photo = $photo->getClientOriginalName();
-            $photo->move('images', $name_photo);
-            $team['photo'] = $name_photo;
+            $team->upload_photo($photo);
         }
-        $team->update($request->all());
+
         return redirect('/team');
     }
 

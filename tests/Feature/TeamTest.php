@@ -28,7 +28,7 @@ class TeamTest extends TestCase
             'first_name'=>'Kevin',
             'last_name'=>'Hidalgo',
             'position' =>'Doctor',
-            'photo'=>$photo,
+            'photo'=>$photo->name,
     ]);
         $this->assertDatabaseHas('teams',[
         "first_name"=> "Kevin",
@@ -42,7 +42,7 @@ class TeamTest extends TestCase
 
 
 
-    public function test_delate_member_team()
+    public function test_delete_member_team()
     {
         $photo = UploadedFile::fake()->image('image.jpg');
         $team=factory(Team::class)->create([
@@ -50,14 +50,14 @@ class TeamTest extends TestCase
             'first_name'=>'Kevin',
             'last_name'=>'Hidalgo',
             'position' =>'Doctor',
-            'photo'=>$photo,
+            'photo'=>$photo->name,
             ]);
         $this->assertDatabaseHas('teams',[
             'id'=> 1 ,
             "first_name"=> "Kevin",
             "last_name"=> "Hidalgo",
             "position"=> "Doctor",
-            "photo"=> $photo,
+            "photo"=> 'image.jpg',
         ]);
         $response= $this->delete('team/'.$team->id);
         $this->assertDatabaseMissing('teams',[
@@ -74,27 +74,27 @@ class TeamTest extends TestCase
 
     public function test_update_member_team_with_image()
     {
-        $photo = $file = UploadedFile::fake()->image('image.jpg');
+        $photo = $file = UploadedFile::fake()->image('image2.jpg');
         $team=factory(Team::class)->create([
             'id'=> 1,
             'first_name'=>'Kevin',
             'last_name'=>'Hidalgo',
             'position' =>'Doctor',
-            'photo'=>$photo,
+            'photo'=>$photo->name,
         ]);
         $response=$this->patch('/team/'. $team->id, [
             'id'=> 1 ,
             'first_name'=>'Kevin',
             'last_name'=>'Vivar',
             'position' =>'Doctor',
-            'photo'=>$photo,
+            'photo'=>'image2.jpg',
         ]);
         $this->assertDatabaseHas('teams',[
             "id"=> 1 ,
             "first_name"=> "Kevin",
             "last_name"=> "Vivar",
             "position"=> "Doctor",
-            "photo"=> $photo,
+            "photo"=> "image2.jpg",
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/team');
