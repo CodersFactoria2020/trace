@@ -88,7 +88,7 @@
           </div>
 
           <div class="user">
-            <a href="" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea usuari</a>
+            <a href="http://localhost:8000/login" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea usuari</a>
           </div>
         </div>
     </div>
