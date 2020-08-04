@@ -8,9 +8,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('user.update', $user->id)}}" method="post">
+                <form action="{{Route('user.update', $user->id)}}" method="POST">
                     @csrf
-                    @method('put')
+                    @method('PUT')
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom</label>

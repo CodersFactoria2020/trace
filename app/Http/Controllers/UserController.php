@@ -22,6 +22,11 @@ class UserController extends Controller
         $users = User::all();
         return view('user.index', ['users' => $users]);
     }
+    
+    public function dashboard()
+    {
+        return view('user.dashboard');
+    }
 
     public function create()
     {

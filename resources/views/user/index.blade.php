@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard-navbar')
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -20,7 +20,7 @@
                 <h1>USUARIS REGISTRATS</h1><hr>
                 <button type="button" class="mybtn btn btn-primary" data-toggle="modal" data-target="#create-user">Afegir un usuari</button>
                 @include('user.create')
-                <a href="{{Route('home')}}" class="mybtn btn btn-secondary">Tornar al inici</a>
+                <a href="{{Route('dashboard')}}" class="mybtn btn btn-secondary">Panel de control</a>
             </div>
             <table class="table table-triped">
                 <thead>
@@ -62,15 +62,8 @@
                         @include('user.show')
                     </td>
                     <td>      
-                        <form action="{{route('user.destroy', $user->id)}}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input
-                                type="submit"
-                                value="Esborrar"
-                                class="mybtn btn btn-danger"
-                            >
-                        </form>
+                        <a style="color:white" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="mybtn btn btn-danger" user="button">Esborrar</a>
+                        @include('user.destroy')
                     </td>
                 </tr>
                 @endforeach
@@ -80,3 +73,4 @@
     </div>
 @endsection
 @include('user.show')
+@include('user.destroy')
