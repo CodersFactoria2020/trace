@@ -3,7 +3,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <style>
     .mybtn {
         height: 3rem !important;
@@ -48,7 +48,7 @@
                     <td>{{implode (",", $user->actualRoles())}}</td>
                     
                     <td>
-                        <a href="#" style="color:white" class="mybtn btn btn-dark btn-lg">
+                        <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" style="color:white" class="mybtn btn btn-dark btn-lg">
                             <span class="glyphicon glyphicon-envelope"></span> 
                           </a>
                     </td>
@@ -75,3 +75,6 @@
 @include('user.edit')
 @include('user.show')
 @include('user.destroy')
+
+<script>
+</script>

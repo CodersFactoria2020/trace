@@ -20,9 +20,9 @@
                             <h5>Cognom: {{$user->last_name}}</h5>
                         </div>
                         <div style="padding:5px;">
-                            <button type="button" href="#" style="color:white" class="mybtn btn btn-dark btn-sm">
+                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" style="color:white" class="mybtn btn btn-dark btn-lg">
                                 <span class="glyphicon glyphicon-envelope"> {{$user->email}}</span> 
-                              </button>
+                            </a>
                         </div>
                         <div style="padding:5px;">
                             <h5>Telèfon: {{$user->phone}}</h5>
