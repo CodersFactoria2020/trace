@@ -8,6 +8,8 @@
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#create-activity">
                     Afegir nova activitat
                 </button>
+                <a href="{{Route('dashboard')}}" class="mybtn btn btn-secondary">Panel de control</a>
+                
                 @foreach($activities as $activity)
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">

@@ -111,9 +111,9 @@
     <a href="/">
       <img src="img/Logo-transparent_w152px_no-small-text.png" alt="logo de la associació Trace"/></a>
     <br> 
-    <a href="{{Route('dashboard')}}">Àrea usuari - Inici</a>
-    <a href="{{Route('user.index')}}">Usuaris</a>
-    <a href="{{Route('activity.index')}}">Activitats</a>
+    <a href="/dashboard">Àrea usuari - Inici</a>
+    <a href="/user">Usuaris</a>
+    <a href="/activity">Activitats</a>
     <br>
     <div class=logoutbtn>
       <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();

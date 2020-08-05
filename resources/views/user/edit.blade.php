@@ -38,12 +38,11 @@
                         </div>
                         <div class="form-group">
                             <label>Rol</label>
-                            <select class="form-control" name="roles" id="roles">
+                            {{-- <select class="form-control" name="role_id">
                                 @foreach ($user->roles as $role)
-                                    <option value="{{$role->id}}"
-                                    >{{$role->name}}</option>
+                                <option value="{{ $role->id }}">{{ $role->role_name }}</option>
                                 @endforeach
-                            </select>
+                            </select> --}}
                         </div>
 
                         <div class="text-right">
