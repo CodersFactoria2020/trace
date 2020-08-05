@@ -19,7 +19,6 @@
             <div class="card-header">
                 <h1>USUARIS REGISTRATS</h1><hr>
                 <button type="button" class="mybtn btn btn-primary" data-toggle="modal" data-target="#create-user">Afegir un usuari</button>
-                @include('user.create')
                 <a href="{{Route('dashboard')}}" class="mybtn btn btn-secondary">Panel de control</a>
             </div>
             <table class="table table-triped">
@@ -72,5 +71,7 @@
         </div>
     </div>
 @endsection
+@include('user.create')
+@include('user.edit')
 @include('user.show')
 @include('user.destroy')
