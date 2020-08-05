@@ -39,6 +39,7 @@
     <style>
       body {
         margin: 0;
+        padding-top: 10px
       }
 
       .sidebar {
@@ -64,8 +65,8 @@
       }
 
       .sidebar a:hover:not(.active) {
-        background-color: #555;
-        color: white;
+        background-color: #efca30;
+        color: black;
       }
 
       div.content {
@@ -107,12 +108,19 @@
 <body>
 
   <div class="sidebar">
-    <a class="active" href="#home">Àrea usuari - Inici</a>
+    <a href="/">
+      <img src="img/Logo-transparent_w152px_no-small-text.png" alt="logo de la associació Trace"/></a>
+    <br> 
+    <a href="{{Route('dashboard')}}">Àrea usuari - Inici</a>
     <a href="{{Route('user.index')}}">Usuaris</a>
     <a href="{{Route('activity.index')}}">Activitats</a>
     <br>
     <div class=logoutbtn>
-      <a href="" target="_blank"><i class="logouticon icofont-logout"></i></i> Tancar sessió</a>
+      <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+      document.getElementById('logout-form').submit();"><i class="logouticon icofont-logout"></i> Tancar sessió</a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
     </div>
   </div>
 

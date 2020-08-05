@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view('equip');
     }
+        
+    public function login()
+    {
+        return view('login');
+    }
 }
