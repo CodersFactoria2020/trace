@@ -34,7 +34,7 @@
                             <h5>Tutor(a): {{$user->tutor}}</h5>
                         </div>
                         <div style="padding:5px;">
-                            <h5>Rol: {{implode (",", $user->actualRoles())}}</h5>
+                            <h5>Rol: {{$user->role_id}}</h5>
                         </div>
 
                         <div class="card-footer text-right">

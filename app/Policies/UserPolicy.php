@@ -4,55 +4,47 @@ namespace App\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-// use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 
 class UserPolicy
 {
     use HandlesAuthorization;
 
-    public function update(User $user, User $model, $permissionRequired=null)
+    public function viewAny(User $user)
     {
-        $adminPermission = $permissionRequired[0];
-        $ownPermission = $permissionRequired[1];
-
-        if ($user->havePermission($adminPermission))
-        {
-            return true;
+        if (Auth::user()->role_id !="Admin") {
+            return false;
         }
-        if ($user->havePermission($ownPermission))
-        {
-            if ($user->id === $model->id)
-            {
-                return true;
-            }
-        }
-        return false;
+        return true;
     }
 
-    public function destroy(User $user, User $model, $permissionRequired=null)
+    public function view(User $user, User $model)
     {
-        $adminPermission = $permissionRequired[0];
-        $ownPermission = $permissionRequired[1];
-        // $auth_user = Auth::user();
+        //
+    }
 
-        if ($user->havePermission($adminPermission))
-        {
-            return true;
-        }
-        if ($user->havePermission($ownPermission))
-        {
-            if ($user->id != $model->id)
-            {
-                return true;
-            }
-        }
-        // if ($user->havePermission($ownPermission))
-        // {
-        //     if ($user->id != $auth_user)
-        //     {
-        //         return true;
-        //     }
-        // }
-        return false;
+    public function create(User $user)
+    {
+        //
+    }
+
+    public function update(User $user, User $model)
+    {
+        //
+    }
+
+    public function delete(User $user, User $model)
+    {
+        //
+    }
+
+    public function restore(User $user, User $model)
+    {
+        //
+    }
+
+    public function forceDelete(User $user, User $model)
+    {
+        //
     }
 }

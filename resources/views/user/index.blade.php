@@ -37,6 +37,7 @@
                 </thead>
 
                 @foreach($users as $user)
+                @can('view-any', $user)
                 <tr>
                     <td>{{$user->id}}</td>
                     <td>{{$user->first_name}}</td>
@@ -45,7 +46,7 @@
 {{--                     <td>{{$user->phone}}</td>
                     <td>{{$user->dni}}</td>
                     <td>{{$user->tutor}}</td> --}}
-                    <td>{{implode (",", $user->actualRoles())}}</td>
+                    <td>{{$user->role_id}}</td>
                     
                     <td>
                         <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" style="color:white" class="mybtn btn btn-dark btn-lg">
@@ -65,6 +66,7 @@
                         @include('user.destroy')
                     </td>
                 </tr>
+                @endcan
                 @endforeach
 
             </table>

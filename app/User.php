@@ -53,7 +53,12 @@ class User extends Authenticatable
         }
     }
 
-    public function getRoleAttribute($value)
+    public function Role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+    
+    public function getRoleIdAttribute($value)
     {
         if ($value === "1")
         {
