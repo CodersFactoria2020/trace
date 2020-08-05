@@ -36,43 +36,91 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
 
-      <style>
-        .topnav-right {
-          float: right;
+    <style>
+      body {
+        margin: 0;
+      }
+
+      .sidebar {
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+      }
+
+      .sidebar a {
+        display: block;
+        color: black;
+        padding: 16px;
+        text-decoration: none;
+      }
+      
+      .sidebar a.active {
+        background-color: #3c8760;
+        color: white;
+      }
+
+      .sidebar a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+      }
+
+      div.content {
+        margin-left: 200px;
+        padding: 1px 16px;
+        height: 1000px;
+      }
+
+      @media screen and (max-width: 700px) {
+        .sidebar {
+          width: 100%;
+          height: auto;
+          position: relative;
         }
-        .logoutbtn {
-          background-color: red;
+        .sidebar a {float: left;}
+        div.content {margin-left: 0;}
+      }
+
+      @media screen and (max-width: 400px) {
+        .sidebar a {
+          text-align: center;
+          float: none;
         }
-      </style>
+      }
+      .logoutbtn {
+        background-color: red;
+        margin: 10 px;
+        padding-left: 10 px;
+      }
+      .logouticon {
+        background-color: red;
+        margin: 10 px;
+        padding-left: 10 px;
+      }
+    </style>
 
 </head>
 
 <body>
-    <div id="topbar" class="d-none d-lg-block">
-        <div class="container d-flex align-items-right justify-content-between">
 
-          <div class="user">
-            <a href="" target="_blank" class="cta"><i class="logoutbtn icofont-logout"></i></i>Tancar sessió</a>
-          </div>
-        </div>
+  <div class="sidebar">
+    <a class="active" href="#home">Àrea usuari - Inici</a>
+    <a href="{{Route('user.index')}}">Usuaris</a>
+    <a href="{{Route('activity.index')}}">Activitats</a>
+    <br>
+    <div class=logoutbtn>
+      <a href="" target="_blank"><i class="logouticon icofont-logout"></i></i> Tancar sessió</a>
     </div>
-
-    <!-- class="sticky-wrapper is-sticky" style="height: 70px; -->
-    <div id="header-sticky-wrapper">
-
-    <!-- style="width: 1399px; position: fixed; top: 0; z-index: 50;" -->
-      <header id="header" >
-
-      </header>
-
-    <div>
+  </div>
 
     <main class="">
         @yield('content')
     </main>
 
 </body>
-
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
