@@ -16,8 +16,8 @@ class CreateActivitiesTable extends Migration
             $table->string('professional');
             $table->date('date');
             $table->time('time');
+            $table->string('category_id');
             $table->timestamps();
-
         });
     }
 

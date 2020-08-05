@@ -5,15 +5,14 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Traits\UserTrait;
 use App\Role;
 
 class User extends Authenticatable
 {
-    use Notifiable, UserTrait;
+    use Notifiable;
 
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor'
+        'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor', 'role_id'
     ];
 
     protected $hidden = [
@@ -56,15 +55,15 @@ class User extends Authenticatable
 
     public function getRoleAttribute($value)
     {
-        if ($value === 1)
+        if ($value === "1")
         {
             return "Admin";
         }
-        if ($value === 2)
+        if ($value === "2")
         {
             return "Professional";
         }
-        if ($value === 3)
+        if ($value === "3")
         {
             return "Soci";
         }
