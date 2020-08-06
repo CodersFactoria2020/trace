@@ -25,7 +25,7 @@ class UserPolicy
 
     public function create(User $user)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (Auth::user()->role_id != "Admin") {
             return false;
         }
         return true;
@@ -33,15 +33,15 @@ class UserPolicy
 
     public function update(User $user, User $model)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (Auth::user()->role_id != "Admin") {
             return false;
         }
         return true;
     }
 
-    public function delete(User $user, User $model)
+    public function destroy(User $user, User $model)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (auth()->user()->role_id != "Admin") {
             return false;
         }
         return true;
@@ -49,17 +49,20 @@ class UserPolicy
 
     public function restore(User $user, User $model)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (Auth::user()->role_id != "Admin") {
             return false;
         }
         return true;
     }
 
-    public function forceDelete(User $user, User $model)
+    public function forceDestroy(User $user, User $model)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (Auth::user()->role_id != "Admin") {
             return false;
         }
+        if (Auth::user()->id === $user->id) {
+            return false;
+            }
         return true;
     }
 }

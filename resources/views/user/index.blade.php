@@ -17,7 +17,7 @@
     <div class="container">
         <div class="card col-12">
             <div class="card-header">
-                <h1>USUARIS REGISTRATS</h1><hr>
+                <h1>USUARIS REGISTRATS <small>({{ count($users)}})</small></h1><hr>
                 <button type="button" class="mybtn btn btn-primary" data-toggle="modal" data-target="#create-user">Afegir un usuari</button>
                 <a href="{{Route('dashboard')}}" class="mybtn btn btn-secondary">Panel de control</a>
             </div>
@@ -62,8 +62,10 @@
                         @include('user.show')
                     </td>
                     <td>      
+                        @can('destroy', $user)
                         <a style="color:white" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="mybtn btn btn-danger" user="button">Esborrar</a>
                         @include('user.destroy')
+                        @endcan
                     </td>
                 </tr>
                 @endcan

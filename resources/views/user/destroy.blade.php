@@ -22,10 +22,9 @@
                 <form action="{{Route('user.destroy', $user->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
-            </form>
-            </div>
- 
+                    <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
+                </form>
+               </div>
         </div>
     </div>
 </div>
