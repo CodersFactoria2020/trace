@@ -50,7 +50,7 @@
                         </div>
                     </div>
                     <div class="card-footer text-right">
-                        <input type="submit" value="Desar" placeholder="Afegir" class="btn btn-primary">
+                        <input type="submit" value="Desar" class="mybtn btn btn-primary">
                     </div>
                 </form>
             </div>

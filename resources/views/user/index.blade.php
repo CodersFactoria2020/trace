@@ -10,6 +10,11 @@
         width: auto !important;
         font-size: 1.4rem !important;
     }
+    thead {
+        margin-top: 2rem;
+        background-color: #efca30;
+        color: black;
+    }
     </style>
 
 </head>
@@ -17,12 +22,11 @@
     <div class="container">
         <div class="card col-12">
             <div class="card-header">
-                <h1>USUARIS REGISTRATS <small>({{ count($users)}})</small></h1><hr>
-                <button type="button" class="mybtn btn btn-primary" data-toggle="modal" data-target="#create-user">Afegir un usuari</button>
-                <a href="{{Route('dashboard')}}" class="mybtn btn btn-secondary">Panel de control</a>
+                <div class="float-left"><h1>USUARIS REGISTRATS <small>({{ count($users)}})</small></h1></div>
+                <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
             </div>
             <table class="table table-triped">
-                <thead>
+                <thead class="thead">
                     <tr>
                         <td><h3>ID</h3></td>
                         <td><h3>Nom</h3></td>
