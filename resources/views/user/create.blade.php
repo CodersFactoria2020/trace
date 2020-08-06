@@ -25,6 +25,10 @@
                             <input type="text" name="email" class="form-control" placeholder="Email"/>
                         </div>
                         <div class="form-group">
+                            <label>Contrasenya</label>
+                            <input type="text" name="password" class="form-control" placeholder="password"/>
+                        </div>
+                        <div class="form-group">
                             <label>Telèfon</label>
                             <input type="text" name="phone" class="form-control" placeholder="+34111222333"/>
                         </div>
@@ -38,19 +42,14 @@
                         </div>
                         <div class="form-group">
                             <label>Rol</label>
-                            <select class="form-control" name="roles" id="roles">
-{{--                                 @foreach ($roles as $role)
-                                    <option value="{{$role->id}}"
-                                    >{{$role->name}}</option>
-                                @endforeach --}}
-                            </select>
+                            <select name="role_id" class="form-control" />
+                            <optgroup label="Selecciona un rol">
+                            @foreach ($roles as $role)
+                                <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
+                            @endforeach
                         </div>
-
-                        <div class="form-group">
-                            <label for="name">Contrasenya</label>
-                        <input type="text" name="password" class="form-control" placeholder="password"/>
-                        </div>
-    
+                    </div>
+                    <div class="card-footer text-right">
                         <input type="submit" value="Desar" placeholder="Afegir" class="btn btn-primary">
                     </div>
                 </form>

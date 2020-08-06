@@ -31,7 +31,9 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::all();
-        return view('user.create', compact('roles'));
+        if (auth()->user()->can('edit', $user)) {
+            return view('user.create', compact('roles'));
+        }
     }
 
     public function store(Request $request)

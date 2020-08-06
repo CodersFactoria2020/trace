@@ -33,7 +33,7 @@ class UserPolicy
 
     public function create(User $user)
     {
-        if (Auth::user()->role_id != "Admin") {
+        if (auth()->user()->role_id != "Admin") {
             return false;
         }
         return true;
