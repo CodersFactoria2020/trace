@@ -14,7 +14,6 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'phone' => $faker->phoneNumber(),
         'dni' => $faker->dni(),
-        'tutor' => $faker->name(),
         'role_id'=> $faker->randomElement(['2', '3'])
     ];
 });
