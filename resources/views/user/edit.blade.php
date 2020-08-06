@@ -38,11 +38,11 @@
                         </div>
                         <div class="form-group">
                             <label>Rol</label>
-                            {{-- <select class="form-control" name="role_id">
-                                @foreach ($user->roles as $role)
-                                <option value="{{ $role->id }}">{{ $role->role_name }}</option>
-                                @endforeach
-                            </select> --}}
+                            <select name="role_id" class="form-control" />
+                            <optgroup label="Selecciona un rol">
+                            @foreach ($roles as $role)
+                                <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
+                            @endforeach
                         </div>
 
                         <div class="text-right">

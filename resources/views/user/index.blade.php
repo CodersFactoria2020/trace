@@ -54,8 +54,10 @@
                           </a>
                     </td>
                     <td>
+                        @can('update', $user)
                         <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="mybtn btn btn-info" user="button">Editar</a>
                         @include('user.edit')
+                        @endcan
                     </td>
                     <td>
                         <a style="color:white" data-toggle="modal" data-target="#show-user{{$user->id}}" class="mybtn btn btn-info" user="button">Detalls</a>

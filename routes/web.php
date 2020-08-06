@@ -19,7 +19,7 @@ Route::get('/equip', 'HomeController@equip')->name('equip');
 Auth::routes();
 
 // User routes
-Route::get('/usuaris', 'UserController@index')->name('user.index');
+Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
 Route::resource('/user', 'UserController')->names('user')->middleware('auth');
 Route::get('user/{id}/show/','UserController@show');

@@ -22,6 +22,14 @@ class UserPolicy
     {
         return true;
     }
+    
+    public function edit(User $user)
+    {
+        if (auth()->user()->role_id != "Admin") {
+            return false;
+        }
+        return true;
+    }
 
     public function create(User $user)
     {
@@ -33,7 +41,7 @@ class UserPolicy
 
     public function update(User $user, User $model)
     {
-        if (Auth::user()->role_id != "Admin") {
+        if (auth()->user()->role_id != "Admin") {
             return false;
         }
         return true;

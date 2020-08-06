@@ -19,7 +19,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('user.index', ['users' => $users]);
+        $roles = Role::all();
+        return view('user.index', ['users' => $users], compact('roles'));
     }
     
     public function dashboard()
@@ -48,7 +49,9 @@ class UserController extends Controller
     public function edit(User $user)
     {
         $roles = Role::all();
-        return view('user.edit', ['user' => $user], compact('roles'));
+        if (auth()->user()->can('edit', $user)) {
+            return view('user.edit', ['user' => $user], compact('roles'));
+        }
     }
 
     public function update(Request $request, User $user)
