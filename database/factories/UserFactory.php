@@ -14,6 +14,6 @@ $factory->define(User::class, function (Faker $faker) {
         'remember_token' => Str::random(10),
         'phone' => $faker->phoneNumber(),
         'dni' => $faker->dni(),
-        'role_id'=> $faker->randomElement(['2', '3'])
+        'role_id'=> $faker->biasedNumberBetween($min = 2, $max = 3, $function = 'sqrt'),
     ];
 });
