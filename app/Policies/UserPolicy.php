@@ -12,7 +12,7 @@ class UserPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id !="Admin") {
+        if (Auth::user()->role_id === "Soci") {
             return false;
         }
         return true;
@@ -20,31 +20,46 @@ class UserPolicy
 
     public function view(User $user, User $model)
     {
-        //
+        return true;
     }
 
     public function create(User $user)
     {
-        //
+        if (Auth::user()->role_id !="Admin") {
+            return false;
+        }
+        return true;
     }
 
     public function update(User $user, User $model)
     {
-        //
+        if (Auth::user()->role_id !="Admin") {
+            return false;
+        }
+        return true;
     }
 
     public function delete(User $user, User $model)
     {
-        //
+        if (Auth::user()->role_id !="Admin") {
+            return false;
+        }
+        return true;
     }
 
     public function restore(User $user, User $model)
     {
-        //
+        if (Auth::user()->role_id !="Admin") {
+            return false;
+        }
+        return true;
     }
 
     public function forceDelete(User $user, User $model)
     {
-        //
+        if (Auth::user()->role_id !="Admin") {
+            return false;
+        }
+        return true;
     }
 }

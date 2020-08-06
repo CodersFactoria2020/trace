@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use App\Activity;
+use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -35,7 +36,6 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
-        $user->roles()->sync($request->get('roles'));
         return redirect(route('user.index'));
     }
 
@@ -54,7 +54,6 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
-        $user->roles()->sync($request->get('roles'));
         return redirect(route('user.index'));
     }
 
