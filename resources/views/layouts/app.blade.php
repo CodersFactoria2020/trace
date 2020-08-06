@@ -107,7 +107,7 @@
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
-                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/home')}}">Inici</a></li>
+                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/')}}">Inici</a></li>
                 <li {% if page == "dany_cerebral" %}class="active" {% endif %}><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
                 <li class="drop-down"><a href="#">Coneix-nos</a>
                   <ul>

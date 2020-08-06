@@ -612,6 +612,15 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
+    .content {
+        h2 {
+            font-weight: 600 !important;
+            font-size: 26px !important;
+            color: $secondary !important;
+            padding-bottom: 20px !important;
+        }
+    }
+
     .flex-container {
         display: flex;
         justify-content: center;
