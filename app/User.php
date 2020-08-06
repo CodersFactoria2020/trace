@@ -60,15 +60,15 @@ class User extends Authenticatable
     
     public function getRoleIdAttribute($value)
     {
-        if ($value === "1")
+        if ($value === 1)
         {
             return "Admin";
         }
-        if ($value === "2")
+        if ($value === 2)
         {
             return "Professional";
         }
-        if ($value === "3")
+        if ($value === 3)
         {
             return "Soci";
         }
