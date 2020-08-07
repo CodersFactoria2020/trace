@@ -56,19 +56,13 @@
     
 <!-- style -->
 <style>
-    .headerH1h2 {
-      color: #efca30;
+    .headerh2 {
+        color: #efca30;
     }
-    .logoutbtn {
-    background-color: red;
-    margin: 10 px;
-    padding: 20 px;
+    .logoutContent {
+        color: white;
     }
-    .logouticon {
-    background-color: red;
-    margin: 10 px;
-    padding-left: 10 px;
-    }
+    
 </style>
 
 </head>
@@ -81,18 +75,13 @@
             <div>
                 <img src="img/Logo-transparent_w96px_INVERT_no-small-text.png" alt="logo de la associació Trace" />
             </div>
-            <div class="headerH1h2">
-                <h1>Hola, {{Auth::User()->first_name}}!</h1>
+            <div class="headerh2">
+                <h2>Àrea privada de {{Auth::User()->first_name}}</h2>
             </div>
-
-            <div class="headerH1h2">
-                <h2>Aquesta es la teva àrea privada!</h2>
-            </div>
-
-            <div class=logoutbtn>
+            <div class="text-right float-left btn btn-danger">
                 <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();"><i class="logouticon icofont-logout"></i>
-                    <h5> Tancar sessió</h5>
+            document.getElementById('logout-form').submit();"><i class="logouticon icofont-logout logoutContent"></i>
+                    <h5 class="logoutContent float-right"> Tancar sessió </h5>
                 </a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -107,7 +96,7 @@
         <div class="container d-flex justify-content-between align-items-center">
 
             <div class="mr auto">
-                <h1 class="">El meu pla de treball</h1>
+                <h2 class="">El meu pla de treball</h2>
                 
             </div>
 
