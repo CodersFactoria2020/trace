@@ -9,6 +9,7 @@ Route::get('/', function () {
 
 Route::resource('/role', 'RoleController')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
+Route::resource('/workplans', 'WorkplanController')->middleware('auth');
 Route::get('/login', 'HomeController@login')->name('login');
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -21,7 +22,7 @@ Auth::routes();
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
-Route::get('/weekplans', 'UserController@weekplans')->name('dashboard');
+Route::get('/workplans', 'UserController@workplans')->name('workplans');
 Route::resource('/user', 'UserController')->names('user')->middleware('auth');
 Route::get('user/{id}/show/','UserController@show');
 Route::get('user/{id}/edit/','UserController@edit');

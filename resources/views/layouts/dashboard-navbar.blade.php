@@ -34,7 +34,7 @@
     <!-- LARAVEL -->
     <!-- CSRF Token -->
     <!-- Scripts -->
-    <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
+    {{-- <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css"> --}}
 
     <style>
       body {
@@ -103,6 +103,8 @@
       }
     </style>
 
+@yield('scripts')
+
 </head>
 
 <body>
@@ -114,7 +116,7 @@
     <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
-    <a href="/weekplans">Plans de treball</a>
+    <a href="/workplans">Plans de treball</a>
     <br>
     <div class=logoutbtn>
       <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
@@ -125,8 +127,10 @@
     </div>
   </div>
 
-    <main class="">
+    <main class="py-4">
+      <div class="container">
         @yield('content')
+      </div>
     </main>
 
 </body>
