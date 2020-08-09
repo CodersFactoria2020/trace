@@ -21,7 +21,7 @@
     },
     "devDependencies": {
         "axios": "^0.19",
-        "bootstrap": "^4.5.1",
+        "bootstrap": "^4.5.2",
         "browser-sync": "^2.26.7",
         "cross-env": "^7.0",
         "del": "^5.1.0",
@@ -42,8 +42,14 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "@fullcalendar/core": "^5.2.1",
+        "@fullcalendar/daygrid": "^5.2.0",
+        "@fullcalendar/interaction": "^5.2.0",
+        "@fullcalendar/list": "^5.2.0",
+        "@fullcalendar/timegrid": "^5.2.0",
         "animate.css": "^4.1.0",
         "boxicons": "^2.0.5",
+        "fullcalendar": "^5.2.0",
         "isotope-layout": "^3.0.6",
         "jquery": "^3.5.1",
         "jquery-sticky": "^1.0.4",
