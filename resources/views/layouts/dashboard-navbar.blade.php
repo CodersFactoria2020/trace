@@ -111,9 +111,10 @@
     <a href="/">
       <img src="img/Logo-transparent_w152px_no-small-text.png" alt="logo de la associació Trace"/></a>
     <br> 
-    <a href="/dashboard">Àrea usuari - Inici</a>
+    <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
+    <a href="/weekplans">Plans de treball</a>
     <br>
     <div class=logoutbtn>
       <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();

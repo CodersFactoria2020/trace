@@ -32,6 +32,17 @@ class UserController extends Controller
         }
         return view('user.soci');
     }
+        
+    public function weekplans()
+    {
+        $users = User::all();
+        $roles = Role::all();
+        $activities = Activity::all();
+        if (auth()->user()->role_id != "Soci") {
+            return view('fullcalendar.index', ['users' => $users], compact('roles'), compact('activities'));
+        }
+        return view('fullcalendar.soci');
+    }
 
     public function create()
     {
