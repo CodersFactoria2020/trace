@@ -122,6 +122,29 @@
             <div class="col-8"><div id="calendar"></div></div>
             <div class="col"></div>
         </div>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                ...
+                </div>
+                <div class="modal-footer">
+                    <button id="btnAdd" class="btn btn-success">Afegir</button>
+                    <button id="btnEdit" class="btn btn-warning">Modificar</button>
+                    <button id="btnDelete" class="btn btn-danger">Esborrar</button>
+                    <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
+                </div>
+            </div>
+            </div>
+        </div>
     </div>
 
 @endsection

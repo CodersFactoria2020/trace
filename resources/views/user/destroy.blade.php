@@ -18,7 +18,7 @@
             </div>
  
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Anul·lar</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel·lar</button>
                 <form action="{{Route('user.destroy', $user->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
