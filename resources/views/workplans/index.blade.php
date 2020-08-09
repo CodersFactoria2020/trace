@@ -128,13 +128,30 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                ...
+                    <label for="txtID">ID</label>
+                    <input type="text" name="txtID" id="txtID">
+                    <br>
+                    <label for="txtID">Data</label>
+                    <input type="text" name="txtDate" id="txtDate">
+                    <br>
+                    <label for="txtID">Títol</label>
+                    <input type="text" name="txtTitle" id="txtTitle">
+                    <br>
+                    <label for="txtID">Hora</label>
+                    <input type="text" name="txtTime" id="txtTime">
+                    <br>
+                    <label for="txtID">Descripció</label>
+                    <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
+                    <br>
+                    <label for="txtID">Color</label>
+                    <input type="color" name="txtColor" id="">
+        )
                 </div>
                 <div class="modal-footer">
                     <button id="btnAdd" class="btn btn-success">Afegir</button>
