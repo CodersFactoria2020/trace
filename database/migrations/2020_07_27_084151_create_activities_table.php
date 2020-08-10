@@ -17,8 +17,8 @@ class CreateActivitiesTable extends Migration
             $table->mediumText('file')->nullable();
             $table->string('professional1');
             $table->string('professional2')->nullable();
-            $table->dateTime('start');
-            $table->dateTime('end');
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();;
             $table->string('category_id');
             $table->timestamps();
         });
