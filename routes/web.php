@@ -34,3 +34,8 @@ Route::get('user/{id}/destroy/','UserController@destroy');
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
 Route::get('/activitats', 'ActivityController@index')->name('activity.index');
 Route::get('activity/{id}/edit/','ActivityController@edit');
+
+// Category routes
+Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
+Route::get('/categories', 'CategoryController@index')->name('category.index');
+Route::get('category/{id}/edit/','CategoryController@edit');
