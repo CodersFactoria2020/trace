@@ -119,6 +119,7 @@
     <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
+    <a href="/category">Àreas</a>
     <a href="/workplans">Plans de treball</a>
     <a href="/team">Equip de gestió</a>
     <br>
