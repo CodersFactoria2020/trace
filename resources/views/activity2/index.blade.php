@@ -34,14 +34,13 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Equip de gestió de l'associació</h1></div>
-            <!-- Cambiar el data-target de la modal -->
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un membre</button>
+            <div class="float-left"><h1>Gestió d'activitats</h1></div>
+            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir una activitat</button>
         </div>
     <!-- Contenido que se desee -->
         <div class="card body">
-            <a>CONTENIDO PROVISIONAL -- membre 1</a>
-            <a>CONTENIDO PROVISIONAL -- membre 1</a>
+            <a>Provisional !!! membre 1</a>
+            <a>Provisional !!! membre 1</a>
         </div>
     </div>
 
