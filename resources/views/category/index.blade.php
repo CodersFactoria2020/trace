@@ -35,9 +35,9 @@
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h1>Gestió d'àreas</h1></div>
-            @can('create')
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una activitat</button>
-            @endcan
+            {{-- @can('create') --}}
+            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
+            {{-- @endcan --}}
         </div>
     <!-- Contenido que se desee -->
     <table class="table table-triped">

@@ -24,7 +24,7 @@ class ActivityPolicy
         return true;
     }
 
-    public function create(User $user)
+    public function create(User $user, Activity $activity)
     {
         if (Auth::user()->role_id === "Soci") {
             return false;

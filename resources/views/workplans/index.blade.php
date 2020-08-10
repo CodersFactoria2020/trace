@@ -143,7 +143,7 @@
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h1>Plans de treball </h1></div>
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un pla de treball</button>
+            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
         </div>
 <!-- Provisional -->
         <div class="row">

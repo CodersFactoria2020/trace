@@ -32,7 +32,7 @@ class ActivityController extends Controller
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
-        return view('activity.create');
+        return view('activity.create', ['users' => $users], compact('activities'), compact('roles'));
     }
 
     public function store(Request $request)
