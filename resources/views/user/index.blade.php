@@ -23,7 +23,9 @@
         <div class="card col-12">
             <div class="card-header">
                 <div class="float-left"><h1>USUARIS REGISTRATS <small>({{ count($users)}})</small></h1></div>
+                @can('create')
                 <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+                @endcan
             </div>
             <table class="table table-triped">
                 <thead class="thead">
