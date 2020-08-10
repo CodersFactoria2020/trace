@@ -57,6 +57,9 @@
           }
         },
         dateClick: function (info) {
+
+          $('#txtDate').val(info.dateStr);
+
           $('#exampleModal').modal();
           console.log(info);
           calendar.addEvent({ title: "Evento X", date: info.dateStr });
@@ -90,6 +93,32 @@
       });
 
       calendar.render();
+
+      $('#btnAdd').click(function() {
+        gatherDataGUI("POST");
+      });
+
+      function gatherDataGUI(method) {
+
+        newEvent={
+          id: $('#txtID').val(),
+          title: $('#txtTitle').val(),
+          description: $('#txtDescription').val(),
+          color: $('#txtColor').val(),
+          textColor: '#FFFFFF',
+          // professional1: $('#professional1').val(),
+          // professional2: $('#professional2').val(),
+          start: $('#txtDate').val()+ " "+$('#txtTime').val(),
+          end: $('#txtDate').val()+ " "+$('#txtTime').val(),
+          category_id: $('#txtID').val(),
+
+          '_token': $("meta[name='csrf-token']").attr("content"),
+          '_method': method
+        }
+        console.log(newEvent);
+
+      }
+
     });
   </script>
 
@@ -134,24 +163,33 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                    <label for="txtID">ID</label>
+                    ID:
                     <input type="text" name="txtID" id="txtID">
                     <br>
-                    <label for="txtID">Data</label>
+                    Data:
                     <input type="text" name="txtDate" id="txtDate">
                     <br>
-                    <label for="txtID">Títol</label>
+                    Títol:
                     <input type="text" name="txtTitle" id="txtTitle">
                     <br>
-                    <label for="txtID">Hora</label>
+                    Hora de inici:
                     <input type="text" name="txtTime" id="txtTime">
                     <br>
-                    <label for="txtID">Descripció</label>
+                    Hora de finalització:
+                    <input type="text" name="txtTime" id="txtTime">
+                    <br>
+                    {{-- Professional 1:
+                    <input type="text" name="txtTProfessional1" id="txtProfessional1">
+                    <br>
+                    Professional 2:
+                    <input type="text" name="txtTProfessional2" id="txtProfessional2">
+                    <br> --}}
+                    Descripció:
                     <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
                     <br>
-                    <label for="txtID">Color</label>
-                    <input type="color" name="txtColor" id="">
-        )
+                    Color:
+                    <input type="color" name="txtColor" id="txtColor">
+                    <br>
                 </div>
                 <div class="modal-footer">
                     <button id="btnAdd" class="btn btn-success">Afegir</button>
