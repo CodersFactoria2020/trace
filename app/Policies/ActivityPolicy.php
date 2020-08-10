@@ -40,7 +40,7 @@ class ActivityPolicy
         return true;
     }
 
-    public function delete(User $user, Activity $activity)
+    public function destroy(User $user, Activity $activity)
     {
         if (Auth::user()->role_id === "Soci") {
             return false;
