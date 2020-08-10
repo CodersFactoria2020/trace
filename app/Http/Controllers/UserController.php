@@ -22,27 +22,6 @@ class UserController extends Controller
         $roles = Role::all();
         return view('user.index', ['users' => $users], compact('roles'));
     }
-    
-    public function dashboard()
-    {
-        $users = User::all();
-        $roles = Role::all();
-        if (auth()->user()->role_id != "Soci") {
-            return view('user.dashboard', ['users' => $users], compact('roles'));
-        }
-        return view('user.soci');
-    }
-        
-    public function workplans()
-    {
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        if (auth()->user()->role_id != "Soci") {
-            return view('workplans.index', ['users' => $users], compact('roles'), compact('activities'));
-        }
-        return view('workplans.soci');
-    }
 
     public function create()
     {
@@ -84,5 +63,36 @@ class UserController extends Controller
             $user->delete();
         }
         return redirect(route('user.index'));
+    }
+        
+    public function dashboard()
+    {
+        $users = User::all();
+        $roles = Role::all();
+        if (auth()->user()->role_id != "Soci") {
+            return view('user.dashboard', ['users' => $users], compact('roles'));
+        }
+        return view('user.soci');
+    }
+        
+    public function workplans()
+    {
+        $users = User::all();
+        $roles = Role::all();
+        $activities = Activity::all();
+        if (auth()->user()->role_id != "Soci") {
+            return view('workplans.index', ['users' => $users], compact('roles'), compact('activities'));
+        }
+        return view('workplans.soci');
+    }
+        
+    public function team()
+    {
+        $users = User::all();
+        $roles = Role::all();
+        if (auth()->user()->role_id != "Admin") {
+            return view('user.notauthorized');
+        }
+        return view('team.index');
     }
 }

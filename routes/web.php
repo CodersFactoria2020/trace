@@ -22,6 +22,7 @@ Auth::routes();
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
+Route::get('/team', 'UserController@team')->name('team');
 Route::get('/workplans', 'UserController@workplans')->name('workplans');
 Route::resource('/user', 'UserController')->names('user')->middleware('auth');
 Route::get('user/{id}/show/','UserController@show');

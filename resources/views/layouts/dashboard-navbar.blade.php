@@ -91,6 +91,10 @@
           float: none;
         }
       }
+      .panelHeader {
+        background-color: #3c8760;
+        color: white !important;
+      }
       .logoutbtn {
         background-color: red;
         margin: 10 px;
@@ -110,13 +114,13 @@
 <body>
 
   <div class="sidebar">
-    <a href="/">
-      <img src="img/Logo-transparent_w152px_no-small-text.png" alt="logo de la associació Trace"/></a>
+    <a class="panelHeader">Panell d'administració</a>
     <br> 
     <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
     <a href="/workplans">Plans de treball</a>
+    <a href="/team">Equip de gestió</a>
     <br>
     <div class=logoutbtn>
       <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
