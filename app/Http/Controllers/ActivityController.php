@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Activity;
+use App\Category;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
@@ -19,20 +20,25 @@ class ActivityController extends Controller
     public function index()
     {
         $activities = Activity::all();
-        $users = User::all();
-        $roles = Role::all();
-        return view('activity.index', ['users' => $users], compact('activities'), compact('roles'));
-    }
-
-    public function create()
-    {
-        $activities = Activity::all();
+        $categories = Category::all();
         $users = User::all();
         $roles = Role::all();
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
-        return view('activity.create', ['users' => $users], compact('activities'), compact('roles'));
+        return view('activity.index', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
+    }
+
+    public function create()
+    {
+        $activities = Activity::all();
+        $categories = Category::all();
+        $users = User::all();
+        $roles = Role::all();
+        if (auth()->user()->role_id === "Soci") {
+            return view('user.notauthorized');
+        }
+        return view('activity.create', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
     }
 
     public function store(Request $request)
@@ -44,14 +50,17 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $roles = Role::all();
-        return view('activity.show', ['users' => $users], compact('activities'), compact('roles'));
+        return view('activity.show', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
     }
 
     public function edit(Activity $activity)
     {
+        $activities = Activity::all();
+        $categories = Category::all();
+        $users = User::all();
         $roles = Role::all();
-        if (auth()->user()->can('edit', $user)) {
-            return view('activity.edit', ['users' => $users], compact('activities'), compact('roles'));
+        if (auth()->user()->can('edit', $activity)) {
+            return view('activity.edit', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
         }
     }
     
