@@ -31,7 +31,8 @@ class Activity extends Model
         if ($value === 4)
         {
             return "Teràpia ocupacional";
-            if ($value === 5)
+        }
+        if ($value === 5)
         {
             return "GNPT i NEURONUP";
         }
@@ -40,5 +41,4 @@ class Activity extends Model
             return "Grupals";
         }
     }
-}
 }
