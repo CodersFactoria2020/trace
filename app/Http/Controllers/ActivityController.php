@@ -26,7 +26,7 @@ class ActivityController extends Controller
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
-        return view('activity.index', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
+        return view('activity.index', compact('activities'), compact('categories'));
     }
 
     public function create()
@@ -60,7 +60,7 @@ class ActivityController extends Controller
         $users = User::all();
         $roles = Role::all();
         if (auth()->user()->can('edit', $activity)) {
-            return view('activity.edit', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
+            return view('activity.edit', compact('users'), compact('activities'), compact('categories'), compact('roles'));
         }
     }
     

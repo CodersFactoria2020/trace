@@ -36,7 +36,7 @@
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h1>Gestió d'activitats</h1></div>
-            {{-- @can('create', $activity) --}}
+            {{-- @can('create') --}}
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
             {{-- @endcan --}}
         </div>

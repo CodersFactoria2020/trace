@@ -36,6 +36,14 @@
                             <label>Data i hora de finalització</label>
                             <input type="text" name="end" class="form-control" value="{{$activity->end}}"/>
                         </div>
+                        <div class="form-group">
+                            <label>Àrea:</label>
+                            <select name="category_id" class="form-control" />
+                            <optgroup label="Selecciona una àrea">
+                            @foreach ($categories as $category)
+                                <option value="{{ $category['id'] }}">{{ $category['category_name'] }}</option>
+                            @endforeach
+                        </div>
 
                         <div class="text-right">
                             <div class="text-right">
