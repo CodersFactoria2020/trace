@@ -2,8 +2,9 @@
 
 @section('scripts')
 
-  <!-- Bootstrap CSS -->
+  <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
   <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
+  
   <!-- Font Awesome CSS -->
   <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
 
@@ -72,7 +73,8 @@
         <td>{{$user->role_id}}</td>
         
         <td>
-            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" style="color:white;" class="mybtn btn btn-dark btn-lg glyphicon glyphicon-envelope">
+            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
+              style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
             </a>
         </td>
         <td>

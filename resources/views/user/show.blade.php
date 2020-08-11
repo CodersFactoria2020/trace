@@ -20,8 +20,9 @@
                             <h5>Cognom:</h5><p> {{$user->last_name}}</p>
                         </div>
                         <div style="padding:5px;">
-                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" style="color:white" class="mybtn btn btn-dark btn-lg">
-                                <span class="glyphicon glyphicon-envelope"> {{$user->email}}</span> 
+                            <h5>Correo:</h5>
+                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
+                                style='font-size:2rem' class="mybtn btn"> <i class=' fas fa-envelope'></i> {{$user->email}}
                             </a>
                         </div>
                         <div style="padding:5px;">
