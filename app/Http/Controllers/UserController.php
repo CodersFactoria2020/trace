@@ -20,6 +20,9 @@ class UserController extends Controller
     {
         $users = User::all();
         $roles = Role::all();
+        if (auth()->user()->role_id === "Soci") {
+            return view('user.notauthorized');
+        }
         return view('user.index', ['users' => $users], compact('roles'));
     }
 
