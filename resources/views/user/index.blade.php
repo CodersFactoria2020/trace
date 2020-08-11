@@ -39,7 +39,7 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Gestió d'usuaris</h1></div>
+            <div class="float-left"><h1>Gestió d'usuaris <small>({{ count($users)}})</small></h1></div>
             {{-- @can('create') --}}
             <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
             {{-- @endcan --}}
