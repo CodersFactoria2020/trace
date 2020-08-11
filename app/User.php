@@ -62,7 +62,7 @@ class User extends Authenticatable
     {
         if ($value === 1)
         {
-            return "Admin";
+            return "Soci";
         }
         if ($value === 2)
         {
@@ -70,7 +70,7 @@ class User extends Authenticatable
         }
         if ($value === 3)
         {
-            return "Soci";
+            return "Admin";
         }
     }
 }

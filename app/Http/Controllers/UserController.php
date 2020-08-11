@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Activity;
 use App\Role;
+use App\Http\Resources\Role as RoleResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
