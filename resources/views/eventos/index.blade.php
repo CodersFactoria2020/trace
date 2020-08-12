@@ -2,6 +2,8 @@
 
 @section('scripts')
 
+  <meta name="csrf-token" content="{{ csrf_token() }}">  
+
   <!-- Jquery -->  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -95,8 +97,8 @@
       calendar.render();
 
       $('#btnAdd').click(function() {
-        objectEvent = gatherDataGUI("POST");
-        sendData('', objectEvent);
+        gatherDataGUI("POST");
+        sendData('', gatherDataGUI("POST"));
       });
 
       function gatherDataGUI(method) {
@@ -107,16 +109,13 @@
           description: $('#txtDescription').val(),
           color: $('#color').val(),
           textColor: '#FFFFFF',
-          // professional1: $('#professional1').val(),
-          // professional2: $('#professional2').val(),
           start: $('#txtDate').val()+ " "+$('#txtTime').val(),
           end: $('#txtDate').val()+ " "+$('#txtTime').val(),
-          // category_id: $('#txtID').val(),
 
-          '_token': $("[name='_token']").attr("value"),
+          '_token': $("meta[name='csrf-token']").attr("content"),
           '_method': method
         }
-       return (newEvent);
+        return (newEvent);
 
       }
       function sendData(action, objectEvent) {
@@ -125,8 +124,8 @@
             type: "POST",
             url: "{{ url('/eventos') }}" + action,
             data: objectEvent,
-            success: function(msg){ console.log(); } ,
-            error: function() { alert("S'ha produït un error"); }
+            success: function(msg){ console.log(msg); },
+          error: function() { alert("S'ha produït un error"); }
           }
         );
       }

@@ -19,27 +19,26 @@ class EventoController extends Controller
 
     public function store(Request $request)
     {
-        //
+        $eventData = request()->except(['_token', '_method']);
+        Evento::insert($eventData);
+        print_r($eventData);
+        //return redirect(route('eventos.index'));
     }
 
-    
     public function show(Evento $evento)
     {
         //
     }
-
     
     public function edit(Evento $evento)
     {
         //
     }
-
    
     public function update(Request $request, Evento $evento)
     {
         //
     }
-
     
     public function destroy(Evento $evento)
     {

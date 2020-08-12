@@ -9,6 +9,8 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <!-- Favicons -->
     <link href="img/favicon.png" rel="icon">
 
@@ -25,11 +27,11 @@
     <link href="css/app.css" rel="stylesheet">
 
     <!-- Theme skin -->
-    <link href="color/default.css" rel="stylesheet" />
+    {{-- <link href="color/default.css" rel="stylesheet" /> --}}
 
       <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet" />
+    {{-- <link href="css/style.css" rel="stylesheet" /> --}}
 
     <!-- LARAVEL -->
     <!-- CSRF Token -->
