@@ -114,7 +114,7 @@
                     <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
                     <li><a href="">Filosofia</a></li>
                     <li><a href="{{url('/equip/')}}">Equip</a></li>
-                    <li><a href="">Transparència</a></li>
+                    <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
                 </li>
                 <li><a href="">Col·laboradors</a></li>
