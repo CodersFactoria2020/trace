@@ -63,8 +63,8 @@
           $('#txtDate').val(info.dateStr);
 
           $('#exampleModal').modal();
-          console.log(info);
-          calendar.addEvent({ title: "Evento X", date: info.dateStr });
+          // console.log(info);
+          // calendar.addEvent({ title: "Evento X", date: info.dateStr });
         },
         eventClick: function(info) {
           console.log(info);
@@ -75,22 +75,27 @@
           console.log(info.event.textColor);
           console.log(info.event.backgroundColor);
           console.log(info.event.extendedProps.description);
+
+          $('#txtID').val(info.event.id);
+          $('#txtTitle').val(info.event.title);
+
+          month = (info.event.start.getMonth() + 1);
+          day = (info.event.start.getDate());
+          year = (info.event.start.getFullYear() + 1);
+
+          month = (month<10)?"0" + month : month;
+          day = (day<10)?"0" + day : day;
+
+          time = (info.event.start.getHours() + ":" + info.event.start.getMinutes());
+
+          $('#txtDate').val(day + "-" + month + "-" + year);
+          $('#txtTime').val(time);
+          $('#txtDescription').val(info.event.extendedProps.description);
+          $('#color').val(info.event.backgroundColor);
+          $('#exampleModal').modal();
         },
 
-        events: [
-          {
-            title: "Mi evento 1",
-            start: "2020-08-05 10:00:00",
-            description: "Descripció de la activitat 1"
-          }, {
-            title: "Mi evento 2",
-            start: "2020-08-06 12:30:00",
-            end: "2020-08-07 12:30:00",
-            color: "#FFCCAA",
-            textColor: "#000000",
-            description: "Descripció de la activitat 2"
-          }
-        ]
+        events: "{{ url('eventos/show') }}"
 
       });
 
@@ -124,7 +129,13 @@
             type: "POST",
             url: "{{ url('/eventos') }}" + action,
             data: objectEvent,
-            success: function(msg){ console.log(msg); },
+            success: function(msg){
+              console.log(msg);
+            
+              $('#exampleModal').modal('toggle');
+              calendar.refetchEvents();
+            
+            },
           error: function() { alert("S'ha produït un error"); }
           }
         );

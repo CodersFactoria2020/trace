@@ -25,9 +25,10 @@ class EventoController extends Controller
         //return redirect(route('eventos.index'));
     }
 
-    public function show(Evento $evento)
+    public function show()
     {
-        //
+        $allEventsData['eventos'] = Evento::all();
+        return response()->json($allEventsData['eventos']);
     }
     
     public function edit(Evento $evento)
