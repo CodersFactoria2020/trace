@@ -104,15 +104,15 @@
           id: $('#txtID').val(),
           title: $('#txtTitle').val(),
           description: $('#txtDescription').val(),
-          color: $('#textColor').val(),
+          color: $('#color').val(),
           textColor: '#FFFFFF',
           // professional1: $('#professional1').val(),
           // professional2: $('#professional2').val(),
           start: $('#txtDate').val()+ " "+$('#txtTime').val(),
           end: $('#txtDate').val()+ " "+$('#txtTime').val(),
-          category_id: $('#txtID').val(),
+          // category_id: $('#txtID').val(),
 
-          '_token': $("meta[name='_token']").attr("content"),
+          '_token': $("[name='_token']").attr("value"),
           '_method': method
         }
         console.log(newEvent);
@@ -158,8 +158,7 @@
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            {{-- <form action="" method="POST">
-            @csrf --}}
+          @csrf
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -169,43 +168,45 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                      ID:
-                      <input type="text" name="txtID" id="txtID">
-                      <br>
-                      Data:
-                      <input type="text" name="txtDate" id="txtDate">
-                      <br>
-                      Títol:
-                      <input type="text" name="txtTitle" id="txtTitle">
-                      <br>
-                      Hora de inici:
-                      <input type="text" name="txtTime" id="txtTime">
-                      <br>
-                      Hora de finalització:
-                      <input type="text" name="txtTime" id="txtTime">
-                      <br>
-                      {{-- Professional 1:
-                      <input type="text" name="txtTProfessional1" id="txtProfessional1">
-                      <br>
-                      Professional 2:
-                      <input type="text" name="txtTProfessional2" id="txtProfessional2">
-                      <br> --}}
-                      Descripció:
-                      <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
-                      <br>
-                      Color:
-                      <input type="color" name="textColor" id="textColor">
-                      <br>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="btnAdd" class="btn btn-success">Afegir</button>
-                        <button id="btnEdit" class="btn btn-warning">Modificar</button>
-                        <button id="btnDelete" class="btn btn-danger">Esborrar</button>
-                        <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
-                    </div>
+                    ID:
+                    <input type="text" name="txtID" id="txtID">
+                    <br>
+                    Data:
+                    <input type="text" name="txtDate" id="txtDate">
+                    <br>
+                    Títol:
+                    <input type="text" name="txtTitle" id="txtTitle">
+                    <br>
+                    Hora de inici:
+                    <input type="text" name="txtTime" id="txtTime">
+                    <br>
+                    {{-- Hora de finalització:
+                    <input type="text" name="txtTime" id="txtTime">
+                    <br>
+                    Professional 1:
+                    <input type="text" name="txtTProfessional1" id="txtProfessional1">
+                    <br>
+                    Professional 2:
+                    <input type="text" name="txtTProfessional2" id="txtProfessional2">
+                    <br> --}}
+                    Descripció:
+                    <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
+                    <br>
+                    Color:
+                    <input type="color" name="color" id="color">
+                    <br>
+                    {{-- Àrea:
+                    <input type="text" name="category_id" id="category_id">
+                    <br> --}}
+                  </div>
+                  <div class="modal-footer">
+                      <button id="btnAdd" class="btn btn-success">Afegir</button>
+                      <button id="btnEdit" class="btn btn-warning">Modificar</button>
+                      <button id="btnDelete" class="btn btn-danger">Esborrar</button>
+                      <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
+                  </div>
             </div>
             </div>
-            {{-- </form> --}}
         </div>
     </div>
 
