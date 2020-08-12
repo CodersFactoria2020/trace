@@ -1,6 +1,6 @@
 
 @extends('parts.footer')
-    @extends('parts.resources-section')    
+    @extends('parts.resources')
     @extends('parts.collaborators-section')
     @extends('parts.team-section')
     @extends('parts.services-section')
