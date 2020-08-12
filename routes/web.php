@@ -31,3 +31,4 @@ Route::get('/qui_som', 'HomeController@qui_som')->name('qui_som');
 Route::get('/equip', 'HomeController@equip')->name('equip');
 Route::get('/contacte', 'HomeController@contacte')->name('contacte');
 Route::get('/transparencia', 'HomeController@transparencia')->name('transparencia');
+Route::get('/recursos', 'HomeController@recursos')->name('recursos');

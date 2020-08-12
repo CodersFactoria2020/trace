@@ -36,4 +36,9 @@ class HomeController extends Controller
     {
         return view('transparencia');
     }
+
+    public function recursos()
+    {
+        return view('recursos');
+    }
 }
