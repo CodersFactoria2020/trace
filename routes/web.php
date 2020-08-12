@@ -39,3 +39,6 @@ Route::get('activity/{id}/edit/','ActivityController@edit');
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
 Route::get('/categories', 'CategoryController@index')->name('category.index');
 Route::get('category/{id}/edit/','CategoryController@edit');
+
+// PROVISIONAL - PRUEBA EVENTOS
+Route::resource('/eventos', 'EventoController');

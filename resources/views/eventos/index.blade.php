@@ -112,7 +112,7 @@
           end: $('#txtDate').val()+ " "+$('#txtTime').val(),
           category_id: $('#txtID').val(),
 
-          '_token': $("meta[name='_token']").attr("value"),
+          '_token': $("meta[name='_token']").attr("content"),
           '_method': method
         }
         console.log(newEvent);
@@ -152,23 +152,23 @@
 <!-- Provisional -->
         <div class="row">
             <div class="col"></div>
-            <div class="col-10"><div id="calendar"></div></div>
+            <div class="col-8"><div id="calendar"></div></div>
             <div class="col"></div>
         </div>
         
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            {{-- <form action="" method="POST">
+            @csrf --}}
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
+                <h5 class="modal-title" id="exampleModalLabel">Datos del evento</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
                 <div class="modal-body">
-                  <form action="" method="POST">
-                    @csrf
                       ID:
                       <input type="text" name="txtID" id="txtID">
                       <br>
@@ -203,9 +203,9 @@
                         <button id="btnDelete" class="btn btn-danger">Esborrar</button>
                         <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
                     </div>
-                  </form>
             </div>
             </div>
+            {{-- </form> --}}
         </div>
     </div>
 
