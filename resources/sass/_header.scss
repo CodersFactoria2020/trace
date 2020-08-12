@@ -12,7 +12,7 @@
         border-radius: 20px;
         color: $primary;
         transition: none;
-        font-size: 14px;
+        font-size: 16px;
         font-family: $font-primary;
         transition: 0.3s;
         &:hover {
@@ -87,7 +87,7 @@
 # Header
 --------------------------------------------------------------*/
 #header {
-    height: 70px;
+    height: 80px;
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
@@ -148,7 +148,7 @@
         color: $secondary;
         padding: 13px 0 15px 25px;
         transition: 0.3s;
-        font-size: 14px;
+        font-size: 16px;
         font-family: $font-secondary;
     }
 
