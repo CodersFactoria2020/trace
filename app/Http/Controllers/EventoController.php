@@ -31,7 +31,7 @@ class EventoController extends Controller
         return response()->json($allEventsData['eventos']);
     }
     
-    public function edit(Evento $evento)
+    public function edit($id)
     {
         //
     }
@@ -41,8 +41,10 @@ class EventoController extends Controller
         //
     }
     
-    public function destroy(Evento $evento)
+    public function destroy($id)
     {
-        //
+        $eventos = Evento::findOrFail($id);
+        Evento::destroy($id);
+        return response()->json($id);
     }
 }

@@ -102,8 +102,12 @@
       calendar.render();
 
       $('#btnAdd').click(function() {
-        gatherDataGUI("POST");
-        sendData('', gatherDataGUI("POST"));
+        objectEvent = gatherDataGUI("POST");
+        sendData('', objectEvent);
+      });
+      $('#btnDelete').click(function() {
+        objectEvent = gatherDataGUI("DELETE");
+        sendData('/' + $('#txtID').val(), objectEvent);
       });
 
       function gatherDataGUI(method) {
