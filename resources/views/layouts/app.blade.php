@@ -121,7 +121,7 @@
                 </li>
                 <li><a href="">Col·laboradors</a></li>
                 <li><a href="">Recursos</a></li>
-                <li><a href="">Contacte</a></li>
+                <li><a href="{{url('/contacte/')}}">Contacte</a></li>
               </ul>
             </nav>
           </div>

@@ -26,4 +26,9 @@ class HomeController extends Controller
     {
         return view('equip');
     }
+
+    public function contacte()
+    {
+        return view('contact');
+    }
 }
