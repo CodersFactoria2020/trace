@@ -88,10 +88,16 @@
           month = (month<10)?"0" + month : month;
           day = (day<10)?"0" + day : day;
 
-          time = (info.event.start.getHours() + ":" + info.event.start.getMinutes());
+          minutes = (info.event.start.getMinutes());
+          hour = (info.event.start.getHours());
+
+          minutes = (minutes<10)?"0" + minutes : minutes;
+          hour = (hour<10)?"0" + hour : hour;
+
+          schedule = (hour + ":" + minutes);
 
           $('#txtDate').val(year + "-" + month + "-" + day);
-          $('#txtTime').val(time);
+          $('#txtTime').val(schedule);
           $('#txtDescription').val(info.event.extendedProps.description);
           $('#color').val(info.event.backgroundColor);
           $('#exampleModal').modal();
@@ -126,8 +132,8 @@
           description: $('#txtDescription').val(),
           color: $('#color').val(),
           textColor: '#FFFFFF',
-          start: $('#txtDate').val()+ " "+$('#txtTime').val(),
-          end: $('#txtDate').val()+ " "+$('#txtTime').val(),
+          start: $('#txtDate').val() + " " + $('#txtTime').val(),
+          end: $('#txtDate').val() + " " + $('#txtTime').val(),
 
           '_token': $("meta[name='csrf-token']").attr("content"),
           '_method': method
@@ -156,7 +162,7 @@
         $('#txtID').val("");
         $('#txtTitle').val("");
         $('#txtDate').val("");
-        $('#txtTime').val("");
+        $('#txtTime').val("09:00");
         $('#txtDescription').val("");
         $('#color').val("");
       }
@@ -210,14 +216,14 @@
                 </button>
                 </div>
                 <div class="modal-body">
-
+                  <div class="d-none">
                     ID:
                     <input type="text" name="txtID" id="txtID">
                     <br>
                     Data:
                     <input type="text" name="txtDate" id="txtDate">
                     <br>
-
+                  </div>
                   <div class='form-row'>
                     <div class='form-group col-md-8'>
                       <label>Títol:</label>
@@ -225,7 +231,7 @@
                     </div>
                     <div class='form-group col-md-4'>
                       <label>Hora de inici:</label>
-                      <input type="text" class="form-control" name="txtTime" id="txtTime">
+                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="txtTime" id="txtTime">
                     </div>
                     <div class='form-group col-md-12'>
                       <label>Descripció:</label>
