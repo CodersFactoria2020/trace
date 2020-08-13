@@ -1,9 +1,24 @@
 @extends('layouts.app')
 
+<style>
+    body {
+        background-color: rgb(58, 57, 57) !important;
+        opacity: 90%;
+    }
+    header {
+        background-color: rgb(58, 57, 57) !important;
+    }
+
+    h2 {
+        color: white;
+        text-align: center;
+    }
+</style>
+
 @section('content')<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <h1>Accés a l'àrea d'usuaris de TraCE</h1>
+        <h2>Accés a l'àrea d'usuaris de TraCE</h2>
 
             <div class="card">
                 <div class="card-header">{{ __('') }}</div>
