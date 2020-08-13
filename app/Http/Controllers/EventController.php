@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Evento;
+use App\Event;
 use Illuminate\Http\Request;
 
-class EventoController extends Controller
+class EventController extends Controller
 {
     public function index()
     {
-        return view('eventos.index');
+        return view('events.index');
     }
 
     public function create()
@@ -20,15 +20,15 @@ class EventoController extends Controller
     public function store(Request $request)
     {
         $eventData = request()->except(['_token', '_method']);
-        Evento::insert($eventData);
+        Event::insert($eventData);
         print_r($eventData);
-        //return redirect(route('eventos.index'));
+        //return redirect(route('events.index'));
     }
 
     public function show()
     {
-        $allEventsData['eventos'] = Evento::all();
-        return response()->json($allEventsData['eventos']);
+        $allEventsData['events'] = Event::all();
+        return response()->json($allEventsData['events']);
     }
     
     public function edit($id)
@@ -39,16 +39,16 @@ class EventoController extends Controller
     public function update(Request $request, $id)
     {
         $eventData = request()->except(['_token', '_method']);
-        $response = Evento::where('id','=',$id)->update($eventData);
+        $response = Event::where('id','=',$id)->update($eventData);
         return response()->json($response);
-        //return redirect(route('eventos.index'));
+        //return redirect(route('events.index'));
         
     }
     
     public function destroy($id)
     {
-        $eventos = Evento::findOrFail($id);
-        Evento::destroy($id);
+        $events = Event::findOrFail($id);
+        Event::destroy($id);
         return response()->json($id);
     }
 }

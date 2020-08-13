@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class EventoSeeder extends Seeder
+class EventSeeder extends Seeder
 {
     public function run()
     {

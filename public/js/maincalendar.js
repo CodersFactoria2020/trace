@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       locale: 'ca',
-      initialView: 'dayGridMonth', // maybe change to 'timeGridWeek'
+      initialView: 'timeGridWeek', // original was month view 'dayGridMonth'
       themeSystem: 'bootstrap',
       headerToolbar: {
         left: 'prev today next AddActivityButton',

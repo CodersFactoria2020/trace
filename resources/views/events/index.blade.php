@@ -25,8 +25,8 @@
 <script src="{{ asset('fullcalendar/lib/locales-all.js') }}" defer></script>
 
 <script>
-  var url_="{{ url('/eventos') }}";  
-  var url_show="{{ url('eventos/show') }}";
+  var url_="{{ url('/events') }}";  
+  var url_show="{{ url('events/show') }}";
 </script>
 <script src="{{ asset('js/maincalendar.js') }}" defer></script>
 <script>
@@ -79,7 +79,7 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                  <div class="d-none">
+                  <div class="">
                     ID:
                     <input type="text" name="txtID" id="txtID">
                     <br>
