@@ -81,14 +81,14 @@
 
           month = (info.event.start.getMonth() + 1);
           day = (info.event.start.getDate());
-          year = (info.event.start.getFullYear() + 1);
+          year = (info.event.start.getFullYear());
 
           month = (month<10)?"0" + month : month;
           day = (day<10)?"0" + day : day;
 
           time = (info.event.start.getHours() + ":" + info.event.start.getMinutes());
 
-          $('#txtDate').val(day + "-" + month + "-" + year);
+          $('#txtDate').val(year + "-" + month + "-" + day);
           $('#txtTime').val(time);
           $('#txtDescription').val(info.event.extendedProps.description);
           $('#color').val(info.event.backgroundColor);
@@ -105,8 +105,14 @@
         objectEvent = gatherDataGUI("POST");
         sendData('', objectEvent);
       });
+
       $('#btnDelete').click(function() {
         objectEvent = gatherDataGUI("DELETE");
+        sendData('/' + $('#txtID').val(), objectEvent);
+      });
+
+      $('#btnEdit').click(function() {
+        objectEvent = gatherDataGUI("PATCH");
         sendData('/' + $('#txtID').val(), objectEvent);
       });
 

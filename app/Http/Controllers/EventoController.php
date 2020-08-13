@@ -36,9 +36,13 @@ class EventoController extends Controller
         //
     }
    
-    public function update(Request $request, Evento $evento)
+    public function update(Request $request, $id)
     {
-        //
+        $eventData = request()->except(['_token', '_method']);
+        $response = Evento::where('id','=',$id)->update($eventData);
+        return response()->json($response);
+        //return redirect(route('eventos.index'));
+        
     }
     
     public function destroy($id)
