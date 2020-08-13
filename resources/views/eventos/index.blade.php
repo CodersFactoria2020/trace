@@ -60,6 +60,8 @@
         },
         dateClick: function (info) {
 
+          clearForm();
+
           $('#txtDate').val(info.dateStr);
 
           $('#exampleModal').modal();
@@ -149,6 +151,14 @@
           error: function() { alert("S'ha produït un error"); }
           }
         );
+      }
+      function clearForm() {
+        $('#txtID').val("");
+        $('#txtTitle').val("");
+        $('#txtDate').val("");
+        $('#txtTime').val("");
+        $('#txtDescription').val("");
+        $('#color').val("");
       }
 
     });
