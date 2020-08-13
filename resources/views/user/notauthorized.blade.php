@@ -36,8 +36,13 @@
         <div class="card-header">
             <div class="float-left"><h1>Accés no autoritzat</h1></div>
         </div>
-        <div class="card-body">
-        Ho sentim, no tens permís per a accedir a aquest apartat.
+        <div class="card-body col-md-6">
+          <div>
+            Ho sentim, no tens permís per a accedir a aquest apartat.
+          </div>
+          <div>
+            <a href="/dashboard" class="btn btn-primary">Tornar</a>
+          </div>
         </div>
     </div>
 
