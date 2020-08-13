@@ -21,24 +21,24 @@ Auth::routes();
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
-Route::get('/dashboard', 'UserController@dashboard')->name('dashboard');
-Route::get('/team', 'UserController@team')->name('team');
-Route::get('/workplans', 'UserController@workplans')->name('workplans');
+Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
+Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
+Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
 Route::resource('/user', 'UserController')->names('user')->middleware('auth');
-Route::get('user/{id}/show/','UserController@show');
-Route::get('user/{id}/edit/','UserController@edit');
-Route::get('user/{id}/create/','UserController@create');
-Route::get('user/{id}/destroy/','UserController@destroy');
+Route::get('user/{id}/show/','UserController@show')->middleware('auth');
+Route::get('user/{id}/edit/','UserController@edit')->middleware('auth');
+Route::get('user/{id}/create/','UserController@create')->middleware('auth');
+Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
-Route::get('/activitats', 'ActivityController@index')->name('activity.index');
-Route::get('activity/{id}/edit/','ActivityController@edit');
+Route::get('/activitats', 'ActivityController@index')->name('activity.index')->middleware('auth');
+Route::get('activity/{id}/edit/','ActivityController@edit')->middleware('auth');
 
 // Category routes
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
-Route::get('/categories', 'CategoryController@index')->name('category.index');
-Route::get('category/{id}/edit/','CategoryController@edit');
+Route::get('/categories', 'CategoryController@index')->name('category.index')->middleware('auth');
+Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - PRUEBA EVENTOS
-Route::resource('/eventos', 'EventoController');
+Route::resource('/eventos', 'EventoController')->middleware('auth');

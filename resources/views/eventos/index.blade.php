@@ -64,11 +64,20 @@
 
           $('#txtDate').val(info.dateStr);
 
+          $('#btnAdd').prop("disabled", false);
+          $('#btnEdit').prop("disabled", true);
+          $('#btnDelete').prop("disabled", true);
+
           $('#exampleModal').modal();
           // console.log(info);
           // calendar.addEvent({ title: "Evento X", date: info.dateStr });
         },
         eventClick: function(info) {
+
+          $('#btnAdd').prop("disabled", true);
+          $('#btnEdit').prop("disabled", false);
+          $('#btnDelete').prop("disabled", false);
+
           console.log(info);
           console.log(info.event.title);
           console.log(info.event.start);
@@ -260,7 +269,7 @@
                     <button id="btnAdd" class="btn btn-success">Afegir</button>
                     <button id="btnEdit" class="btn btn-warning">Modificar</button>
                     <button id="btnDelete" class="btn btn-danger">Esborrar</button>
-                    <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
+                    <button id="btnCancel" data-dismiss="modal" class="btn btn-secondary">Cancel·lar</button>
                 </div>
             </div>
             </div>
