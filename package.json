@@ -42,21 +42,21 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
-        "@fullcalendar/core": "^5.2.1",
-        "@fullcalendar/daygrid": "^5.2.0",
-        "@fullcalendar/interaction": "^5.2.0",
-        "@fullcalendar/list": "^5.2.0",
-        "@fullcalendar/timegrid": "^5.2.0",
+        "@fullcalendar/core": "^5.3.0",
+        "@fullcalendar/daygrid": "^5.3.0",
+        "@fullcalendar/interaction": "^5.3.0",
+        "@fullcalendar/list": "^5.3.0",
+        "@fullcalendar/timegrid": "^5.3.0",
         "animate.css": "^4.1.0",
         "boxicons": "^2.0.5",
-        "fullcalendar": "^5.2.0",
+        "fullcalendar": "^5.3.0",
         "isotope-layout": "^3.0.6",
         "jquery-sticky": "^1.0.4",
         "jquery.easing": "^1.4.1",
         "nunjucks": "^3.2.2",
         "owl.carousel": "^2.3.4",
         "sweetalert": "^2.1.2",
-        "venobox": "^1.9.0",
+        "venobox": "^1.9.1",
         "waypoints": "^4.0.1"
     },
     "jquery": {
