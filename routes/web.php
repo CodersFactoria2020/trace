@@ -17,7 +17,7 @@ Route::get('/dany_cerebral', 'HomeController@dany_cerebral')->name('dany_cerebra
 Route::get('/qui_som', 'HomeController@qui_som')->name('qui_som');
 Route::get('/equip', 'HomeController@equip')->name('equip');
 
-Auth::routes();
+Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
