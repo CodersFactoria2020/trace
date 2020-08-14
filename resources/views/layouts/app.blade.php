@@ -117,7 +117,7 @@
                     <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
                 </li>
-                <li><a href="">Col·laboradors</a></li>
+                <li><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
                 <li><a href="{{url('/recursos/')}}">Recursos</a></li>
                 <li><a href="{{url('/contacte/')}}">Contacte</a></li>
               </ul>

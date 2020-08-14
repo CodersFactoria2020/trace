@@ -41,4 +41,9 @@ class HomeController extends Controller
     {
         return view('recursos');
     }
+
+    public function collaboradors()
+    {
+        return view('collaboradors');
+    }
 }
