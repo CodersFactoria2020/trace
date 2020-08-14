@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#txtDate').val(year + "-" + month + "-" + day);
         $('#txtTime').val(schedule);
         $('#txtDescription').val(info.event.extendedProps.description);
-        //$('#color').val(info.event.backgroundColor);
+        $('#professional1').val(info.event.extendedProps.professional1);
+        $('#color').val(info.event.backgroundColor);
         $('#exampleModal').modal();
       },
 
@@ -97,12 +98,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function gatherDataGUI(method) {
-
       newEvent={
         id: $('#txtID').val(),
         title: $('#txtTitle').val(),
         description: $('#txtDescription').val(),
-        // color: $('#color').val(),
+        color: $('#color').val(),
         textColor: '#000000',
         start: $('#txtDate').val() + " " + $('#txtTime').val(),
         end: $('#txtDate').val() + " " + $('#txtTime').val(),
@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '_token': $("meta[name='csrf-token']").attr("content"),
         '_method': method
       }
+      //  console.log(newEvent);
       return (newEvent);
     }
 
@@ -137,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
       $('#txtTime').val("09:00");
       $('#txtDescription').val("");
       $('#professional1').val("");
-      // $('#color').val("");
+      $('#color').val("");
       $('#category_id').val("");
     }
 

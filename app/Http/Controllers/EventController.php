@@ -14,8 +14,9 @@ class EventController extends Controller
     {
         $categories = Category::all();
         $users = User::all();
+        $users = $users->except(['dni','phone','tutor','role_id']);
         $roles = Role::all();
-        return view('events.index', compact('categories'));
+        return view('events.index', compact('categories'), compact('users'));
     }
 
     public function create()

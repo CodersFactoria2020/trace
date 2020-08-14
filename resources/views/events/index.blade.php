@@ -106,11 +106,19 @@
                     </div>
                     <div class='form-group col-md-12'>
                       <label>Àrea:</label>
-                      {{-- <input type="text" name="category_id" id="category_id"> --}}
                       <select name="category_id" class="form-control" id="category_id">
                         <optgroup label="Selecciona una àrea">
                         @foreach ($categories as $category)
-                            <option value="{{ $category['id'] }}">{{ $category['category_name'] }}</option>
+                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_name'] }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class='form-group col-md-12'>
+                      <label>Color de fons:</label>
+                      <select name="color" class="form-control" id="color">
+                        <optgroup label="Selecciona un color de fons">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category['category_color'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_color'] }}</option>
                         @endforeach
                       </select>
                     </div>                       
