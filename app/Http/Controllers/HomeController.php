@@ -46,4 +46,9 @@ class HomeController extends Controller
     {
         return view('collaboradors');
     }
+
+    public function filosofia()
+    {
+        return view('filosofia');
+    }
 }

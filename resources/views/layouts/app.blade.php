@@ -112,7 +112,7 @@
                 <li class="drop-down"><a href="#">Coneix-nos</a>
                   <ul>
                     <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
-                    <li><a href="">Filosofia</a></li>
+                    <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
                     <li><a href="{{url('/equip/')}}">Equip</a></li>
                     <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
