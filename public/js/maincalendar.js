@@ -84,12 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#btnDelete').click(function() {
       objectEvent = gatherDataGUI("DELETE");
-      sendData('/' + $('#txtID').val(), objectEvent);
+      getDeleteConfirmation();      
     });
 
     $('#btnEdit').click(function() {
       objectEvent = gatherDataGUI("PATCH");
-      sendData('/' + $('#txtID').val(), objectEvent);
+      var retVal = confirm("CONFIRMACIÓ: Esborrar aquest esdeveniment?");
+      if (retVal == true) {
+        sendData('/' + $('#txtID').val(), objectEvent);
+      }
+      return false;
     });
 
     function gatherDataGUI(method) {
