@@ -3,13 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Event;
+use App\Category;
+use App\User;
+use App\Role;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        return view('events.index');
+        $categories = Category::all();
+        $users = User::all();
+        $roles = Role::all();
+        return view('events.index', compact('categories'));
     }
 
     public function create()

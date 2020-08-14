@@ -100,23 +100,27 @@
                       <label>Descripció:</label>
                       <textarea name="txtDescription" class="form-control" id="txtDescription" cols="30" rows="3"></textarea>
                     </div>
+                    <div class='form-group col-md-8'>
+                      <label>Professional:</label>
+                      <input type="text" class="form-control" name="professional1" id="professional1">
+                    </div>
                     <div class='form-group col-md-12'>
-                      <label>Color:</label>
-                      <input type="color" class="form-control" name="color" id="color">
+                      <label>Àrea:</label>
+                      {{-- <input type="text" name="category_id" id="category_id"> --}}
+                      <select name="category_id" class="form-control" id="category_id">
+                        <optgroup label="Selecciona una àrea">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category['id'] }}">{{ $category['category_name'] }}</option>
+                        @endforeach
+                      </select>
                     </div>                       
                       {{-- Hora de finalització:
                       <input type="text" name="txtTime" id="txtTime">
                       
-                      Professional 1:
-                      <input type="text" name="txtTProfessional1" id="txtProfessional1">
-                      
                       Professional 2:
                       <input type="text" name="txtTProfessional2" id="txtProfessional2">
                       --}}
-                      
-                      {{-- Àrea:
-                      <input type="text" name="category_id" id="category_id">
-                      --}}
+                     
                   </div>
                 </div>
                 <div class="modal-footer">

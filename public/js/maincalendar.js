@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       locale: 'ca',
-      contentHeight: 500,
+      contentHeight: 600,
       initialView: 'timeGridWeek', // original was month view 'dayGridMonth'
       themeSystem: 'bootstrap',
       headerToolbar: {
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#txtDate').val(year + "-" + month + "-" + day);
         $('#txtTime').val(schedule);
         $('#txtDescription').val(info.event.extendedProps.description);
-        $('#color').val(info.event.backgroundColor);
+        //$('#color').val(info.event.backgroundColor);
         $('#exampleModal').modal();
       },
 
@@ -84,16 +84,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#btnDelete').click(function() {
       objectEvent = gatherDataGUI("DELETE");
-      getDeleteConfirmation();      
-    });
-
-    $('#btnEdit').click(function() {
-      objectEvent = gatherDataGUI("PATCH");
       var retVal = confirm("CONFIRMACIÓ: Esborrar aquest esdeveniment?");
       if (retVal == true) {
         sendData('/' + $('#txtID').val(), objectEvent);
       }
-      return false;
+      return false;      
+    });
+
+    $('#btnEdit').click(function() {
+      objectEvent = gatherDataGUI("PATCH");
+     sendData('/' + $('#txtID').val(), objectEvent);
     });
 
     function gatherDataGUI(method) {
@@ -102,10 +102,12 @@ document.addEventListener('DOMContentLoaded', function () {
         id: $('#txtID').val(),
         title: $('#txtTitle').val(),
         description: $('#txtDescription').val(),
-        color: $('#color').val(),
-        textColor: '#FFFFFF',
+        // color: $('#color').val(),
+        textColor: '#000000',
         start: $('#txtDate').val() + " " + $('#txtTime').val(),
         end: $('#txtDate').val() + " " + $('#txtTime').val(),
+        professional1: $('#professional1').val(),
+        category_id: $('#category_id').val(),
 
         '_token': $("meta[name='csrf-token']").attr("content"),
         '_method': method
@@ -134,7 +136,9 @@ document.addEventListener('DOMContentLoaded', function () {
       $('#txtDate').val("");
       $('#txtTime').val("09:00");
       $('#txtDescription').val("");
-      $('#color').val("");
+      $('#professional1').val("");
+      // $('#color').val("");
+      $('#category_id').val("");
     }
 
   });
