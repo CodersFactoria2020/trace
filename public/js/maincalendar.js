@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#btnEdit').prop("disabled", false);
         $('#btnDelete').prop("disabled", false);          
         $('#txtID').val(info.event.id);
-        $('#txtTitle').val(info.event.title);
+        $('#activity_title').val(info.event.title);
 
         month = (info.event.start.getMonth() + 1);
         day = (info.event.start.getDate());
@@ -74,6 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
         $('#endTime').val(scheduleEnd);
         $('#txtDescription').val(info.event.extendedProps.description);
         $('#professional1').val(info.event.extendedProps.professional1);
+        $('#category_id').val(info.event.extendedProps.category_id);
         $('#color').val(info.event.backgroundColor);
         $('#exampleModal').modal();
       },
@@ -106,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function gatherDataGUI(method) {
       newEvent={
         id: $('#txtID').val(),
-        title: $('#txtTitle').val(),
+        title: $('#activity_title').val(),
         description: $('#txtDescription').val(),
         color: $('#color').val(),
         textColor: '#000000',
@@ -139,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function clearForm() {
       $('#txtID').val("");
-      $('#txtTitle').val("");
+      $('#activity_title').val("");
       $('#startTime').val("09:00");
       $('#endTime').val("");
       $('#txtDescription').val("");

@@ -63,7 +63,7 @@
 <!-- Provisional -->
         <div class="row">
             <div class="col"></div>
-            <div class="col-8"><div id="calendar"></div></div>
+            <div class="col-10"><div id="calendar"></div></div>
             <div class="col"></div>
         </div>
         
@@ -90,7 +90,13 @@
                   <div class='form-row'>
                     <div class='form-group col-md-12'>
                       <label>Títol:</label>
-                      <input type="text" class="form-control" name="txtTitle" id="txtTitle">
+                      {{-- <input type="text" class="form-control" name="txtTitle" id="txtTitle"> --}}
+                      <select name="activity_title" class="form-control" id="activity_title">
+                        <optgroup label="Selecciona una activitat">
+                        @foreach ($activities as $activity)
+                            <option value="{{ $activity['title'] }}">{{ $activity['title'] }}</option>
+                        @endforeach
+                      </select>
                     </div>
                     <div class='form-group col-md-6'>
                       <label>Hora de inici:</label>
