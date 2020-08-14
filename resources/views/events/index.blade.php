@@ -88,13 +88,17 @@
                     <br>
                   </div>
                   <div class='form-row'>
-                    <div class='form-group col-md-8'>
+                    <div class='form-group col-md-12'>
                       <label>Títol:</label>
                       <input type="text" class="form-control" name="txtTitle" id="txtTitle">
                     </div>
-                    <div class='form-group col-md-4'>
+                    <div class='form-group col-md-6'>
                       <label>Hora de inici:</label>
-                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="txtTime" id="txtTime">
+                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="startTime" id="startTime">
+                    </div>
+                    <div class='form-group col-md-6'>
+                      <label>Hora de finalització:</label>
+                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="endTime" id="endTime">
                     </div>
                     <div class='form-group col-md-12'>
                       <label>Descripció:</label>
@@ -104,7 +108,7 @@
                       <label>Professional:</label>
                       <input type="text" class="form-control" name="professional1" id="professional1">
                     </div>
-                    <div class='form-group col-md-12'>
+                    <div class='form-group col-md-8'>
                       <label>Àrea:</label>
                       <select name="category_id" class="form-control" id="category_id">
                         <optgroup label="Selecciona una àrea">
@@ -113,7 +117,7 @@
                         @endforeach
                       </select>
                     </div>
-                    <div class='form-group col-md-12'>
+                    <div class='form-group col-md-4'>
                       <label>Color de fons:</label>
                       <select name="color" class="form-control" id="color">
                         <optgroup label="Selecciona un color de fons">
@@ -122,9 +126,7 @@
                         @endforeach
                       </select>
                     </div>                       
-                      {{-- Hora de finalització:
-                      <input type="text" name="txtTime" id="txtTime">
-                      
+                      {{--                       
                       Professional 2:
                       <input type="text" name="txtTProfessional2" id="txtProfessional2">
                       --}}
