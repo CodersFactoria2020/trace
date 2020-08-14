@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       locale: 'ca',
+      contentHeight: 500,
       initialView: 'timeGridWeek', // original was month view 'dayGridMonth'
       themeSystem: 'bootstrap',
       headerToolbar: {
-        left: 'prev today next AddActivityButton',
+        left: 'prev today next', // in customButtons --> AddActivityButton
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
@@ -22,18 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
 
-      customButtons: {
-        AddActivityButton: {
-          text: "Afegir activitat",
-          click: function () {
-            alert("Hola, mundo!");
-            $('#exampleModal').modal();
-          }
-        }
-      },
+      // customButtons: {
+      //   AddActivityButton: {
+      //     text: "Afegir activitat",
+      //     click: function () {
+      //       alert("Hola, mundo!");
+      //       $('#exampleModal').modal();
+      //     }
+      //   }
+      // },
       dateClick: function (info) {
         clearForm();
-        $('#txtDate').val(info.dateStr);
+        dateFromClick = (info.dateStr);
+        dateOnly = dateFromClick.slice(0, 10);
+        $('#txtDate').val(dateOnly);
         $('#btnAdd').prop("disabled", false);
         $('#btnEdit').prop("disabled", true);
         $('#btnDelete').prop("disabled", true);

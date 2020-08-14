@@ -57,8 +57,8 @@
 
     <div class="card mycard col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Plans de treball </h1></div>
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
+            <div class="float-left"><h4>Plans de treball </h3></div>
+            <button class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
         </div>
 <!-- Provisional -->
         <div class="row">
@@ -79,7 +79,7 @@
                 </button>
                 </div>
                 <div class="modal-body">
-                  <div class="">
+                  <div class="d-none">
                     ID:
                     <input type="text" name="txtID" id="txtID">
                     <br>
