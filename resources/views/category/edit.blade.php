@@ -20,6 +20,15 @@
                             <label>Descripció</label>
                             <input type="text" name="description" class="form-control" value="{{$category->description}}"/>
                         </div>
+                        <div class="form-group">
+                            <label>Color de fons:</label>
+                            <select name="category_color" class="form-control">
+                                <optgroup label="Selecciona un color">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category['id'] }}">{{ $category['category_color'] }}</option>
+                                @endforeach
+                            </select>
+                        </div>
 
                         <div class="text-right">
                             <div class="text-right">

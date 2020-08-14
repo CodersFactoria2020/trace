@@ -38,11 +38,12 @@
                         </div>
                         <div class="form-group">
                             <label>Àrea:</label>
-                            <select name="category_id" class="form-control" />
-                            <optgroup label="Selecciona una àrea">
-                            @foreach ($categories as $category)
-                                <option value="{{ $category['id'] }}">{{ $category['category_name'] }}</option>
-                            @endforeach
+                            <select name="category_id" class="form-control">
+                                <optgroup label="Selecciona una àrea">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category['id'] }}">{{ $category['category_name'] }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="text-right">
