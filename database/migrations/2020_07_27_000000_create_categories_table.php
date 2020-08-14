@@ -13,6 +13,7 @@ class CreateCategoriesTable extends Migration
             $table->id('id');
             $table->string('category_name');
             $table->string('description')->nullable();
+            $table->string('category_color')->nullable();
             $table->timestamps();
         });
     }

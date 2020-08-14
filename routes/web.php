@@ -40,5 +40,5 @@ Route::resource('/category', 'CategoryController')->names('category')->middlewar
 Route::get('/categories', 'CategoryController@index')->name('category.index')->middleware('auth');
 Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
-// PROVISIONAL - PRUEBA EVENTOS
-Route::resource('/eventos', 'EventoController')->middleware('auth');
+// PROVISIONAL - EVENTS SANDBOX
+Route::resource('/events', 'EventController')->middleware('auth');

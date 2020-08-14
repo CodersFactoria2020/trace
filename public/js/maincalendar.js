@@ -2,10 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var calendarEl = document.getElementById('calendar');
     var calendar = new FullCalendar.Calendar(calendarEl, {
       locale: 'ca',
-      initialView: 'dayGridMonth', // maybe change to 'timeGridWeek'
+      contentHeight: 600,
+      initialView: 'timeGridWeek', // original was month view 'dayGridMonth'
       themeSystem: 'bootstrap',
       headerToolbar: {
-        left: 'prev today next AddActivityButton',
+        left: 'prev today next', // in customButtons --> AddActivityButton
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dayHeaderFormat: { weekday: 'long', day: 'numeric' },
       weekends: false, // hides Sunday and Saturday
       allDaySlot: false,
-      slotDuration: '00:15:00',
+      slotDuration: '00:30:00',
       slotMinTime: '09:00:00',
       slotMaxTime: '19:00:00',
       buttonIcons: false, // show the prev/next text
@@ -22,18 +23,20 @@ document.addEventListener('DOMContentLoaded', function () {
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
 
-      customButtons: {
-        AddActivityButton: {
-          text: "Afegir activitat",
-          click: function () {
-            alert("Hola, mundo!");
-            $('#exampleModal').modal();
-          }
-        }
-      },
+      // customButtons: {
+      //   AddActivityButton: {
+      //     text: "Afegir activitat",
+      //     click: function () {
+      //       alert("Hola, mundo!");
+      //       $('#exampleModal').modal();
+      //     }
+      //   }
+      // },
       dateClick: function (info) {
         clearForm();
-        $('#txtDate').val(info.dateStr);
+        dateFromClick = (info.dateStr);
+        dateOnly = dateFromClick.slice(0, 10);
+        $('#txtDate').val(dateOnly);
         $('#btnAdd').prop("disabled", false);
         $('#btnEdit').prop("disabled", true);
         $('#btnDelete').prop("disabled", true);
@@ -53,17 +56,24 @@ document.addEventListener('DOMContentLoaded', function () {
         month = (month<10)?"0" + month : month;
         day = (day<10)?"0" + day : day;
 
-        minutes = (info.event.start.getMinutes());
-        hour = (info.event.start.getHours());
+        minutesStart = (info.event.start.getMinutes());
+        hoursStart = (info.event.start.getHours());
+        minutesStart = (minutesStart<10)?"0" + minutesStart : minutesStart;
+        hoursStart = (hoursStart<10)?"0" + hoursStart : hoursStart;
 
-        minutes = (minutes<10)?"0" + minutes : minutes;
-        hour = (hour<10)?"0" + hour : hour;
-
-        schedule = (hour + ":" + minutes);
+        scheduleStart = (hoursStart + ":" + minutesStart);
+        
+        minutesEnd = (info.event.start.getMinutes());
+        hoursEnd = (info.event.start.getHours());
+        minutesEnd = (minutesEnd<10)?"0" + minutesEnd : minutesEnd;
+        hoursEnd = (hoursEnd<10)?"0" + hoursEnd : hoursEnd;
+        scheduleEnd = (hoursEnd + ":" + minutesEnd);
 
         $('#txtDate').val(year + "-" + month + "-" + day);
-        $('#txtTime').val(schedule);
+        $('#startTime').val(scheduleStart);
+        $('#endTime').val(scheduleEnd);
         $('#txtDescription').val(info.event.extendedProps.description);
+        $('#professional1').val(info.event.extendedProps.professional1);
         $('#color').val(info.event.backgroundColor);
         $('#exampleModal').modal();
       },
@@ -81,28 +91,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
     $('#btnDelete').click(function() {
       objectEvent = gatherDataGUI("DELETE");
-      sendData('/' + $('#txtID').val(), objectEvent);
+      var retVal = confirm("CONFIRMACIÓ: Esborrar aquest esdeveniment?");
+      if (retVal == true) {
+        sendData('/' + $('#txtID').val(), objectEvent);
+      }
+      return false;      
     });
 
     $('#btnEdit').click(function() {
       objectEvent = gatherDataGUI("PATCH");
-      sendData('/' + $('#txtID').val(), objectEvent);
+     sendData('/' + $('#txtID').val(), objectEvent);
     });
 
     function gatherDataGUI(method) {
-
       newEvent={
         id: $('#txtID').val(),
         title: $('#txtTitle').val(),
         description: $('#txtDescription').val(),
         color: $('#color').val(),
-        textColor: '#FFFFFF',
-        start: $('#txtDate').val() + " " + $('#txtTime').val(),
-        end: $('#txtDate').val() + " " + $('#txtTime').val(),
+        textColor: '#000000',
+        start: $('#txtDate').val() + " " + $('#startTime').val(),
+        end: $('#txtDate').val() + " " + $('#endTime').val(),
+        professional1: $('#professional1').val(),
+        category_id: $('#category_id').val(),
 
         '_token': $("meta[name='csrf-token']").attr("content"),
         '_method': method
       }
+      //  console.log(newEvent);
       return (newEvent);
     }
 
@@ -124,10 +140,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function clearForm() {
       $('#txtID').val("");
       $('#txtTitle').val("");
-      $('#txtDate').val("");
-      $('#txtTime').val("09:00");
+      $('#startTime').val("09:00");
+      $('#endTime').val("");
       $('#txtDescription').val("");
+      $('#professional1').val("");
       $('#color').val("");
+      $('#category_id').val("");
     }
 
   });

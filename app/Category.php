@@ -7,10 +7,10 @@ use App\Activity;
 
 class Category extends Model
 {
-    protected $fillable = ['category_name', 'description']; 
+    protected $fillable = ['category_name', 'description', 'category_color']; 
 
     public function activities()
     {
-        return $this->hasMany(ACtivity::class);
+        return $this->hasMany(Activity::class);
     }
 }

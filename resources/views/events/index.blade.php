@@ -25,8 +25,8 @@
 <script src="{{ asset('fullcalendar/lib/locales-all.js') }}" defer></script>
 
 <script>
-  var url_="{{ url('/eventos') }}";  
-  var url_show="{{ url('eventos/show') }}";
+  var url_="{{ url('/events') }}";  
+  var url_show="{{ url('events/show') }}";
 </script>
 <script src="{{ asset('js/maincalendar.js') }}" defer></script>
 <script>
@@ -57,8 +57,8 @@
 
     <div class="card mycard col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Plans de treball </h1></div>
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
+            <div class="float-left"><h4>Plans de treball </h3></div>
+            <button class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
         </div>
 <!-- Provisional -->
         <div class="row">
@@ -88,35 +88,49 @@
                     <br>
                   </div>
                   <div class='form-row'>
-                    <div class='form-group col-md-8'>
+                    <div class='form-group col-md-12'>
                       <label>Títol:</label>
                       <input type="text" class="form-control" name="txtTitle" id="txtTitle">
                     </div>
-                    <div class='form-group col-md-4'>
+                    <div class='form-group col-md-6'>
                       <label>Hora de inici:</label>
-                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="txtTime" id="txtTime">
+                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="startTime" id="startTime">
+                    </div>
+                    <div class='form-group col-md-6'>
+                      <label>Hora de finalització:</label>
+                      <input type="time" min="09:00" max="19:00" step="600" class="form-control" name="endTime" id="endTime">
                     </div>
                     <div class='form-group col-md-12'>
                       <label>Descripció:</label>
                       <textarea name="txtDescription" class="form-control" id="txtDescription" cols="30" rows="3"></textarea>
                     </div>
-                    <div class='form-group col-md-12'>
-                      <label>Color:</label>
-                      <input type="color" class="form-control" name="color" id="color">
+                    <div class='form-group col-md-8'>
+                      <label>Professional:</label>
+                      <input type="text" class="form-control" name="professional1" id="professional1">
+                    </div>
+                    <div class='form-group col-md-8'>
+                      <label>Àrea:</label>
+                      <select name="category_id" class="form-control" id="category_id">
+                        <optgroup label="Selecciona una àrea">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_name'] }}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    <div class='form-group col-md-4'>
+                      <label>Color de fons:</label>
+                      <select name="color" class="form-control" id="color">
+                        <optgroup label="Selecciona un color de fons">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category['category_color'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_color'] }}</option>
+                        @endforeach
+                      </select>
                     </div>                       
-                      {{-- Hora de finalització:
-                      <input type="text" name="txtTime" id="txtTime">
-                      
-                      Professional 1:
-                      <input type="text" name="txtTProfessional1" id="txtProfessional1">
-                      
+                      {{--                       
                       Professional 2:
                       <input type="text" name="txtTProfessional2" id="txtProfessional2">
                       --}}
-                      
-                      {{-- Àrea:
-                      <input type="text" name="category_id" id="category_id">
-                      --}}
+                     
                   </div>
                 </div>
                 <div class="modal-footer">
