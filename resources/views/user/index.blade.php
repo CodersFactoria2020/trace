@@ -38,7 +38,7 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Gestió d'usuaris <small>({{ count($users)}})</small></h1></div>
+            <div class="float-left"><h2>Gestió d'usuaris <small>({{ count($users)}})</small></h2></div>
             <div class="float-left" class="sr-only" style="padding: 10px 10px;"> {{ $users->links() }}</div>
             {{-- @can('create') --}}
             <button type="button" class="btn btn-primary float-right" style="margin-top: .5rem;" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
@@ -48,31 +48,24 @@
     <table class="table table-triped">
       <thead class="thead">
           <tr>
-            <td><h3>ID</h3></td>
-            <td><h3>Nom</h3></td>
-            <td><h3>Cognom</h3></td>
-            <td><h3>Email</h3></td>
-{{--                         <td><h3>Telèfon</h3></td>
-            <td><h3>DNI</h3></td>
-            <td><h3>Tutor</h3></td> --}}
-            <td><h3>Rol</h3></td>
-            <td colspan="3"><h3>Accions</h3></td>
+            <td class="col-md-1"><h5>ID</h5></td>
+            <td class="col-md-2"><h5>Nom</h5></td>
+            <td class="col-md-2"><h5>Cognom</h5></td>
+            <td class="col-md-2"><h5>E-mail</h5></td>
+            <td class="col-md-1"><h5>Rol</h5></td>
+            <td class="col-md-4"><h5>Accions</h5></td>
         </tr>
     </thead>
 
     @foreach($users as $user)
     @can('view-any', $user)
     <tr>
-        <td>{{$user->id}}</td>
-        <td>{{$user->first_name}}</td>
-        <td>{{$user->last_name}}</td>
-        <td>{{$user->email}}</td>
-{{--                     <td>{{$user->phone}}</td>
-        <td>{{$user->dni}}</td>
-        <td>{{$user->tutor}}</td> --}}
-        <td>{{$user->role_id}}</td>
-        
-        <td>
+        <td class="col-md-1">{{$user->id}}</td>
+        <td class="col-md-2">{{$user->first_name}}</td>
+        <td class="col-md-2">{{$user->last_name}}</td>
+        <td class="col-md-2">{{$user->email}}</td>
+        <td class="col-md-1">{{$user->role_id}}</td>        
+        <td class="col-md-4">
             <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
               style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
             </a>
