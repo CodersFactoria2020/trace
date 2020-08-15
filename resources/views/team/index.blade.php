@@ -34,7 +34,7 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Equip de gestió de l'associació</h1></div>
+            <div class="float-left"><h2>Equip de gestió de l'associació</h2></div>
             <!-- Cambiar el data-target de la modal -->
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un membre</button>
         </div>

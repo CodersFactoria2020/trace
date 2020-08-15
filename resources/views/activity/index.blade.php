@@ -34,7 +34,7 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h1>Gestió d'activitats</h1></div>
+            <div class="float-left"><h2>Gestió d'activitats</h2></div>
             {{-- @can('create') --}}
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
             {{-- @endcan --}}
@@ -43,12 +43,12 @@
     <table class="table table-triped">
       <thead class="thead">
           <tr>
-              <td><h3>ID</h3></td>
-              <td><h3>Títol</h3></td>
-              <td><h3>Descripció</h3></td>
-              <td><h3>Professional</h3></td>
+              <td><h5>ID</h5></td>
+              <td><h5>Títol</h5></td>
+              <td><h5>Descripció</h5></td>
+              <td><h5>Professional</h5></td>
 
-              <td colspan="3"><h3>Accions</h3></td>
+              <td colspan="3"><h5>Accions</h5></td>
           </tr>
       </thead>
 
