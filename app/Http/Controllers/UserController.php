@@ -19,7 +19,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(6);
         $roles = Role::all();
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');

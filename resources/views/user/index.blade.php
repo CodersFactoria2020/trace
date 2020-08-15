@@ -39,8 +39,9 @@
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h1>Gestió d'usuaris <small>({{ count($users)}})</small></h1></div>
+            <div class="float-left" class="sr-only" style="padding: 10px 10px;"> {{ $users->links() }}</div>
             {{-- @can('create') --}}
-            <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+            <button type="button" class="btn btn-primary float-right" style="margin-top: .5rem;" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
             {{-- @endcan --}}
         </div>
     <!-- Contenido que se desee -->
@@ -97,7 +98,7 @@
       @endforeach
 
   </table>
-    </div>
+  </div>
 
 @endsection
 @include('user.create')
