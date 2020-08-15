@@ -45,7 +45,7 @@
             {{-- @endcan --}}
         </div>
     <!-- Contenido que se desee -->
-    <table class="table table-triped">
+    <table class="table table-striped">
       <thead class="thead">
           <tr>
             <td class="col-md-1"><h5>ID</h5></td>
