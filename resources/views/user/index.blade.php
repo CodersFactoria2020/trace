@@ -48,24 +48,22 @@
     <table class="table table-striped">
       <thead class="thead">
           <tr>
-            <td class="col-md-1"><h5>ID</h5></td>
-            <td class="col-md-2"><h5>Nom</h5></td>
-            <td class="col-md-2"><h5>Cognom</h5></td>
-            <td class="col-md-2"><h5>E-mail</h5></td>
-            <td class="col-md-1"><h5>Rol</h5></td>
-            <td class="col-md-4"><h5>Accions</h5></td>
+            <td><h5>ID</h5></td>
+            <td><h5>Nom i cognom</h5></td>
+            <td><h5>E-mail</h5></td>
+            <td><h5>Rol</h5></td>
+            <td colspan="3"><h5>Accions</h5></td>
         </tr>
     </thead>
 
     @foreach($users as $user)
     @can('view-any', $user)
     <tr>
-        <td class="col-md-1">{{$user->id}}</td>
-        <td class="col-md-2">{{$user->first_name}}</td>
-        <td class="col-md-2">{{$user->last_name}}</td>
-        <td class="col-md-2">{{$user->email}}</td>
-        <td class="col-md-1">{{$user->role_id}}</td>        
-        <td class="col-md-4">
+        <td>{{$user->id}}</td>
+        <td>{{$user->first_name}} {{$user->last_name}}</td>
+        <td>{{$user->email}}</td>
+        <td>{{$user->role_id}}</td>        
+        <td colspan="3">
             <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
               style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
             </a>
