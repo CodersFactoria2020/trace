@@ -38,7 +38,8 @@
 
     <div class="card col-12">
         <div class="card-header">
-            <div class="float-left"><h2>Gestió d'usuaris <small>({{ count($users)}})</small></h2></div>
+            <div class="float-left"><h2>Gestió d'usuaris </h2></div>
+            <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
             <div class="float-left" class="sr-only" style="padding: 10px 10px;"> {{ $users->links() }}</div>
             {{-- @can('create') --}}
             <button type="button" class="btn btn-primary float-right" style="margin-top: .5rem;" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
