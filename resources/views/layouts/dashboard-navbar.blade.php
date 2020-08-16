@@ -97,6 +97,7 @@
       .panelHeader {
         background-color: #3c8760;
         color: white !important;
+        text-align: center;
       }
       .logoutbtn {
         background-color: red;
@@ -117,8 +118,9 @@
 <body>
 
   <div class="sidebar">
-    <a class="panelHeader">Panell d'administració</a>
-    <br> 
+    <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid" style="width:90px; heigh:auto"></a>
+    <br>
+    <h5 class="panelHeader">Panell d'administració</h5> 
     <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
