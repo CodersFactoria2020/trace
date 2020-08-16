@@ -37,23 +37,30 @@
 @section('content')
 
     <div class="card col-12">
-        <div class="card-header">
-            <div class="float-left"><h2>Gestió d'usuaris </h2></div>
-            <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
-            <div class="float-left" class="sr-only" style="padding: 10px 10px;"> {{ $users->links() }}</div>
-            {{-- @can('create') --}}
-            <button type="button" class="btn btn-primary float-right" style="margin-top: .5rem;" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
-            {{-- @endcan --}}
-          </div>
+      <div class="card-header">
+          <div class="float-left"><h2>Gestió d'usuaris </h2></div>
+          <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
+          <div class="float-left" class="sr-only" style="padding: 0 2rem;"> {{ $users->links() }}</div>
+          {{-- @can('create') --}}
+          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+          {{-- @endcan --}}
+        </div>
     <!-- Contenido que se desee -->
-    <div class="col-12">
-      <h6 style="display:inline-block;margin:10 5 15;">Mostrar només:</h6>
-      <a href="/user?role_id=1" class="btn btn-outline-primary btn-sm">Soci</a> |
-      <a href="/user?role_id=2" class="btn btn-outline-primary btn-sm">Professional</a> |
-      <a href="/user?role_id=3" class="btn btn-outline-primary btn-sm">Admin</a> |
-      <a href="/user" class="btn btn-outline-primary btn-sm">Cap filtre</a>
-    </div>
     <table class="table table-striped">
+      <div class="col-12">
+        <div class="col-6 float-left">
+          <h6 style="display:inline-block;margin:10 5 15;">Mostrar només:</h6>
+          <a href="/user?role_id=1" class="btn btn-outline-primary btn-sm">Soci</a> |
+          <a href="/user?role_id=2" class="btn btn-outline-primary btn-sm">Professional</a> |
+          <a href="/user?role_id=3" class="btn btn-outline-primary btn-sm">Admin</a> |
+          <a href="/user" class="btn btn-outline-primary btn-sm">Cap filtre</a>
+        </div>
+        <div class="col-6 float-right">
+          <h6 style="display:inline-block;margin:10 5 0;">Ordenar per cognom:</h6>
+          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-primary btn-sm">Ascendent</a> |
+          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-primary btn-sm">Descendent</a>
+        </div>
+      </div>
       <thead class="thead">
           <tr>
             <td><h5>ID</h5></td>

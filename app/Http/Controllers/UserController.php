@@ -24,17 +24,21 @@ class UserController extends Controller
     public function index()
     {
         // $users = User::paginate($this->users_per_page);
-        $users = User::paginate(6);
+        $users = new User;
         $roles = Role::all();
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
         if (request()->has('role_id')) {
-            $users = User::where('role_id', request('role_id'))
-            ->paginate(5)
-            ->appends('role_id', request('role_id'));
-            return view('user.index', ['users' => $users], compact('roles'));
+            $users = $users->where('role_id', request('role_id'));
         }
+        if (request()->has('sort')) {
+            $users = $users->orderBy('last_name', request('sort'));
+        }
+        $users = $users->paginate(8)->appends([
+            'role_id' => request('role_id'),
+            'sort' => request('sort'),
+        ]);
         return view('user.index', ['users' => $users], compact('roles'));
     }
 
@@ -101,14 +105,14 @@ class UserController extends Controller
         return view('workplans.soci');
     }
         
-    public function team()
-    {
-        $users = User::all();
-        $roles = Role::all();
-        $teams = Team::all();
-        if (auth()->user()->role_id != "Admin") {
-            return view('user.notauthorized');
-        }
-        return view('team.index', compact('teams'));
-    }
+    // public function team()
+    // {
+    //     $users = User::all();
+    //     $roles = Role::all();
+    //     $teams = Team::all();
+    //     if (auth()->user()->role_id != "Admin") {
+    //         return view('user.notauthorized');
+    //     }
+    //     return view('team.index', compact('teams'));
+    // }
 }
