@@ -12,17 +12,27 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
+    // public $users_per_page;
+    
     public function __construct()
     {
         $this->middleware('auth');
+        // this->users_per_page = $users_per_page;
     }
 
     public function index()
     {
+        // $users = User::paginate($this->users_per_page);
         $users = User::paginate(6);
         $roles = Role::all();
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
+        }
+        if (request()->has('role_id')) {
+            $users = User::where('role_id', request('role_id'))
+            ->paginate(5)
+            ->appends('role_id', request('role_id'));
+            return view('user.index', ['users' => $users], compact('roles'));
         }
         return view('user.index', ['users' => $users], compact('roles'));
     }

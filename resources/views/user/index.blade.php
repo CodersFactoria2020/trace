@@ -44,8 +44,15 @@
             {{-- @can('create') --}}
             <button type="button" class="btn btn-primary float-right" style="margin-top: .5rem;" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
             {{-- @endcan --}}
-        </div>
+          </div>
     <!-- Contenido que se desee -->
+    <div class="col-12">
+      <h6 style="display:inline-block;margin:10 5 15;">Mostrar només:</h6>
+      <a href="/user?role_id=1" class="btn btn-outline-primary btn-sm">Soci</a> |
+      <a href="/user?role_id=2" class="btn btn-outline-primary btn-sm">Professional</a> |
+      <a href="/user?role_id=3" class="btn btn-outline-primary btn-sm">Admin</a> |
+      <a href="/user" class="btn btn-outline-primary btn-sm">Cap filtre</a>
+    </div>
     <table class="table table-striped">
       <thead class="thead">
           <tr>
