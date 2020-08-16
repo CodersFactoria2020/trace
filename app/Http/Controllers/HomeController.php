@@ -35,4 +35,29 @@ class HomeController extends Controller
     {
         return view('login');
     }
+    
+    public function contacte()
+    {
+        return view('contact');
+    }
+
+    public function transparencia()
+    {
+        return view('transparencia');
+    }
+
+    public function recursos()
+    {
+        return view('recursos');
+    }
+
+    public function collaboradors()
+    {
+        return view('collaboradors');
+    }
+
+    public function filosofia()
+    {
+        return view('filosofia');
+    }
 }

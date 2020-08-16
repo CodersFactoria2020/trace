@@ -93,35 +93,33 @@
         </div>
     </div>
 
-    <!-- class="sticky-wrapper is-sticky" style="height: 70px; -->
     <div id="header-sticky-wrapper">
 
-    <!-- style="width: 1399px; position: fixed; top: 0; z-index: 50;" -->
       <header id="header" >
 
         <div class="container d-flex justify-content-between align-items-center">
 
           <div class="mr auto">
-            <h1 class=""><a href="{{url('/home')}}">traCE</a></h1>
-          <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <a href="{{url('/home')}}">
+            <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid" style="width:90px; heigh:auto"></a>
           </div>
 
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
-                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/home')}}">Inici</a></li>
+                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/')}}">Inici</a></li>
                 <li {% if page == "dany_cerebral" %}class="active" {% endif %}><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
                 <li class="drop-down"><a href="#">Coneix-nos</a>
                   <ul>
                     <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
-                    <li><a href="">Filosofia</a></li>
+                    <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
                     <li><a href="{{url('/equip/')}}">Equip</a></li>
-                    <li><a href="">Transparència</a></li>
+                    <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
                 </li>
-                <li><a href="">Col·laboradors</a></li>
-                <li><a href="">Recursos</a></li>
-                <li><a href="">Contacte</a></li>
+                <li><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
+                <li><a href="{{url('/recursos/')}}">Recursos</a></li>
+                <li><a href="{{url('/contacte/')}}">Contacte</a></li>
               </ul>
             </nav>
           </div>
