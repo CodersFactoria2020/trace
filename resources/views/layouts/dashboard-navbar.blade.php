@@ -97,7 +97,7 @@
       .panelHeader {
         background-color: #3c8760;
         color: white !important;
-        text-align: center;
+        padding: .5rem 1rem .5rem;
       }
       .logoutbtn {
         background-color: red;
