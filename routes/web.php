@@ -25,6 +25,8 @@ Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
+Route::resource('team','TeamController')->middleware('auth');
+
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
