@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
       dayHeaderFormat: { weekday: 'long', day: 'numeric' },
       weekends: false, // hides Sunday and Saturday
       allDaySlot: false,
-      slotDuration: '00:30:00',
+      slotDuration: '00:15:00',
       slotMinTime: '09:00:00',
       slotMaxTime: '19:00:00',
       buttonIcons: false, // show the prev/next text
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
       navLinks: false, // can click day/week names to navigate views
       editable: true,
       dayMaxEvents: true, // allow "more" link when too many events
+      editable: true,
 
       // customButtons: {
       //   AddActivityButton: {
