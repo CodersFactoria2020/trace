@@ -30,7 +30,7 @@ Route::resource('team','TeamController')->middleware('auth');
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
-Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
+//Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
 Route::resource('/user', 'UserController')->names('user')->middleware('auth');
 Route::get('user/{id}/show/','UserController@show')->middleware('auth');

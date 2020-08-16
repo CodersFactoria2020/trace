@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Activity;
 use App\Role;
+use App\Team;
 use App\Http\Resources\Role as RoleResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -104,9 +105,10 @@ class UserController extends Controller
     {
         $users = User::all();
         $roles = Role::all();
+        $teams = Team::all();
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
         }
-        return view('team.index');
+        return view('team.index', compact('teams'));
     }
 }

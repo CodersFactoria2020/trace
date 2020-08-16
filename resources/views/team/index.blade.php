@@ -40,17 +40,9 @@
         </div>
     <!-- Contenido que se desee -->
         <div class="card body">
-            <div class="row">
-                <div class="col-lg-12 margin-tb">
-                    <div class="pull-left">
-                        <h2>Membres de l'equip.</h2>
-                    </div>
-                    <div class="pull-right">
-                        <a class="btn btn-success" href="{{ route('team.create') }}"> Nou membre</a>
-                    </div>
-                </div>
+            <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('team.create') }}"> Nou membre</a>
             </div>
-        
             <table class="table table-bordered">
                 <tr>
                     <th>Nom i Cognom</th>
