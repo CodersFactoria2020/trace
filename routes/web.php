@@ -30,7 +30,7 @@ Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
-Route::resource('/user/{role_id?}', 'UserController')->names('user')->middleware('auth');
+Route::resource('/user', 'UserController')->names('user')->middleware('auth');
 Route::get('user/{id}/show/','UserController@show')->middleware('auth');
 Route::get('user/{id}/edit/','UserController@edit')->middleware('auth');
 Route::get('user/{id}/create/','UserController@create')->middleware('auth');
