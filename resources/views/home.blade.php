@@ -1,23 +1,13 @@
-@extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+@extends('parts.footer')
+    @extends('parts.resources-section')
+    @extends('parts.collaborators-section')
+    @extends('parts.team-section')
+    @extends('parts.services-section')
+    @extends('parts.description-section')
+    @extends('parts.hero')
+ @extends('layouts.app')
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+
+

@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
-                            <input type="text" name="name" class="form-control">
+                            <input type="text" name="title" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
@@ -21,15 +21,28 @@
                         </div>
                         <div class="form-group">
                             <label>Professional</label>
-                            <textarea type="text" name="professional" class="form-control"></textarea>
+                            <textarea type="text" name="professional1" class="form-control"></textarea>
                         </div>
                         <div class="form-group">
-                            <label>Data</label>
-                            <textarea type="text" name="date" class="form-control"></textarea>
+                            <label>Professional de support</label>
+                            <input type="text" name="professional2" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label>Hora</label>
-                            <textarea type="text" name="time" class="form-control"></textarea>
+                            <label>Data i hora de inici</label>
+                            <textarea type="text" name="start" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Data i hora de finalització</label>
+                            <textarea type="text" name="end" class="form-control"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Àrea:</label>
+                            <select name="category_id" class="form-control">
+                                <optgroup label="Selecciona una àrea">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_name'] }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             Adjunta document

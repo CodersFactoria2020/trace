@@ -10,14 +10,18 @@ class CreateActivitiesTable extends Migration
     {
         Schema::create('activities', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('description');
+            $table->string('title');
+            $table->text('description');
+            $table->string('color',20)->nullable();
+            $table->string('textColor',20)->default('#000000');
             $table->mediumText('file')->nullable();
-            $table->string('professional');
-            $table->date('date');
-            $table->time('time');
+            $table->string('professional1');
+            $table->string('professional2')->nullable();
+            $table->dateTime('start')->nullable();
+            $table->dateTime('end')->nullable();
+            $table->foreignId('category_id')->nullable();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
-
         });
     }
 

@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
-                            <input type="text" name="name" class="form-control" value="{{$activity->name}}"/>
+                            <input type="text" name="title" class="form-control" value="{{$activity->title}}"/>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
@@ -22,15 +22,28 @@
                         </div>
                         <div class="form-group">
                             <label>Professional</label>
-                            <input type="text" name="professional" class="form-control" value="{{$activity->professional}}"/>
+                            <input type="text" name="professional1" class="form-control" value="{{$activity->professional1}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Data</label>
-                            <input type="text" name="date" class="form-control" value="{{$activity->date}}"/>
+                            <label>Professional de support</label>
+                            <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Hora</label>
-                            <input type="text" name="time" class="form-control" value="{{$activity->time}}"/>
+                            <label>Data i hora de inici</label>
+                            <input type="text" name="start" class="form-control" value="{{$activity->start}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Data i hora de finalització</label>
+                            <input type="text" name="end" class="form-control" value="{{$activity->end}}"/>
+                        </div>
+                        <div class="form-group">
+                            <label>Àrea:</label>
+                            <select name="category_id" class="form-control">
+                                <optgroup label="Selecciona una àrea">
+                                @foreach ($categories as $category)
+                                    <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_name'] }}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="text-right">
