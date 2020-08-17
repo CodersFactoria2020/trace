@@ -128,7 +128,7 @@
                       <select name="color" class="form-control" id="color">
                         <optgroup label="Selecciona un color de fons">
                         @foreach ($categories as $category)
-                            <option value="{{ $category['category_color'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_color'] }}</option>
+                            <option value="{{ $category['category_color'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_name'] }}</option>
                         @endforeach
                       </select>
                     </div>                       
