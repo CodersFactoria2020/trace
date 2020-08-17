@@ -40,7 +40,7 @@ class ActivityController extends Controller
 
         if($activity['file']) {
             $upload = $request->file('file');
-            $document = $upload->storeAs('/activities/', $activity->id. '.pdf');
+            $document = $upload->storeAs('/activities/', $activity->id. '.pdf', ['disk'=>'public']);
         }
         return redirect('/activity');
     }
