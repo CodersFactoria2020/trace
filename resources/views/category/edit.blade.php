@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'àrea</label>
-                            <input type="text" name="title" class="form-control" value="{{$category->title}}"/>
+                            <input type="text" name="category_name" class="form-control" value="{{$category->category_name}}"/>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
