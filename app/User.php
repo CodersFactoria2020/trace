@@ -5,15 +5,14 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use App\Traits\UserTrait;
 use App\Role;
 
 class User extends Authenticatable
 {
-    use Notifiable, UserTrait;
+    use Notifiable;
 
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor'
+        'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor', 'role_id'
     ];
 
     protected $hidden = [
@@ -51,6 +50,27 @@ class User extends Authenticatable
                 $user = User::find($i);
                 $user->roles()->sync([$associatedRole]);
             }
+        }
+    }
+
+    public function Role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+    
+    public function getRoleIdAttribute($value)
+    {
+        if ($value === 1)
+        {
+            return "Soci";
+        }
+        if ($value === 2)
+        {
+            return "Professional";
+        }
+        if ($value === 3)
+        {
+            return "Admin";
         }
     }
 }

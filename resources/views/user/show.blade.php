@@ -1,22 +1,51 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1>user {{$user->name}}</h1><hr>
+<div class="modal fadeIn" id="show-user{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">DETALLS DE L'USUARI</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <h2>ID:</h2><p>{{$user->id}}</p>
-            <h2>Name:</h2><p>{{$user->first_name}}</p>
-            <h2>Last Name:</h2><p>{{$user->last_name}}</p>
-            <h2>Email:</h2><p>{{$user->email}}</p>
-            <h2>Phone:</h2><p>{{$user->phone}}</p>
-            <h2>DNI:</h2><p>{{$user->dni}}</p>
-            <h2>Tutor:</h2><p>{{$user->tutor}}</p>
-            <h2>Rol:</h2><p>{{implode (",", $user->actualRoles())}}</p>
-        </div>
-        <div class="card-footer">
-            <a href="{{Route('user.index')}}" class="btn btn-secondary">Back</a>
+            <div class="modal-body">
+                    @method('put')
+                    <div class="card-body">
+                        <div style="padding:5px;">
+                            <h5>ID:</h5><p> {{$user->id}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Nom:</h5><p> {{$user->first_name}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Cognom:</h5><p> {{$user->last_name}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Correo:</h5>
+                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
+                                style='font-size:2rem' class="mybtn btn"> <i class=' fas fa-envelope'></i> {{$user->email}}
+                            </a>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Telèfon:</h5><p> {{$user->phone}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>DNI:</h5><p> {{$user->dni}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Tutor(a):</h5><p> {{$user->tutor}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Rol:</h5><p> {{$user->role_id}}</p>
+                        </div>
+                        
+                        <div class="card-footer text-right">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-@endsection
+</div>
+

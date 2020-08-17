@@ -14,4 +14,11 @@ public/mix-manifest.json
 public/css/app.css
 public/js/app.js
 composer.lock
+tests/Feature/ExampleTest.php
+tests/Unit/ExampleTest.php
+tests/TestCase.php
 .idea/
+.vscode/settings.json
+.vscode/
+composer.lock
+.idea/workspace.xml

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Team;
+use App\User;
+use App\Role;
 use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -12,8 +14,13 @@ class TeamController extends Controller
 
     public function index()
     {
+        $users = User::all();
+        $roles = Role::all();
         $teams = Team::all();
-        return view('team.index',compact('teams'));
+        if (auth()->user()->role_id != "Admin") {
+            return view('user.notauthorized');
+        }
+        return view('team.index', compact('teams'));
     }
 
     public function create(Request $request)

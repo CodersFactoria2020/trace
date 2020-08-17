@@ -1,57 +1,113 @@
-@extends('layouts.app')
+@extends('layouts.dashboard-navbar')
+
+@section('scripts')
+
+  <!-- Jquery -->  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
+  <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
+  <!-- Font Awesome CSS -->
+  <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
+@endsection
+
+  <!-- Custom  Style -->
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .mybtn {
+        height: 2.4rem !important;
+        width: auto !important;
+        font-size: 1.4rem !important;
+    }
+  </style>
 
 @section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1>Your users</h1><hr>
-                <a href="{{Route('user.create')}}" class="btn btn-secondary">Add New</a>
-                <a href="{{Route('home')}}" class="btn btn-secondary">Back Home</a>
-            </div>
-            <table class="table table-triped">
-                <thead>
-                    <tr>
-                        <td><h3>ID</h3></td>
-                        <td><h3>First Name</h3></td>
-                        <td><h3>Last Name</h3></td>
-                        <td><h3>Email</h3></td>
-                        <td><h3>Phone</h3></td>
-                        <td><h3>DNI</h3></td>
-                        <td><h3>Tutor</h3></td>
-                        <td><h3>Rol</h3></td>
-                        <td colspan="3"><h3>Actions</h3></td>
-                    </tr>
-                </thead>
 
-                @foreach($users as $user)
-                <tr>
-                    <td>{{$user->id}}</td>
-                    <td>{{$user->first_name}}</td>
-                    <td>{{$user->last_name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->phone}}</td>
-                    <td>{{$user->dni}}</td>
-                    <td>{{$user->tutor}}</td>
-                    <td>{{implode (",", $user->actualRoles())}}</td>
-                    <td>
-                        <a style="color:white" href="{{Route('user.edit',$user->id)}}" class="btn btn-info" user="button">Modify</a></td>
-                    <td>
-                        <a style="color:white" href="{{Route('user.show',$user->id)}}" class="btn btn-info" user="button">See</a></td>
-                    <td>      
-                        <form action="{{route('user.destroy', $user->id)}}" method="post">
-                            @csrf
-                            @method('delete')
-                            <input
-                                type="submit"
-                                value="Delete"
-                                class="btn btn-danger"
-                            >
-                        </form>
-                    </td>
-                </tr>
-                @endforeach
-
-            </table>
+    <div class="card col-12">
+      <div class="card-header">
+          <div class="float-left"><h2>Gestió d'usuaris </h2></div>
+          <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
+          <div class="float-left" class="sr-only" style="padding: 0 2rem;"> {{ $users->links() }}</div>
+          {{-- @can('create') --}}
+          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+          {{-- @endcan --}}
         </div>
-    </div>
+    <!-- Contenido que se desee -->
+    <table class="table table-striped">
+      <div class="col-12">
+        <div class="col-6 float-left">
+          <h6 style="display:inline-block;margin:10 5 15;">Mostrar només:</h6>
+          <a href="/user?role_id=1" class="btn btn-outline-primary btn-sm">Soci</a> |
+          <a href="/user?role_id=2" class="btn btn-outline-primary btn-sm">Professional</a> |
+          <a href="/user?role_id=3" class="btn btn-outline-primary btn-sm">Admin</a> |
+          <a href="/user" class="btn btn-outline-primary btn-sm">Cap filtre</a>
+        </div>
+        <div class="col-6 float-right">
+          <h6 style="display:inline-block;margin:10 5 0;">Ordenar per cognom:</h6>
+          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-primary btn-sm">Ascendent</a> |
+          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-primary btn-sm">Descendent</a>
+        </div>
+      </div>
+      <thead class="thead">
+          <tr>
+            <td><h5>ID</h5></td>
+            <td><h5>Nom i cognom</h5></td>
+            <td><h5>E-mail</h5></td>
+            <td><h5>Rol</h5></td>
+            <td colspan="3"><h5>Accions</h5></td>
+        </tr>
+    </thead>
+
+    @foreach($users as $user)
+    @can('view-any', $user)
+    <tr>
+        <td>{{$user->id}}</td>
+        <td>{{$user->first_name}} {{$user->last_name}}</td>
+        <td>{{$user->email}}</td>
+        <td>{{$user->role_id}}</td>        
+        <td colspan="3">
+            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
+              style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
+            </a>
+        </td>
+        <td>
+              @can('update', $user)
+              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-info" user="button">Editar</a>
+              @include('user.edit')
+              @endcan
+          </td>
+          <td>
+              <a style="color:white" data-toggle="modal" data-target="#show-user{{$user->id}}" class="btn btn-info" user="button">Detalls</a>
+              @include('user.show')
+          </td>
+          <td>      
+              @can('destroy', $user)
+              <a style="color:white" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="btn btn-danger" user="button">Esborrar</a>
+              @include('user.destroy')
+              @endcan
+          </td>
+      </tr>
+      @endcan
+      @endforeach
+
+  </table>
+  </div>
+
 @endsection
+@include('user.create')
+@include('user.edit')
+@include('user.show')
+@include('user.destroy')

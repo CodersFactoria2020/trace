@@ -3,23 +3,22 @@
 namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Gate;
 use App\User;
 use App\Policies\UserPolicy;
+use App\Activity;
+use App\Policies\ActivityPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
     protected $policies = [
-        User::class => UserPolicy::class,
+        'App\Activity' => 'App\Policies\ActivityPolicy',
+        'App\User' => 'App\Policies\UserPolicy'
     ];
     
     public function boot()
     {
         $this->registerPolicies();
 
-        Gate::define('haveaccess', function(User $user, $permissionRequired)
-        {
-            return $user->havePermission($permissionRequired);
-        });
+        
     }
 }

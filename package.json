@@ -1,5 +1,13 @@
 {
     "private": true,
+    "name": "eterna",
+    "title": "Eterna",
+    "version": "2.1.0",
+    "description": "Eterna - Bootstrap Website Template",
+    "author": "BootstrapMade.com",
+    "homepage": "https://bootstrapmade.com/eterna-free-multipurpose-bootstrap-template/",
+    "license": "https://bootstrapmade.com/license/",
+    "main": "gulpfile.js",
     "scripts": {
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -7,19 +15,121 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "start": "node_modules/.bin/gulp start",
+        "dist": "node_modules/.bin/gulp"
     },
     "devDependencies": {
         "axios": "^0.19",
-        "bootstrap": "^4.0.0",
+        "bootstrap": "^4.5.2",
+        "browser-sync": "^2.26.7",
         "cross-env": "^7.0",
-        "jquery": "^3.2",
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^7.0.1",
+        "gulp-beautify": "^3.0.0",
+        "gulp-inject-string": "^1.1.2",
+        "gulp-nunjucks": "^5.0.1",
+        "gulp-sass": "^4.1.0",
+        "jquery": "^3.5.1",
         "laravel-mix": "^5.0.1",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.20",
+        "merge-stream": "^2.0.0",
         "popper.js": "^1.12",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.15.2",
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
+    },
+    "dependencies": {
+        "@fullcalendar/core": "^5.3.0",
+        "@fullcalendar/daygrid": "^5.3.0",
+        "@fullcalendar/interaction": "^5.3.0",
+        "@fullcalendar/list": "^5.3.0",
+        "@fullcalendar/timegrid": "^5.3.0",
+        "animate.css": "^4.1.0",
+        "boxicons": "^2.0.5",
+        "fullcalendar": "^5.3.0",
+        "isotope-layout": "^3.0.6",
+        "jquery-sticky": "^1.0.4",
+        "jquery.easing": "^1.4.1",
+        "nunjucks": "^3.2.2",
+        "owl.carousel": "^2.3.4",
+        "sweetalert": "^2.1.2",
+        "venobox": "^1.9.1",
+        "waypoints": "^4.0.1"
+    },
+    "jquery": {
+        "src": [
+            "./node_modules/jquery/dist/jquery.min.js",
+            "./node_modules/jquery/dist/jquery.min.map"
+        ],
+        "dest": "assets/vendor/jquery/",
+        "js_link": "assets/vendor/jquery/jquery.min.js"
+    },
+    "bootstrap": {
+        "src": "./node_modules/bootstrap/dist/**/*",
+        "dest": "assets/vendor/bootstrap/",
+        "css_link": "assets/vendor/bootstrap/css/bootstrap.min.css",
+        "js_link": "assets/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    "jquery.easing": {
+        "src": "./node_modules/jquery.easing/jquery.easing.min.js",
+        "dest": "assets/vendor/jquery.easing/",
+        "js_link": "assets/vendor/jquery.easing/jquery.easing.min.js"
+    },
+    "php-email-form": {
+        "js_link": "assets/vendor/php-email-form/validate.js"
+    },
+    "icofont": {
+        "css_link": "assets/vendor/icofont/icofont.min.css"
+    },
+    "jquery-sticky": {
+        "src": "./node_modules/jquery-sticky/jquery.sticky.js",
+        "dest": "assets/vendor/jquery-sticky/",
+        "js_link": "assets/vendor/jquery-sticky/jquery.sticky.js"
+    },
+    "boxicons": {
+        "srcs": [
+            {
+                "src": "./node_modules/boxicons/css/*",
+                "dest": "assets/vendor/boxicons/css/"
+            },
+            {
+                "src": "./node_modules/boxicons/fonts/*",
+                "dest": "assets/vendor/boxicons/fonts/"
+            }
+        ],
+        "css_link": "assets/vendor/boxicons/css/boxicons.min.css"
+    },
+    "animate.css": {
+        "src": "./node_modules/animate.css/*.css",
+        "dest": "assets/vendor/animate.css/",
+        "css_link": "assets/vendor/animate.css/animate.min.css"
+    },
+    "owl.carousel": {
+        "src": "./node_modules/owl.carousel/dist/**/*",
+        "dest": "assets/vendor/owl.carousel/",
+        "css_link": "assets/vendor/owl.carousel/assets/owl.carousel.min.css",
+        "js_link": "assets/vendor/owl.carousel/owl.carousel.min.js"
+    },
+    "waypoints": {
+        "src": "./node_modules/waypoints/lib/jquery.waypoints.min.js",
+        "dest": "assets/vendor/waypoints/",
+        "js_link": "assets/vendor/waypoints/jquery.waypoints.min.js"
+    },
+    "counterup": {
+        "js_link": "assets/vendor/counterup/counterup.min.js"
+    },
+    "isotope-layout": {
+        "src": "./node_modules/isotope-layout/dist/**/*",
+        "dest": "assets/vendor/isotope-layout/",
+        "js_link": "assets/vendor/isotope-layout/isotope.pkgd.min.js"
+    },
+    "venobox": {
+        "src": "./node_modules/venobox/venobox/*",
+        "dest": "assets/vendor/venobox/",
+        "css_link": "assets/vendor/venobox/venobox.css",
+        "js_link": "assets/vendor/venobox/venobox.min.js"
     }
 }
