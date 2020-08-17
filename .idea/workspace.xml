@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/team/destroy.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,6 +281,10 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="523" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1596097736961" />
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1597672093817">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1597672093817" />
     <state x="500" y="194" key="FileChooserDialogImpl" timestamp="1597669024756">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
