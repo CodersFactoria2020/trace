@@ -22,6 +22,7 @@ Route::get('/transparencia', 'HomeController@transparencia')->name('transparenci
 Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
+Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
