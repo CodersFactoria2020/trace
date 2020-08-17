@@ -17,7 +17,7 @@ class ActivityController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
         $activities = Activity::all();
@@ -50,13 +50,12 @@ class ActivityController extends Controller
         ]);
 
         $activity = Activity::create([
-            'name' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
-            'professional' => $request->professional,
+            'professional1' => $request->professional1,
             'file' => $request->file,
             'date'=> $request->date,
-            'time'=> $request->time,
-            'activity_id' => $request->activity_id,
+            'time'=> $request->time
         ]);
 
         if($activity['file']) {
@@ -65,7 +64,7 @@ class ActivityController extends Controller
         }
         return redirect('/activity');
     }
-    
+
     public function download(Request $request, Activity $activity)
     {
         return Storage::download('/activities/'.$activity->id.'.pdf', $activity->name.'.pdf');
@@ -87,7 +86,7 @@ class ActivityController extends Controller
             return view('activity.edit', compact('users'), compact('activities'), compact('categories'), compact('roles'));
         }
     }
-    
+
     public function update(Request $request, Activity $activity)
     {
         $activity->update($request->all());

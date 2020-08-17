@@ -29,14 +29,6 @@
                             <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Data i hora de inici</label>
-                            <input type="text" name="start" class="form-control" value="{{$activity->start}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Data i hora de finalització</label>
-                            <input type="text" name="end" class="form-control" value="{{$activity->end}}"/>
-                        </div>
-                        <div class="form-group">
                             <label>Àrea:</label>
                             <select name="category_id" class="form-control">
                                 <optgroup label="Selecciona una àrea">

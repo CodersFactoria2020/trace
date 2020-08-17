@@ -26,13 +26,10 @@
                             <h5>Professional de suport:</h5><p> {{$activity->professional2}}</p>
                         </div>
                         <div style="padding:5px;">
-                            <h5>Data i hora d'inici:</h5><p> {{$activity->start}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Data i hora de finalització:</h5><p> {{$activity->end}}</p>
-                        </div>
-                        <div style="padding:5px;">
                             <h5>Àrea:</h5><p> {{$activity->category_id}}</p>
+                        </div>
+                        <div style="padding:5px;">
+                            <h5>Document adjunt:</h5><p> {{$activity->file}}</p>
                         </div>
 
                         <div class="text-right">
