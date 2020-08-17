@@ -25,7 +25,7 @@
 
     .carousel-item::before {
         content: "";
-        background-color: rgba($white, 0.6);
+        background-color: rgba($white, 0.8);
         position: absolute;
         top: 0;
         right: 0;
@@ -43,6 +43,7 @@
         top: 0;
         left: 0;
         right: 0;
+        padding-bottom: 120px;
     }
 
     .carousel-content {
@@ -61,14 +62,14 @@
     }
 
     p {
+        width: 80%;
+
         animation-delay: 0.4s;
         margin: 0 auto 30px auto;
         color: arken($secondary, 15);
     }
 
     .carousel-inner {
-        height: 70vh;
-
         .carousel-item {
             transition-property: opacity;
             background-position: center top;
