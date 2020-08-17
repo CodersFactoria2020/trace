@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_07_30_094618_create_user_activity_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,67 +136,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-  </component>
-  <component name="RunManager" selected="PHPUnit.ActivitiesTest">
-    <configuration name="ActivitiesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.3" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ActivitiesTest.test_activity_is_created" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.3" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_activity_is_created" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ActivitiesTest.test_activity_is_deleted" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.3" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_activity_is_deleted" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ActivitiesTest.test_activity_is_updated" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.3" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_activity_is_updated" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ActivitiesTest.test_can_upload_file" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <CommandLine>
-        <PhpTestInterpreterSettings>
-          <option name="interpreterName" value="PHP 7.3" />
-        </PhpTestInterpreterSettings>
-      </CommandLine>
-      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_can_upload_file" scope="Method" />
-      <method v="2" />
-    </configuration>
-    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner scope="XML" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="PHPUnit.ActivitiesTest" />
-        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_updated" />
-        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_deleted" />
-        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_created" />
-        <item itemvalue="PHPUnit.ActivitiesTest.test_can_upload_file" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -225,6 +162,9 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -274,6 +214,10 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="371" y="40" key="#ExampleTest/0.23.1440.801@0.23.1440.801" timestamp="1595839943398" />
+    <state x="174" y="56" width="1092" height="804" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597659230153">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="174" y="56" width="1092" height="804" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1597659230153" />
     <state x="523" y="139" key="#com.intellij.ide.util.MemberChooser" timestamp="1596097736961">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -21,3 +21,4 @@ tests/TestCase.php
 .vscode/settings.json
 .vscode/
 composer.lock
+.idea/workspace.xml
