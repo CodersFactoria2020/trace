@@ -26,12 +26,12 @@ class HomeController extends Controller
     {
         return view('equip');
     }
-        
+
     public function login()
     {
         return view('login');
     }
-    
+
     public function contacte()
     {
         return view('contact');
@@ -55,5 +55,10 @@ class HomeController extends Controller
     public function filosofia()
     {
         return view('filosofia');
+    }
+
+    public function collabora()
+    {
+        return view('collabora');
     }
 }

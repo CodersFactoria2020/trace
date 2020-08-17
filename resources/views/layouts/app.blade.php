@@ -125,7 +125,7 @@
           </div>
 
           <div>
-            <a href="" class="cta-line">Col·labora</a>
+            <a href="{{url('/collabora/')}}" class="cta-line">Col·labora</a>
           </div>
 
         </div>
