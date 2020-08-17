@@ -42,6 +42,7 @@ Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
 Route::get('/activitats', 'ActivityController@index')->name('activity.index')->middleware('auth');
 Route::get('activity/{id}/edit/','ActivityController@edit')->middleware('auth');
+Route::get('/activity/{activity}/download', 'ActivityController@download')->name('download-document');
 
 // Category routes
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');

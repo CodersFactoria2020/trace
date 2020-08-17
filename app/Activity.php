@@ -4,10 +4,17 @@ namespace App;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use App\Category;
 
 class Activity extends Model
 {
     protected $fillable = ['title', 'description', 'file', 'professional1', 'professional2', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    
+    public function Categories() {
+
+        return $this->belongsTo(Category::class);
+
+    }
     
     public function User()
     {
@@ -41,4 +48,3 @@ class Activity extends Model
             return "Grupals";
         }
     }
-}

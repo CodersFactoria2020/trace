@@ -44,6 +44,10 @@
                                 @endforeach
                             </select>
                         </div>
+                        <div class="form-group">
+                            Adjunta document
+                            <input type="file" name="file" id="fileToUpload"/>
+                        </div>
 
                         <div class="text-right">
                                 <input type="submit" value="Crear" class="btn btn-primary">

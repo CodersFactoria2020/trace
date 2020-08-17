@@ -8,6 +8,7 @@ use App\User;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
@@ -41,10 +42,33 @@ class ActivityController extends Controller
         return view('activity.create', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Activity $activity)
     {
-        Activity::create($request->all());
+
+        $this->validate($request, [
+            'file' => 'file|max:9920000'
+        ]);
+
+        $activity = Activity::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'professional' => $request->professional,
+            'file' => $request->file,
+            'date'=> $request->date,
+            'time'=> $request->time,
+            'activity_id' => $request->activity_id,
+        ]);
+
+        if($activity['file']) {
+            $upload = $request->file('file');
+            $document = $upload->storeAs('/activities/', $activity->id. '.pdf', ['disk'=>'public']);
+        }
         return redirect('/activity');
+    }
+    
+    public function download(Request $request, Activity $activity)
+    {
+        return Storage::download('/activities/'.$activity->id.'.pdf', $activity->name.'.pdf');
     }
 
     public function show(Activity $activity)
