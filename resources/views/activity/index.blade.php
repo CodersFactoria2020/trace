@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -31,10 +31,11 @@
   </style>
 
 @section('content')
-
+    @include('custom.message')
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'activitats</h2></div>
+
             {{-- @can('create') --}}
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
             {{-- @endcan --}}
@@ -61,7 +62,7 @@
           <td>{{$activity->professional1}}</td>
           <td>
               @can('update', $activity)
-              <a style="color:white" data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Editar</a>
+              <a style="color:#ffffff" data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Editar</a>
               @include('activity.edit')
               @endcan
           </td>
@@ -69,7 +70,7 @@
               <a style="color:white" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Detalls</a>
               @include('activity.show')
           </td>
-          <td>      
+          <td>
               @can('destroy', $activity)
               <a style="color:white" data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="mybtn btn btn-danger" activity="button">Esborrar</a>
               @include('activity.destroy')
