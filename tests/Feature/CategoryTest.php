@@ -75,6 +75,23 @@ class CategoryTest extends TestCase
         $response->assertRedirect('/areas');
     }
 
+    public function test_admin_can_access_one_category()
+    {
+        $role = factory(Role::class)->create();
+        $user = factory(User::class)->states('admin')->create();
+        $category = factory(Category::class)->create([
+            'id' => 1,
+            'category_name' => 'Neurology',
+            'description' => 'Is a branch of medicine dealing with disorders of the nervous system',
+            'category_color' => '#ff0000',
+        ]);
+
+        $response = $this->get('/category/'.$category->id);
+
+        $response->assertStatus(302);
+    }
+
+
     public function test_admin_can_update_category()
     {
         $role = factory(Role::class)->create();
