@@ -24,7 +24,7 @@ class CategoryController extends Controller
         if (auth()->user()->role_id != "Admin") {
                 return view('user.notauthorized');
         }
-        return view('category.index', ['categories' => $categories], compact('users'), compact('roles'));
+        return view('category.index', compact('categories'), compact('users'), compact('roles'));
     }
 
     public function create()
@@ -35,19 +35,19 @@ class CategoryController extends Controller
         if (auth()->user()->role_id != "Admin") {
                 return view('user.notauthorized');
         }
-        return view('category.create', ['categories' => $categories], compact('users'), compact('roles'));
+        return view('category.create', compact('categories'), compact('users'), compact('roles'));
     }
 
     public function store(Request $request)
     {
         Category::create($request->all());
-        return redirect('/category');
+        return redirect('/category')->with('status_success',"S'ha creat la categoria correctament");
     }
 
     public function show(Category $category)
     {
         $roles = Role::all();
-        return view('category.show', ['categories' => $categories], compact('users'), compact('roles'));
+        return view('category.show', compact('categories'), compact('users'), compact('roles'));
     }
 
     public function edit(Category $category)
@@ -56,14 +56,14 @@ class CategoryController extends Controller
         $users = User::all();
         $roles = Role::all();
         if (auth()->user()->can('edit', $user)) {
-            return view('category.edit', ['users' => $users], compact('roles'));
+            return view('category.edit', compact('users'), compact('roles'));
         }
     }
 
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-        return redirect('/category');
+        return redirect('/category')->with('status_success',"S'ha actualitzat la categoria correctament");
     }
 
     public function destroy(Category $category)
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         if (auth()->user()->can('destroy', $category)) {
             $category->delete();
         }
-        return redirect('/category');
+        return redirect('/category')->with('status_success',"S'ha suprimit la categoria correctament");
     }
 }
 

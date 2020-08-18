@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -20,18 +20,9 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
-
 @section('content')
 
+@include('custom.message')
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'àreas</h2></div>
@@ -59,7 +50,7 @@
           <td>{{$category->description}}</td>
           <td>
               @can('update', $category)
-              <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="mybtn btn btn-info" category="button">Editar</a>
+              <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="mybtn btn btn-warning" category="button">Editar</a>
               @include('category.edit')
               @endcan
           </td>
@@ -67,7 +58,7 @@
               <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id}}" class="mybtn btn btn-info" category="button">Detalls</a>
               @include('category.show')
           </td>
-          <td>      
+          <td>
               @can('destroy', $category)
               <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
               @include('category.destroy')
