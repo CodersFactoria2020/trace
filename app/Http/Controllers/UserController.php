@@ -73,7 +73,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
-        return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");;
+        return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");
     }
 
     public function destroy(User $user)
