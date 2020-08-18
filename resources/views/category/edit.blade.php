@@ -33,7 +33,7 @@
                         <div class="text-right">
                             <div class="text-right">
                                 <a href="{{Route('category.update', $category->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
+                                    <input type="submit" value="Actualitzar" class="btn btn-primary">
                                 </a>
                             </div>
                         </div>
