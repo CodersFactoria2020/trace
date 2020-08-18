@@ -7,8 +7,8 @@
     </div>
 @endif
 
-@if($errors->any())
-    <div class="alert alert-danger" role="alert">
+@if(session('status_error'))
+    <div class="alert alert-danger" role="alert">{{session('status_error')}}
         <ul>
             @foreach($errors->all() as $error)
                 <li>{{$error}}</li>
