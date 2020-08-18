@@ -83,15 +83,15 @@
               style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
             </a>
         </td>
-        <td>
-              @can('update', $user)
-              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-info" user="button">Editar</a>
-              @include('user.edit')
-              @endcan
-          </td>
           <td>
               <a style="color:white" data-toggle="modal" data-target="#show-user{{$user->id}}" class="btn btn-info" user="button">Detalls</a>
               @include('user.show')
+          </td>
+          <td>
+              @can('update', $user)
+              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-primary" user="button">Editar</a>
+              @include('user.edit')
+              @endcan
           </td>
           <td>      
               @can('destroy', $user)
