@@ -26,6 +26,9 @@ class TeamController extends Controller
     public function create(Request $request)
     {
         $teams = Team::all();
+        if (auth()->user()->role_id !== "Admin") {
+            return view('user.notauthorized');
+        }
         return view('team.create', compact('teams'));
 
     }
@@ -44,11 +47,17 @@ class TeamController extends Controller
 
     public function show(Team $team)
     {
+        if (auth()->user()->role_id !== "Admin") {
+            return view('user.notauthorized');
+        }
         return view('team.show',compact('team'));
     }
 
     public function edit(Team $team)
     {
+        if (auth()->user()->role_id !== "Admin") {
+            return view('user.notauthorized');
+        }
         return view('team.edit',compact('team'));
     }
 
@@ -65,7 +74,9 @@ class TeamController extends Controller
 
     public function destroy(Team $team)
     {
-
+        if (auth()->user()->role_id !== "Admin") {
+            return view('user.notauthorized');
+        }
         $team->delete();
         Storage::delete('images');
         return redirect()->route('team.index');
