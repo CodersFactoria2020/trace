@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'àrea</label>
-                            <input type="text" name="title" class="form-control" value="{{$category->title}}"/>
+                            <input type="text" name="category_name" class="form-control" value="{{$category->category_name}}"/>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
@@ -33,7 +33,7 @@
                         <div class="text-right">
                             <div class="text-right">
                                 <a href="{{Route('category.update', $category->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
+                                    <input type="submit" value="Actualitzar" class="btn btn-primary">
                                 </a>
                             </div>
                         </div>
