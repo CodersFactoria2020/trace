@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>traCE</title>
+    <title>TraCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -71,9 +71,17 @@
 </head>
 
 <body>
+    <div class="js-cookie-consent cookie-consent">
+      <span class="cookie-consent__message">
+        Al fer click en aceptar, estás aceptant les nostres <a href="{{'/legal'}}">polítiques i cookies</a>.
+      </span>
+      <button class="js-cookie-consent-agree cookie-consent__agree">
+          Aceptar
+      </button>
+    </div>
     <div id="topbar" class="d-none d-lg-block">
         <div class="container d-flex align-items-center justify-content-between">
-
+          
           <div class="contact-info">
               <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
               <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
