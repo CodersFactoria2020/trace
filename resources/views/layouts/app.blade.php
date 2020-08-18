@@ -107,19 +107,19 @@
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
-                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/')}}">Inici</a></li>
-                <li {% if page == "dany_cerebral" %}class="active" {% endif %}><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
-                <li class="drop-down"><a href="#">Coneix-nos</a>
+                <li class="{{ request()->is('home') ? 'active' : ''}}"><a href="{{url('/home')}}">Inici</a></li>
+                <li class="{{ request()->is('dany_cerebral') ? 'active' : ''}}"><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
+                <li class="drop-down {{ request()->is('qui_som','filosofia','equip','transparencia') ? 'active' : ''}}"><a href="#">Coneix-nos</a>
                   <ul>
-                    <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
+                    <li ><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
                     <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
                     <li><a href="{{url('/equip/')}}">Equip</a></li>
                     <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
                 </li>
-                <li><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
-                <li><a href="{{url('/recursos/')}}">Recursos</a></li>
-                <li><a href="{{url('/contacte/')}}">Contacte</a></li>
+                <li class="{{ request()->is('collaboradors') ? 'active' : ''}}"><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
+                <li class="{{ request()->is('recursos') ? 'active' : ''}}"><a href="{{url('/recursos/')}}">Recursos</a></li>
+                <li class="{{ request()->is('contacte') ? 'active' : ''}}"><a href="{{url('/contacte/')}}">Contacte</a></li>
               </ul>
             </nav>
           </div>
