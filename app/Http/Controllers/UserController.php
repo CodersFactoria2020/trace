@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 class UserController extends Controller
 {
 
-    // public $users_per_page;
+    // public $users_per_page;    ¿SE PODRÍA DEJAR AQUÍ EL nº DE PAGINACIÓN DESEADO?
     
     public function __construct()
     {
@@ -26,6 +26,7 @@ class UserController extends Controller
         // $users = User::paginate($this->users_per_page);
         $users = new User;
         $roles = Role::all();
+        // if (!$this->authorize('view-any', $user)) {   // A través UserPolicy - NO FUNCIONA
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
