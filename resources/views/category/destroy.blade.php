@@ -21,7 +21,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel·lar</button>
                 <form action="{{Route('category.destroy', $category->id ?? 'Default')}}" method="POST">
                     @csrf
-                    @method('DELETE')
+                    @method('delete')
                     <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
                 </form>
                </div>
