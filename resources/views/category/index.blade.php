@@ -43,7 +43,7 @@
             @foreach($categories as $category)
                 @can('view-any', $category)
                     <tr>
-                        <td>{{$category->id}}</td>
+                        <td>{{$category->id}} </td>
                         <td>{{$category->category_name}}</td>
                         <td>{{$category->description}}</td>
                         <td>

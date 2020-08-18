@@ -47,7 +47,7 @@ Route::get('/activity/{activity}/download', 'ActivityController@download')->name
 
 // Category routes
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
-Route::get('/categories', 'CategoryController@index')->name('category.index')->middleware('auth');
+Route::get('/areas', 'CategoryController@index')->name('category.index')->middleware('auth');
 Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX

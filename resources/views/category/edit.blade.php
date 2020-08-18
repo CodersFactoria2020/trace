@@ -22,11 +22,7 @@
                         </div>
                         <div class="form-group">
                             <label>Color de fons:</label>
-                            <select name="category_color" class="form-control">
-                                <optgroup label="Selecciona un color">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category['id'] }}">{{ $category['category_color'] }}</option>
-                                @endforeach
+                                <input type="color" id="category_color"  name="category_color" value="{{ $category->category_color }}" class="form-control">
                             </select>
                         </div>
 

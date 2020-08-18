@@ -21,12 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>Color de fons:</label>
-                            <select name="category_color" class="form-control">
-                                <optgroup label="Selecciona un color">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_color'] }}</option>
-                                @endforeach
-                            </select>
+                            <input type="color" id="category_color"  name="category_color" value="#ff0000" class="form-control"><br><br>
                         </div>
 
                         <div class="text-right">
