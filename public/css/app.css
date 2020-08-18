@@ -11031,7 +11031,7 @@ header {
   position: fixed;
   display: none;
   right: 15px;
-  bottom: 15px;
+  bottom: 45px;
   z-index: 99999;
 }
 
@@ -12521,9 +12521,9 @@ section a {
 }
 
 #footer .copyright {
-  background-color: #2e7749;
+  background: #006d4b;
   text-align: center;
-  padding: 10px 0;
+  padding: 10px 20px;
 }
 
 #footer .copyright p {

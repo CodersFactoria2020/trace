@@ -66,9 +66,9 @@
         p {
             font-size: 14px;
         }
-        background-color: #2e7749;
+        background: darken($primary, 5);
         text-align: center;
-        padding: 10px 0;
+        padding: 10px 20px;
     }
 
     .credits {
