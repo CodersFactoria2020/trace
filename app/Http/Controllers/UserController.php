@@ -26,7 +26,7 @@ class UserController extends Controller
         // $users = User::paginate($this->users_per_page);
         $users = new User;
         $roles = Role::all();
-        if (auth()->user()->role_id === 1) {
+        if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
         if (request()->has('role_id')) {
@@ -53,7 +53,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $user = User::create($request->all());
-        return redirect(route('user.index'));
+        return redirect('/user')->with('status_success',"S'ha creat l'usuari correctament");
     }
 
     public function show(User $user)
@@ -73,7 +73,7 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $user->update($request->all());
-        return redirect(route('user.index'));
+        return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");;
     }
 
     public function destroy(User $user)
@@ -81,7 +81,7 @@ class UserController extends Controller
         if ((auth()->user()->can('destroy', $user)) & (auth()->user()->id != $user->id)) {
             $user->delete();
         }
-        return redirect(route('user.index'));
+        return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
     }
         
     public function dashboard()

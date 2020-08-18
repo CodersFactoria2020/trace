@@ -35,7 +35,7 @@
   </style>
 
 @section('content')
-
+  @include('custom.message')
     <div class="card col-12">
       <div class="card-header">
           <div class="float-left"><h2>Gestió d'usuaris </h2></div>
