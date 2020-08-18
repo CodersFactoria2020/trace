@@ -12449,9 +12449,17 @@ section a {
   }
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
+.collaborators img {
+  width: auto;
+  height: 120px;
+  padding: 10px 0;
+}
+
+.collaborators h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #545454;
+}
 
 #footer {
   background: #00865d;
