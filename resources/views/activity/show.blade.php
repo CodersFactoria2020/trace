@@ -31,6 +31,11 @@
                         <div style="padding:5px;">
                             <h5>Document adjunt:</h5><p> {{$activity->file}}</p>
                         </div>
+                        <a href="{{Route('download-document', $activity->id)}}">
+                            <button type="button" class="btn btn-primary text-right">
+                                Descarregar
+                            </button>
+                        </a>
 
                         <div class="text-right">
                             <div class="text-right">

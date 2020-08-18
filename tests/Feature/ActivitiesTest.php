@@ -66,7 +66,7 @@ class ActivitiesTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
     }
-    
+
 
 
 

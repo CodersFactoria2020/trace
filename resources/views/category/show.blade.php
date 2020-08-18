@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="text-right">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Tancar</button>
                         </div>
                     </div>
                 </form>
