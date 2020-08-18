@@ -18,6 +18,10 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
-$factory->state(User::class, 'Admin', [
-    'role_id' => 3,
+// $factory->state(User::class, 'Admin', [
+//     'role_id' => 3,
+// ]);
+
+$factory->state(User::class, 'Soci', [
+    'role_id' => 1,
 ]);
