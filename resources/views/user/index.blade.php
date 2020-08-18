@@ -41,9 +41,9 @@
           <div class="float-left"><h2>Gestió d'usuaris </h2></div>
           <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
           <div class="float-left" class="sr-only" style="padding: 0 2rem;"> {{ $users->links() }}</div>
-          {{-- @can('create') --}}
+          @if (auth()->user()->role_id === "Admin")
           <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
-          {{-- @endcan --}}
+          @endif
         </div>
     <!-- Contenido que se desee -->
     <table class="table table-striped">

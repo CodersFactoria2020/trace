@@ -25,23 +25,15 @@
                             <input type="text" name="professional1" class="form-control" value="{{$activity->professional1}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Professional de support</label>
+                            <label>Professional de suport</label>
                             <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Data i hora de inici</label>
-                            <input type="text" name="start" class="form-control" value="{{$activity->start}}"/>
-                        </div>
-                        <div class="form-group">
-                            <label>Data i hora de finalització</label>
-                            <input type="text" name="end" class="form-control" value="{{$activity->end}}"/>
                         </div>
                         <div class="form-group">
                             <label>Àrea:</label>
                             <select name="category_id" class="form-control">
                                 <optgroup label="Selecciona una àrea">
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_name'] }}</option>
+                                    <option value="{{ $activity->category_id}}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_name'] }}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -31,6 +31,7 @@
   </style>
 
 @section('content')
+<<<<<<< HEAD
 
     <div class="container">
         <div class="row justify-content-center">
@@ -80,13 +81,20 @@
             </div>
 
 
+=======
+    @include('custom.message')
+>>>>>>> develop
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'activitats</h2></div>
+
             {{-- @can('create') --}}
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
             {{-- @endcan --}}
+<<<<<<< HEAD
 
+=======
+>>>>>>> develop
         </div>
     <!-- Contenido que se desee -->
     <table class="table table-striped">
@@ -110,7 +118,7 @@
           <td>{{$activity->professional1}}</td>
           <td>
               @can('update', $activity)
-              <a style="color:white" data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Editar</a>
+              <a style="color:#ffffff" data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Editar</a>
               @include('activity.edit')
               @endcan
           </td>

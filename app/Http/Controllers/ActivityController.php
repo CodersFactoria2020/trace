@@ -7,11 +7,7 @@ use App\Category;
 use App\User;
 use App\Role;
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Storage;
-
-
-use Illuminate\Support\Facades\Auth;
 
 
 class ActivityController extends Controller
@@ -54,27 +50,24 @@ class ActivityController extends Controller
         ]);
 
         $activity = Activity::create([
-            'name' => $request->name,
+            'title' => $request->title,
             'description' => $request->description,
-            'professional' => $request->professional,
+            'professional1' => $request->professional1,
             'file' => $request->file,
             'date'=> $request->date,
             'time'=> $request->time,
-            'activity_id' => $request->activity_id,
         ]);
 
         if($activity['file']) {
             $upload = $request->file('file');
             $document = $upload->storeAs('/activities/', $activity->id. '.pdf', ['disk'=>'public']);
         }
-        return redirect('/activity');
+        return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha creat correctament ');
     }
+
     public function download(Request $request, Activity $activity)
     {
-
-        return Storage::download('/activities/'.$activity->id.'.pdf', $activity->name.'.pdf');
-
-
+        return Storage::download('/activities/'.$activity->id.'.pdf', $activity->title.'.pdf');
     }
 
     public function show(Activity $activity)
@@ -97,7 +90,7 @@ class ActivityController extends Controller
     public function update(Request $request, Activity $activity)
     {
         $activity->update($request->all());
-        return redirect('/activity');
+        return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha actualitzat correctament ');
     }
 
     public function destroy(Activity $activity)
@@ -105,6 +98,6 @@ class ActivityController extends Controller
         if (auth()->user()->can('destroy', $activity)) {
             $activity->delete();
         }
-        return redirect('/activity');
+        return redirect('/activity')->with('status_succes','L\'activitat s\'ha esborrat correctament');
     }
 }

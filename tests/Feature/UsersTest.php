@@ -13,17 +13,18 @@ class UsersTest extends TestCase
     {
         $user = factory(User::class)->make();
         $response = $this->actingAs($user)->get('/usuaris');
-        
+
         //$response->assertStatus(200);
         $response->assertSeeText('USUARIS REGISTRATS');
     }
-    
+
     public function test_genuine_dashboard_page_displayed_to_authorized_associated()
     {
         $user = factory(User::class)->make();
         $response = $this->actingAs($user)->role_id['Soci']->get('/dashboard');
-        
+
         //$response->assertStatus(200);
         $response->assertSeeText('El meu pla de treball');
     }
+
 }

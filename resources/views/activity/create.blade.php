@@ -28,14 +28,6 @@
                             <input type="text" name="professional2" class="form-control"/>
                         </div>
                         <div class="form-group">
-                            <label>Data i hora de inici</label>
-                            <textarea type="text" name="start" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Data i hora de finalització</label>
-                            <textarea type="text" name="end" class="form-control"></textarea>
-                        </div>
-                        <div class="form-group">
                             <label>Àrea:</label>
                             <select name="category_id" class="form-control">
                                 <optgroup label="Selecciona una àrea">

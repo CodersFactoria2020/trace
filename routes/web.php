@@ -22,6 +22,7 @@ Route::get('/transparencia', 'HomeController@transparencia')->name('transparenci
 Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
+Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
@@ -40,9 +41,11 @@ Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
+
 Route::get('/activity/{activity}/download', 'ActivityController@download')->name('download-document');
 Route::get('/activitats', 'ActivityController@index')->name('activity.index')->middleware('auth');
 Route::get('activity/{id}/edit/','ActivityController@edit')->middleware('auth');
+Route::get('/activity/{activity}/download', 'ActivityController@download')->name('download-document');
 
 // Category routes
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
@@ -51,4 +54,3 @@ Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX
 Route::resource('/events', 'EventController')->middleware('auth');
-
