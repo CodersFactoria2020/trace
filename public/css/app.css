@@ -12457,6 +12457,8 @@ section a {
   background: #00865d;
   color: #fff;
   font-size: 14px;
+  bottom: 0;
+  width: 100%;
 }
 
 #footer a {
@@ -12528,13 +12530,6 @@ section a {
 
 #footer .copyright p {
   font-size: 14px;
-}
-
-#footer .credits {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 13px;
-  color: #fff;
 }
 
 .slide-hero-1 {
