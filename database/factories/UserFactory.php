@@ -17,3 +17,7 @@ $factory->define(User::class, function (Faker $faker) {
         'role_id'=> $faker->numberBetween($min = 1, $max = 2),
     ];
 });
+
+$factory->state(User::class, 'Admin', [
+    'role_id' => 3,
+]);

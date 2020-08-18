@@ -26,7 +26,7 @@ class UserController extends Controller
         // $users = User::paginate($this->users_per_page);
         $users = new User;
         $roles = Role::all();
-        if (auth()->user()->role_id === "Soci") {
+        if (auth()->user()->role_id === 1) {
             return view('user.notauthorized');
         }
         if (request()->has('role_id')) {
