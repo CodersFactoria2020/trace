@@ -72,7 +72,7 @@
 
 <body>
     <div id="topbar" class="d-none d-lg-block">
-        <div class="container d-flex align-items-center justify-content-between">
+        <div class="flex-container d-flex align-items-center justify-content-between">
 
           <div class="contact-info">
               <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
@@ -97,7 +97,7 @@
 
       <header id="header" >
 
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="flex-container d-flex justify-content-between align-items-center">
 
           <div class="mr auto">
             <a href="{{url('/home')}}">
