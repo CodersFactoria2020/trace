@@ -15,7 +15,6 @@ class Team extends Model
     {
         $name_photo = $this->id . '.jpg';
         $photo->storeAs('team/', $name_photo, ['disk'=>'public']);
-
     }
     public function get_photo_url()
     {
