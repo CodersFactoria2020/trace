@@ -10,6 +10,10 @@ class Role extends Model
 {
     protected $fillable = ['role_name']; 
 
+    static $admin_id = 3;
+    static $professional_id = 2;
+    static $soci_id = 1;
+
     public function users()
     {
         return $this->hasMany(User::class);
