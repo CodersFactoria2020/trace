@@ -23,24 +23,25 @@ class UsersTest extends TestCase
         $this->assertEquals($userRole, $expectedReturn);
     }
 
-    // public function test_genuine_dashboard_page_displayed_to_Admin_user()
-    // {
-    //     $role = factory(Role::class)->create();
-    //     $user = factory(User::class)->states('Admin')->create();
-    //     $response = $this->actingAs($user)->get('/dashboard');
+    public function test_genuine_dashboard_page_displayed_to_Admin_user()
+    {
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
+        $response = $this->actingAs($user)->get('/dashboard');
         
-    //     $response->assertStatus(200);
-    //     $response->assertSee('Selecciona en el panell');
-    // }
+        $response->assertStatus(200);
+        $response->assertSee('Selecciona en el panell');
+    }
 
     // public function test_Admin_can_add_a_new_user()
     // {
-    //     $role = factory(Role::class)->create();
+    //     $role = factory(Role::class)->states('Admin')->create();
     //     $user = factory(User::class)->states('Admin')->create();
     //     $response = $this->actingAs($user)->post('/user', [
     //         'first_name'=>'Pep',
     //         'last_name'=>'Vilanova',
     //         'email' =>'pep.vilanova@example.com',
+    //         'password' =>'password',
     //         'phone' =>'555666777',
     //         'dni'=>'45632178Q',
     //         'tutor' =>'Selma',
