@@ -13,63 +13,36 @@ class TeamPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id !== "Admin") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
     }
 
-    public function view(User $user, Activity $activity)
+    public function view(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
-            return false;
-        }
-        return true;return true;
+        return true;
     }
-        
-    public function edit(User $user, Activity $activity)
+
+    public function create(User $user)
     {
-        if (Auth::user()->role_id !== "Admin") {
+        if ($user->role_id != "Admin") {
             return false;
         }
         return true;
     }
 
-    public function create(User $user, Activity $activity)
+    public function update(User $user)
     {
-        if (Auth::user()->role_id !== "Admin") {
+        if ($user->role_id != "Admin") {
             return false;
         }
         return true;
     }
 
-    public function update(User $user, Activity $activity)
+    public function destroy(User $user)
     {
-        if (Auth::user()->role_id !== "Admin") {
-            return false;
-        }
-        return true;
-    }
-
-    public function destroy(User $user, Activity $activity)
-    {
-        if (Auth::user()->role_id !== "Admin") {
-            return false;
-        }
-        return true;
-    }
-
-    public function restore(User $user, Activity $activity)
-    {
-        if (Auth::user()->role_id !== "Admin") {
-            return false;
-        }
-        return true;
-    }
-
-    public function forceDelete(User $user, Activity $activity)
-    {
-        if (Auth::user()->role_id !== "Admin") {
+        if ($user->role_id != "Admin") {
             return false;
         }
         return true;

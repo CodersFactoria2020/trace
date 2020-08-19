@@ -14,27 +14,22 @@ class TeamController extends Controller
 
     public function index()
     {
-        $users = User::all();
-        $roles = Role::all();
+        $this->authorize('view-any', Team::class);
         $teams = Team::all();
-        if (auth()->user()->role_id != "Admin") {
-            return view('user.notauthorized');
-        }
         return view('team.index', compact('teams'));
     }
 
     public function create(Request $request)
     {
+        $this->authorize('create', Team::class);
         $teams = Team::all();
-        if (auth()->user()->role_id !== "Admin") {
-            return view('user.notauthorized');
-        }
         return view('team.create', compact('teams'));
 
     }
 
     public function store(Request $request, Team $team)
     {
+        $this->authorize('create', Team::class);
         $data = $request->all();
         $team = Team::create($data);
 
@@ -47,22 +42,19 @@ class TeamController extends Controller
 
     public function show(Team $team)
     {
-        if (auth()->user()->role_id !== "Admin") {
-            return view('user.notauthorized');
-        }
+        $this->authorize('view', Team::class);
         return view('team.show',compact('team'));
     }
 
     public function edit(Team $team)
     {
-        if (auth()->user()->role_id !== "Admin") {
-            return view('user.notauthorized');
-        }
+        $this->authorize('update', Team::class);
         return view('team.edit',compact('team'));
     }
 
     public function update(Request $request, Team $team)
     {
+        $this->authorize('update', Team::class);
         $team->update($request->all());
 
         if ($photo = $request->file('photo')) {
@@ -74,9 +66,7 @@ class TeamController extends Controller
 
     public function destroy(Team $team)
     {
-        if (auth()->user()->role_id !== "Admin") {
-            return view('user.notauthorized');
-        }
+        $this->authorize('destroy', Team::class);
         $team->delete();
         Storage::delete('images');
         return redirect()->route('team.index');
