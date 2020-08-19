@@ -10974,6 +10974,7 @@ header {
 }
 
 .cta {
+  border: none !important;
   background: #00865d;
   display: inline-block;
   padding: 8px 30px;
@@ -11099,6 +11100,22 @@ header {
 .quote-author {
   font-weight: bold;
   margin-left: 20px;
+}
+
+.bg-color {
+  background-color: rgba(236, 236, 236, 0.5);
+  width: 100%;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.full-vertical-align {
+  height: 100vh;
+  /* IMPORTANTE */
+  display: flex;
+  align-items: center;
+  display: fixed;
 }
 
 /*--------------------------------------------------------------
@@ -11663,7 +11680,7 @@ section a {
 }
 
 .section-bg {
-  background-color: #7cffd7;
+  background-color: white;
 }
 
 .section-title {
@@ -12218,6 +12235,33 @@ section a {
   padding-right: 10px;
 }
 
+.login h2 {
+  text-align: center;
+  color: #00865d;
+  margin-top: 100px;
+  padding-bottom: 30px;
+  font-weight: 600;
+}
+
+.login .box {
+  display: flex;
+  flex-direction: column;
+}
+
+.login button {
+  margin: 20px 0;
+}
+
+.login .card {
+  border: none !important;
+  box-shadow: 0 rgba(0, 0, 0, 0.3) !important;
+  transition: 0.3s !important;
+}
+
+.login label {
+  font-size: 18px;
+}
+
 #footer {
   background: #00865d;
   color: #fff;
@@ -12299,5 +12343,31 @@ section a {
 
 .slide-hero-1 {
   background-image: url("https://images.unsplash.com/photo-1533766569461-3823e8a83622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
+}
+
+#sidebarMenu li,
+#sidebarMenu a {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#sidebarMenu i {
+  padding-right: 5px;
+}
+
+#sidebarMenu .logo {
+  width: 90px;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+#sidebarMenu .logoutbtn {
+  margin-bottom: 30px;
+  margin-left: 20px;
+}
+
+#sidebarMenu .logoutbtn a {
+  color: #dc3545 !important;
 }
 

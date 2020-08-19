@@ -1,0 +1,23 @@
+#sidebarMenu {
+    li,
+    a {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    i {
+        padding-right: 5px;
+    }
+    .logo {
+        width: 90px;
+        height: auto;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    .logoutbtn {
+        margin-bottom: 30px;
+        margin-left: 20px;
+        a {
+            color: $red !important;
+        }
+    }
+}

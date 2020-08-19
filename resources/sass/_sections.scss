@@ -9,7 +9,7 @@ section {
 }
 
 .section-bg {
-    background-color: lighten($primary, 48);
+    background-color: lighten($gray, 70);
 }
 
 .section-title {
@@ -544,5 +544,34 @@ section {
     }
     i {
         padding-right: 10px;
+    }
+}
+
+.login {
+    h2 {
+        text-align: center;
+        color: $primary;
+        margin-top: 100px;
+        padding-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin: 20px 0;
+    }
+
+    .card {
+        border: none !important;
+        box-shadow: 0 rgba(0, 0, 0, 0.3) !important;
+        transition: 0.3s !important;
+    }
+
+    label {
+        font-size: 18px;
     }
 }

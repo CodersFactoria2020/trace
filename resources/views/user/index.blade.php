@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
