@@ -74,14 +74,14 @@
     <div id="topbar" class="d-none d-lg-block">
         <div class="flex-container d-flex align-items-center justify-content-between">
 
-          <div class="contact-info d-flex align-items-center justify-content-betwee">
+          <div class="contact-info d-flex align-items-center justify-content-between">
               <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
               <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
               <div class="social-links">
                 <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
                 <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
                 <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
-              </div> 
+              </div>
           </div>
           <a class="social-links" href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
 
