@@ -2,9 +2,9 @@
 
 @section('scripts')
 
-  <meta name="csrf-token" content="{{ csrf_token() }}">  
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -25,12 +25,12 @@
 <script src="{{ asset('fullcalendar/lib/locales-all.js') }}" defer></script>
 
 <script>
-  var url_="{{ url('/events') }}";  
+  var url_="{{ url('/events') }}";
   var url_show="{{ url('events/show') }}";
 </script>
 <script src="{{ asset('js/maincalendar.js') }}" defer></script>
 <script>
-    
+
   </script>
 
 @endsection
@@ -66,7 +66,7 @@
             <div class="col-10"><div id="calendar"></div></div>
             <div class="col"></div>
         </div>
-        
+
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           @csrf
@@ -119,7 +119,7 @@
                       <select name="category_id" class="form-control" id="category_id">
                         <optgroup label="Selecciona una àrea">
                         @foreach ($categories as $category)
-                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_name'] }}</option>
+                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['color'] }}" >{{ $category['name'] }}</option>
                         @endforeach
                       </select>
                     </div>
@@ -128,15 +128,15 @@
                       <select name="color" class="form-control" id="color">
                         <optgroup label="Selecciona un color de fons">
                         @foreach ($categories as $category)
-                            <option value="{{ $category['category_color'] }}" style="background-color:{{ $category['category_color'] }}" >{{ $category['category_name'] }}</option>
+                            <option value="{{ $category['color'] }}" style="background-color:{{ $category['color'] }}" >{{ $category['name'] }}</option>
                         @endforeach
                       </select>
-                    </div>                       
-                      {{--                       
+                    </div>
+                      {{--
                       Professional 2:
                       <input type="text" name="txtTProfessional2" id="txtProfessional2">
                       --}}
-                     
+
                   </div>
                 </div>
                 <div class="modal-footer">

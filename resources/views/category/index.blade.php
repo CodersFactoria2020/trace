@@ -43,22 +43,22 @@
             @foreach($categories as $category)
                 @can('view-any', $category)
                     <tr>
-                        <td>{{$category->id}} </td>
-                        <td>{{$category->category_name}}</td>
-                        <td>{{$category->description}}</td>
+                        <td>{{$category->id ?? 'Default'}} </td>
+                        <td>{{$category->name ?? 'Default'}}</td>
+                        <td>{{$category->description ?? 'Default'}}</td>
                         <td>
                             @can('update', $category)
-                                <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="mybtn btn btn-warning" category="button">Editar</a>
+                                <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-warning" category="button">Editar</a>
                                 @include('category.edit')
                             @endcan
                         </td>
                         <td>
-                            <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id}}" class="mybtn btn btn-info" category="button">Detalls</a>
+                            <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-info" category="button">Detalls</a>
                             @include('category.show')
                         </td>
                         <td>
                             @can('destroy', $category)
-                                <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
+                                <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
                                 @include('category.destroy')
                             @endcan
                         </td>
