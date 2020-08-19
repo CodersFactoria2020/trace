@@ -3,10 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\User;
-use App\Role;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
@@ -18,59 +15,49 @@ class CategoryController extends Controller
 
     public function index()
     {
+        $this->authorize('view-any', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        if (auth()->user()->role_id != "Admin") {
-                return view('user.notauthorized');
-        }
-        return view('category.index', compact('categories'), compact('users'), compact('roles'));
+        return view('category.index', compact('categories'));
     }
 
     public function create()
     {
+        $this->authorize('create', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        if (auth()->user()->role_id != "Admin") {
-                return view('user.notauthorized');
-        }
-        return view('category.create', compact('categories'), compact('users'), compact('roles'));
+        return view('category.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
+        $this->authorize('create', Category::class);
         Category::create($request->all());
         return redirect('/areas')->with('status_success',"S'ha creat la categoria correctament");
     }
 
     public function show(Category $category)
     {
-        $roles = Role::all();
-        return view('category.show', compact('categories'), compact('users'), compact('roles'));
+        $this->authorize('view', Category::class);
+        return view('category.show', compact('categories'));
     }
 
     public function edit(Category $category)
     {
+        $this->authorize('update', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        if (auth()->user()->can('edit', $user)) {
-            return view('category.edit', compact('users'), compact('roles'));
-        }
+        return view('category.edit', compact('categories'));
     }
 
     public function update(Request $request, Category $category)
     {
+        $this->authorize('update', Category::class);
         $category->update($request->all());
         return redirect('/areas')->with('status_success',"S'ha actualitzat la categoria correctament");
     }
 
     public function destroy(Category $category)
     {
-        if (auth()->user()->can('destroy', $category)) {
-            $category->delete();
-        }
+        $this->authorize('destroy', Category::class);
+        $category->delete();
         return redirect('/areas')->with('status_success',"S'ha suprimit la categoria correctament");
     }
 }
