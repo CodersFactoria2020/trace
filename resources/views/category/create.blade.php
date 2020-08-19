@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'àrea</label>
-                            <input type="text" name="category_name" class="form-control" required>
+                            <input type="text" name="name" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>Color de fons:</label>
-                            <input type="color" id="category_color"  name="category_color" value="#ff0000" class="form-control" required><br><br>
+                            <input type="color" id="color"  name="color" value="#ff0000" class="form-control" required><br><br>
                         </div>
 
                         <div class="text-right">

@@ -10,7 +10,7 @@
             <div class="modal-body">
                 <p>Segur que desitja esborrar aquesta àrea?</p>
                 <div style="padding:5px;">
-                    <h5>Nom: {{$category->category_name ?? 'Default'}}</h5>
+                    <h5>Nom: {{$category->name ?? 'Default'}}</h5>
                 </div>
                 <div style="padding:5px;">
                     <h5>descripció: {{$category->description ?? 'Default'}}</h5>

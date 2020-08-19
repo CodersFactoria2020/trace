@@ -7,7 +7,7 @@ use App\Activity;
 
 class Category extends Model
 {
-    protected $fillable = ['category_name', 'description', 'category_color']; 
+    protected $fillable = ['name', 'description', 'color'];
 
     public function activities()
     {
