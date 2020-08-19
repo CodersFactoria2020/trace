@@ -5,7 +5,6 @@ namespace App\Policies;
 use App\Activity;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
 class ActivityPolicy
 {
@@ -13,7 +12,7 @@ class ActivityPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
@@ -23,8 +22,8 @@ class ActivityPolicy
     {
         return true;
     }
-        
-    public function edit(User $user, Activity $activity)
+
+    public function edit(User $user)
     {
         if (auth()->user()->role_id === "Soci") {
             return false;
@@ -32,41 +31,25 @@ class ActivityPolicy
         return true;
     }
 
-    public function create(User $user, Activity $activity)
+    public function create(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
     }
 
-    public function update(User $user, Activity $activity)
+    public function update(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
     }
 
-    public function destroy(User $user, Activity $activity)
+    public function destroy(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
-            return false;
-        }
-        return true;
-    }
-
-    public function restore(User $user, Activity $activity)
-    {
-        if (Auth::user()->role_id === "Soci") {
-            return false;
-        }
-        return true;
-    }
-
-    public function forceDelete(User $user, Activity $activity)
-    {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
