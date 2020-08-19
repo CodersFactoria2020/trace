@@ -12,31 +12,27 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-
-    // public $users_per_page;    ¿SE PODRÍA DEJAR AQUÍ EL nº DE PAGINACIÓN DESEADO?
     
     public function __construct()
     {
         $this->middleware('auth');
-        // this->users_per_page = $users_per_page;
     }
 
     public function index()
     {
-        // $users = User::paginate($this->users_per_page);
+        
+        $user = Auth::user();
+        $this->authorize('view-any', $user);
         $users = new User;
         $roles = Role::all();
-        // if (!$this->authorize('view-any', $user)) {   // A través UserPolicy - NO FUNCIONA
-        if (auth()->user()->role_id === "Soci") {
-            return view('user.notauthorized');
-        }
+        $users_per_page = 8;
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
         if (request()->has('sort')) {
             $users = $users->orderBy('last_name', request('sort'));
         }
-        $users = $users->paginate(8)->appends([
+        $users = $users->paginate($users_per_page)->appends([
             'role_id' => request('role_id'),
             'sort' => request('sort'),
         ]);
@@ -45,44 +41,45 @@ class UserController extends Controller
 
     public function create()
     {
+        $this->authorize('create', $user);
         $roles = Role::all();
-        if (auth()->user()->can('create', $user)) {
-            return view('user.create', compact('roles'));
-        }
+        return view('user.create', compact('roles'));
     }
 
     public function store(Request $request)
     {
+        $user = Auth::user();
+        $this->authorize('create', $user);
         $user = User::create($request->all());
         return redirect('/user')->with('status_success',"S'ha creat l'usuari correctament");
     }
 
     public function show(User $user)
     {
+        $this->authorize('view', $user);
         $roles = Role::all();
         return view('user.show', ['user' => $user], compact('roles'));
     }
 
     public function edit(User $user)
     {
+        $this->authorize('update', $user);
         $roles = Role::all();
-        if (auth()->user()->can('edit', $user)) {
-            return view('user.edit', ['user' => $user], compact('roles'));
-        }
+        return view('user.edit', ['user' => $user], compact('roles'));
     }
 
     public function update(Request $request, User $user)
     {
+        $this->authorize('update', $user);
         $user->update($request->all());
         return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");
     }
 
     public function destroy(User $user)
     {
-        if ((auth()->user()->can('destroy', $user)) & (auth()->user()->id != $user->id)) {
-            return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
-        }
-        return redirect('/user')->with('status_error',"No es possible esborrar l'usuari");
+        $this->authorize('destroy', $user);
+        $user->delete();
+        return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
     }
         
     public function dashboard()
