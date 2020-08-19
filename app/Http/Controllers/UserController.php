@@ -80,9 +80,9 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         if ((auth()->user()->can('destroy', $user)) & (auth()->user()->id != $user->id)) {
-            $user->delete();
+            return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
         }
-        return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
+        return redirect('/user')->with('status_error',"No es possible esborrar l'usuari");
     }
         
     public function dashboard()
