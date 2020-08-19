@@ -25,9 +25,9 @@
     <div class="card col-12">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'àreas</h2></div>
-            {{-- @can('create') --}}
+            @if (auth()->user()->role_id === "Admin")
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
-            {{-- @endcan --}}
+            @endif
         </div>
 
         <table class="table table-striped">
