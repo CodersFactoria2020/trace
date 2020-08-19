@@ -41,7 +41,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         Category::create($request->all());
-        return redirect('/category')->with('status_success',"S'ha creat la categoria correctament");
+        return redirect('/areas')->with('status_success',"S'ha creat la categoria correctament");
     }
 
     public function show(Category $category)
@@ -63,7 +63,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
-        return redirect('/category')->with('status_success',"S'ha actualitzat la categoria correctament");
+        return redirect('/areas')->with('status_success',"S'ha actualitzat la categoria correctament");
     }
 
     public function destroy(Category $category)
@@ -71,7 +71,7 @@ class CategoryController extends Controller
         if (auth()->user()->can('destroy', $category)) {
             $category->delete();
         }
-        return redirect('/category')->with('status_success',"S'ha suprimit la categoria correctament");
+        return redirect('/areas')->with('status_success',"S'ha suprimit la categoria correctament");
     }
 }
 
