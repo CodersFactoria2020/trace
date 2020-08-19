@@ -330,6 +330,13 @@ section {
             color: $secondary !important;
             padding-bottom: 20px !important;
         }
+
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
     }
 
     .flex-container {
@@ -544,5 +551,52 @@ section {
     }
     i {
         padding-right: 10px;
+    }
+}
+
+.philosophy {
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .box-cta {
+        padding-top: 10px;
+    }
+
+    .quote {
+        font-size: 24px;
+        font-weight: lighter;
+        font-style: italic;
+        margin-left: 20px;
+    }
+
+    .quote-author {
+        font-weight: bold;
+        margin-left: 20px;
+    }
+}
+
+.transparency {
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 18px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
     }
 }
