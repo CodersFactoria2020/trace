@@ -12029,6 +12029,26 @@ section a {
 # Contact
 --------------------------------------------------------------*/
 
+.contact h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #545454;
+  padding-bottom: 20px;
+}
+
+.contact ul {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.contact a {
+  padding: 10px 0;
+}
+
+.contact i {
+  padding-right: 10px;
+}
+
 .contact .info-box {
   color: #444444;
   text-align: center;
@@ -12187,6 +12207,7 @@ section a {
 
 .resources ul {
   padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .resources a {
