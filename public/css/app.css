@@ -12384,6 +12384,7 @@ section a {
 #sidebarMenu .logoutbtn {
   position: fixed;
   bottom: 30px;
+  width: 226px;
 }
 
 #sidebarMenu .logoutbtn a {

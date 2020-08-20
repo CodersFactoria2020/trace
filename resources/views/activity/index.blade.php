@@ -25,16 +25,17 @@
 @include('custom.message')
 <div class="col">
     <div class="dashboard-right-side">
-        <div class="float-left"><h2>Activitats</h2></div>
+        <div class="float-left">
+            <h2>Activitats</h2>
+        </div>
 
         {{-- @can('create') --}}
         <button type="button" class="cta" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
         {{-- @endcan --}}
     </div>
-    <!-- Contenido que se desee -->
     <div class="dashboard-right-side">
         <table class="table table-striped table-borderless">
-        <thead class="thead text-uppercase">
+            <thead class="thead text-uppercase">
                 <tr>
                     <td><small><b>Nº</b></small></td>
                     <td><small><b>Títol</b></small></td>
