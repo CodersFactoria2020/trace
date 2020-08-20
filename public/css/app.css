@@ -12461,11 +12461,11 @@ section a {
   color: #00865d !important;
 }
 
-.primary {
+.primary-green {
   color: #00865d !important;
 }
 
-.primary a:hover {
+.primary-green a:hover {
   color: #343a40 !important;
   text-decoration: none;
 }
@@ -12491,6 +12491,7 @@ section a {
 .icon-text a {
   font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .actions i {
