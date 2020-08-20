@@ -9,19 +9,19 @@
     <div class="full-vertical-align">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link primary active" data-toggle="pill" href="/dashboard">
+          <a class="nav-link primary active" href="/dashboard">
             <span><i class="icofont-home"></i></span>
             Inici <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link primary" data-toggle="pill" href="/user">
+          <a class="nav-link primary" href="/user">
             <span><i class="icofont-users-alt-3"></i></span>
             Usuaris
           </a>
         </li>
         <li class="nav-item ">
-          <a class="nav-link primary" data-toggle="pill" href="/activity">
+          <a class="nav-link primary" href="/activity">
             <span><i class="icofont-attachment"></i></span>
             Activitats
           </a>
@@ -35,7 +35,7 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link primary" data-toggle="pill" href="/workplans">
+          <a class="nav-link primary" href="/workplans">
             <span><i class="icofont-calendar"></i></span>
             Plans de treball
           </a>
