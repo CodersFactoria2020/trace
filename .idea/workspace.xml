@@ -20,6 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+=======
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/trace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trace.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -28,6 +32,7 @@
       <change beforePath="$PROJECT_DIR$/resources/views/activity/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/activity/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/custom/message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/custom/message.blade.php" afterDir="false" />
+>>>>>>> develop
       <change beforePath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -207,15 +212,40 @@
           <option name="interpreterName" value="PHP 7.3" />
         </PhpTestInterpreterSettings>
       </CommandLine>
+<<<<<<< HEAD
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_activity_is_updated" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_success_response_to_user_authorized" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
       <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_success_response_to_user_authorized" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+=======
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_success_response_to_user_authorized" scope="Method" />
+>>>>>>> develop
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+<<<<<<< HEAD
+        <item itemvalue="PHPUnit.ActivitiesTest" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_success_response_to_user_authorized" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_created" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_deleted" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_updated" />
+=======
         <item itemvalue="PHPUnit.ActivitiesTest.test_activity_is_created" />
         <item itemvalue="PHPUnit.ActivitiesTest.test_redirect_user_not_authorized" />
         <item itemvalue="PHPUnit.ActivitiesTest.test_success_response_to_user_authorized" />
         <item itemvalue="PHPUnit.ActivitiesTest" />
+>>>>>>> develop
       </list>
     </recent_temporary>
   </component>
@@ -235,10 +265,16 @@
       <workItem from="1595949798153" duration="572000" />
       <workItem from="1596003471939" duration="3430000" />
       <workItem from="1596035594493" duration="2662000" />
+<<<<<<< HEAD
+      <workItem from="1596096016104" duration="14192000" />
+      <workItem from="1596178104565" duration="3150000" />
+      <workItem from="1597644782655" duration="741000" />
+=======
       <workItem from="1596096016104" duration="10512000" />
       <workItem from="1597731215558" duration="155000" />
       <workItem from="1597731413945" duration="21000" />
       <workItem from="1597731868050" duration="2818000" />
+>>>>>>> develop
     </task>
     <servers />
   </component>
@@ -296,6 +332,13 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="371" y="50" key="#ActivitiesTest.test_info_to_user_not_authorized/0.0.1440.900@0.0.1440.900" timestamp="1595871683258" />
+<<<<<<< HEAD
+    <state x="371" y="50" key="#ActivitiesTest.test_success_response_to_user_authorized" timestamp="1596116758301">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="371" y="50" key="#ActivitiesTest.test_success_response_to_user_authorized/0.0.1440.900@0.0.1440.900" timestamp="1596116758301" />
+    <state x="371" y="66" key="#ActivitiesTest/0.0.1440.900@0.0.1440.900" timestamp="1595852916073" />
+=======
     <state x="371" y="50" key="#ActivitiesTest.test_redirect_user_not_authorized" timestamp="1597670315839">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -305,6 +348,7 @@
     </state>
     <state x="371" y="50" key="#ActivitiesTest.test_success_response_to_user_authorized/0.0.1440.900@0.0.1440.900" timestamp="1597670281868" />
     <state x="371" y="66" key="#ActivitiesTest/0.0.1440.900@0.0.1440.900" timestamp="1597669734764" />
+>>>>>>> develop
     <state x="371" y="40" key="#ExampleTest" timestamp="1595839943398">
       <screen x="0" y="23" width="1440" height="801" />
     </state>
@@ -321,6 +365,37 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="523" y="139" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1596097736961" />
+<<<<<<< HEAD
+    <state width="1398" height="349" key="GridCell.Tab.0.bottom" timestamp="1596117619762">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state width="1398" height="349" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1596116762552" />
+    <state width="1398" height="349" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1596117619762" />
+    <state width="1398" height="453" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1596030456820" />
+    <state width="1398" height="442" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1595927314386" />
+    <state width="1398" height="309" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1595843027749" />
+    <state width="1398" height="349" key="GridCell.Tab.0.center" timestamp="1596117619761">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state width="1398" height="349" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1596116762551" />
+    <state width="1398" height="349" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1596117619761" />
+    <state width="1398" height="453" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1596030456818" />
+    <state width="1398" height="442" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1595927314385" />
+    <state width="1398" height="309" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1595843027748" />
+    <state width="1398" height="349" key="GridCell.Tab.0.left" timestamp="1596117619760">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state width="1398" height="349" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1596116762550" />
+    <state width="1398" height="349" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1596117619760" />
+    <state width="1398" height="453" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1596030456818" />
+    <state width="1398" height="442" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1595927314384" />
+    <state width="1398" height="309" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1595843027747" />
+    <state width="1398" height="349" key="GridCell.Tab.0.right" timestamp="1596117619761">
+      <screen x="0" y="23" width="1440" height="793" />
+    </state>
+    <state width="1398" height="349" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1596116762551" />
+    <state width="1398" height="349" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1596117619761" />
+=======
     <state x="458" y="204" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1597750083899">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -350,6 +425,7 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state width="1398" height="598" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1597671146775" />
+>>>>>>> develop
     <state width="1398" height="453" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1596030456819" />
     <state width="1398" height="442" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1595927314386" />
     <state width="1398" height="119" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1597671420450" />

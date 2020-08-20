@@ -28,14 +28,17 @@
                         <div style="padding:5px;">
                             <h5>Àrea:</h5><p> {{$activity->category_id}}</p>
                         </div>
+                        @if($activity->has_file())
                         <div style="padding:5px;">
-                            <h5>Document adjunt:</h5><p> {{$activity->file}}</p>
+                            <h5>Document adjunt:</h5><p> {{$activity->get_downloaded_file_name()}}</p>
                         </div>
                         <a href="{{Route('download-document', $activity->id)}}">
                             <button type="button" class="btn btn-primary text-right">
                                 Descarregar
                             </button>
                         </a>
+                        @endif
+
 
                         <div class="text-right">
                             <div class="text-right">
