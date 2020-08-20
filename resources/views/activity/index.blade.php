@@ -26,9 +26,9 @@
         <div class="dashboard-right-side">
             <div class="float-left"><h2>Activitats</h2></div>
 
-            {{-- @can('create') --}}
+
             <button type="button" class="cta" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
-            {{-- @endcan --}}
+            @include('activity.create')
         </div>
         <!-- Contenido que se desee -->
         <table class="table table-striped">

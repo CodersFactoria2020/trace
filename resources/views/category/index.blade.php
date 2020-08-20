@@ -27,6 +27,7 @@
             <div class="float-left"><h2>Gestió d'àreas</h2></div>
             @if (auth()->user()->role_id === "Admin")
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
+            @include('category.create')
             @endif
         </div>
 
