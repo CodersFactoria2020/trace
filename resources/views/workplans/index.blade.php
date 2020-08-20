@@ -144,7 +144,7 @@
 
 @section('content')
 
-    <div class="card mycard col-12">
+    <div class="card col">
         <div class="card-header">
             <div class="float-left"><h1>Plans de treball </h1></div>
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>

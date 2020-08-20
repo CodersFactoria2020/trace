@@ -20,23 +20,10 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .mybtn {
-        height: 2.4rem !important;
-        width: auto !important;
-        font-size: 1.4rem !important;
-    }
-  </style>
 
 @section('content')
 
-    <div class="card col-12">
+    <div class="col">
       <div class="card-header">
           <div class="float-left"><h2>Gestió d'usuaris </h2></div>
           <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>

@@ -1,15 +1,15 @@
 
-<nav id="sidebarMenu" class="col-md-3 col-lg-3 d-md-block bg-light sidebar collapse">
-  <div class="sidebar-sticky flex-column pt-3">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bg-color">
+  <div class="sidebar-sticky flex-column pt-2">
 
-    <div class="nav-item fixed-top logo"{{ request()->is('home') ? 'active' : ''}}"">
+    <div class="nav-item fixed-top logo">
         <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
     </div>
 
     <div class="full-vertical-align">
       <ul class="nav flex-column">
         <li>
-          <a class="nav-link active" href="/dashboard">
+          <a class="nav-link {{ request()->is('dashboard') ? 'active' : ''}}" href="/dashboard">
             <span><i class="icofont-home"></i></span>
             Inici <span class="sr-only">(current)</span>
           </a>

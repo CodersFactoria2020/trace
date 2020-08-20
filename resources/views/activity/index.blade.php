@@ -20,19 +20,10 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
 
 @section('content')
     @include('custom.message')
-    <div class="card col-12">
+    <div class="col">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'activitats</h2></div>
 

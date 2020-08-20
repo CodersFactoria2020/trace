@@ -32,7 +32,7 @@
 
 @section('content')
 
-    <div class="card col-12">
+    <div class="card col">
         <div class="card-header">
             <div class="float-left"><h2>Equip de gestió de l'associació</h2></div>
             <!-- Cambiar el data-target de la modal -->

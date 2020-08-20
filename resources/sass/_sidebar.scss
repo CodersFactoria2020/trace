@@ -20,4 +20,9 @@
             color: $red !important;
         }
     }
+    .active {
+        a {
+            color: $black;
+        }
+    }
 }

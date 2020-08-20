@@ -22,7 +22,7 @@
 
 @section('content')
     @include('custom.message')
-    <div class="card col-12">
+    <div class="col">
         <div class="card-header">
             <div class="float-left"><h2>Gestió d'àreas</h2></div>
             {{-- @can('create') --}}

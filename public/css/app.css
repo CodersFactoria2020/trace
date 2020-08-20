@@ -11115,7 +11115,7 @@ header {
   /* IMPORTANTE */
   display: flex;
   align-items: center;
-  display: fixed;
+  position: fixed;
 }
 
 /*--------------------------------------------------------------
@@ -12369,5 +12369,9 @@ section a {
 
 #sidebarMenu .logoutbtn a {
   color: #dc3545 !important;
+}
+
+#sidebarMenu .active a {
+  color: #343a40;
 }
 
