@@ -8,41 +8,41 @@
 
     <div class="full-vertical-align">
       <ul class="nav flex-column">
-        <li class="nav-item primary">
-          <a class="nav-link {{ request()->is('dashboard') ? 'active' : ''}}" href="/dashboard">
+        <li class="nav-item {{ request()->is('dashboard') ? 'active' : ''}}">
+          <a class="nav-link primary" href="/dashboard">
             <span><i class="icofont-home"></i></span>
             Inici <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item primary">
-          <a class="nav-link" href="/user">
+        <li class="nav-item">
+          <a class="nav-link primary" href="/user">
             <span><i class="icofont-users-alt-3"></i></span>
             Usuaris
           </a>
         </li>
-        <li class="nav-item primary">
-          <a class="nav-link" href="/activity">
+        <li class="nav-item ">
+          <a class="nav-link primary" href="/activity">
             <span><i class="icofont-attachment"></i></span>
             Activitats
           </a>
         </li>
 
-        <li class="nav-item primary">
-          <a class="nav-link " href="/areas">
+        <li class="nav-item">
+          <a class="nav-link primary" href="/areas">
             <span><i class="icofont-list"></i></span>
             Àreas
           </a>
         </li>
 
         <li class="nav-item primary">
-          <a class="nav-link" href="/workplans">
+          <a class="nav-link primary" href="/workplans">
             <span><i class="icofont-calendar"></i></span>
             Plans de treball
           </a>
         </li>
 
-        <li class="nav-item primary">
-          <a class="nav-link" href="/team">
+        <li class="nav-item">
+          <a class="nav-link primary" href="/team">
             <span><i class="icofont-id"></i></span>
             Equip de gestió
           </a>

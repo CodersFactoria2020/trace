@@ -69,7 +69,7 @@
       <tr>
         <td class="icon-text">
           <div class="primary">
-            <a data-toggle="modal" data-target="#show-user{{$user->id}}" class="" user="button">
+            <a href="" data-toggle="modal" data-target="#show-user{{$user->id}}" class="primary" user="button">
             <i class="icofont-user-alt-3"></i>
             {{$user->first_name}} {{$user->last_name}}
             </a>
@@ -88,7 +88,7 @@
         <td class="actions">
           @can('update', $user)
           <div class="primary">
-            <a data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button">
+            <a  href="" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button">
               <i class="icofont-ui-edit"></i>
             </a>
           </div>
@@ -99,7 +99,7 @@
         <td class="actions ">      
           @can('destroy', $user)
           <div class="danger">
-            <a data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">
+            <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">
               <i class="icofont-ui-delete"></i>
             </a>
           </div>
