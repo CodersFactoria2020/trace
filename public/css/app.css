@@ -11110,14 +11110,6 @@ header {
   margin: 0;
 }
 
-.full-vertical-align {
-  height: 100vh;
-  /* IMPORTANTE */
-  display: flex;
-  align-items: center;
-  position: fixed;
-}
-
 /*--------------------------------------------------------------
 # Top Bar
 --------------------------------------------------------------*/
@@ -12377,10 +12369,11 @@ section a {
 .dashboard-right-side {
   display: flex;
   justify-content: space-between;
-  padding: 30px 20px;
+  padding: 20px 20px;
 }
 
 .dashboard-right-side h2 {
+  padding-top: 10px;
   color: #00865d;
   font-weight: 300;
 }
@@ -12430,7 +12423,7 @@ section a {
 }
 
 .primary a:hover {
-  color: #545454;
+  color: #343a40 !important;
   text-decoration: none;
 }
 
@@ -12451,5 +12444,18 @@ section a {
 .icon-text a {
   font-size: 14px;
   font-weight: 600;
+}
+
+.full-vertical-align {
+  height: 100vh;
+  /* IMPORTANTE */
+  display: flex;
+  align-items: center;
+  position: fixed;
+}
+
+.pagination {
+  margin: 0 !important;
+  padding-left: 10px !important;
 }
 

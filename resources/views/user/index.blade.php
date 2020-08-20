@@ -25,7 +25,7 @@
 
 <div class="col">
   <div class="dashboard-right-side">
-    <div class="float-left"><h2>Gestió d'usuaris</h2></div>
+    <div class="float-left"><h2>Usuaris</h2></div>
     
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
@@ -60,25 +60,32 @@
             <td><small><b>Nom i cognom</b></small></td>
             <td><small><b>Rol</b></small></td>
             <td><small><b>E-mail</b></small></td>
-            <td ><small><b>Accions</b></small></td>
+            <td colspan="2"><small><b>Accions</b></small></td>
         </tr>
       </thead>
 
       @foreach($users as $user)
       @can('view-any', $user)
+      
       <tr>
         <td><small>{{$user->id}}</small></td>
-        <td class="icon-text d-flex align-items-center">
-          <a data-toggle="modal" data-target="#show-user{{$user->id}}" class="primary" user="button"><i class="icofont-id"></i>
-          {{$user->first_name}} {{$user->last_name}}</a>
+        <td class="icon-text">
+          <div class="primary">
+            <a data-toggle="modal" data-target="#show-user{{$user->id}}" class="" user="button">
+              <i class="icofont-id"></i>
+            {{$user->first_name}} {{$user->last_name}}
+            </a>
+        </div>
             @include('user.show')
-          
         </td>
         <td><small>{{$user->role_id}}</small></td>    
-        <td class="icon-text d-flex align-items-center">
-          <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
-          <i class="icofont-send-mail"></i>
-              {{$user->email}}</a>
+        <td class="icon-text">
+          <div class="primary">
+            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
+              <i class="icofont-send-mail"></i>
+              {{$user->email}}
+            </a>
+          </div>
         </td>    
         <td>
           @can('update', $user)
@@ -102,9 +109,9 @@
     </table>
   </div>
   <!-- PAGINADO -->
-  <div class="d-flex align-items-center justify-content-end">
-    <div class=""><p>Mostrant {{ count($users) }} de {{ $users->total() }}</p></div>
-    <div class="px-4"> {{ $users->links() }}</div>
+  <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+    <div class=""><small>Mostrant {{ count($users) }} de {{ $users->total() }}</small></div>
+    <div class=""> {{ $users->links() }}</div>
   </div>
 </div>
 

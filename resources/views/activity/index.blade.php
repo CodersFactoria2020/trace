@@ -24,11 +24,11 @@
 @section('content')
     @include('custom.message')
     <div class="col">
-        <div class="card-header">
-            <div class="float-left"><h2>Gestió d'activitats</h2></div>
-
+        <div class="dashboard-right-side">
+            <div class="float-left"><h2>Activitats</h2></div>
+    
             {{-- @can('create') --}}
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
+            <button type="button" class="cta" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
             {{-- @endcan --}}
         </div>
     <!-- Contenido que se desee -->

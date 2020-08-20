@@ -147,11 +147,3 @@ header {
     padding: 0;
     margin: 0;
 }
-
-.full-vertical-align {
-    height: 100vh;
-    /* IMPORTANTE */
-    display: flex;
-    align-items: center;
-    position: fixed;
-}
