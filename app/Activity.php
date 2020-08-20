@@ -5,6 +5,7 @@ namespace App;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
+use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
@@ -48,4 +49,27 @@ class Activity extends Model
             return "Grupals";
         }
     }
+
+    public function upload_file($file)
+    {
+        $this->file = $file->extension();
+        $this->save();
+        $file_name = $this->get_saved_file_name();
+        $file->storeAs('activities/', $file_name);
+    }
+    public function download_file()
+    {
+        return Storage::download('/activities/'.$this->get_saved_file_name(), $this->get_downloaded_file_name());
+    }
+
+    private function get_saved_file_name(): string
+    {
+        return $this->id . '.' . $this->file;
+    }
+
+    public function get_downloaded_file_name(): string
+    {
+        return $this->title . '.' . $this->file;
+    }
+
 }

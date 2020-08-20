@@ -6,6 +6,7 @@ use App\Activity;
 use App\Category;
 use App\User;
 use App\Role;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -44,35 +45,33 @@ class ActivityController extends Controller
 
     public function store(Request $request, Activity $activity)
     {
+        $data = $request->all();
 
-        $this->validate($request, [
-            'file' => 'file|max:9920000'
-        ]);
+        //$validatedData = $request->validate([
+         //   'file' => 'required|file|mimes:mp3,mp4,wav,mid,jpg,pdf,png,jpeg|max:20000'
+        //]);
 
-        $activity = Activity::create([
-            'title' => $request->title,
-            'description' => $request->description,
-            'professional1' => $request->professional1,
-            'file' => $request->file,
-            'date'=> $request->date,
-            'time'=> $request->time,
-        ]);
+        $activity = Activity::create($data);
 
-        if($activity['file']) {
-            $upload = $request->file('file');
-            $document = $upload->storeAs('/activities/', $activity->id. '.pdf', ['disk'=>'public']);
+        if($file = $request->file('file'))
+        {
+            $activity->upload_file($file);
         }
+
         return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha creat correctament ');
     }
 
     public function download(Request $request, Activity $activity)
     {
-        return Storage::download('/activities/'.$activity->id.'.pdf', $activity->title.'.pdf');
+
+        return $activity->download_file();
+
     }
 
     public function show(Activity $activity)
     {
         $roles = Role::all();
+        $activities = Activity::all();
         return view('activity.show', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
     }
 
