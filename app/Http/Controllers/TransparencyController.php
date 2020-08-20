@@ -31,16 +31,14 @@ class TransparencyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $validacion = $request->validate($data->all(), [
-            'economic_document'=> 'max:2560',
-            'entity_document'=> 'max:2560',
+        $validatedData = $request->validate([
+            'economic_document'=> 'max:22560',
+            'entity_document'=> 'max:22560',
         ]);
-        $transparency = Transparency::create($data,$validacion);
-        if ($economic_document = $request->file('economic_document')) {
-            $transparency->upload_document($economic_document);
-        }
-        if ($entity_document = $request->file('entity_document')) {
-            $transparency->upload_document($entity_document);
+
+        $transparency = Transparency::create($data,$validatedData);
+        if ($economic_document = $request->file('economic_document') && $entity_document= $request->file('entity_document')) {
+            $transparency->upload_document($economic_document,$entity_document);
         }
 
         return redirect(route('transparency.index'));
@@ -58,16 +56,16 @@ class TransparencyController extends Controller
 
     public function update(Request $request, Transparency $transparency)
     {
+        $data = $request->all();
+        $validatedData = $request->validate([
+            'economic_document'=> 'max:22560',
+            'entity_document'=> 'max:22560',
+        ]);
+        $transparency->update($data,$validatedData);
 
-        $transparency->update($request->all());
-
-        if ($economic_document = $request->file('economic_document')) {
-            $transparency->upload_document($economic_document);
+        if ($economic_document = $request->file('economic_document') && $entity_document= $request->file('entity_document')) {
+            $transparency->upload_document($economic_document,$entity_document);
         }
-        if ($entity_document = $request->file('entity_document')) {
-            $transparency->upload_document($entity_document);
-        }
-
         return redirect('/transparency');
     }
 

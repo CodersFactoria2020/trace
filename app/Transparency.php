@@ -21,8 +21,9 @@ class Transparency extends Model
         Return Storage::url('transparency/'.$this->id . '.pdf');
     }
 
-    //public function download_document($transparency)
-    //{
-        //return Storage::download('transparency/'.$transparency->id.'.pdf', $transparency->name.'.pdf');
-    //}
+    public function view_documents($transparency)
+    {
+
+    }
+
 }

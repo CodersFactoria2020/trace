@@ -20,19 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransparencyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransparencyController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Transparency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transparency.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/TransparencyFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TransparencyFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_18_101258_create_transparencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_18_101258_create_transparencies_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TransparencySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TransparencySeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
