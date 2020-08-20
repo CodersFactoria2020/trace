@@ -53,10 +53,9 @@
   </div>
   <!-- TABLA -->
   <div class="dashboard-right-side">
-    <table class="table table-striped">
+    <table class="table table-striped table-borderless">
       <thead class="thead text-uppercase">
           <tr>
-            <td><small><b>ID</b></small></small>
             <td><small><b>Nom i cognom</b></small></td>
             <td><small><b>Rol</b></small></td>
             <td><small><b>E-mail</b></small></td>
@@ -68,38 +67,42 @@
       @can('view-any', $user)
       
       <tr>
-        <td><small>{{$user->id}}</small></td>
         <td class="icon-text">
           <div class="primary">
             <a data-toggle="modal" data-target="#show-user{{$user->id}}" class="" user="button">
-              <i class="icofont-id"></i>
+            <i class="icofont-user-alt-3"></i>
             {{$user->first_name}} {{$user->last_name}}
             </a>
         </div>
             @include('user.show')
         </td>
-        <td><small>{{$user->role_id}}</small></td>    
+        <td>{{$user->role_id}}</td>    
         <td class="icon-text">
           <div class="primary">
             <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
-              <i class="icofont-send-mail"></i>
+              <i class="icofont-send-mail" style="font-size:24px"></i>
               {{$user->email}}
             </a>
           </div>
         </td>    
-        <td>
+        <td class="actions">
           @can('update', $user)
-          <a data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button"><i class="icofont-ui-edit"></i></a>
+          <div class="primary">
+            <a data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button">
+              <i class="icofont-ui-edit"></i>
+            </a>
+          </div>
           @include('user.edit')
           @endcan
         </td>
-        <!-- <td>
-          <a data-toggle="modal" data-target="#show-user{{$user->id}}" class="btn btn-info" user="button">Detalls</a>
-          @include('user.show')
-        </td> -->
-        <td>      
+
+        <td class="actions ">      
           @can('destroy', $user)
-          <a data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button"><i class="icofont-ui-delete"></i></a>
+          <div class="danger">
+            <a data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">
+              <i class="icofont-ui-delete"></i>
+            </a>
+          </div>
           @include('user.destroy')
           @endcan
         </td>

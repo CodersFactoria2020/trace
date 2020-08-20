@@ -12337,7 +12337,7 @@ section a {
   background-image: url("https://images.unsplash.com/photo-1533766569461-3823e8a83622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
 }
 
-#sidebarMenu li,
+#sidebarMenu back li,
 #sidebarMenu a {
   font-size: 16px;
   font-weight: 600;
@@ -12427,8 +12427,12 @@ section a {
   text-decoration: none;
 }
 
-.danger {
+.danger a {
   color: #dc3545 !important;
+}
+
+.danger a:hover {
+  color: #343a40 !important;
 }
 
 .icon-text {
@@ -12437,13 +12441,17 @@ section a {
 }
 
 .icon-text i {
-  font-size: 24px;
   padding-right: 5px;
 }
 
 .icon-text a {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
+}
+
+.actions i {
+  font-size: 18px;
+  padding-right: 5px;
 }
 
 .full-vertical-align {

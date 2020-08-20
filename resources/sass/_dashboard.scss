@@ -1,5 +1,5 @@
 #sidebarMenu {
-    li,
+    back li,
     a {
         font-size: 16px;
         font-weight: 600;
@@ -87,7 +87,12 @@
 }
 
 .danger {
-    color: $red !important;
+    a {
+        color: $red !important;
+    }
+    a:hover {
+        color: $black !important;
+    }
 }
 
 .icon-text {
@@ -95,12 +100,19 @@
     align-items: center;
 
     i {
-        font-size: 24px;
         padding-right: 5px;
     }
+
     a {
-        font-size: 14px;
+        font-size: 16px;
         font-weight: 600;
+    }
+}
+
+.actions {
+    i {
+        font-size: 18px;
+        padding-right: 5px;
     }
 }
 

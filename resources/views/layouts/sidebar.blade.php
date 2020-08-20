@@ -1,5 +1,5 @@
 
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bg-color">
   <div class="sidebar-sticky flex-column pt-2">
 
     <div class="nav-item fixed-top logo">
@@ -8,40 +8,40 @@
 
     <div class="full-vertical-align">
       <ul class="nav flex-column">
-        <li>
+        <li class="nav-item primary">
           <a class="nav-link {{ request()->is('dashboard') ? 'active' : ''}}" href="/dashboard">
             <span><i class="icofont-home"></i></span>
             Inici <span class="sr-only">(current)</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item primary">
           <a class="nav-link" href="/user">
             <span><i class="icofont-users-alt-3"></i></span>
             Usuaris
           </a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item primary">
           <a class="nav-link" href="/activity">
             <span><i class="icofont-attachment"></i></span>
             Activitats
           </a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="/areas">
+        <li class="nav-item primary">
+          <a class="nav-link " href="/areas">
             <span><i class="icofont-list"></i></span>
             Àreas
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item primary">
           <a class="nav-link" href="/workplans">
             <span><i class="icofont-calendar"></i></span>
             Plans de treball
           </a>
         </li>
 
-        <li class="nav-item">
+        <li class="nav-item primary">
           <a class="nav-link" href="/team">
             <span><i class="icofont-id"></i></span>
             Equip de gestió
