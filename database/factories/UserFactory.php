@@ -25,7 +25,7 @@ $factory->state(User::class, 'Admin', [
 ]);
 
 // TESTS - state - PROFESSIONAL Role 
-$factory->state(User::class, 'Soci', [
+$factory->state(User::class, 'Professional', [
     'role_id' => Role::$professional_id,
 ]);
 
