@@ -23,14 +23,6 @@ class ActivityPolicy
         return true;
     }
 
-    public function edit(User $user)
-    {
-        if (auth()->user()->role_id === "Soci") {
-            return false;
-        }
-        return true;
-    }
-
     public function create(User $user)
     {
         if ($user->role_id === "Soci") {
