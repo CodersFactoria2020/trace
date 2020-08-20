@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\gate;
 Route::get('/', function () {
     return view('home');
 });
+Route::view('/legal', 'legal');
 
 Route::resource('/role', 'RoleController')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');

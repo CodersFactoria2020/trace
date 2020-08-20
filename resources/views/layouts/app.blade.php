@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>traCE</title>
+    <title>TraCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -71,6 +71,9 @@
 </head>
 
 <body>
+
+    @include('layouts.cookies')
+
     <div id="topbar" class="d-none d-lg-block">
         <div class="flex-container d-flex align-items-center justify-content-between">
 
@@ -150,9 +153,9 @@
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/venobox/venobox.min.js"></script>
 
+
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
-
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
