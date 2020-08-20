@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -26,7 +26,7 @@
 <div class="col">
   <div class="dashboard-right-side">
     <div class="float-left"><h2>Usuaris</h2></div>
-    
+
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
     @endif
@@ -39,7 +39,7 @@
       <a href="/user?role_id=1" class="btn btn-outline-dark btn-sm">Soci</a>
       <a href="/user?role_id=2" class="btn btn-outline-dark btn-sm">Professional</a>
       <a href="/user?role_id=3" class="btn btn-outline-dark btn-sm">Admin</a>
-      
+
     </div>
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>
@@ -65,7 +65,7 @@
 
       @foreach($users as $user)
       @can('view-any', $user)
-      
+
       <tr>
         <td class="icon-text">
           <div class="primary">
@@ -76,7 +76,7 @@
         </div>
             @include('user.show')
         </td>
-        <td>{{$user->role_id}}</td>    
+        <td>{{$user->role_id}}</td>
         <td class="icon-text">
           <div class="primary">
             <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
@@ -84,7 +84,7 @@
               {{$user->email}}
             </a>
           </div>
-        </td>    
+        </td>
         <td class="actions">
           @can('update', $user)
           <div class="primary">
@@ -95,7 +95,7 @@
           @include('user.edit')
           @endcan
         </td>
-        <td class="actions ">      
+        <td class="actions ">
           @can('destroy', $user)
           <div class="danger">
             <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">
@@ -118,7 +118,3 @@
 </div>
 
 @endsection
-@include('user.create')
-@include('user.edit')
-@include('user.show')
-@include('user.destroy')
