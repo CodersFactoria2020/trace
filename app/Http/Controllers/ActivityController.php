@@ -47,10 +47,6 @@ class ActivityController extends Controller
     {
         $data = $request->all();
 
-        //$validatedData = $request->validate([
-         //   'file' => 'required|file|mimes:mp3,mp4,wav,mid,jpg,pdf,png,jpeg|max:20000'
-        //]);
-
         $activity = Activity::create($data);
 
         if($file = $request->file('file'))

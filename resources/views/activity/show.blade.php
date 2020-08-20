@@ -28,7 +28,7 @@
                         <div style="padding:5px;">
                             <h5>Àrea:</h5><p> {{$activity->category_id}}</p>
                         </div>
-                        @isset($activity->file)
+                        @if($activity->has_file())
                         <div style="padding:5px;">
                             <h5>Document adjunt:</h5><p> {{$activity->get_downloaded_file_name()}}</p>
                         </div>
@@ -37,7 +37,7 @@
                                 Descarregar
                             </button>
                         </a>
-                        @endisset
+                        @endif
 
 
                         <div class="text-right">
