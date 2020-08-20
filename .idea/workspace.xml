@@ -20,24 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3dfd1a26-eaf3-4a5d-983b-e462e7d68133" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/TransparencyController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Policies/TransparencyPolicy.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transparency.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/factories/TransparencyFactory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_08_18_101258_create_transparencies_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/TransparencySeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/trace.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/trace.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Team.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Team.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/TeamSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TeamSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/dashboard-navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/dashboard-navbar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TransparencyController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TransparencyController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transparency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transparency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/TransparencyFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/TransparencyFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_08_18_101258_create_transparencies_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_08_18_101258_create_transparencies_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/TransparencySeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/TransparencySeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +198,8 @@
       <workItem from="1596035594493" duration="2662000" />
       <workItem from="1596096016104" duration="10512000" />
       <workItem from="1597744217067" duration="8266000" />
-      <workItem from="1597817369484" duration="5766000" />
+      <workItem from="1597817369484" duration="16536000" />
+      <workItem from="1597903016486" duration="10017000" />
     </task>
     <servers />
   </component>
@@ -311,6 +306,10 @@
     <state width="1398" height="453" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1596030456819" />
     <state width="1398" height="442" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1595927314386" />
     <state width="1398" height="309" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1595843027748" />
+    <state x="84" y="27" width="585" height="801" key="find.popup" timestamp="1597917691507">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="84" y="27" width="585" height="801" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1597917691507" />
     <state x="385" y="140" width="670" height="760" key="search.everywhere.popup" timestamp="1596097733397">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

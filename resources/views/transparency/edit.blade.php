@@ -1,4 +1,4 @@
-<div class="modal fade" id="edit-team{{$team->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="edit-transparency{{$transparency->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('transparency.update', $team->id)}}" method="post">
+                <form action="{{Route('transparency.update', $transparency->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -17,8 +17,12 @@
                             <input type="text" name="date_name" class="form-control" placeholder="First Name"/>
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentacio</label>
-                            <input type="file" name="document" class="form-control" >
+                            <label for="name">Documentacio d'activitat economica</label>
+                            <input type="file" name="economic_document" class="form-control" >
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Documentacio economica d'entitats</label>
+                            <input type="file" name="entity_document" class="form-control" >
                         </div>
 
                         <div class="text-right">

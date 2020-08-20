@@ -8,6 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Transparency::class, function (Faker $faker) {
     return [
         'date_name' => $faker->numerify(),
-        'document'=>$faker->randomElement(['pdf', '']),
+        'economic_document'=>$faker->fileExtension,
+        'entity_document'=>$faker->fileExtension,
     ];
 });

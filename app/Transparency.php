@@ -3,23 +3,26 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 
 class Transparency extends Model
 {
     protected $fillable = [
-        'date_name', 'document'
+        'date_name', 'economic_document','entity_document'
     ];
-    public function upload_document($document)
+    public function upload_documents($economic_document,$entity_document)
     {
         $name_document = $this->id . '.pdf';
-        $document->storeAs('transparency/', $name_document, ['disk'=>'public']);
+        $economic_document->storeAs('transparency/', $name_document, ['disk'=>'public']);
+        $entity_document->storeAs('transparency/', $name_document, ['disk'=>'public']);
     }
-    public function get_document_url()
+    public function get_documents_url()
     {
-        Return Storage::url('transparency/'.$this->id . '.jpg');
+        Return Storage::url('transparency/'.$this->id . '.pdf');
     }
-    public function download_document($transparency)
-    {
-        return Storage::download('transparency/'.$transparency->id.'.pdf', $transparency->name.'.pdf');
-    }
+
+    //public function download_document($transparency)
+    //{
+        //return Storage::download('transparency/'.$transparency->id.'.pdf', $transparency->name.'.pdf');
+    //}
 }

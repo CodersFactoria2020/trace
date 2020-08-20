@@ -17,7 +17,10 @@
                         <h5>Any de l'exercsici:</h5><p>{{$transparency->date_name}}</p>
                     </div>
                     <div style="padding:5px;">
-                        <h5>Imatge adjunt:</h5><p>{{$transparency->get_document_url()}}</p>
+                        <h5>Documentacio Econmica:</h5><p>{{$transparency->economic_document}}</p>
+                    </div>
+                    <div style="padding:5px;">
+                        <h5>Documentacio Economica d'entitats:</h5><p>{{$transparency->entity_document}}</p>
                     </div>
 
                     <div class="text-right">

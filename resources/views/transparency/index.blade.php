@@ -46,7 +46,8 @@
           <tr>
               <td><h5>ID</h5></td>
               <td><h5>Any</h5></td>
-              <td><h5>Documentacio</h5></td>
+              <td><h5>Documentacio Econmica</h5></td>
+              <td><h5>Documentacio Economica d'entitats</h5></td>
               <td colspan="3"><h5>Accions</h5></td>
           </tr>
       </thead>
@@ -56,6 +57,8 @@
       <tr>
           <td>{{$transparency->id}}</td>
           <td>{{$transparency->date_name}}</td>
+          <td>{{$transparency->economic_document}}</td>
+          <td>{{$transparency->entity_document}}</td>
 
           <td>
               @can('update', $transparency)

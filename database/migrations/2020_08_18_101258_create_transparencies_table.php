@@ -16,6 +16,8 @@ class CreateTransparenciesTable extends Migration
         Schema::create('transparencies', function (Blueprint $table) {
             $table->id();
             $table->string('date_name');
+            $table->string('economic_document')->nullable();
+            $table->string('entity_document')->nullable();
             $table->timestamps();
         });
     }

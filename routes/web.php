@@ -54,6 +54,4 @@ Route::resource('/events', 'EventController')->middleware('auth');
 
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
-Route::get('/transparency', 'TransparencyController@index')->name('transparency.index')->middleware('auth');
-Route::get('transparency/{id}/edit/','TransparencyController@edit')->middleware('auth');
-Route::get('/transparency/{transparency}/download', 'TransparencyController@download')->name('transparency.download');
+

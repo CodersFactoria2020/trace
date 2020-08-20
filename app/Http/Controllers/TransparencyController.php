@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Transparency;
-use App\User;
-use App\Role;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TransparencyController extends Controller
 {
@@ -15,8 +15,6 @@ class TransparencyController extends Controller
     }
     public function index()
     {
-        $users = User::all();
-        $roles = Role::all();
         $transparencies = Transparency::all();
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
@@ -33,9 +31,16 @@ class TransparencyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $transparency = Transparency::create($data);
-        if ($document = $request->file('document')) {
-            $transparency->upload_document($document);
+        $validacion = $request->validate($data->all(), [
+            'economic_document'=> 'max:2560',
+            'entity_document'=> 'max:2560',
+        ]);
+        $transparency = Transparency::create($data,$validacion);
+        if ($economic_document = $request->file('economic_document')) {
+            $transparency->upload_document($economic_document);
+        }
+        if ($entity_document = $request->file('entity_document')) {
+            $transparency->upload_document($entity_document);
         }
 
         return redirect(route('transparency.index'));
@@ -53,10 +58,14 @@ class TransparencyController extends Controller
 
     public function update(Request $request, Transparency $transparency)
     {
+
         $transparency->update($request->all());
 
-        if ($document = $request->file('document')) {
-            $transparency->upload_document($document);
+        if ($economic_document = $request->file('economic_document')) {
+            $transparency->upload_document($economic_document);
+        }
+        if ($entity_document = $request->file('entity_document')) {
+            $transparency->upload_document($entity_document);
         }
 
         return redirect('/transparency');
@@ -65,7 +74,7 @@ class TransparencyController extends Controller
     public function destroy(Transparency $transparency)
     {
         $transparency->delete();
-        Storage::delete('document');
+        Storage::delete(['entity_document', 'economic_document']);
         return redirect()->route('transparency.index');
     }
 }
