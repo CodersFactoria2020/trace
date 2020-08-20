@@ -21,10 +21,11 @@ header {
 }
 
 .cta {
+    border: none !important;
     background: $primary;
     display: inline-block;
     padding: 8px 30px;
-    border-radius: 20px;
+    border-radius: 30px;
     color: #fff;
     transition: none;
     font-size: 16px;
@@ -126,5 +127,3 @@ header {
 .logo {
     margin-bottom: 10px;
 }
-
-

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
@@ -32,7 +32,7 @@
 
 @section('content')
 
-    <div class="card col-12">
+    <div class="card col">
         <div class="card-header">
             <div class="float-left"><h2>Gestió de Membres de l'Equip</h2></div>
             {{-- @can('create') --}}
