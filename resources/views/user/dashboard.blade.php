@@ -1,17 +1,18 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('content')
-    <div class="container">
-        <div class="card col-12">
-            <div class="card-header">
-                <h1>Benvingut/da  {{Auth::User()->first_name}}</h1><hr>
-                {{-- <a href="/user" class="mybtn btn btn-secondary">Gestió d'usuaris</a>
-                <a href="/activity" class="mybtn btn btn-secondary">Gestió d'activitats</a> --}}
+<div class="">
+    <main class="col">        
+        <div class="full-vertical-align">
+            <div class="col">
+            <h1 class="h2">Benvingut/da  {{Auth::User()->first_name}}</h1>
+            <h5>Selecciona en el panell de l'esquerra l'apartat al qual desitges accedir.</h5>
             </div>
-            <div class="card-body">
-                <h5>Selecciona en el panell de l'esquerra l'apartat al qual desitges accedir.</h5>
-            </div>
-
+            
         </div>
-    </div>
+        
+
+    </main>
+</div>
+
 @endsection

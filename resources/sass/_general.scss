@@ -21,10 +21,11 @@ header {
 }
 
 .cta {
+    border: none !important;
     background: $primary;
     display: inline-block;
     padding: 8px 30px;
-    border-radius: 20px;
+    border-radius: 30px;
     color: #fff;
     transition: none;
     font-size: 16px;
@@ -74,7 +75,7 @@ header {
     position: fixed;
     display: none;
     right: 15px;
-    bottom: 15px;
+    bottom: 45px;
     z-index: 99999;
 
     i {
@@ -125,16 +126,4 @@ header {
 
 .logo {
     margin-bottom: 10px;
-}
-
-.quote {
-    font-size: 30px;
-    font-weight: lighter;
-    font-style: italic;
-    margin-left: 20px;
-}
-
-.quote-author {
-    font-weight: bold;
-    margin-left: 20px;
 }

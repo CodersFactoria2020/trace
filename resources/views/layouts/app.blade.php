@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>traCE</title>
+    <title>TraCE</title>
     <meta content="" name="description">
     <meta content="" name="keywords">
 
@@ -71,20 +71,21 @@
 </head>
 
 <body>
-    <div id="topbar" class="d-none d-lg-block">
-        <div class="container d-flex align-items-center justify-content-between">
 
-          <div class="contact-info">
+    @include('layouts.cookies')
+
+    <div id="topbar" class="d-none d-lg-block">
+        <div class="flex-container d-flex align-items-center justify-content-between">
+
+          <div class="contact-info d-flex align-items-center justify-content-between">
               <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
               <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
-          </div>
-
-          <div class="social-links">
-              <p>Segueix-nos:</p>
-              <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
-              <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
-              <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
-              <a href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
+              <div class="social-links">
+                <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
+                <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
+                <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
+                <a class="social-links" href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
+              </div>
           </div>
 
           <div class="user">
@@ -97,7 +98,7 @@
 
       <header id="header" >
 
-        <div class="container d-flex justify-content-between align-items-center">
+        <div class="flex-container d-flex justify-content-between align-items-center">
 
           <div class="mr auto">
             <a href="{{url('/home')}}">
@@ -107,19 +108,19 @@
           <div>
             <nav class="nav-menu d-none d-lg-block">
               <ul>
-                <li {% if page == "home" %}class="active" {% endif %}><a href="{{url('/')}}">Inici</a></li>
-                <li {% if page == "dany_cerebral" %}class="active" {% endif %}><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
-                <li class="drop-down"><a href="#">Coneix-nos</a>
+                <li class="{{ request()->is('home') ? 'active' : ''}}"><a href="{{url('/home')}}">Inici</a></li>
+                <li class="{{ request()->is('dany_cerebral') ? 'active' : ''}}"><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
+                <li class="drop-down {{ request()->is('qui_som','filosofia','equip','transparencia') ? 'active' : ''}}"><a href="#">Coneix-nos</a>
                   <ul>
-                    <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
+                    <li ><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
                     <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
                     <li><a href="{{url('/equip/')}}">Equip</a></li>
                     <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
                   </ul>
                 </li>
-                <li><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
-                <li><a href="{{url('/recursos/')}}">Recursos</a></li>
-                <li><a href="{{url('/contacte/')}}">Contacte</a></li>
+                <li class="{{ request()->is('collaboradors') ? 'active' : ''}}"><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
+                <li class="{{ request()->is('recursos') ? 'active' : ''}}"><a href="{{url('/recursos/')}}">Recursos</a></li>
+                <li class="{{ request()->is('contacte') ? 'active' : ''}}"><a href="{{url('/contacte/')}}">Contacte</a></li>
               </ul>
             </nav>
           </div>
@@ -152,9 +153,9 @@
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/venobox/venobox.min.js"></script>
 
+
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>
-
 
 <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 

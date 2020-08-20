@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
@@ -20,91 +20,102 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-    .mybtn {
-        height: 2.4rem !important;
-        width: auto !important;
-        font-size: 1.4rem !important;
-    }
-  </style>
 
 @section('content')
-
-    <div class="card col-12">
-      <div class="card-header">
-          <div class="float-left"><h2>Gestió d'usuaris </h2></div>
-          <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
-          <div class="float-left" class="sr-only" style="padding: 0 2rem;"> {{ $users->links() }}</div>
-          @if (auth()->user()->role_id === "Admin")
-          <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
-          @endif
-        </div>
-    <!-- Contenido que se desee -->
-    <table class="table table-striped">
-      <div class="col-12">
-        <div class="col-6 float-left">
-          <h6 style="display:inline-block;margin:10 5 15;">Mostrar només:</h6>
-          <a href="/user?role_id=1" class="btn btn-outline-primary btn-sm">Soci</a> |
-          <a href="/user?role_id=2" class="btn btn-outline-primary btn-sm">Professional</a> |
-          <a href="/user?role_id=3" class="btn btn-outline-primary btn-sm">Admin</a> |
-          <a href="/user" class="btn btn-outline-primary btn-sm">Cap filtre</a>
-        </div>
-        <div class="col-6 float-right">
-          <h6 style="display:inline-block;margin:10 5 0;">Ordenar per cognom:</h6>
-          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-primary btn-sm">Ascendent</a> |
-          <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-primary btn-sm">Descendent</a>
-        </div>
+@include('custom.message')
+<div class="col">
+  <div class="dashboard-right-side">
+    <div class="float-left"><h2>Usuaris</h2></div>
+    
+    @if (auth()->user()->role_id === "Admin")
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+    @endif
+  </div>
+  <!-- REVISAR CON CLIENTE SI ES NECESARIO ORDEN ASC Y DESC -->
+  <div class="filter-views">
+    <div class="float-left">
+      <!-- {{ request()->is('home') ? 'active' : ''}} -->
+      <a href="/user" class="btn btn-outline-dark btn-sm active">Veure tots</a>
+      <a href="/user?role_id=1" class="btn btn-outline-dark btn-sm">Soci</a>
+      <a href="/user?role_id=2" class="btn btn-outline-dark btn-sm">Professional</a>
+      <a href="/user?role_id=3" class="btn btn-outline-dark btn-sm">Admin</a>
+      
+    </div>
+    <div class="float-right d-flex align-items-center">
+      <small class="pr-2">Ordenar per cognom:</small>
+      <!-- {{ request()->is('home') ? 'active' : ''}} -->
+      <div>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm active">Ascendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm">Descendent</a>
       </div>
-      <thead class="thead">
-          <tr>
-            <td><h5>ID</h5></td>
-            <td><h5>Nom i cognom</h5></td>
-            <td><h5>E-mail</h5></td>
-            <td><h5>Rol</h5></td>
-            <td colspan="3"><h5>Accions</h5></td>
-        </tr>
-    </thead>
 
-    @foreach($users as $user)
-    @can('view-any', $user)
-    <tr>
-        <td>{{$user->id}}</td>
-        <td>{{$user->first_name}} {{$user->last_name}}</td>
-        <td>{{$user->email}}</td>
-        <td>{{$user->role_id}}</td>        
-        <td colspan="3">
-            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
-              style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
+    </div>
+  </div>
+  <!-- TABLA -->
+  <div class="dashboard-right-side">
+    <table class="table table-striped table-borderless">
+      <thead class="thead text-uppercase">
+          <tr>
+            <td><small><b>Nom i cognom</b></small></td>
+            <td><small><b>Rol</b></small></td>
+            <td><small><b>E-mail</b></small></td>
+            <td colspan="2"><small><b>Accions</b></small></td>
+        </tr>
+      </thead>
+
+      @foreach($users as $user)
+      @can('view-any', $user)
+      
+      <tr>
+        <td class="icon-text">
+          <div class="primary">
+            <a href="" data-toggle="modal" data-target="#show-user{{$user->id}}" class="primary" user="button">
+            <i class="icofont-user-alt-3"></i>
+            {{$user->first_name}} {{$user->last_name}}
             </a>
+        </div>
+            @include('user.show')
         </td>
-        <td>
-              @can('update', $user)
-              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-info" user="button">Editar</a>
-              @include('user.edit')
-              @endcan
-          </td>
-          <td>
-              <a style="color:white" data-toggle="modal" data-target="#show-user{{$user->id}}" class="btn btn-info" user="button">Detalls</a>
-              @include('user.show')
-          </td>
-          <td>      
-              @can('destroy', $user)
-              <a style="color:white" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="btn btn-danger" user="button">Esborrar</a>
-              @include('user.destroy')
-              @endcan
-          </td>
+        <td>{{$user->role_id}}</td>    
+        <td class="icon-text">
+          <div class="primary">
+            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
+              <i class="icofont-send-mail" style="font-size:24px"></i>
+              {{$user->email}}
+            </a>
+          </div>
+        </td>    
+        <td class="actions">
+          @can('update', $user)
+          <div class="primary">
+            <a  href="" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button">
+              <i class="icofont-ui-edit"></i>
+            </a>
+          </div>
+          @include('user.edit')
+          @endcan
+        </td>
+        <td class="actions ">      
+          @can('destroy', $user)
+          <div class="danger">
+            <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">
+              <i class="icofont-ui-delete"></i>
+            </a>
+          </div>
+          @include('user.destroy')
+          @endcan
+        </td>
       </tr>
       @endcan
       @endforeach
-
-  </table>
+    </table>
   </div>
+  <!-- PAGINADO -->
+  <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+    <div class=""><small>Mostrant {{ count($users) }} de {{ $users->total() }}</small></div>
+    <div class=""> {{ $users->links() }}</div>
+  </div>
+</div>
 
 @endsection
 @include('user.create')

@@ -12,7 +12,7 @@ class UserPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
@@ -22,18 +22,10 @@ class UserPolicy
     {
         return true;
     }
-    
-    public function edit(User $user)
-    {
-        if (auth()->user()->role_id != "Admin") {
-            return false;
-        }
-        return true;
-    }
 
     public function create(User $user)
     {
-        if (auth()->user()->role_id != "Admin") {
+        if ($user->role_id != "Admin") {
             return false;
         }
         return true;
@@ -41,34 +33,21 @@ class UserPolicy
 
     public function update(User $user, User $model)
     {
-        if (auth()->user()->role_id != "Admin") {
+        if ($user->role_id !== "Admin") {
             return false;
         }
+        if ($user->id === $model->id) {
+            return false;
+            }
         return true;
     }
 
     public function destroy(User $user, User $model)
     {
-        if (auth()->user()->role_id != "Admin") {
+        if ($user->role_id !== "Admin") {
             return false;
         }
-        return true;
-    }
-
-    public function restore(User $user, User $model)
-    {
-        if (Auth::user()->role_id != "Admin") {
-            return false;
-        }
-        return true;
-    }
-
-    public function forceDestroy(User $user, User $model)
-    {
-        if (Auth::user()->role_id != "Admin") {
-            return false;
-        }
-        if (Auth::user()->id === $user->id) {
+        if ($user->id === $model->id) {
             return false;
             }
         return true;

@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
@@ -125,26 +125,10 @@
 @endsection
 
   <!-- Custom fullcalendar Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #calendar {
-      max-width: 900px;
-      margin: 40px auto;
-    }
-
-    .mycard {
-      background-color: rgb(173, 173, 173) !important;
-    }
-  </style>
 
 @section('content')
 
-    <div class="card mycard col-12">
+    <div class="card col">
         <div class="card-header">
             <div class="float-left"><h1>Plans de treball </h1></div>
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>

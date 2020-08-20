@@ -1,8 +1,8 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -32,47 +32,53 @@
 
 @section('content')
 
-    <div class="card col-12">
+    <div class="card col">
         <div class="card-header">
-            <div class="float-left"><h2>Equip de gestió de l'associació</h2></div>
-            <!-- Cambiar el data-target de la modal -->
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un membre</button>
+            <div class="float-left"><h2>Gestió de Membres de l'Equip</h2></div>
+            {{-- @can('create') --}}
+            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-team"> Afegir un membre de l'equip</button>
+            @include('team.create')
+            {{-- @endcan --}}
         </div>
     <!-- Contenido que se desee -->
-        <div class="card body">
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('team.create') }}"> Nou membre</a>
-            </div>
-            <table class="table table-bordered">
-                <tr>
-                    <th>Nom i Cognom</th>
-                    <th>Professio</th>
-                    <th>Imatge</th>
-                    <th width="280px">Action</th>
-                </tr>
-                @foreach ($teams as $team)
-                    <tr>
-                        <td>{{$team->first_name}}, {{$team->last_name}}</td>
-                        <td>{{ $team->position }}</td>
-                        <td> <img src="{{$team->get_photo_url()}}" width="150" height="150"></td>
-                        <td>
-                            <form action="{{ route('team.destroy',$team->id) }}" method="POST">
-        
-                                <a class="btn btn-info" href="{{ route('team.show',$team->id) }}">Show</a>
-        
-                                <a class="btn btn-primary" href="{{ route('team.edit',$team->id) }}">Edit</a>
-        
-                                @csrf
-                                @method('DELETE')
-        
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </table>
+    <table class="table table-striped">
+      <thead class="thead">
+          <tr>
+              <td><h5>ID</h5></td>
+              <td><h5>Nom i Cognom</h5></td>
+              <td><h5>Professio</h5></td>
+              <td><h5>Imatge</h5></td>
+              <td colspan="4"><h5>Accions</h5></td>
+          </tr>
+      </thead>
+      @foreach($teams as $team)
+      @can('view-any', $team)
+      <tr>
+          <td>{{$team->id}}</td>
+          <td>{{$team->first_name}}, {{$team->last_name}}</td>
+          <td>{{$team->position}}</td>
+          <td> <img src="{{$team->get_photo_url()}}" width="150" height="150"></td>
+          <td>
+              @can('update', $team)
+              <a style="color:white" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="mybtn btn btn-info" type="button">Editar</a>
+              @include('team.edit')
+              @endcan
+          </td>
+          <td>
+              <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="mybtn btn btn-info" type="button">Detalls</a>
+              @include('team.show')
+          </td>
+          <td>
+              @can('destroy', $team)
+              <a style="color:white" data-toggle="modal" data-target="#destroy-team{{$team->id}}" class="mybtn btn btn-danger" type="button">Esborrar</a>
+              @include('team.destroy')
+              @endcan
+          </td>
+      </tr>
+      @endcan
+      @endforeach
 
-        </div>
+  </table>
     </div>
 
 @endsection

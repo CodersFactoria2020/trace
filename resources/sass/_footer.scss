@@ -1,10 +1,9 @@
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
 #footer {
     background: $primary;
     color: $white;
     font-size: 14px;
+    bottom: 0;
+    width: 100%;
     a {
         color: $yellow;
         &:hover {
@@ -17,7 +16,7 @@
         background: $primary;
         display: flex;
         align-items: center;
-        padding: 20px 0 20px 0;
+        padding: 20px 20px 20px 20px;
 
         .footer-info {
             p {
@@ -66,15 +65,8 @@
         p {
             font-size: 14px;
         }
-        background-color: #2e7749;
+        background: darken($primary, 5);
         text-align: center;
-        padding: 10px 0;
-    }
-
-    .credits {
-        padding-top: 10px;
-        text-align: center;
-        font-size: 13px;
-        color: $white;
+        padding: 10px 20px;
     }
 }
