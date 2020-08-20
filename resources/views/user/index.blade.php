@@ -35,15 +35,15 @@
   </style>
 
 @section('content')
-
+  @include('custom.message')
     <div class="card col-12">
       <div class="card-header">
           <div class="float-left"><h2>Gestió d'usuaris </h2></div>
           <div class="float-left" style="margin: .8rem 0 0 .8rem;"><p>(Mostrant {{ count($users) }} de {{ $users->total() }})</p></div>
           <div class="float-left" class="sr-only" style="padding: 0 2rem;"> {{ $users->links() }}</div>
-          {{-- @can('create') --}}
+          @if (auth()->user()->role_id === "Admin")
           <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
-          {{-- @endcan --}}
+          @endif
         </div>
     <!-- Contenido que se desee -->
     <table class="table table-striped">
@@ -83,15 +83,15 @@
               style='font-size:2rem' class="mybtn btn btn-dark btn-lg">  <i class=' fas fa-envelope'></i>
             </a>
         </td>
-        <td>
-              @can('update', $user)
-              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-info" user="button">Editar</a>
-              @include('user.edit')
-              @endcan
-          </td>
           <td>
               <a style="color:white" data-toggle="modal" data-target="#show-user{{$user->id}}" class="btn btn-info" user="button">Detalls</a>
               @include('user.show')
+          </td>
+          <td>
+              @can('update', $user)
+              <a style="color:white" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="btn btn-primary" user="button">Editar</a>
+              @include('user.edit')
+              @endcan
           </td>
           <td>      
               @can('destroy', $user)

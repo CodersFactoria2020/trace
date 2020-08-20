@@ -1,66 +1,109 @@
-<nav aria-label="breadcrumb" class="container">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="home">Inici</a>
-        </li>
-        <li class="breadcrumb-item">
-            Contacte<i class="icon-angle-right gray"></i>
-        </li>
-    </ol>
-</nav>
-
 <section id="contact" class="contact">
-    <div class="container">
-        <div class="row">
+    <div class="container y-6">
+        <div class="row content d-flex pt-5">
             <div class="col-lg-6 pt-4 pt-lg-0 content right">
                 <h3>
                     Contacte
                 </h3>
-                <br>
                 <p>
                     Tens molts dubtes i necessites assessorament? Truca'ns
                 </p>
-                <br>
+                <ul class="list-group">
+                    <a href="tel:+349332503636">
+                        <i class="icofont-phone"></i>933 250 3636</a
+                    >
+                    <a href="mailto:info@tracecatalunya.org"
+                        ><i class="icofont-envelope"></i>info@tracecatalunya.org
+                    </a>
+
+                    <a
+                        href="https://goo.gl/maps/B7NKYv2Wz9AQDspU7"
+                        starget="_blank"
+                    >
+                        <i class="icofont-location-pin"></i>
+                        Carrer de Lança, 42, 08015, Barcelona
+                    </a>
+                </ul>
                 <div>
-                    <p><i class="icofont-phone"></i><b> 933 250 3636</b> </p>
-                    <p><i class="icofont-envelope"></i><b> info@tracecatalunya.org</b></p>
-                    <p><i class="icofont-location-pin"></i><b> Carrer de Lança, 42, 08015, Barcelona</b></p>
-                </div>
-                <br>
-                <div>
-                    <iframe class="mb-4 mb-lg-0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.756243285726!2d2.1443872154255437!3d41.37938037926494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27fbb4cacad%3A0xe217355ea7a6cd15!2sCarrer%20de%20Llan%C3%A7a%2C%2042%2C%2008015%20Barcelona!5e0!3m2!1sen!2ses!4v1596821127763!5m2!1sen!2ses" width="550" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0" allowfullscreen></iframe>
+                    <iframe
+                        class="mb-4 mb-lg-0"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.756243285726!2d2.1443872154255437!3d41.37938037926494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27fbb4cacad%3A0xe217355ea7a6cd15!2sCarrer%20de%20Llan%C3%A7a%2C%2042%2C%2008015%20Barcelona!5e0!3m2!1sen!2ses!4v1596821127763!5m2!1sen!2ses"
+                        width="550"
+                        height="400"
+                        frameborder="0"
+                        style="border:0;"
+                        allowfullscreen=""
+                        aria-hidden="false"
+                        tabindex="0"
+                        allowfullscreen
+                    ></iframe>
                 </div>
             </div>
 
             <div class="col-lg-6">
-                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                <form
+                    action="forms/contact.php"
+                    method="post"
+                    role="form"
+                    class="php-email-form"
+                >
                     <div class="form-group">
-                        <br><br>
+                        <br /><br />
                         <p>El teu nom (obligatori)</p>
-                        <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                        <input
+                            type="text"
+                            name="name"
+                            class="form-control"
+                            id="name"
+                            data-rule="minlen:4"
+                            data-msg="Please enter at least 4 chars"
+                        />
                         <div class="validate"></div>
                     </div>
                     <div class="form-group">
                         <p>El teu correu electrònic (obligatori)</p>
-                        <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                        <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            data-rule="email"
+                            data-msg="Please enter a valid email"
+                        />
                         <div class="validate"></div>
                     </div>
                     <div class="form-group">
                         <p>Assumpte</p>
-                        <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                        <input
+                            type="text"
+                            class="form-control"
+                            name="subject"
+                            id="subject"
+                            data-rule="minlen:4"
+                            data-msg="Please enter at least 8 chars of subject"
+                        />
                         <div class="validate"></div>
                     </div>
                     <div class="form-group">
                         <p>Missatge</p>
-                        <textarea class="form-control" name="message" rows="5" data-rule="required"></textarea>
+                        <textarea
+                            class="form-control"
+                            name="message"
+                            rows="5"
+                            data-rule="required"
+                        ></textarea>
                         <div class="validate"></div>
                     </div>
                     <div class="mb-3">
-                        <div class="loading">Loading</div>
+                        <div class="loading">Cargant</div>
                         <div class="error-message"></div>
-                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                        <div class="sent-message">
+                            S'ha enviat el teu missatge, moltes gràcies!
+                        </div>
                     </div>
-                    <div class="text-center"><button type="submit">Enviar</button></div>
+                    <div class="text-center">
+                        <button type="submit">Enviar</button>
+                    </div>
                 </form>
             </div>
         </div>

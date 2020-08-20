@@ -3,11 +3,9 @@
 namespace Tests\Feature;
 use App\Team;
 use App\User;
+use App\Role;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Http\UploadedFile;
-use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 
@@ -17,7 +15,8 @@ class TeamTest extends TestCase
 
     public function test_show_all_team()
     {
-        $user = factory(User::class)->create();
+        $role = factory(Role::class)->create();
+        $user = factory(User::class)->states('admin')->create();
         $response = $this->actingAs($user)->get('/team');
 
         $response->assertStatus(200);
@@ -25,7 +24,8 @@ class TeamTest extends TestCase
 
     public function test_create_member_team_with_image()
     {
-        $user = factory(User::class)->create();
+        $role = factory(Role::class)->create();
+        $user = factory(User::class)->states('admin')->create();
         $photo = UploadedFile::fake()->image('image.jpg');
         $response = $this->actingAs($user)->post('/team', [
             'first_name'=>'Kevin',
@@ -43,11 +43,10 @@ class TeamTest extends TestCase
         $response->assertRedirect('/team');
     }
 
-
-
     public function test_delete_member_team()
     {
-        $user = factory(User::class)->create();
+        $role = factory(Role::class)->create();
+        $user = factory(User::class)->states('admin')->create();
         $photo = UploadedFile::fake()->image('image.jpg');
         $team=factory(Team::class)->create([
             'id'=>1,
@@ -78,7 +77,8 @@ class TeamTest extends TestCase
 
     public function test_update_member_team_with_image()
     {
-        $user = factory(User::class)->create();
+        $role = factory(Role::class)->create();
+        $user = factory(User::class)->states('admin')->create();
         $photo = $file = UploadedFile::fake()->image('image2.jpg');
         $team=factory(Team::class)->create([
             'id'=> 1,

@@ -121,11 +121,10 @@
     <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid" style="width:90px; heigh:auto"></a>
     <br>
     <h5 class="panelHeader">Panell d'administració</h5>
-
     <a href="/dashboard">Inici</a>
     <a href="/user">Usuaris</a>
     <a href="/activity">Activitats</a>
-    <a href="/category">Àreas</a>
+    <a href="/areas">Àreas</a>
     <a href="/workplans">Plans de treball</a>
     <a href="/team">Equip de gestió</a>
     <a href="/transparency">Transparència</a>

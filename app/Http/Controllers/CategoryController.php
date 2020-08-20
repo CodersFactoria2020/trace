@@ -3,78 +3,62 @@
 namespace App\Http\Controllers;
 
 use App\Category;
-use App\User;
-use App\Activity;
-use App\Role;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class CategoryController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
+        $this->authorize('view-any', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        if (auth()->user()->role_id != "Admin") {
-                return view('user.notauthorized');
-        }
-        return view('category.index', ['categories' => $categories], compact('users'), compact('roles'), compact('activities'));
+        return view('category.index', compact('categories'));
     }
-    
+
     public function create()
     {
+        $this->authorize('create', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        if (auth()->user()->role_id != "Admin") {
-                return view('user.notauthorized');
-        }
-        return view('category.create', ['categories' => $categories], compact('users'), compact('roles'), compact('activities'));
+        return view('category.create', compact('categories'));
     }
 
     public function store(Request $request)
     {
-        Activity::create($request->all());
-        return redirect('/category');
+        $this->authorize('create', Category::class);
+        Category::create($request->all());
+        return redirect('/areas')->with('status_success',"S'ha creat la categoria correctament");
     }
 
     public function show(Category $category)
     {
-        $roles = Role::all();
-        return view('category.show', ['categories' => $categories], compact('users'), compact('roles'), compact('activities'));
+        $this->authorize('view', Category::class);
+        return view('category.show', compact('categories'));
     }
 
     public function edit(Category $category)
     {
+        $this->authorize('update', Category::class);
         $categories = Category::all();
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        if (auth()->user()->can('edit', $user)) {
-            return view('category.edit', ['users' => $users], compact('activities'), compact('roles'));
-        }
+        return view('category.edit', compact('categories'));
     }
 
     public function update(Request $request, Category $category)
     {
+        $this->authorize('update', Category::class);
         $category->update($request->all());
-        return redirect('/category');
+        return redirect('/areas')->with('status_success',"S'ha actualitzat la categoria correctament");
     }
 
     public function destroy(Category $category)
     {
-        if (auth()->user()->can('destroy', $category)) {
-            $category->delete();
-        }
-        return redirect('/category');
+        $this->authorize('destroy', Category::class);
+        $category->delete();
+        return redirect('/areas')->with('status_success',"S'ha suprimit la categoria correctament");
     }
 }
+

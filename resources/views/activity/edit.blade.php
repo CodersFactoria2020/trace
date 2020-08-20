@@ -25,7 +25,7 @@
                             <input type="text" name="professional1" class="form-control" value="{{$activity->professional1}}"/>
                         </div>
                         <div class="form-group">
-                            <label>Professional de support</label>
+                            <label>Professional de suport</label>
                             <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
                         </div>
                         <div class="form-group">
@@ -33,7 +33,7 @@
                             <select name="category_id" class="form-control">
                                 <optgroup label="Selecciona una àrea">
                                 @foreach ($categories as $category)
-                                    <option value="{{ $category['id'] }}" style="background-color:{{ $category['category_color'] }}">{{ $category['category_name'] }}</option>
+                                    <option value="{{ $activity->category_id}}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
                         </div>

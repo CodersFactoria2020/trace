@@ -1,7 +1,8 @@
 
 @extends('parts.footer')
-    @extends('parts.about-section')
- @extends('layouts.app')
+    @extends('parts.que-fem-section')
+    @extends('parts.qui-som-section')
+@extends('layouts.app')
 
 
 

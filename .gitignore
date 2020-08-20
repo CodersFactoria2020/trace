@@ -22,3 +22,6 @@ tests/TestCase.php
 .vscode/
 composer.lock
 .idea/workspace.xml
+.vs/trace/v15/.suo
+.vs/VSWorkspaceState.json
+.vs/slnx.sqlite

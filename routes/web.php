@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\gate;
 Route::get('/', function () {
     return view('home');
 });
+Route::view('/legal', 'legal');
 
 Route::resource('/role', 'RoleController')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
@@ -22,6 +23,7 @@ Route::get('/transparencia', 'HomeController@transparencia')->name('transparenci
 Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
+Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
@@ -46,11 +48,12 @@ Route::get('/activity/{activity}/download', 'ActivityController@download')->name
 
 // Category routes
 Route::resource('/category', 'CategoryController')->names('category')->middleware('auth');
-Route::get('/categories', 'CategoryController@index')->name('category.index')->middleware('auth');
+Route::get('/areas', 'CategoryController@index')->name('category.index')->middleware('auth');
 Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX
 Route::resource('/events', 'EventController')->middleware('auth');
+
 
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
