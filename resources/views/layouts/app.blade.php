@@ -61,6 +61,9 @@
     <link href="css/prettyPhoto.css" rel="stylesheet" />
     <link href="css/jquery.bxslider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
+    
+    <!-- Cookie alert -->
+    <link rel="stylesheet" href="{{ asset('css/cookies-alert.css') }}">
 
     <!-- LARAVEL -->
     <!-- CSRF Token -->
@@ -72,7 +75,16 @@
 
 <body>
 
-    @include('layouts.cookies')
+    <!-- @include('layouts.cookies') -->
+    <!-- START Bootstrap-Cookie-Alert -->
+<div class="alert text-center cookiealert" role="alert">
+     &#x1F36A; Al fer click en aceptar, estás aceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
+
+    <button type="button" class="btn btn-primary btn-sm acceptcookies">
+        Aceptar
+    </button>
+</div>
+<!-- END Bootstrap-Cookie-Alert -->
 
     <div id="topbar" class="d-none d-lg-block">
         <div class="flex-container d-flex align-items-center justify-content-between">
@@ -140,6 +152,11 @@
     </main>
 
 </body>
+<script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js">
+window.addEventListener("cookieAlertAccept", function() {
+    alert("cookies accepted")
+})
+</script>
 
 <!-- Vendor JS Files -->
 <script src="vendor/jquery/jquery.min.js"></script>
