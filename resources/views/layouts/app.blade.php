@@ -70,20 +70,18 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
 
-
 </head>
 
 <body>
+  
+  <!-- START Bootstrap-Cookie-Alert -->
+  <div class="alert text-center cookiealert" role="alert">
+      &#x1F36A; Al fer click en aceptar, estás aceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
 
-    <!-- @include('layouts.cookies') -->
-    <!-- START Bootstrap-Cookie-Alert -->
-<div class="alert text-center cookiealert" role="alert">
-     &#x1F36A; Al fer click en aceptar, estás aceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
-
-    <button type="button" class="btn btn-primary btn-sm acceptcookies">
-        Aceptar
-    </button>
-</div>
+      <button type="button" class="btn btn-primary btn-sm acceptcookies">
+          Aceptar
+      </button>
+  </div>
 <!-- END Bootstrap-Cookie-Alert -->
 
     <div id="topbar" class="d-none d-lg-block">
@@ -152,6 +150,7 @@
     </main>
 
 </body>
+
 <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js">
 window.addEventListener("cookieAlertAccept", function() {
     alert("cookies accepted")
