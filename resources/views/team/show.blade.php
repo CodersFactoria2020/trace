@@ -1,18 +1,36 @@
-@extends('layouts.app')
-
-@section('content')
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h1> Membre de l'equip</h1><hr>
+<div class="modal fade" id="show-team{{$team->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Detalls del Membre de l'equip</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <h2>ID:</h2><p>{{$team->id}}</p>
-            <h2>Name i Cognom:</h2><p>{{$team->first_name}} {{$team->last_name}}</p>
-            <h2>Description:</h2><p>{{$team->position}}</p>
-            <h2>Imatge:</h2><td> <img src="images/{{$team->photo}}" width="150" height="150"></td>
-        </div>
-        <div class="card-footer">
-            <a href="{{Route('team.index')}}" class="btn btn-secondary">Back</a>
+            <div class="modal-body">
+                @method('put')
+                <div class="card-body">
+                    <div style="padding:5px;">
+                        <h5>ID:</h5><p> {{$team->id}}</p>
+                    </div>
+                    <div style="padding:5px;">
+                        <h5>Name i Cognom:</h5><p>{{$team->first_name}} {{$team->last_name}}</p>
+                    </div>
+                    <div style="padding:5px;">
+                        <h5>Description:</h5><p>{{$team->position}}</p>
+                    </div>
+                    <div style="padding:5px;">
+                        <h5>Imatge adjunt:</h5><p><img src="{{$team->get_photo_url()}}" width="150" height="150"></p>
+                    </div>
+
+                    <div class="text-right">
+                        <div class="text-right">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                        </div>
+                    </div>
+                </div>
+                </form>
+            </div>
         </div>
     </div>
-@endsection
+</div>

@@ -13,7 +13,8 @@ class TeamPolicy
 
     public function viewAny(User $user)
     {
-        if ($user->role_id === "Soci") {
+        if ($user->role_id === "Soci")
+        {
             return false;
         }
         return true;
@@ -43,6 +44,7 @@ class TeamPolicy
     public function destroy(User $user)
     {
         if ($user->role_id != "Admin") {
+
             return false;
         }
         return true;
