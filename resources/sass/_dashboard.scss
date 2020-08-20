@@ -1,0 +1,104 @@
+#sidebarMenu {
+    li,
+    a {
+        font-size: 16px;
+        font-weight: 600;
+    }
+    i {
+        padding-right: 5px;
+    }
+    .logo {
+        width: 90px;
+        height: auto;
+        margin-top: 30px;
+        margin-left: 30px;
+    }
+    .logoutbtn {
+        margin-bottom: 30px;
+        a {
+            color: $red !important;
+        }
+    }
+    .active {
+        a {
+            color: $black;
+        }
+    }
+}
+
+.dashboard-right-side {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    h2 {
+        color: $primary;
+        font-weight: 300;
+    }
+    .cta {
+        font-size: 14px;
+    }
+
+    .table th,
+    .table td {
+        vertical-align: baseline !important;
+    }
+}
+
+.filter-views {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0 20px;
+
+    a {
+        margin-right: 10px !important;
+    }
+}
+
+.page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: $primary !important;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    a {
+        color: $primary !important;
+        text-decoration: none;
+        background-color: transparent;
+    }
+}
+
+.page-item {
+    .active {
+        color: $primary !important;
+    }
+}
+
+.primary {
+    color: $primary !important;
+
+    a:hover {
+        color: $secondary;
+        text-decoration: none;
+    }
+}
+
+.danger {
+    color: $red !important;
+}
+
+.icon-text {
+    display: flex;
+    align-items: center;
+
+    i {
+        font-size: 24px;
+        padding-right: 5px;
+    }
+    a {
+        font-size: 14px;
+        font-weight: 600;
+    }
+}

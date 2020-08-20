@@ -125,22 +125,6 @@
 @endsection
 
   <!-- Custom fullcalendar Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #calendar {
-      max-width: 900px;
-      margin: 40px auto;
-    }
-
-    .mycard {
-      background-color: rgb(173, 173, 173) !important;
-    }
-  </style>
 
 @section('content')
 

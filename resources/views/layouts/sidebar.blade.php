@@ -1,5 +1,5 @@
 
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bg-color">
+<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
   <div class="sidebar-sticky flex-column pt-2">
 
     <div class="nav-item fixed-top logo">

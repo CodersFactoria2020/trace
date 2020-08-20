@@ -10978,7 +10978,7 @@ header {
   background: #00865d;
   display: inline-block;
   padding: 8px 30px;
-  border-radius: 20px;
+  border-radius: 30px;
   color: #fff;
   transition: none;
   font-size: 16px;
@@ -12364,7 +12364,6 @@ section a {
 
 #sidebarMenu .logoutbtn {
   margin-bottom: 30px;
-  margin-left: 20px;
 }
 
 #sidebarMenu .logoutbtn a {
@@ -12373,5 +12372,84 @@ section a {
 
 #sidebarMenu .active a {
   color: #343a40;
+}
+
+.dashboard-right-side {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 20px;
+}
+
+.dashboard-right-side h2 {
+  color: #00865d;
+  font-weight: 300;
+}
+
+.dashboard-right-side .cta {
+  font-size: 14px;
+}
+
+.dashboard-right-side .table th,
+.dashboard-right-side .table td {
+  vertical-align: baseline !important;
+}
+
+.filter-views {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px 0 20px;
+}
+
+.filter-views a {
+  margin-right: 10px !important;
+}
+
+.page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #00865d !important;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.page-link a {
+  color: #00865d !important;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.page-item .active {
+  color: #00865d !important;
+}
+
+.primary {
+  color: #00865d !important;
+}
+
+.primary a:hover {
+  color: #545454;
+  text-decoration: none;
+}
+
+.danger {
+  color: #dc3545 !important;
+}
+
+.icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.icon-text i {
+  font-size: 24px;
+  padding-right: 5px;
+}
+
+.icon-text a {
+  font-size: 14px;
+  font-weight: 600;
 }
 
