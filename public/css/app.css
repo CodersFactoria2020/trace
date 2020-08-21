@@ -11449,10 +11449,6 @@ header {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-
 #hero {
   width: 100%;
   height: 70vh;
@@ -11604,7 +11600,7 @@ header {
   text-decoration: none;
 }
 
-@media (max-height: 70vh), (max-width: 2000px) {
+@media (max-height: 70vh), (max-width: 4000px) {
   #hero {
     margin-bottom: 60px;
   }
@@ -12487,11 +12483,16 @@ section a {
 
 .icon-text i {
   padding-right: 5px;
+  text-decoration: none;
 }
 
 .icon-text a {
   font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.actions {
   text-decoration: none;
 }
 
@@ -12511,5 +12512,29 @@ section a {
 .pagination {
   margin: 0 !important;
   padding-left: 15px !important;
+}
+
+.bg-color {
+  background-color: honeydew;
+  height: 100vh;
+}
+
+/* TRYING TO CHANGE INTERACTION CALENDAR COLOR */
+
+#calendar .btn-primary {
+  color: #fff;
+  background-color: #343a40 !important;
+  border-color: #343a40 !important;
+}
+
+#calendar .fc-timeGridWeek-button .btn-primary .active {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.dashboard-team img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 

@@ -121,6 +121,7 @@
 
     i {
         padding-right: 5px;
+        text-decoration: none;
     }
 
     a {
@@ -135,6 +136,7 @@
         font-size: 18px;
         padding-right: 5px;
     }
+    text-decoration: none;
 }
 
 .full-vertical-align {
@@ -148,4 +150,35 @@
 .pagination {
     margin: 0 !important;
     padding-left: 15px !important;
+}
+
+.bg-color {
+    background-color: honeydew;
+    height: 100vh;
+}
+
+/* TRYING TO CHANGE INTERACTION CALENDAR COLOR */
+#calendar {
+    .btn-primary {
+        color: #fff;
+        background-color: #343a40 !important;
+        border-color: #343a40 !important;
+    }
+
+    .fc-timeGridWeek-button {
+        .btn-primary {
+            .active {
+                background-color: #000000 !important;
+                border-color: #000000 !important;
+            }
+        }
+    }
+}
+
+.dashboard-team {
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
 }
