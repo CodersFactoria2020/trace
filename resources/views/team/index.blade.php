@@ -26,12 +26,12 @@
   <div class="dashboard-right-side">
     <div class="float-left">
       <h2>Gestió de l'Equip</h2>
-    </div> 
+    </div>
     {{-- @can('create') --}}
     <button type="button" class="cta" data-toggle="modal" data-target="#create-team">Afegir un membre de l'equip</button>
     @include('team.create')
             {{-- @endcan --}}
-  </div> 
+  </div>
     <!-- Contenido que se desee -->
   <div class="dashboard-right-side">
     <table class="table table-striped table-borderless">
@@ -48,7 +48,7 @@
       @can('view-any', $team)
       <tr>
         <td>{{$team->id}}</td>
-        <td><img class="dashboard-team" src="{{$team->get_photo_url()}}"></td>   
+        <td class="dashboard-team"><img src="{{$team->get_photo_url()}}"></td>
         <td class="icon-text">
           <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
           <i class="icofont-user-alt-3"></i>
@@ -57,7 +57,7 @@
           </a>
         </td>
         <td>{{$team->position}}</td>
-        <td class="actions"> 
+        <td class="actions">
             @can('update', $team)
             <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
             <i class="icofont-ui-edit"></i>
@@ -65,7 +65,7 @@
             @include('team.edit')
             @endcan
         </td>
-        <td class="actions danger"> 
+        <td class="actions danger">
             @can('destroy', $team)
             <a href="" data-toggle="modal" data-target="#destroy-team{{$team->id}}" class="danger" type="button">
             <i class="icofont-ui-delete"></i>
@@ -78,7 +78,7 @@
       @endforeach
 
     </table>
-  </div> 
+  </div>
 </div>
 
 @endsection
