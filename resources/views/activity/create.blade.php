@@ -13,15 +13,15 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
-                            <input type="text" name="title" class="form-control">
+                            <input type="text" name="title" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
-                            <textarea type="text" name="description" class="form-control"></textarea>
+                            <textarea type="text" name="description" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
                             <label>Professional</label>
-                            <textarea type="text" name="professional1" class="form-control"></textarea>
+                            <textarea type="text" name="professional1" class="form-control" required></textarea>
                         </div>
                         <div class="form-group">
                             <label>Professional de support</label>
@@ -29,14 +29,14 @@
                         </div>
                         <div class="form-group">
                             <label>Àrea:</label>
-                            <select name="category_id" class="form-control">
+                            <select name="category_id" class="form-control" required>
                                 <optgroup label="Selecciona una àrea">
                                 @foreach ($categories as $category)
                                     <option value="{{ $category['id'] }}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" >
                             Adjunta document
                             <input type="file" name="file" id="fileToUpload"/>
                         </div>
