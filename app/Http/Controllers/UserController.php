@@ -20,7 +20,6 @@ class UserController extends Controller
 
     public function index()
     {
-        
         $user = Auth::user();
         $this->authorize('view-any', $user);
         $users = new User;

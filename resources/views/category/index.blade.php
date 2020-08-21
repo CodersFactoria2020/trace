@@ -27,6 +27,7 @@
             <div class="float-left"><h2>Gestió d'àreas</h2></div>
             @if (auth()->user()->role_id === "Admin")
             <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
+            @include('category.create')
             @endif
         </div>
 
@@ -40,36 +41,34 @@
                 </tr>
             </thead>
 
-            @foreach($categories as $category)
-                @can('view-any', $category)
-                    <tr>
-                        <td>{{$category->id ?? 'Default'}} </td>
-                        <td>{{$category->name ?? 'Default'}}</td>
-                        <td>{{$category->description ?? 'Default'}}</td>
-                        <td>
-                            @can('update', $category)
-                                <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-warning" category="button">Editar</a>
-                                @include('category.edit')
-                            @endcan
-                        </td>
-                        <td>
-                            <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-info" category="button">Detalls</a>
-                            @include('category.show')
-                        </td>
-                        <td>
-                            @can('destroy', $category)
-                                <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id ?? 'Default'}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
-                                @include('category.destroy')
-                            @endcan
-                        </td>
-                    </tr>
-                @endcan
-            @endforeach
+            @if ($categories)
+                @foreach($categories as $category)
+                    @can('view-any', $category)
+                        <tr>
+                            <td>{{$category->id}} </td>
+                            <td>{{$category->name}}</td>
+                            <td>{{$category->description}}</td>
+                            <td>
+                                @can('update', $category)
+                                    <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="mybtn btn btn-warning" category="button">Editar</a>
+                                    @include('category.edit')
+                                @endcan
+                            </td>
+                            <td>
+                                <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id}}" class="mybtn btn btn-info" category="button">Detalls</a>
+                                @include('category.show')
+                            </td>
+                            <td>
+                                @can('destroy', $category)
+                                    <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
+                                    @include('category.destroy')
+                                @endcan
+                            </td>
+                        </tr>
+                    @endcan
+                @endforeach
+            @endif
         </table>
     </div>
 @endsection
 
-@include('category.create')
-@include('category.show')
-@include('category.edit')
-@include('category.destroy')

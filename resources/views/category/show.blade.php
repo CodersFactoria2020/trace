@@ -1,4 +1,4 @@
-<div class="modal fade" id="show-category{{$category->id ?? 'Default'}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="show-category{{$category->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -11,16 +11,16 @@
                     @method('put')
                     <div class="card-body">
                         <div style="padding:5px;">
-                            <h5>ID:</h5><p> {{$category->id ?? 'Default'}}</p>
+                            <h5>ID:</h5><p> {{$category->id}}</p>
                         </div>
                         <div style="padding:5px;">
-                            <h5>Nom de l'àrea:</h5><p> {{$category->name ?? 'Default'}}</p>
+                            <h5>Nom de l'àrea:</h5><p> {{$category->name}}</p>
                         </div>
                         <div style="padding:5px;">
-                            <h5>Descripció:</h5><p> {{$category->description ?? 'Default'}}</p>
+                            <h5>Descripció:</h5><p> {{$category->description}}</p>
                         </div>
                         <div style="padding:5px;">
-                            <h5>Color de fons:</h5><p style="background-color:{{ $category['color'] ?? 'Default' }}; color:{{$category->color ?? 'Default'}}"> {{$category->color ?? 'Default'}} </p>
+                            <h5>Color de fons:</h5><p style="background-color:{{ $category['color'] }}; color:{{$category->color}}"> {{$category->color}} </p>
                         </div>
 
                         <div class="text-right">
