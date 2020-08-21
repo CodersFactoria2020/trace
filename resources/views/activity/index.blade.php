@@ -21,58 +21,73 @@
 @endsection
 
 @section('content')
-    @include('custom.message')
-    <div class="col">
-        <div class="dashboard-right-side">
-            <div class="float-left"><h2>Activitats</h2></div>
-
-
-            <button type="button" class="cta" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
-            @include('activity.create')
+@include('custom.message')
+<div class="col">
+    <div class="dashboard-right-side">
+        <div class="float-left">
+            <h2>Activitats</h2>
         </div>
-        <!-- Contenido que se desee -->
-        <table class="table table-striped">
-            <thead class="thead">
-            <tr>
-                <td><h5>ID</h5></td>
-                <td><h5>Títol</h5></td>
-                <td><h5>Descripció</h5></td>
-                <td><h5>Professional</h5></td>
 
-                <td colspan="3"><h5>Accions</h5></td>
-            </tr>
+        {{-- @can('create') --}}
+        <button type="button" class="cta" data-toggle="modal" data-target="#create-activity"> Afegir una activitat</button>
+        @include('activity.create')
+        {{-- @endcan --}}
+    </div>
+    <div class="dashboard-right-side">
+        <table class="table table-striped table-borderless">
+            <thead class="thead text-uppercase">
+                <tr>
+                    <td><small><b>Nº</b></small></td>
+                    <td><small><b>Títol</b></small></td>
+                    <td><small><b>Descripció</b></small></td>
+                    <td><small><b>Professional</b></small></td>
+
+                    <td colspan="3"><small><b>Accions<small><b></td>
+                </tr>
             </thead>
+        @if ($activities)
+        @foreach($activities as $activity)
+        @can('view-any', $activity)
+        <tr>
+            <td>
+                
+                {{$activity->id}}
+            </td>
+            <td class="icon-text primary-green">
+                <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
+                    <i class="icofont-attachment"></i>
+                    {{$activity->title}}
+                </a>
+                @include('activity.show')     
+            </td>
+            <td>{{$activity->description}}</td>
+            <td>{{$activity->professional1}}</td>
+            <td class="actions">
+                @can('update', $activity)
+                <a href=""  data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="primary-green" activity="button">
+                    <i class="icofont-ui-edit"></i>
+                </a>
+                @include('activity.edit')
+                @endcan
+            </td>
 
-           @if ($activities)
-                @foreach($activities as $activity)
-                    @can('view-any', $activity)
-                        <tr>
-                            <td>{{$activity->id}}</td>
-                            <td>{{$activity->title}}</td>
-                            <td>{{$activity->description}}</td>
-                            <td>{{$activity->professional1}}</td>
-                            <td>
-                                @can('update', $activity)
-                                    <a style="color:#ffffff" data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Editar</a>
-                                    @include('activity.edit')
-                                @endcan
-                            </td>
-                            <td>
-                                <a style="color:white" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="mybtn btn btn-info" activity="button">Detalls</a>
-                                @include('activity.show')
-                            </td>
-                            <td>
-                                @can('destroy', $activity)
-                                    <a style="color:white" data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="mybtn btn btn-danger" activity="button">Esborrar</a>
-                                    @include('activity.destroy')
-                                @endcan
-                            </td>
-                        </tr>
-                    @endcan
-                @endforeach
-           @endif
+            <td class="actions">
+                @can('destroy', $activity)
+                <div class="danger">
+                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">     
+                        <i class="icofont-ui-delete"></i>
+                    </a>
+                </div>
+                @include('activity.destroy')
+                @endcan
+            </td>
+        </tr>
+        @endcan
+        @endforeach
+        @endif
 
         </table>
     </div>
+</div>
 
 @endsection

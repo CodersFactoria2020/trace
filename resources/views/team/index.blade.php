@@ -20,65 +20,65 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
 
 @section('content')
-
-    <div class="card col">
-        <div class="card-header">
-            <div class="float-left"><h2>Gestió de Membres de l'Equip</h2></div>
-            {{-- @can('create') --}}
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-team"> Afegir un membre de l'equip</button>
-            @include('team.create')
+<div class="col">
+  <div class="dashboard-right-side">
+    <div class="float-left">
+      <h2>Gestió de l'Equip</h2>
+    </div> 
+    {{-- @can('create') --}}
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-team">Afegir un membre de l'equip</button>
+    @include('team.create')
             {{-- @endcan --}}
-        </div>
+  </div> 
     <!-- Contenido que se desee -->
-    <table class="table table-striped">
-      <thead class="thead">
-          <tr>
-              <td><h5>ID</h5></td>
-              <td><h5>Nom i Cognom</h5></td>
-              <td><h5>Professio</h5></td>
-              <td><h5>Imatge</h5></td>
-              <td colspan="4"><h5>Accions</h5></td>
-          </tr>
+  <div class="dashboard-right-side">
+    <table class="table table-striped table-borderless">
+      <thead class="thead text-uppercase">
+        <tr>
+          <td><small><b>ID</b></small></td>
+          <td><small><b>Imatge</b></small></td>
+          <td><small><b>Nom i Cognom</b></small></td>
+          <td><small><b>Professio</b></small></td>
+          <td colspan="2"><small><b>Accions</b></small></td>
+        </tr>
       </thead>
       @foreach($teams as $team)
       @can('view-any', $team)
       <tr>
-          <td>{{$team->id}}</td>
-          <td>{{$team->first_name}}, {{$team->last_name}}</td>
-          <td>{{$team->position}}</td>
-          <td> <img src="{{$team->get_photo_url()}}" width="150" height="150"></td>
-          <td>
-              @can('update', $team)
-              <a style="color:white" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="mybtn btn btn-info" type="button">Editar</a>
-              @include('team.edit')
-              @endcan
-          </td>
-          <td>
-              <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="mybtn btn btn-info" type="button">Detalls</a>
-              @include('team.show')
-          </td>
-          <td>
-              @can('destroy', $team)
-              <a style="color:white" data-toggle="modal" data-target="#destroy-team{{$team->id}}" class="mybtn btn btn-danger" type="button">Esborrar</a>
-              @include('team.destroy')
-              @endcan
-          </td>
+        <td>{{$team->id}}</td>
+        <td><img class="dashboard-team" src="{{$team->get_photo_url()}}"></td>   
+        <td class="icon-text">
+          <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
+          <i class="icofont-user-alt-3"></i>
+          {{$team->first_name}}, {{$team->last_name}}
+          @include('team.show')
+          </a>
+        </td>
+        <td>{{$team->position}}</td>
+        <td class="actions"> 
+            @can('update', $team)
+            <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
+            <i class="icofont-ui-edit"></i>
+            </a>
+            @include('team.edit')
+            @endcan
+        </td>
+        <td class="actions danger"> 
+            @can('destroy', $team)
+            <a href="" data-toggle="modal" data-target="#destroy-team{{$team->id}}" class="danger" type="button">
+            <i class="icofont-ui-delete"></i>
+            </a>
+            @include('team.destroy')
+            @endcan
+        </td>
       </tr>
       @endcan
       @endforeach
 
-  </table>
-    </div>
+    </table>
+  </div> 
+</div>
 
 @endsection

@@ -21,54 +21,66 @@
 @endsection
 
 @section('content')
-    @include('custom.message')
-    <div class="col">
-        <div class="card-header">
-            <div class="float-left"><h2>Gestió d'àreas</h2></div>
-            @if (auth()->user()->role_id === "Admin")
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
-            @include('category.create')
-            @endif
+@include('custom.message')
+<div class="col">
+    <div class="dashboard-right-side">
+        <div class="float-left">
+            <h2>Àreas</h2>
         </div>
+        @if (auth()->user()->role_id === "Admin")
+        <button type="button" class="cta" data-toggle="modal" data-target="#create-category"> Afegir una àrea</button>
+        @include('category.create')
+        @endif
+    </div>
+    <div class="dashboard-right-side">
+    <table class="table table-striped table-borderless">
+        <thead class="thead text-uppercase">
+            <tr>
+                <td><small><b>ID</b></small></td>
+                <td><small><b>Nom de l'àrea</b></small></td>
+                <td><small><b>Descripció de l'àrea</b></small></td>
+                <td colspan="3"><small><b>Accions</b></small></td>
+            </tr>
+        </thead>
 
-        <table class="table table-striped">
-            <thead class="thead">
-                <tr>
-                    <td><h5>ID</h5></td>
-                    <td><h5>Nom de l'àrea</h5></td>
-                    <td><h5>Descripció de l'àrea</h5></td>
-                    <td colspan="3"><h5>Accions</h5></td>
-                </tr>
-            </thead>
-
-            @if ($categories)
-                @foreach($categories as $category)
-                    @can('view-any', $category)
-                        <tr>
-                            <td>{{$category->id}} </td>
-                            <td>{{$category->name}}</td>
-                            <td>{{$category->description}}</td>
-                            <td>
-                                @can('update', $category)
-                                    <a style="color:white" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="mybtn btn btn-warning" category="button">Editar</a>
-                                    @include('category.edit')
-                                @endcan
-                            </td>
-                            <td>
-                                <a style="color:white" data-toggle="modal" data-target="#show-category{{$category->id}}" class="mybtn btn btn-info" category="button">Detalls</a>
-                                @include('category.show')
-                            </td>
-                            <td>
-                                @can('destroy', $category)
-                                    <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id}}" class="mybtn btn btn-danger" category="button">Esborrar</a>
-                                    @include('category.destroy')
-                                @endcan
-                            </td>
-                        </tr>
-                    @endcan
-                @endforeach
-            @endif
+        @if ($categories)
+        @foreach($categories as $category)
+        @can('view-any', $category)
+        <tr>
+            <td>{{$category->id}} </td>
+            <td class="icon-text primary-green">
+                <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
+                <i class="icofont-list"></i>
+                {{$category->name}}
+                </a>
+                @include('category.show')
+                </td>
+            <td>{{$category->description}}</td>
+            <td class="actions">
+                @can('update', $category)
+                <a href="" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="primary-green" category="button">
+                    <i class="icofont-ui-edit"></i>
+                </a>
+                @include('category.edit')
+                @endcan
+            </td>
+            <td class="actions">
+                @can('destroy', $category)
+                <div class="danger">
+                    <a style="color:white" data-toggle="modal" data-target="#destroy-category{{$category->id}}" class="danger" category="button">
+                        <i class="icofont-ui-delete"></i>
+                    </a>
+                </div>
+                
+                @include('category.destroy')
+                @endcan
+            </td>
+        </tr>
+        @endcan
+        @endforeach
+        @endif
         </table>
     </div>
+</div>
 @endsection
 

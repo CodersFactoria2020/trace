@@ -11449,10 +11449,6 @@ header {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Hero Section
---------------------------------------------------------------*/
-
 #hero {
   width: 100%;
   height: 70vh;
@@ -11604,7 +11600,7 @@ header {
   text-decoration: none;
 }
 
-@media (max-height: 70vh), (max-width: 2000px) {
+@media (max-height: 70vh), (max-width: 4000px) {
   #hero {
     margin-bottom: 60px;
   }
@@ -12365,7 +12361,6 @@ section a {
   background-image: url("https://images.unsplash.com/photo-1533766569461-3823e8a83622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
 }
 
-#sidebarMenu back li,
 #sidebarMenu a {
   font-size: 16px;
   font-weight: 600;
@@ -12383,7 +12378,9 @@ section a {
 }
 
 #sidebarMenu .logoutbtn {
-  margin-bottom: 30px;
+  position: fixed;
+  bottom: 30px;
+  width: 226px;
 }
 
 #sidebarMenu .logoutbtn a {
@@ -12442,15 +12439,30 @@ section a {
   background-color: transparent;
 }
 
+.page-link .active {
+  color: #fff !important;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff !important;
+  background-color: #00865d !important;
+  border-color: #00865d !important;
+}
+
+.bg-color {
+  background-color: #f2f2f2;
+}
+
 .page-item .active {
   color: #00865d !important;
 }
 
-.primary {
+.primary-green {
   color: #00865d !important;
 }
 
-.primary a:hover {
+.primary-green a:hover {
   color: #343a40 !important;
   text-decoration: none;
 }
@@ -12471,11 +12483,17 @@ section a {
 
 .icon-text i {
   padding-right: 5px;
+  text-decoration: none;
 }
 
 .icon-text a {
   font-size: 16px;
   font-weight: 600;
+  text-decoration: none;
+}
+
+.actions {
+  text-decoration: none;
 }
 
 .actions i {
@@ -12493,6 +12511,30 @@ section a {
 
 .pagination {
   margin: 0 !important;
-  padding-left: 10px !important;
+  padding-left: 15px !important;
+}
+
+.bg-color {
+  background-color: honeydew;
+  height: 100vh;
+}
+
+/* TRYING TO CHANGE INTERACTION CALENDAR COLOR */
+
+#calendar .btn-primary {
+  color: #fff;
+  background-color: #343a40 !important;
+  border-color: #343a40 !important;
+}
+
+#calendar .fc-timeGridWeek-button .btn-primary .active {
+  background-color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+.dashboard-team img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
 }
 

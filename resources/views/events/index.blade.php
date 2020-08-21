@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
   <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -35,37 +35,21 @@
 
 @endsection
 
-  <!-- Custom fullcalendar Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    #calendar {
-      max-width: 900px;
-      margin: 40px auto;
-    }
-
-    .mycard {
-      background-color: rgb(173, 173, 173) !important;
-    }
-  </style>
 
 @section('content')
+<div class="col">
+  <div class="dashboard-right-side">
+    <div class="float-left">
+      <h2>Plans de treball</h2>
+    </div> 
+  </div>
 
-    <div class="card mycard col-12">
-        <div class="card-header">
-            <div class="float-left"><h4>Plans de treball </h3></div>
-            <button class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
-        </div>
 <!-- Provisional -->
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-10"><div id="calendar"></div></div>
-            <div class="col"></div>
-        </div>
+      <div class="row">
+          <div class="col"></div>
+          <div class="col-10"><div id="calendar"></div></div>
+          <div class="col"></div>
+      </div>
 
         <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

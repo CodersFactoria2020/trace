@@ -1,5 +1,4 @@
 #sidebarMenu {
-    back li,
     a {
         font-size: 16px;
         font-weight: 600;
@@ -7,18 +6,23 @@
     i {
         padding-right: 5px;
     }
+
     .logo {
         width: 90px;
         height: auto;
         margin-top: 30px;
         margin-left: 30px;
     }
+
     .logoutbtn {
-        margin-bottom: 30px;
+        position: fixed;
+        bottom: 30px;
+        width: 226px;
         a {
             color: $red !important;
         }
     }
+
     .active {
         a {
             color: $black;
@@ -69,6 +73,21 @@
         text-decoration: none;
         background-color: transparent;
     }
+
+    .active {
+        color: $white !important;
+    }
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff !important;
+    background-color: $primary !important;
+    border-color: $primary !important;
+}
+
+.bg-color {
+    background-color: #f2f2f2;
 }
 
 .page-item {
@@ -77,7 +96,7 @@
     }
 }
 
-.primary {
+.primary-green {
     color: $primary !important;
 
     a:hover {
@@ -102,11 +121,13 @@
 
     i {
         padding-right: 5px;
+        text-decoration: none;
     }
 
     a {
         font-size: 16px;
         font-weight: 600;
+        text-decoration: none;
     }
 }
 
@@ -115,6 +136,7 @@
         font-size: 18px;
         padding-right: 5px;
     }
+    text-decoration: none;
 }
 
 .full-vertical-align {
@@ -127,5 +149,36 @@
 
 .pagination {
     margin: 0 !important;
-    padding-left: 10px !important;
+    padding-left: 15px !important;
+}
+
+.bg-color {
+    background-color: honeydew;
+    height: 100vh;
+}
+
+/* TRYING TO CHANGE INTERACTION CALENDAR COLOR */
+#calendar {
+    .btn-primary {
+        color: #fff;
+        background-color: #343a40 !important;
+        border-color: #343a40 !important;
+    }
+
+    .fc-timeGridWeek-button {
+        .btn-primary {
+            .active {
+                background-color: #000000 !important;
+                border-color: #000000 !important;
+            }
+        }
+    }
+}
+
+.dashboard-team {
+    img {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
 }

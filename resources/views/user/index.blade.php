@@ -25,14 +25,13 @@
 @include('custom.message')
 <div class="col">
   <div class="dashboard-right-side">
-    <div class="float-left"><h2>Usuaris</h2></div>
-
+    <div class="float-left"><h2>Usuaris</h2></div>  
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
     @include('user.create')
     @endif
   </div>
-  <!-- REVISAR CON CLIENTE SI ES NECESARIO ORDEN ASC Y DESC -->
+  <!-- ORDEN ASCENDENTE BY DEFAULT -->
   <div class="filter-views">
     <div class="float-left">
       <!-- {{ request()->is('home') ? 'active' : ''}} -->
@@ -69,8 +68,8 @@
 
       <tr>
         <td class="icon-text">
-          <div class="primary">
-            <a href="" data-toggle="modal" data-target="#show-user{{$user->id}}" class="primary" user="button">
+          <div class="primary-green">
+            <a href="" data-toggle="modal" data-target="#show-user{{$user->id}}" class="primary-green" user="button">
             <i class="icofont-user-alt-3"></i>
             {{$user->first_name}} {{$user->last_name}}
             </a>
@@ -79,8 +78,8 @@
         </td>
         <td>{{$user->role_id}}</td>
         <td class="icon-text">
-          <div class="primary">
-            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary">
+          <div class="primary-green">
+            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
               <i class="icofont-send-mail" style="font-size:24px"></i>
               {{$user->email}}
             </a>
@@ -89,14 +88,14 @@
         <td class="actions">
           @can('update', $user)
           <div class="primary">
-            <a  href="" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary" user="button">
+            <a  href="" data-toggle="modal" data-target="#edit-user{{$user->id}}" class="primary-green" user="button">
               <i class="icofont-ui-edit"></i>
             </a>
           </div>
           @include('user.edit')
           @endcan
         </td>
-        <td class="actions ">
+        <td class="actions">      
           @can('destroy', $user)
           <div class="danger">
             <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">

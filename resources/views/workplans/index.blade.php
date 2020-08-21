@@ -21,7 +21,6 @@
 <link rel="stylesheet" href="{{ asset('fullcalendar/lib/main.css') }}">
 <script src="{{ asset('fullcalendar/lib/main.js') }}" defer></script>
 <script src="{{ asset('fullcalendar/lib/locales-all.js') }}" defer></script>
-
 <script>
     document.addEventListener('DOMContentLoaded', function () {
       var calendarEl = document.getElementById('calendar');
@@ -124,73 +123,74 @@
 
 @endsection
 
-  <!-- Custom fullcalendar Style -->
 
 @section('content')
 
-    <div class="card col">
-        <div class="card-header">
-            <div class="float-left"><h1>Plans de treball </h1></div>
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
-        </div>
-<!-- Provisional -->
-        <div class="row">
-            <div class="col"></div>
-            <div class="col-10"><div id="calendar"></div></div>
-            <div class="col"></div>
-        </div>
-        
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    ID:
-                    <input type="text" name="txtID" id="txtID">
-                    <br>
-                    Data:
-                    <input type="text" name="txtDate" id="txtDate">
-                    <br>
-                    Títol:
-                    <input type="text" name="txtTitle" id="txtTitle">
-                    <br>
-                    Hora de inici:
-                    <input type="text" name="txtTime" id="txtTime">
-                    <br>
-                    {{-- Hora de finalització:
-                    <input type="text" name="txtTime" id="txtTime">
-                    <br>
-                    Professional 1:
-                    <input type="text" name="txtTProfessional1" id="txtProfessional1">
-                    <br>
-                    Professional 2:
-                    <input type="text" name="txtTProfessional2" id="txtProfessional2">
-                    <br> --}}
-                    Descripció:
-                    <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
-                    <br>
-                    Color:
-                    <input type="color" name="color" id="color">
-                    <br>
-                    {{-- Àrea:
-                    <input type="text" name="category_id" id="category_id">
-                    <br> --}}
-                  </div>
-                  <div class="modal-footer">
-                      <button id="btnAdd" class="btn btn-success">Afegir</button>
-                      <button id="btnEdit" class="btn btn-warning">Modificar</button>
-                      <button id="btnDelete" class="btn btn-danger">Esborrar</button>
-                      <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
-                  </div>
-            </div>
-            </div>
-        </div>
+<div class="col">
+  <div class="dashboard-right-side">
+    <div class="float-left">
+      <h2>Plans de treball</h2>
+    </div> 
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-activity">Afegir un pla de treball</button>
+</div>
+
+<div class="dashboard-right-side">
+  <div class="col">
+    <div id="calendar">
     </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ID:
+        <input type="text" name="txtID" id="txtID">
+        <br>
+        Data:
+        <input type="text" name="txtDate" id="txtDate">
+        <br>
+        Títol:
+        <input type="text" name="txtTitle" id="txtTitle">
+        <br>
+        Hora de inici:
+        <input type="text" name="txtTime" id="txtTime">
+        <br>
+        {{-- Hora de finalització:
+        <input type="text" name="txtTime" id="txtTime">
+        <br>
+        Professional 1:
+        <input type="text" name="txtTProfessional1" id="txtProfessional1">
+        <br>
+        Professional 2:
+        <input type="text" name="txtTProfessional2" id="txtProfessional2">
+        <br> --}}
+        Descripció:
+        <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
+        <br>
+        Color:
+        <input type="color" name="color" id="color">
+        <br>
+        {{-- Àrea:
+        <input type="text" name="category_id" id="category_id">
+        <br> --}}
+      </div>
+      <div class="modal-footer">
+        <button id="btnAdd" class="btn btn-success">Afegir</button>
+        <button id="btnEdit" class="btn btn-warning">Modificar</button>
+        <button id="btnDelete" class="btn btn-danger">Esborrar</button>
+        <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 @endsection
