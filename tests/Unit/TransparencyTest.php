@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use App\Transparency;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Http\UploadedFile;
@@ -12,12 +14,11 @@ class TransparencyTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testAvatarUpload()
+    public function test_economic_document_upload()
     {
-        $sizeInKilobytes = 1000000;
+        $user = factory(User::class)->create();
+        $kilobytes=2222;
+        $file = UploadedFile::fake()->create('document.pdf', $kilobytes);
 
-        Storage::fake('avatars');
-
-        UploadedFile::fake()->create('document.pdf', $sizeInKilobytes, 'trasparency/pdf');
     }
 }

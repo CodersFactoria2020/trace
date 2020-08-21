@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Team;
-use App\User;
-use App\Role;
-use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 

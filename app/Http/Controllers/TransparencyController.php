@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Transparency;
-use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -30,16 +29,14 @@ class TransparencyController extends Controller
 
     public function store(Request $request)
     {
+
         $data = $request->all();
         $validatedData = $request->validate([
             'economic_document'=> 'max:22560',
             'entity_document'=> 'max:22560',
         ]);
-
         $transparency = Transparency::create($data,$validatedData);
-        if ($economic_document = $request->file('economic_document') && $entity_document= $request->file('entity_document')) {
-            $transparency->upload_document($economic_document,$entity_document);
-        }
+        $this->upload_documents($request, $transparency);
 
         return redirect(route('transparency.index'));
     }
@@ -63,9 +60,7 @@ class TransparencyController extends Controller
         ]);
         $transparency->update($data,$validatedData);
 
-        if ($economic_document = $request->file('economic_document') && $entity_document= $request->file('entity_document')) {
-            $transparency->upload_document($economic_document,$entity_document);
-        }
+        $this->upload_documents($request, $transparency);
         return redirect('/transparency');
     }
 
@@ -74,5 +69,17 @@ class TransparencyController extends Controller
         $transparency->delete();
         Storage::delete(['entity_document', 'economic_document']);
         return redirect()->route('transparency.index');
+    }
+
+    private function upload_documents(Request $request, Transparency $transparency): void
+    {
+        if ($request->file('economic_document')) {
+
+            $transparency->upload_economic_document($request->file('economic_document'));
+        }
+        if ($request->file('entity_document')) {
+
+            $transparency->upload_entity_document($request->file('entity_document'));
+        }
     }
 }

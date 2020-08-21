@@ -57,8 +57,8 @@
       <tr>
           <td>{{$transparency->id}}</td>
           <td>{{$transparency->date_name}}</td>
-          <td>{{$transparency->economic_document}}</td>
-          <td>{{$transparency->entity_document}}</td>
+          <td>{{$transparency->get_document_url()}}</td>
+          <td>{{$transparency->get_document_url()}}</td>
 
           <td>
               @can('update', $transparency)
