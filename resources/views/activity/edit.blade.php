@@ -33,7 +33,7 @@
                             <select name="category_id" class="form-control">
                                 <optgroup label="Selecciona una àrea">
                                 @foreach ($categories as $category)
-                                    <option value="{{ $activity->category_id}}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
+                                    <option value="{{ $category->id}}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
                         </div>
