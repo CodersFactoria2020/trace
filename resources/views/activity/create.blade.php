@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('activity.store')}}" method="post" enctype="multipart/form-data"> <!-- enctype para subir el logo -->
+                <form action="{{Route('activity.store')}}" method="post"> <!-- enctype para subir el logo -->
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
