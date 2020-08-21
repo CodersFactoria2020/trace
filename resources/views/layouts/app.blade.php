@@ -76,10 +76,10 @@
   
   <!-- START Bootstrap-Cookie-Alert -->
   <div class="alert text-center cookiealert" role="alert">
-      &#x1F36A; Al fer click en aceptar, estás aceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
+      &#x1F36A; En fer clic a Acceptar estàs acceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
 
       <button type="button" class="btn btn-primary btn-sm acceptcookies">
-          Aceptar
+          Acceptar
       </button>
   </div>
 <!-- END Bootstrap-Cookie-Alert -->
