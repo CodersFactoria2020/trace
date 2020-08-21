@@ -29,6 +29,7 @@
 
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+    @include('user.create')
     @endif
   </div>
   <!-- REVISAR CON CLIENTE SI ES NECESARIO ORDEN ASC Y DESC -->
