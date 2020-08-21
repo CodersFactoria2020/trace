@@ -55,3 +55,8 @@ Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX
 Route::resource('/events', 'EventController')->middleware('auth');
+
+
+// transparency routes
+Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
+
