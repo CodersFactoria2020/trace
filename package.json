@@ -42,6 +42,7 @@
         "vue-template-compiler": "^2.6.11"
     },
     "dependencies": {
+        "@fortawesome/fontawesome": "^1.1.8",
         "@fullcalendar/core": "^5.3.0",
         "@fullcalendar/daygrid": "^5.3.0",
         "@fullcalendar/interaction": "^5.3.0",

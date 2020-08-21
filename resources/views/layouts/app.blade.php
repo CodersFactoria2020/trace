@@ -61,7 +61,7 @@
     <link href="css/prettyPhoto.css" rel="stylesheet" />
     <link href="css/jquery.bxslider.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
-    
+
     <!-- Cookie alert -->
     <link rel="stylesheet" href="{{ asset('css/cookies-alert.css') }}">
 
@@ -73,7 +73,7 @@
 </head>
 
 <body>
-  
+
   <!-- START Bootstrap-Cookie-Alert -->
   <div class="alert text-center cookiealert" role="alert">
       &#x1F36A; En fer clic a Acceptar estàs acceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
@@ -168,6 +168,7 @@ window.addEventListener("cookieAlertAccept", function() {
 <script src="vendor/counterup/counterup.min.js"></script>
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/venobox/venobox.min.js"></script>
+<script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-a11y="true"></script>
 
 
 <!-- Template Main JS File -->
