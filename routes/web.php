@@ -9,7 +9,6 @@ Route::get('/', function () {
 Route::view('/legal', 'legal');
 
 Route::resource('/role', 'RoleController')->middleware('auth');
-Route::resource('/user', 'UserController')->middleware('auth');
 Route::resource('/workplans', 'WorkplanController')->middleware('auth');
 Route::get('/login', 'HomeController@login')->name('login');
 
@@ -34,10 +33,7 @@ Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
 //Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
-Route::resource('/user', 'UserController')->names('user')->middleware('auth');
-Route::get('user/{id}/show/','UserController@show')->middleware('auth');
-Route::get('user/{id}/edit/','UserController@edit')->middleware('auth');
-Route::get('user/{id}/create/','UserController@create')->middleware('auth');
+Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 
 // Activity routes
@@ -60,3 +56,5 @@ Route::resource('/events', 'EventController')->middleware('auth');
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
 
+// Workplans routes
+Route::resource('/workplans', 'WorkplanController')->middleware('auth');
