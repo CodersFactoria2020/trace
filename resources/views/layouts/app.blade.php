@@ -76,7 +76,7 @@
   
   <!-- START Bootstrap-Cookie-Alert -->
   <div class="alert text-center cookiealert" role="alert">
-      &#x1F36A; En fer clic a Acceptar estàs acceptant les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
+      &#x1F36A; Aquest web utilitza cookies pròpies i de tercers per optimitzar i adaptar-se a la vostra navegació i les vostres preferències, entre altres tasques. Si continueu navegant, entendrem que accepteu les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
 
       <button type="button" class="btn btn-primary btn-sm acceptcookies">
           Acceptar
