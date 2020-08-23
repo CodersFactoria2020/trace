@@ -10,10 +10,10 @@
             <div class="modal-body">
                 <p>Segur que desitja esborrar aquest pla de treball?</p>
                 <div style="padding:5px;">
-                    <h5>Nom: </h5>
+                    <h5>Nom: {{ $users[($workplan->user_id)-1]->first_name }}</h5>
                 </div>
                 <div style="padding:5px;">
-                    <h5>Cognom: </h5>
+                    <h5>Cognom: {{ $users[($workplan->user_id)-1]->last_name }}</h5>
                 </div>
             </div>
  

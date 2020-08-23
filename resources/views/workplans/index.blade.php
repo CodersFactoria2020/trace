@@ -20,13 +20,12 @@
 
 @endsection
 
-
 @section('content')
 @include('custom.message')
 <div class="col">
   <div class="dashboard-right-side">
     <div class="float-left"><h2>Plans de treball</h2></div>  
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-workplan">Afegir un pla de treball</button>
     @include('workplans.create')
   </div>
   
@@ -42,19 +41,19 @@
       @if ($workplans)
         @foreach($workplans as $workplan)
         @can('view-any', $workplan)
-
         <tr>
-
+        
           <td class="icon-text">
             <div class="primary-green">
               <a href="" data-toggle="modal" data-target="#show-workplan{{$workplan->id}}" class="primary-green" user="button">
               <i class="icofont-user-alt-3"></i>
-              {{$workplan->user_id}}
+              
+              {{ $users[($workplan->user_id)-1]->first_name }} {{ $users[($workplan->user_id)-1]->last_name }}
               </a>
           </div>
               @include('workplans.show')
           </td>
-          <!-- <td class="actions">
+          <td class="actions">
             @can('update', $workplan)
             <div class="primary">
               <a  href="" data-toggle="modal" data-target="#edit-workplan{{$workplan->id}}" class="primary-green" user="button">
@@ -73,7 +72,7 @@
             </div>
             @include('workplans.destroy')
             @endcan
-          </td> -->
+          </td>
         </tr>
         @endcan
         @endforeach
