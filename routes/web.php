@@ -59,3 +59,4 @@ Route::resource('/transparency', 'TransparencyController')->names('transparency'
 
 // Workplans routes
 Route::resource('/workplans', 'WorkplanController')->middleware('auth');
+Route::get('workplans/{id}/destroy/','WorkplanController@destroy')->middleware('auth');
