@@ -35,6 +35,7 @@ Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middlew
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
+Route::get('filter','UserController@filter')->name('user.filter')->middleware('auth');
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
