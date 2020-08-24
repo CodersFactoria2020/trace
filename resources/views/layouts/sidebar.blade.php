@@ -48,7 +48,7 @@
         </li>  
 
         <li class="nav-item">
-          <a class="nav-link primary-green" href="">
+          <a class="nav-link primary-green" href="/transparency">
             <span><i class="icofont-page"></i></span>
             Transparència
           </a>
