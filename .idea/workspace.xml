@@ -21,16 +21,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/TransparencyPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TransparencyPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transparency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transparency.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/TeamTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TeamTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/TransparencyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TransparencyTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +220,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598003558920</updated>
       <workItem from="1598003560222" duration="1199000" />
-      <workItem from="1598251455798" duration="17076000" />
+      <workItem from="1598251455798" duration="18127000" />
     </task>
     <servers />
   </component>

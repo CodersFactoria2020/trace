@@ -19,7 +19,7 @@ class TeamPolicy
         return true;
     }
 
-    public function view(User $user, User $model)
+    public function view(User $user, Team $team)
     {
         return true;
     }
@@ -32,23 +32,23 @@ class TeamPolicy
         return true;
     }
 
-    public function update(User $user, User $model)
+    public function update(User $user,Team $team)
     {
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $model->id) {
+        if ($user->id === $team->id) {
             return false;
         }
         return true;
     }
 
-    public function destroy(User $user, User $model)
+    public function destroy(User $user, Team $team)
     {
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $model->id) {
+        if ($user->id === $team->id) {
             return false;
         }
         return true;
