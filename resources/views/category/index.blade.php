@@ -21,9 +21,9 @@
 @endsection
 
 @section('content')
-@include('custom.message')
 
 <div class="col">
+    @include('custom.message')
     <div class="col">
         <div class="dashboard-right-side">
             <div class="float-left">
