@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">DETALLS DE L'USUARI</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Detalls de l'usuari</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -10,37 +10,41 @@
             <div class="modal-body">
                     @method('put')
                     <div class="card-body">
-                        <div style="padding:5px;">
-                            <h5>ID:</h5><p> {{$user->id}}</p>
+                        <div>
+                            <small><b>Nom:</b></small><p> {{$user->first_name}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Nom:</h5><p> {{$user->first_name}}</p>
+                        <div>
+                            <small><b>Cognom:</b></small><p> {{$user->last_name}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Cognom:</h5><p> {{$user->last_name}}</p>
+                        <div>
+                            <small><b>Correo:</b></small>
+                            <div class="icon-text mb-3">
+                                <div class="primary-green">
+                                    <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
+                                    <i class="icofont-send-mail" style="font-size:24px"></i>
+                                    {{$user->email}}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>     
+                        <div>
+                            <small><b>Telèfon:</b></small>
+                            <p>{{$user->phone}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Correo:</h5>
-                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
-                                style='font-size:2rem' class="mybtn btn"> <i class=' fas fa-envelope'></i> {{$user->email}}
-                            </a>
+                        <div>
+                            <small><b>DNI:</b></small>
+                            <p>{{$user->dni}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Telèfon:</h5><p> {{$user->phone}}</p>
+                        <div>
+                            <small><b>Tutor(a):</b></small>
+                            <p>{{$user->tutor}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>DNI:</h5><p> {{$user->dni}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Tutor(a):</h5><p> {{$user->tutor}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Rol:</h5><p> {{$user->role_id}}</p>
+                        <div>
+                            <small><b>Rol:</b></small>
+                            <p>{{$user->role_id}}</p>
                         </div>
                         
-                        <div class="card-footer text-right">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
-                        </div>
+        
                         </div>
                     </div>
                 </div>

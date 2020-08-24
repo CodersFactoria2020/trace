@@ -53,20 +53,24 @@
                 
                 {{$activity->id}}
             </td>
-            <td class="icon-text primary-green">
-                <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
-                    <i class="icofont-attachment"></i>
-                    {{$activity->title}}
-                </a>
+            <td class="icon-text">
+                <div class="primary-green">
+                    <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
+                        <i class="icofont-attachment"></i>
+                        {{$activity->title}}
+                    </a>
+                </div>
                 @include('activity.show')     
             </td>
-            <td>{{$activity->description}}</td>
+            <td>{{$activity->description = substr($activity->description, 0, 40) . '...'}}</td>
             <td>{{$activity->professional1}}</td>
             <td class="actions">
                 @can('update', $activity)
-                <a href=""  data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="primary-green" activity="button">
-                    <i class="icofont-ui-edit"></i>
-                </a>
+                <div class="primary-green">
+                    <a href=""  data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="primary-green" activity="button">
+                        <i class="icofont-ui-edit"></i>
+                    </a>
+                </div>
                 @include('activity.edit')
                 @endcan
             </td>

@@ -51,19 +51,23 @@
                 @can('view-any', $category)
                 <tr>
                     <td>{{$category->id}} </td>
-                    <td class="icon-text primary-green">
-                        <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
-                        <i class="icofont-list"></i>
+                    <td class="icon-text">
+                        <div class="primary-green">
+                            <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
+                            <i class="icofont-list"></i>
+                        </div>
                         {{$category->name}}
                         </a>
                         @include('category.show')
                         </td>
-                    <td>{{$category->description}}</td>
+                    <td>{{$category->description = substr($category->description, 0, 40) . '...'}}</td>
                     <td class="actions">
                         @can('update', $category)
-                        <a href="" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="primary-green" category="button">
-                            <i class="icofont-ui-edit"></i>
-                        </a>
+                        <div class="primary">
+                            <a href="" data-toggle="modal" data-target="#edit-category{{$category->id}}" class="primary-green" category="button">
+                                <i class="icofont-ui-edit"></i>
+                            </a>
+                        </div>
                         @include('category.edit')
                         @endcan
                     </td>

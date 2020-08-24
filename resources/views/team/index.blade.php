@@ -50,18 +50,22 @@
         <td>{{$team->id}}</td>
         <td class="dashboard-team"><img src="{{$team->get_photo_url()}}"></td>
         <td class="icon-text">
-          <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
-          <i class="icofont-user-alt-3"></i>
-          {{$team->first_name}}, {{$team->last_name}}
+          <div class="primary-green">
+            <a data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
+              <i class="icofont-user-alt-3"></i>
+              {{$team->first_name}}, {{$team->last_name}}
+            </a>
+          </div>
           @include('team.show')
-          </a>
         </td>
         <td>{{$team->position}}</td>
         <td class="actions">
             @can('update', $team)
-            <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
-            <i class="icofont-ui-edit"></i>
-            </a>
+            <div class="primary-green">
+              <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
+                <i class="icofont-ui-edit"></i>
+              </a>
+            </div>
             @include('team.edit')
             @endcan
         </td>

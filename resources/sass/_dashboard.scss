@@ -36,6 +36,7 @@
     display: flex;
     justify-content: space-between;
     padding: 20px 20px;
+
     h2 {
         padding-top: 10px;
         color: $primary;
@@ -138,7 +139,11 @@
         font-size: 18px;
         padding-right: 5px;
     }
-    text-decoration: none;
+
+    a:hover {
+        color: $black !important;
+        text-decoration: none;
+    }
 }
 
 .full-vertical-align {
@@ -146,7 +151,6 @@
     /* IMPORTANTE */
     display: flex;
     align-items: center;
-    position: fixed;
 }
 
 .pagination {
@@ -194,4 +198,9 @@
     left: 0;
     background-color: #f2f2f2;
     overflow-x: hidden; /* Disable horizontal scroll */
+}
+
+.label-small {
+    font-size: 14px !important;
+    font-weight: 600 !important;
 }

@@ -24,46 +24,57 @@
 @include('custom.message')
 
 <div class="col">
+
   <div class="dashboard-right-side">
-    <div class="float-left"><h2>Informació económica i d’activitats</h2></div>
+    <div class="float-left"><h2>Transparència</h2></div>
     {{-- @can('create') --}}
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-transparency"> Afegir una activitat economica</button>
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-transparency"> Afegir document</button>
     @include('transparency.create')
     {{-- @endcan --}}
     </div>
-    <!-- Contenido que se desee -->
-    <table class="table table-striped">
-      <thead class="thead">
-          <tr>
-              <td><h5>ID</h5></td>
-              <td><h5>Any</h5></td>
-              <td><h5>Documentacio Econmica</h5></td>
-              <td><h5>Documentacio Economica d'entitats</h5></td>
-              <td colspan="3"><h5>Accions</h5></td>
-          </tr>
-      </thead>
 
-      @foreach($transparencies as $transparency)
-      @can('view-any', $transparency)
-      <tr>
+
+
+    <div class="dashboard-right-side">
+      <table class="table table-striped table-borderless">
+        <thead class="thead text-uppercase">
+          <td><small><b>ID</b></small></td>
+          <td><small><b>Any</b></small></td>
+          <td><small><b>Documentacio Economica</b></small></td>
+          <td><small><b>Documentacio Economica d'entitats</b></small></td>
+          <td colspan="3"><small><b>Accions</b></small></td>
+        </thead>
+        @foreach($transparencies as $transparency)
+        @can('view-any', $transparency)
+        <tr>
           <td>{{$transparency->id}}</td>
-          <td>{{$transparency->date_name}}</td>
+          <td class="icon-text">
+            <div class="primary-green">
+              <a href="" data-toggle="modal" data-target="#show-transparency{{$transparency->id}}" class="primary-green" transparency="button">
+                {{$transparency->date_name}}
+              </a>
+            </div>
+            @include('transparency.show')
+          </td>
           <td>{{$transparency->get_document_url()}}</td>
           <td>{{$transparency->get_document_url()}}</td>
 
-          <td>
+          <td class="actions">
               @can('update', $transparency)
-              <a style="color:white" data-toggle="modal" data-target="#edit-transparency{{$transparency->id}}" class="mybtn btn btn-info" transparency="button">Editar</a>
+              <div class="primary-green">
+                <a href="" data-toggle="modal" data-target="#edit-transparency{{$transparency->id}}" class="primary-green" transparency="button">
+                  <i class="icofont-ui-edit"></i>
+                </a>
+              </div>
               @include('transparency.edit')
               @endcan
           </td>
-          <td>
-              <a style="color:white" data-toggle="modal" data-target="#show-transparency{{$transparency->id}}" class="mybtn btn btn-info" transparency="button">Detalls</a>
-              @include('transparency.show')
-          </td>
-          <td>
+
+          <td class="actions danger">
               @can('destroy', $transparency)
-              <a style="color:white" data-toggle="modal" data-target="#destroy-transparency{{$transparency->id}}" class="mybtn btn btn-danger" transparency="button">Esborrar</a>
+              <a href="" data-toggle="modal" data-target="#destroy-transparency{{$transparency->id}}" class="danger" transparency="button">
+                <i class="icofont-ui-delete"></i>
+              </a>
               @include('transparency.destroy')
               @endcan
           </td>
@@ -71,7 +82,8 @@
       @endcan
       @endforeach
 
-  </table>
-    </div>
+    </table>
+  </div>
+</div>
 
 @endsection
