@@ -56,8 +56,8 @@
             </div>
             @include('transparency.show')
           </td>
-          <td>{{$transparency->get_document_url()}}</td>
-          <td>{{$transparency->get_document_url()}}</td>
+          <td><a href="{{$transparency->get_economic_url()}}">{{Storage::url($transparency->get_economic_url())}}</a></td>
+          <td><a href="{{$transparency->get_entity_url()}}">{{Storage::url($transparency->get_entity_url())}}</a></td>
 
           <td class="actions">
               @can('update', $transparency)
