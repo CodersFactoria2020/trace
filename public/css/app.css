@@ -12178,6 +12178,34 @@ section a {
   }
 }
 
+/*--------------------------------------------------------------
+# Collabora
+--------------------------------------------------------------*/
+
+.collabora .content h3 {
+  font-weight: 600;
+  font-size: 26px;
+  color: #545454;
+  padding-bottom: 20px;
+}
+
+.collabora .content h4 {
+  font-weight: 600;
+  font-size: 18px !important;
+  color: #545454;
+  padding-bottom: 20px;
+}
+
+.collabora .content li {
+  font-size: 16px;
+  color: #545454;
+  padding-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Collaborators
+--------------------------------------------------------------*/
+
 .collaborators img {
   width: auto;
   height: 120px;
@@ -12189,6 +12217,10 @@ section a {
   font-size: 26px;
   color: #545454;
 }
+
+/*--------------------------------------------------------------
+# Resources
+--------------------------------------------------------------*/
 
 .resources h3 {
   font-weight: 600;
@@ -12209,6 +12241,10 @@ section a {
 .resources i {
   padding-right: 10px;
 }
+
+/*--------------------------------------------------------------
+# Philosophy
+--------------------------------------------------------------*/
 
 .philosophy .content h3 {
   font-weight: 600;
@@ -12237,6 +12273,10 @@ section a {
   margin-left: 20px;
 }
 
+/*--------------------------------------------------------------
+# Transparency
+--------------------------------------------------------------*/
+
 .transparency .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -12246,10 +12286,21 @@ section a {
 
 .transparency .content h4 {
   font-weight: 600;
+  font-size: 18px !important;
+  color: #545454;
+  padding-bottom: 20px;
+}
+
+.transparency .content ul {
+  font-weight: 600;
   font-size: 18px;
   color: #545454;
   padding-bottom: 20px;
 }
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
 
 .login h2 {
   text-align: center;
@@ -12510,7 +12561,6 @@ section a {
   /* IMPORTANTE */
   display: flex;
   align-items: center;
-  position: fixed;
 }
 
 .pagination {
@@ -12541,6 +12591,7 @@ section a {
   height: auto;
   border-radius: 50%;
   background-size: cover;
+<<<<<<< HEAD
 }
 
 .fixed-side {
@@ -12556,5 +12607,7 @@ section a {
   background-color: #f2f2f2;
   overflow-x: hidden;
   /* Disable horizontal scroll */
+=======
+>>>>>>> fixing-front-end-details
 }
 
