@@ -22,10 +22,11 @@
 
 
 @section('content')
-@include('custom.message')
+
 <div class="col">
+    @include('custom.message')
   <div class="dashboard-right-side">
-    <div class="float-left"><h2>Usuaris</h2></div>  
+    <div class="float-left"><h2>Usuaris</h2></div>
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
     @include('user.create')
@@ -34,9 +35,14 @@
   <!-- ORDEN ASCENDENTE BY DEFAULT -->
   <div class="filter-views">
     <div class="float-left">
-      <!-- {{ request()->is('home') ? 'active' : ''}} -->
+      <!--  -->
       <form action="{{ Route('user.filter') }}">
-        <a href="/user" class="btn btn-outline-dark btn-sm active">Veure tots</a>
+      
+      <a href="/user" class="btn btn-outline-dark btn-sm active">
+      <!--
+      class="{{ request()->is('user') ? 'btn btn-outline-dark btn-sm active' : 'btn btn-outline-dark btn-sm'}}">
+      -->   
+      Veure tots</a>
         @foreach($roles as $role)
         <a type="submit" href="/user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm">{{ $role->role_name }}</a>
         @endforeach
@@ -44,7 +50,6 @@
     </div>
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>
-      <!-- {{ request()->is('home') ? 'active' : ''}} -->
       <div>
         <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm active">Ascendent</a>
         <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm">Descendent</a>
@@ -96,7 +101,7 @@
           @include('user.edit')
           @endcan
         </td>
-        <td class="actions">      
+        <td class="actions">
           @can('destroy', $user)
           <div class="danger">
             <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">

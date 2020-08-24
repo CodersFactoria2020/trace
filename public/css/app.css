@@ -12361,6 +12361,10 @@ section a {
   background-image: url("https://images.unsplash.com/photo-1533766569461-3823e8a83622?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80");
 }
 
+#sidebarMenu {
+  background-color: #f2f2f2;
+}
+
 #sidebarMenu a {
   font-size: 16px;
   font-weight: 600;
@@ -12371,7 +12375,7 @@ section a {
 }
 
 #sidebarMenu .logo {
-  width: 90px;
+  width: 100px;
   height: auto;
   margin-top: 30px;
   margin-left: 30px;
@@ -12534,7 +12538,23 @@ section a {
 
 .dashboard-team img {
   width: 80px;
-  height: 80px;
+  height: auto;
   border-radius: 50%;
+  background-size: cover;
+}
+
+.fixed-side {
+  height: 100%;
+  /* Full-height: remove this if you want "auto" height */
+  position: fixed;
+  /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1;
+  /* Stay on top */
+  top: 0;
+  /* Stay at the top */
+  left: 0;
+  background-color: #f2f2f2;
+  overflow-x: hidden;
+  /* Disable horizontal scroll */
 }
 
