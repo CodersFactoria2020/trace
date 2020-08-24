@@ -35,7 +35,6 @@
   <!-- ORDEN ASCENDENTE BY DEFAULT -->
   <div class="filter-views">
     <div class="float-left">
-      <!-- {{ request()->is('home') ? 'active' : ''}} -->
       <form action="{{ Route('user.filter') }}">
         <a href="/user" class="btn btn-outline-dark btn-sm active">Veure tots</a>
         @foreach($roles as $role)
