@@ -26,15 +26,19 @@
                         </div>
                         <div class="form-group">
                             <label for="name">Imatge</label>
+                            <div class="d-flex justify-content-start pb-3">
+                                    Nombre de la imagen adjuntada
+                                    <button type="button" class="close pl-2"><span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
                             <input type="file" name="photo" class="form-control">
                         </div>
+                        
 
                         <div class="text-right">
-                            <div class="text-right">
-                                <a href="{{Route('team.update', $team->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
-                                </a>
-                            </div>
+                            <a href="{{Route('team.update', $team->id)}}" >
+                                <input type="submit" value="Actualitzar" class="cta">
+                            </a>
                         </div>
                     </div>
                 </form>

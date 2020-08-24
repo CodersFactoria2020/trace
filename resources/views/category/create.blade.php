@@ -25,7 +25,7 @@
                         </div>
 
                         <div class="text-right">
-                            <input type="submit" value="Crear" class="btn btn-primary">
+                            <input type="submit" value="Crear" class="cta">
                         </div>
                         </div>
                     </div>

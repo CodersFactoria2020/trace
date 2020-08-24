@@ -28,7 +28,7 @@
   <div class="dashboard-right-side">
     <div class="float-left"><h2>Transparència</h2></div>
     {{-- @can('create') --}}
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-transparency"> Afegir document</button>
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-transparency"> Afegir documents</button>
     @include('transparency.create')
     {{-- @endcan --}}
     </div>
@@ -38,7 +38,6 @@
     <div class="dashboard-right-side">
       <table class="table table-striped table-borderless">
         <thead class="thead text-uppercase">
-          <td><small><b>ID</b></small></td>
           <td><small><b>Any</b></small></td>
           <td><small><b>Documentacio Economica</b></small></td>
           <td><small><b>Documentacio Economica d'entitats</b></small></td>
@@ -47,7 +46,6 @@
         @foreach($transparencies as $transparency)
         @can('view-any', $transparency)
         <tr>
-          <td>{{$transparency->id}}</td>
           <td class="icon-text">
             <div class="primary-green">
               <a href="" data-toggle="modal" data-target="#show-transparency{{$transparency->id}}" class="primary-green" transparency="button">

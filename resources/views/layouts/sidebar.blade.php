@@ -43,7 +43,7 @@
         <li class="nav-item">
           <a class="nav-link primary-green" href="/team">
             <span><i class="icofont-id"></i></span>
-            Equip de gestió
+            Gestió de l'Equip
           </a>
         </li>  
 

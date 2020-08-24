@@ -54,10 +54,9 @@
                     <td class="icon-text">
                         <div class="primary-green">
                             <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
-                            <i class="icofont-list"></i>
-                        </div>
-                        {{$category->name}}
-                        </a>
+                            <i class="icofont-list"></i>{{$category->name}}
+                            </a>
+                        </div>   
                         @include('category.show')
                         </td>
                     <td>{{$category->description = substr($category->description, 0, 40) . '...'}}</td>

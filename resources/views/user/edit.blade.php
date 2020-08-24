@@ -54,9 +54,9 @@
                             <div class="form-group col-md-6">
                                 <label>Tutor(a)</label>
                                 <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"/>
-                            </div>
-                            
+                            </div> 
                         </div>
+
                     </div>
 
                     <div class="text-right mb-2">

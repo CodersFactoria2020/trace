@@ -7,32 +7,34 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
-                <form action="{{Route('team.store')}}" method="post" enctype="multipart/form-data"> <!-- enctype para subir el logo -->
-                    @csrf
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="name">Nom</label>
-                            <input type="text" name="first_name" class="form-control" placeholder="First Name" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Cognom</label>
-                            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Posicio</label>
-                            <input type="text" name="position" class="form-control" placeholder="Position" required/>
-                        </div>
-                        <div class="form-group">
-                            <label for="name">Imatge</label>
-                            <input type="file" name="photo" class="form-control" >
-                        </div>
+            <div class="card-body">
+                <div class="modal-body">
+                    <form action="{{Route('team.store')}}" method="post" enctype="multipart/form-data"> <!-- enctype para subir el logo -->
+                        @csrf
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Nom</label>
+                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Cognom</label>
+                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Posicio</label>
+                                <input type="text" name="position" class="form-control" placeholder="Position" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Imatge</label>
+                                <input type="file" name="photo" class="form-control" >
+                            </div>
 
-                        <div class="text-right">
-                                <input type="submit" value="Crear" class="btn btn-primary">
+                            <div class="text-right mt-4">
+                                <input type="submit" value="Crear" class="cta">
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

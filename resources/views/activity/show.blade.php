@@ -8,45 +8,41 @@
                 </button>
             </div>
             <div class="modal-body">
-                    @method('put')
-                    <div class="card-body">
-                        <div style="padding:5px;">
-                            <h5>ID:</h5><p> {{$activity->id}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Nom de l'activitat:</h5><p> {{$activity->title}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Descripció:</h5><p> {{$activity->description}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Professional responsable:</h5><p> {{$activity->professional1}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Professional de suport:</h5><p> {{$activity->professional2}}</p>
-                        </div>
-                        <div style="padding:5px;">
-                            <h5>Àrea:</h5><p> {{$activity->category_id}}</p>
-                        </div>
-                        @if($activity->has_file())
-                        <div style="padding:5px;">
-                            <h5>Document adjunt:</h5><p> {{$activity->get_downloaded_file_name()}}</p>
-                        </div>
-                        <a href="{{Route('download-document', $activity->id)}}">
-                            <button type="button" class="btn btn-primary text-right">
-                                Descarregar
-                            </button>
-                        </a>
-                        @endif
-
-
-                        <div class="text-right">
-                            <div class="text-right">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
-                            </div>
-                        </div>
+                @method('put')
+                <div class="card-body">
+                    <div>
+                        <small><b>Nom de l'activitat: </b></small>
+                        <p>{{$activity->title}}</p>
                     </div>
-                </form>
+                    <div>
+                        <small><b>Descripció: </b></small>
+                        <p>{{$activity->description}}</p>
+                    </div>
+                    <div>
+                        <small><b>Professional responsable: </b></small>
+                        <p>{{$activity->professional1}}</p>
+                    </div>
+                    <div>
+                        <small><b>Professional de suport: </b></small>
+                        <p>{{$activity->professional2}}</p>
+                    </div>
+                    <div>
+                        <small><b>Àrea: </b></small>
+                        <p>{{$activity->category_id}}</p>
+                    </div>
+                    @if($activity->has_file())
+                    <div>
+                        <small><b>Document adjunt: </b></small>
+                        <p>{{$activity->get_downloaded_file_name()}}</p>
+                    </div>
+                    <a href="{{Route('download-document', $activity->id)}}">
+                        <button type="button" class="btn btn-primary text-right">
+                            Descarregar
+                        </button>
+                    </a>
+                    @endif
+                </div>
+                
             </div>
         </div>
     </div>

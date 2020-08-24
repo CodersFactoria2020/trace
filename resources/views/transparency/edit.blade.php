@@ -25,12 +25,10 @@
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
-                        <div class="text-right">
-                            <div class="text-right">
-                                <a href="{{Route('transparency.update', $transparency->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
-                                </a>
-                            </div>
+                        <div class="text-right pt-4">
+                            <a href="{{Route('transparency.update', $transparency->id)}}" >
+                                <input type="submit" value="Actualitzar" class="cta">
+                            </a>
                         </div>
                     </div>
                 </form>

@@ -8,10 +8,8 @@
             </div>
 
             <div class="modal-body">
-                <p>Segur que desitja esborrar aquest activitat economica?</p>
-                <div style="padding:5px;">
-                    <h5>Activitat Economica: {{$transparency->date_name}}</h5>
-                </div>
+                <p>Segur que desitja esborrar aquests documents de <b>{{$transparency->date_name}}</b>?</p>
+
             </div>
 
             <div class="modal-footer">
