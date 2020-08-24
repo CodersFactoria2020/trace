@@ -1,4 +1,4 @@
-@extends('layouts.dashboard-navbar')
+@extends('layouts.app-dashboard')
 
 @section('scripts')
 
@@ -20,26 +20,17 @@
 
 @endsection
 
-  <!-- Custom  Style -->
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-  </style>
-
 @section('content')
+@include('custom.message')
 
-    <div class="card col-12">
-        <div class="card-header">
-            <div class="float-left"><h2>Informació económica i d’activitats</h2></div>
-            {{-- @can('create') --}}
-            <button type="button" class="mybtn btn btn-primary float-right" data-toggle="modal" data-target="#create-transparency"> Afegir una activitat economica</button>
-            @include('transparency.create')
-            {{-- @endcan --}}
-        </div>
+<div class="col">
+  <div class="dashboard-right-side">
+    <div class="float-left"><h2>Informació económica i d’activitats</h2></div>
+    {{-- @can('create') --}}
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-transparency"> Afegir una activitat economica</button>
+    @include('transparency.create')
+    {{-- @endcan --}}
+    </div>
     <!-- Contenido que se desee -->
     <table class="table table-striped">
       <thead class="thead">
