@@ -38,16 +38,14 @@
     <div class="dashboard-right-side">
       <table class="table table-striped table-borderless">
         <thead class="thead text-uppercase">
-          <td><small><b>ID</b></small></td>
           <td><small><b>Any</b></small></td>
-          <td><small><b>Documentacio Economica</b></small></td>
-          <td><small><b>Documentacio Economica d'entitats</b></small></td>
+          <td><small><b>Documentació Econòmica</b></small></td>
+          <td><small><b>Documentació Econòmica d'entitats</b></small></td>
           <td colspan="3"><small><b>Accions</b></small></td>
         </thead>
         @foreach($transparencies as $transparency)
         @can('view-any', $transparency)
         <tr>
-          <td>{{$transparency->id}}</td>
           <td class="icon-text">
             <div class="primary-green">
               <a href="" data-toggle="modal" data-target="#show-transparency{{$transparency->id}}" class="primary-green" transparency="button">

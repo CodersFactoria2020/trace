@@ -14,7 +14,7 @@ class ActivitiesTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_success_response_to_user_authorized()
+    public function test_admin_can_view_all_activities()
     {
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
@@ -23,6 +23,17 @@ class ActivitiesTest extends TestCase
         $response->assertStatus(200);
         $response->assertSeeText('Activitats');
     }
+    public function test_admin_can_view_one_activity()
+    {
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
+        $activity = factory(Activity::class)->create();
+
+        $response = $this->get('/activity/' . $activity->id);
+
+        $response->assertStatus(302);
+    }
+
 
     public function test_redirect_user_not_authorized()
     {
@@ -120,6 +131,25 @@ class ActivitiesTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
     }
+    public function test_professional_can_view_all_activities()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $response = $this->actingAs($user)->get('/activity');
+
+        $response->assertStatus(200);
+        $response->assertSeeText('Activitats');
+    }
+    public function test_professional_can_view_one_activity()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $activity = factory(Activity::class)->create();
+
+        $response = $this->get('/activity/' . $activity->id);
+
+        $response->assertStatus(302);
+    }
     public function test_professional_can_create_activity()
     {
         $role = factory(Role::class)->states('Professional')->create();
@@ -179,7 +209,7 @@ class ActivitiesTest extends TestCase
     }
     public function test_professional_can_update_activity()
     {
-        $role = factory(Role::class)->states('Professioanl')->create();
+        $role = factory(Role::class)->states('Professional')->create();
         $user = factory(User::class)->states('Professional')->create();
         $activity = factory(Activity::class)->create([
             'id'=> 1,
@@ -207,6 +237,97 @@ class ActivitiesTest extends TestCase
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
+    }
+    public function test_soci_cannot_view_all_activities()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $response = $this->actingAs($user)->get('/activity');
+
+        $response->assertStatus(403);
+    }
+
+    public function test_soci_can_view_one_category()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $activity = factory(Activity::class)->create();
+        $response = $this->get('/activity/' . $activity->id);
+
+        $response->assertStatus(302);
+    }
+    public function test_soci_cannot_create_activity()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $file = UploadedFile::fake()->create('document.pdf', 22);
+        $response = $this->actingAs($user)->post('/activity', [
+            'title'=>'Natació',
+            'description'=>'descipció',
+            'textColor'=> "#000000",
+            'professional1'=>'Paca',
+            'file' => $file->name,
+        ]);
+
+        $response->assertStatus(403);
+
+    }
+    public function test_soci_cannot_update_activity()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $activity = factory(Activity::class)->create([
+            'id'=> 1,
+            'title'=>'Natació',
+            'description'=>'descipció',
+            'professional1'=>'Paca'
+        ]);
+        $response = $this->actingAs($user)->patch('/activity/'.$activity->id, [
+            'id'=> 1,
+            'title'=>'Equitació',
+            'description'=>'descipció',
+            'professional1'=>'Paca'
+        ]);
+        $this->assertDatabaseHas('activities', [
+            'id'=> 1,
+            'title'=>'Natació',
+            'description'=>'descipció',
+            'professional1'=>'Paca',
+        ]);
+        $response->assertStatus(403);
+
+    }
+    public function test_soci_cannot_delete_activity()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $activity = factory(Activity::class)->create([
+            'id' => 1,
+            'title' => 'Natació',
+            'description' => 'descipció',
+            'color' => 'Turquoise',
+            'textColor' => '#000000',
+            'professional1' => 'Paca',
+
+        ]);
+        $this->assertDatabaseHas('activities', [
+            'id' => 1,
+            'title' => 'Natació',
+            'description' => 'descipció',
+            'color' => 'Turquoise',
+            'textColor' => '#000000',
+            'professional1' => 'Paca',
+
+        ]);
+        $response = $this->actingAs($user)->delete('/activity/' . $activity->id);
+        $this->assertDatabaseMissing('activities', [
+            'id' => 1,
+            'title' => 'Natació', '
+            description' => 'descipció',
+            'textColor' => '#000000',
+            'professional1' => 'Paca',
+        ]);
+        $response->assertStatus(403);
     }
 
 
