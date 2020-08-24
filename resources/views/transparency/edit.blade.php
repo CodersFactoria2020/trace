@@ -14,7 +14,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Any de l'exercici</label>
-                            <input type="text" name="date_name" class="form-control" placeholder="First Name"/>
+                            <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici economic" value="{{$transparency->date_name}}"/>
                         </div>
                         <div class="form-group">
                             <label for="name">Documentació de l'activitat econòmica</label>
