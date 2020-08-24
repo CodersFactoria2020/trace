@@ -30,7 +30,7 @@
                             </div>
 
                             <div class="text-right mt-4">
-                                <input type="submit" value="Crear" class="cta">
+                                <input type="submit" value="Afegir" class="cta">
                             </div>
                         </div>
                     </form>
