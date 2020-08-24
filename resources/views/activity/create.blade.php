@@ -20,30 +20,36 @@
                                 <label>Descripció</label>
                                 <textarea type="text" name="description" class="form-control" required></textarea>
                             </div>
-                            <div class="form-group">
-                                <label>Professional</label>
-                                <textarea type="text" name="professional1" class="form-control" required></textarea>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Professional</label>
+                                    <input type="text" name="professional1" class="form-control" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label>Professional de support</label>
+                                    <input type="text" name="professional2" class="form-control"/>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Professional de support</label>
-                                <input type="text" name="professional2" class="form-control"/>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label>Àrea:</label>
+                                    <select name="category_id" class="form-control" required>
+                                        <optgroup label="Selecciona una àrea">
+                                        @foreach ($categories as $category)
+                                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label>Àrea:</label>
-                                <select name="category_id" class="form-control" required>
-                                    <optgroup label="Selecciona una àrea">
-                                    @foreach ($categories as $category)
-                                        <option value="{{ $category['id'] }}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            <div class="form-group" >
-                                Adjunta document
-                                <input type="file" name="file" id="fileToUpload"/>
+                            <div class="form-row">
+                                <div class="form-group col-md-6 pt-2">
+                                    <label>Document adjunt:</label>
+                                    <input type="file" name="file" id="fileToUpload"/>
+                                </div>
                             </div>
 
                             <div class="text-right">
-                                    <input type="submit" value="Crear" class="cta" required>
+                                    <input type="submit" value="Afegir" class="cta" required>
                             </div>
                         </div>
                     </form>
