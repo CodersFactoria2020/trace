@@ -64,14 +64,13 @@
     }
     
 </style>
-
+@yield('scripts')
 </head>
 
 <body>
     <header>
         <div id="topbar" class="d-none d-lg-block">
             <div class="container d-flex align-items-center justify-content-between">
-
                 <div>
                     <img src="img/Logo-transparent_w96px_INVERT_no-small-text.png" alt="logo de la associació Trace" />
                 </div>
@@ -91,19 +90,13 @@
         </div>
     </header>
 
-    <main class="">
-
-        <div class="container d-flex justify-content-between align-items-center">
-
-            <div class="mr auto">
-                <h2 class="">El meu pla de treball</h2>
-            </div>
-
-        </div>
-        
+<main class="">
+    <div class="container-fluid">
+      <div class="row">
         @yield('content')
-    
-    </main>
+      </div>
+  </div>
+</main>
 
 </body>
 
