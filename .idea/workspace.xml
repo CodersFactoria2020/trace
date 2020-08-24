@@ -3,14 +3,29 @@
   <component name="ChangeListManager">
     <list default="true" id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/collabora.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collabora.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/collaborators-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collaborators-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/collaborators.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collaborators.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/contact-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/contact-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/dany-cerebral.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/dany-cerebral.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/description-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/description-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/hero.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/legal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/philosophy.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/philosophy.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/qui-som-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/qui-som-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/resources-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/resources-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/services-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/services-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/parts/team-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/team-section.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/workplans/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workplans/index.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -143,11 +158,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1598003558920</updated>
-      <workItem from="1598003560222" duration="1199000" />
+      <workItem from="1598003560222" duration="3113000" />
+      <workItem from="1598249864885" duration="2874000" />
+      <workItem from="1598256717894" duration="1508000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="385" y="141" width="670" height="680" key="search.everywhere.popup" timestamp="1598257115707">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="385" y="140" width="670" height="676" key="search.everywhere.popup/0.23.1440.793@0.23.1440.793" timestamp="1598251216506" />
+    <state x="385" y="141" width="670" height="680" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1598257115707" />
   </component>
 </project>

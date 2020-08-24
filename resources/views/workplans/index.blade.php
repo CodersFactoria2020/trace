@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -67,7 +67,7 @@
           console.log(info);
           console.log(info.event.title);
           console.log(info.event.start);
-          
+
           console.log(info.event.end);
           console.log(info.event.textColor);
           console.log(info.event.backgroundColor);
@@ -130,7 +130,7 @@
   <div class="dashboard-right-side">
     <div class="float-left">
       <h2>Plans de treball</h2>
-    </div> 
+    </div>
     <button type="button" class="cta" data-toggle="modal" data-target="#create-activity">Afegir un pla de treball</button>
 </div>
 
@@ -146,7 +146,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
+        <h5 class="modal-title" id="exampleModalLabel">Dades de l'activitat </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>

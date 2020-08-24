@@ -40,7 +40,7 @@
           <td><small><b>ID</b></small></td>
           <td><small><b>Imatge</b></small></td>
           <td><small><b>Nom i Cognom</b></small></td>
-          <td><small><b>Professio</b></small></td>
+          <td><small><b>Professió</b></small></td>
           <td colspan="2"><small><b>Accions</b></small></td>
         </tr>
       </thead>
