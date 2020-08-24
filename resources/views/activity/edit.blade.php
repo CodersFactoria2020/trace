@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('activity.update', $activity->id)}}" method="post">
+                <form action="{{Route('activity.update', $activity->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -36,6 +36,10 @@
                                     <option value="{{ $category->id}}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
                                 @endforeach
                             </select>
+                        </div>
+                        <div class="form-group" >
+                            Adjunta document
+                            <input type="file" name="file" id="fileToUpload"/>
                         </div>
 
                         <div class="text-right">

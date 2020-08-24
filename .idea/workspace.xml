@@ -3,22 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/collabora.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collabora.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/collaborators-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collaborators-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/collaborators.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/collaborators.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/contact-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/contact-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/dany-cerebral.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/dany-cerebral.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/description-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/description-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/hero.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/hero.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/legal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/philosophy.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/philosophy.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/qui-som-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/qui-som-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/resources-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/resources-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/services-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/services-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/parts/team-section.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/parts/team-section.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/team/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/team/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/workplans/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/workplans/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/activity/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/activity/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,6 +142,62 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RunManager" selected="PHPUnit.ActivitiesTest.test_professional_can_delete_activity">
+    <configuration name="ActivitiesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_admin_can_delete_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_admin_can_delete_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_admin_can_update_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_admin_can_update_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_professional_can_create_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_professional_can_create_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_professional_can_delete_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_professional_can_delete_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ActivitiesTest.test_professional_can_delete_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_professional_can_create_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_admin_can_update_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_admin_can_delete_activity" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -168,10 +216,43 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="385" y="141" width="670" height="680" key="search.everywhere.popup" timestamp="1598257115707">
-      <screen x="0" y="23" width="1440" height="797" />
+    <state width="1398" height="52" key="GridCell.Tab.0.bottom" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1598262798852" />
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1598261221404" />
+    <state width="1398" height="451" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1598269506253" />
+    <state width="1398" height="52" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state width="1398" height="52" key="GridCell.Tab.0.center" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1598262798850" />
+    <state width="1398" height="203" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1598261221402" />
+    <state width="1398" height="451" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1598269506252" />
+    <state width="1398" height="52" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state width="1398" height="52" key="GridCell.Tab.0.left" timestamp="1598272533509">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1598264111198" />
+    <state width="1398" height="2" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1598262798850" />
+    <state width="1398" height="203" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1598261221399" />
+    <state width="1398" height="451" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1598269506251" />
+    <state width="1398" height="52" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1598272533509" />
+    <state width="1398" height="52" key="GridCell.Tab.0.right" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1598262798851" />
+    <state width="1398" height="203" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1598261221403" />
+    <state width="1398" height="451" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1598269506252" />
+    <state width="1398" height="52" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state x="385" y="142" width="670" height="686" key="search.everywhere.popup" timestamp="1598271022959">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
     <state x="385" y="140" width="670" height="676" key="search.everywhere.popup/0.23.1440.793@0.23.1440.793" timestamp="1598251216506" />
     <state x="385" y="141" width="670" height="680" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1598257115707" />
+    <state x="385" y="142" width="670" height="686" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1598271022959" />
   </component>
 </project>

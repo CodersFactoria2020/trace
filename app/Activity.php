@@ -74,7 +74,6 @@ class Activity extends Model
     public function has_file()
     {
         return Storage::exists('/activities/'.$this->get_saved_file_name());
-
     }
 
 }
