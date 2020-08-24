@@ -21,7 +21,7 @@
                         </div>
                         <div style="padding:5px;">
                             <h5>Correo:</h5>
-                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" 
+                            <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank"
                                 style='font-size:2rem' class="mybtn btn"> <i class=' fas fa-envelope'></i> {{$user->email}}
                             </a>
                         </div>
@@ -37,13 +37,8 @@
                         <div style="padding:5px;">
                             <h5>Rol:</h5><p> {{$user->role_id}}</p>
                         </div>
-                        
-                        <div class="card-footer text-right">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
-                        </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
