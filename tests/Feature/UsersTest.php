@@ -105,7 +105,7 @@ class UsersTest extends TestCase
         $userTwo = factory(User::class)->states('Admin')->create();
         $response = $this->actingAs($user)->get('/user/2');
         $response->assertStatus(200);
-        $response->assertSee('Tancar');
+        $response->assertSee('Detalls');
     }
 
     public function test_Admin_can_add_a_new_user()
@@ -215,7 +215,7 @@ class UsersTest extends TestCase
         $userTwo = factory(User::class)->states('Professional')->create();
         $response = $this->actingAs($user)->get('/user/2');
         $response->assertStatus(200);
-        $response->assertSee('Tancar');
+        $response->assertSee('Detalls');
     }
 
     public function test_if_user_logged_in_as_professional_cant_create_users_show()
@@ -315,14 +315,14 @@ class UsersTest extends TestCase
         $response->assertStatus(403);
     }
 
-    public function test_if_user_logged_in_as_soci_can_access_users_show()
+    public function test_if_user_logged_in_as_soci_cant_access_users_show_to_othe_socis()
     {
         $role = factory(Role::class)->states('Soci')->create();
         $user = factory(User::class)->states('Soci')->create();
         $userTwo = factory(User::class)->states('Soci')->create();
-        $response = $this->actingAs($user)->get('/user/2');
-        $response->assertStatus(200);
-        $response->assertSee('Tancar');
+        $response = $this->actingAs($user)->get("/user/$userTwo->id");
+        $response->assertStatus(301);
+        $response->assertRedirect('/dashboard');
     }//TOCA REFACTORIZAR, PUESTO QUE .... ¿QUEREMOS QUE UN SOCI PUEDA VER OTRO SOCI? ¿O SOLO A PROFESSIONALES Y ADMIN?
 
     public function test_if_user_logged_in_as_soci_cant_create_users_show()

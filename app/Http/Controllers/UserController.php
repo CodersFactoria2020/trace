@@ -74,6 +74,10 @@ class UserController extends Controller
     public function show(User $user)
     {
         $this->authorize('view', $user);
+        $loggedUser = Auth::user();
+        if ($loggedUser->role_id === "Soci" && $user->role_id === "Soci"){
+            return redirect('/dashboard');
+        }
         $roles = Role::all();
         return view('user.show', ['user' => $user], compact('roles'));
     }
