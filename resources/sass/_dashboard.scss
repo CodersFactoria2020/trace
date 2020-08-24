@@ -1,4 +1,6 @@
 #sidebarMenu {
+    background-color: #f2f2f2;
+
     a {
         font-size: 16px;
         font-weight: 600;
@@ -8,7 +10,7 @@
     }
 
     .logo {
-        width: 90px;
+        width: 100px;
         height: auto;
         margin-top: 30px;
         margin-left: 30px;
@@ -182,4 +184,14 @@
         border-radius: 50%;
         background-size: cover;
     }
+}
+
+.fixed-side {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #f2f2f2;
+    overflow-x: hidden; /* Disable horizontal scroll */
 }

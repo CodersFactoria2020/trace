@@ -1,6 +1,6 @@
+<nav id="sidebarMenu" class="fixed-side col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <div class="sidebar-sticky fixed-side pt-3">
 
-<nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-  <div class="sidebar-sticky pt-3">
     <div class="nav-item fixed-top logo">
       <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
     </div>    
@@ -45,22 +45,29 @@
             <span><i class="icofont-id"></i></span>
             Equip de gestió
           </a>
-        </li>     
-      
-      </ul>
-    </div>
+        </li>  
 
-    <div class="nav-item logoutbtn">
-      <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
-      document.getElementById('logout-form').submit();">
-        <span>
-          <i class="icofont-logout"></i></i>
-        </span>
-        Tancar sessió
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-      @csrf
-      </form>
+        <li class="nav-item">
+          <a class="nav-link primary-green" href="">
+            <span><i class="icofont-page"></i></span>
+            Transparència
+          </a>
+        </li>  
+        <li class="nav-item pt-3">
+          <div class="nav-item logoutbtn">
+            <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+              <span>
+                <i class="icofont-logout"></i></i>
+              </span>
+              Tancar sessió
+            </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+            </form>
+          </div>
+        </li>     
+      </ul>
     </div>
     
   </div>
