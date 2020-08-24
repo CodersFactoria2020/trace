@@ -50,7 +50,7 @@
         @can('view-any', $activity)
         <tr>
             <td>
-                
+
                 {{$activity->id}}
             </td>
             <td class="icon-text primary-green">
@@ -58,9 +58,9 @@
                     <i class="icofont-attachment"></i>
                     {{$activity->title}}
                 </a>
-                @include('activity.show')     
+                @include('activity.show')
             </td>
-            <td>{{$activity->description}}</td>
+            <td>{{$activity->description = substr($activity->description, 0, 50) . '...' }}</td>
             <td>{{$activity->professional1}}</td>
             <td class="actions">
                 @can('update', $activity)
@@ -74,7 +74,7 @@
             <td class="actions">
                 @can('destroy', $activity)
                 <div class="danger">
-                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">     
+                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">
                         <i class="icofont-ui-delete"></i>
                     </a>
                 </div>
