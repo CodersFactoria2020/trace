@@ -22,11 +22,11 @@ class WorkplanController extends Controller
     {
         $user = Auth::user();
         $this->authorize('view-any', $user);
-        $workplans = new Workplan;
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        $categories = Category::all();
+        // $workplans = new Workplan;
+        // $users = User::all();
+        // $roles = Role::all();
+        // $activities = Activity::all();
+        // $categories = Category::all();
         $workplans_per_page = 8;
         $workplans = $workplans->paginate($workplans_per_page);
         return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));

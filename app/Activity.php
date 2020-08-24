@@ -17,9 +17,9 @@ class Activity extends Model
 
     }
 
-    public function User()
+    public function Users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function getCategoryIdAttribute($value)

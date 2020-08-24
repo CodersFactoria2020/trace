@@ -3,5 +3,6 @@
 @section('content')
 
 
+El meu pla de treball
 
 @endsection
