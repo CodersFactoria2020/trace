@@ -15,37 +15,40 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label class='label-small'>Nom</label>
-                                <input type="text" name="first_name" class="form-control" value="{{$user->first_name}}"/>
+                                <input type="text" name="first_name" class="form-control" value="{{$user->first_name}}" required/>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Cognom</label>
-                                <input type="text" name="last_name" class="form-control" value="{{$user->last_name}}"/>
+                                <input type="text" name="last_name" class="form-control" value="{{$user->last_name}}" required/>
                             </div>
                         </div>
             
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control" value="{{$user->email}}"/>
+                                <input type="text" name="email" class="form-control" value="{{$user->email}}" required/>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Telèfon</label>
-                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}"/>
+                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}" required/>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>DNI</label>
-                                <input type="text" name="dni" class="form-control" value="{{$user->dni}}"/>
+                                <input type="text" name="dni" class="form-control" value="{{$user->dni}}" required/>
                             </div>
                         </div>
-
+                        <div class="form-group">
+                            <label>Contrasenya</label>
+                            <input type="text" name="dni" class="form-control" placeholder="contrasenya" required/>
+                        </div>
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Rol</label>
                                 <select name="role_id" class="form-control">
-                                    <optgroup label="Selecciona un rol">
+                                    <optgroup label="Selecciona un rol" >
                                     @foreach ($roles as $role)
                                         <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
                                     @endforeach
