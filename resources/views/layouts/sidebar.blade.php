@@ -29,7 +29,7 @@
         <li class="nav-item">
           <a class="nav-link primary-green" href="/areas">
             <span><i class="icofont-list"></i></span>
-            Àrees
+            Àreas
           </a>
         </li>
 
@@ -45,14 +45,14 @@
             <span><i class="icofont-id"></i></span>
             Equip de gestió
           </a>
-        </li>  
+        </li>
 
         <li class="nav-item">
           <a class="nav-link primary-green" href="/transparency">
             <span><i class="icofont-page"></i></span>
             Transparència
           </a>
-        </li>  
+        </li>
         <li class="nav-item pt-3">
           <div class="nav-item logoutbtn">
             <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
@@ -66,10 +66,10 @@
             @csrf
             </form>
           </div>
-        </li>     
+        </li>
       </ul>
     </div>
-    
+
   </div>
 </nav>
 
