@@ -47,7 +47,7 @@ class ActivityController extends Controller
             $activity->upload_file($file);
         }
 
-        return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha creat correctament ');
+        return redirect('/activity')->with('status_success', 'L\'activitat s\'ha creat correctament ');
     }
 
     public function download(Request $request, Activity $activity)
@@ -75,13 +75,13 @@ class ActivityController extends Controller
     {
         $this->authorize('update', Activity::class);
         $activity->update($request->all());
-        return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha actualitzat correctament ');
+        return redirect('/activity')->with('status_success', 'L\'activitat s\'ha actualitzat correctament ');
     }
 
     public function destroy(Activity $activity)
     {
         $this->authorize('destroy', Activity::class);
         $activity->delete();
-        return redirect('/activity')->with('status_succes','L\'activitat s\'ha esborrat correctament');
+        return redirect('/activity')->with('status_success','L\'activitat s\'ha esborrat correctament');
     }
 }

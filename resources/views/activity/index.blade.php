@@ -21,8 +21,9 @@
 @endsection
 
 @section('content')
-@include('custom.message')
+
 <div class="col">
+    @include('custom.message')
     <div class="dashboard-right-side">
         <div class="float-left">
             <h2>Activitats</h2>
@@ -41,7 +42,6 @@
                     <td><small><b>Títol</b></small></td>
                     <td><small><b>Descripció</b></small></td>
                     <td><small><b>Professional</b></small></td>
-
                     <td colspan="3"><small><b>Accions<small><b></td>
                 </tr>
             </thead>
@@ -50,7 +50,6 @@
         @can('view-any', $activity)
         <tr>
             <td>
-
                 {{$activity->id}}
             </td>
             <td class="icon-text primary-green">
