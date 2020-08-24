@@ -190,14 +190,15 @@
     }
 }
 
-.fixed-side {
-    height: 100%; /* Full-height: remove this if you want "auto" height */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+.side-bar-menu {
+    position: fixed;
     z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
     left: 0;
+}
+
+.fixed-side {
     background-color: #f2f2f2;
-    overflow-x: hidden; /* Disable horizontal scroll */
+    overflow: hidden; /* Disable horizontal scroll */
 }
 
 .label-small {

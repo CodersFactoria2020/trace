@@ -1,4 +1,4 @@
-<nav id="sidebarMenu" class="fixed-side col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+<nav id="sidebarMenu" class="fixed-side col-md-3 col-lg-2 d-md-block sidebar collapse">
   <div class="sidebar-sticky fixed-side pt-3">
 
     <div class="nav-item fixed-top logo">
@@ -6,68 +6,70 @@
     </div>
 
     <div class="nav-item full-vertical-align">
-      <ul class="nav flex-column">
-        <li class="nav-item">
-          <a class="nav-link primary-green active" href="/dashboard">
-            <span><i class="icofont-home"></i></span>
-            Inici <span class="sr-only">(current)</span>
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/user">
-            <span><i class="icofont-users-alt-3"></i></span>
-            Usuaris
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/activity">
-            <span><i class="icofont-attachment"></i></span>
-            Activitats
-          </a>
-        </li>
+      <div class="side-bar-menu">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link primary-green active" href="/dashboard">
+                <span><i class="icofont-home"></i></span>
+                Inici <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/user">
+                <span><i class="icofont-users-alt-3"></i></span>
+                Usuaris
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/activity">
+                <span><i class="icofont-attachment"></i></span>
+                Activitats
+              </a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/areas">
-            <span><i class="icofont-list"></i></span>
-            Àreas
-          </a>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/areas">
+                <span><i class="icofont-list"></i></span>
+                Àreas
+              </a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/workplans">
-            <span><i class="icofont-calendar"></i></span>
-            Plans de treball
-          </a>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/workplans">
+                <span><i class="icofont-calendar"></i></span>
+                Plans de treball
+              </a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/team">
-            <span><i class="icofont-id"></i></span>
-            Equip de gestió
-          </a>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/team">
+                <span><i class="icofont-id"></i></span>
+                Equip de gestió
+              </a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/transparency">
-            <span><i class="icofont-page"></i></span>
-            Transparència
-          </a>
-        </li>
-        <li class="nav-item pt-3">
-          <div class="nav-item logoutbtn">
-            <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-              <span>
-                <i class="icofont-logout"></i></i>
-              </span>
-              Tancar sessió
-            </a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-            </form>
-          </div>
-        </li>
-      </ul>
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/transparency">
+                <span><i class="icofont-page"></i></span>
+                Transparència
+              </a>
+            </li>
+            <li class="nav-item pt-3">
+              <div class="nav-item logoutbtn">
+                <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                  <span>
+                    <i class="icofont-logout"></i></i>
+                  </span>
+                  Tancar sessió
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+                </form>
+              </div>
+            </li>
+          </ul>
+      </div>
     </div>
 
   </div>
