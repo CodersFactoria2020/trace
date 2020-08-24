@@ -13,7 +13,7 @@ class TransparencyPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
@@ -24,50 +24,31 @@ class TransparencyPolicy
         return true;
     }
 
-    public function edit(User $user, Transparency $transparency)
+    public function create(User $user)
     {
-        if (auth()->user()->role_id === "Soci") {
+        if ($user->role_id != "Admin") {
             return false;
         }
         return true;
     }
 
-    public function create(User $user, Transparency $transparency)
+    public function update(User $user,Transparency $transparency)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id !== "Admin") {
             return false;
         }
-        return true;
-    }
-
-    public function update(User $user, Transparency $transparency)
-    {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->id === $transparency->id) {
             return false;
         }
         return true;
     }
 
     public function destroy(User $user, Transparency $transparency)
-
     {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->role_id !== "Admin") {
             return false;
         }
-        return true;
-    }
-
-    public function restore(User $user, Transparency $transparency)
-    {
-        if (Auth::user()->role_id === "Soci") {
-            return false;
-        }
-        return true;
-    }
-
-    public function forceDelete(User $user, Transparency $transparency)
-    {
-        if (Auth::user()->role_id === "Soci") {
+        if ($user->id === $transparency->id) {
             return false;
         }
         return true;

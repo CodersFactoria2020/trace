@@ -3,7 +3,7 @@
   <div class="sidebar-sticky pt-3">
     <div class="nav-item fixed-top logo">
       <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
-    </div>    
+    </div>
 
     <div class="nav-item full-vertical-align">
       <ul class="nav flex-column">
@@ -45,8 +45,15 @@
             <span><i class="icofont-id"></i></span>
             Equip de gestió
           </a>
-        </li>     
-      
+        </li>
+        <li class="nav-item">
+          <a class="nav-link primary-green" href="/transparency">
+            <span><i class="icofont-id"></i></span>
+               Trasparencia Economica
+          </a>
+        </li>
+
+
       </ul>
     </div>
 
@@ -62,7 +69,7 @@
       @csrf
       </form>
     </div>
-    
+
   </div>
-</nav>    
+</nav>
 

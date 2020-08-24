@@ -13,14 +13,13 @@ class TeamPolicy
 
     public function viewAny(User $user)
     {
-        if ($user->role_id === "Soci")
-        {
+        if ($user->role_id === "Soci") {
             return false;
         }
         return true;
     }
 
-    public function view(User $user)
+    public function view(User $user, User $model)
     {
         return true;
     }
@@ -33,18 +32,23 @@ class TeamPolicy
         return true;
     }
 
-    public function update(User $user)
+    public function update(User $user, User $model)
     {
-        if ($user->role_id != "Admin") {
+        if ($user->role_id !== "Admin") {
+            return false;
+        }
+        if ($user->id === $model->id) {
             return false;
         }
         return true;
     }
 
-    public function destroy(User $user)
+    public function destroy(User $user, User $model)
     {
-        if ($user->role_id != "Admin") {
-
+        if ($user->role_id !== "Admin") {
+            return false;
+        }
+        if ($user->id === $model->id) {
             return false;
         }
         return true;

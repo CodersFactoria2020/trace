@@ -1,16 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_dashboard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_dashboard.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TeamPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/TransparencyPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TransparencyPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transparency.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transparency.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/TeamTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TeamTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/TransparencyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/TransparencyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -133,7 +160,64 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="PHPUnit.TransparencyTest (1)">
+    <configuration name="ActivitiesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TeamTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\TeamTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/TeamTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TeamTest.test_admin_delete_member_team" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\TeamTest" file="$PROJECT_DIR$/tests/Feature/TeamTest.php" method="test_admin_delete_member_team" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TransparencyTest (1)" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\TransparencyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/TransparencyTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TransparencyTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.4" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Unit\TransparencyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/TransparencyTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.TransparencyTest (1)" />
+        <item itemvalue="PHPUnit.TransparencyTest" />
+        <item itemvalue="PHPUnit.TeamTest" />
+        <item itemvalue="PHPUnit.TeamTest.test_admin_delete_member_team" />
+        <item itemvalue="PHPUnit.ActivitiesTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -144,10 +228,52 @@
       <option name="presentableId" value="Default" />
       <updated>1598003558920</updated>
       <workItem from="1598003560222" duration="1199000" />
+      <workItem from="1598251455798" duration="17076000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1598267081574">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="450" y="185" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1440.860@0.0.1440.860" timestamp="1598267081574" />
+    <state width="1397" height="184" key="GridCell.Tab.0.bottom" timestamp="1598269341404">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="184" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1598269341404" />
+    <state width="1397" height="184" key="GridCell.Tab.0.center" timestamp="1598269341404">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="184" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1598269341404" />
+    <state width="1397" height="184" key="GridCell.Tab.0.left" timestamp="1598269341403">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="184" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1598269341403" />
+    <state width="1397" height="184" key="GridCell.Tab.0.right" timestamp="1598269341404">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1397" height="184" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1598269341404" />
+    <state x="358" y="298" key="run.anything.popup" timestamp="1598258748936">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="358" y="298" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1598258748936" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1598267484640">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1598267484640" />
   </component>
 </project>

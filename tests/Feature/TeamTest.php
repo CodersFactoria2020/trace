@@ -13,19 +13,19 @@ class TeamTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_show_all_team()
+    public function test_admin_can_view_all_teams()
     {
-        $role = factory(Role::class)->create();
-        $user = factory(User::class)->states('admin')->create();
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
         $response = $this->actingAs($user)->get('/team');
 
         $response->assertStatus(200);
     }
 
-    public function test_create_member_team_with_image()
+    public function test_admin_create_member_team_with_image()
     {
-        $role = factory(Role::class)->create();
-        $user = factory(User::class)->states('admin')->create();
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
         $photo = UploadedFile::fake()->image('image.jpg');
         $response = $this->actingAs($user)->post('/team', [
             'first_name'=>'Kevin',
@@ -43,24 +43,24 @@ class TeamTest extends TestCase
         $response->assertRedirect('/team');
     }
 
-    public function test_delete_member_team()
+    public function test_admin_delete_member_team()
     {
-        $role = factory(Role::class)->create();
-        $user = factory(User::class)->states('admin')->create();
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
         $photo = UploadedFile::fake()->image('image.jpg');
         $team=factory(Team::class)->create([
             'id'=>1,
             'first_name'=>'Kevin',
             'last_name'=>'Hidalgo',
             'position' =>'Doctor',
-            'photo'=>$photo->name,
+            //'photo'=>$photo->name,
             ]);
         $this->assertDatabaseHas('teams',[
             'id'=> 1 ,
             "first_name"=> "Kevin",
             "last_name"=> "Hidalgo",
             "position"=> "Doctor",
-            "photo"=> 'image.jpg',
+            //"photo"=> 'image.jpg',
         ]);
         $response = $this->actingAs($user)->delete('team/'.$team->id);
         $this->assertDatabaseMissing('teams',[
@@ -68,17 +68,17 @@ class TeamTest extends TestCase
             "first_name"=> "Kevin",
             "last_name"=> "Hidalgo",
             "position"=> "Scrum Master",
-            "photo"=> $photo,
+            //"photo"=> $photo,
 
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/team');
     }
 
-    public function test_update_member_team_with_image()
+    public function test_admin_update_member_team_with_image()
     {
-        $role = factory(Role::class)->create();
-        $user = factory(User::class)->states('admin')->create();
+        $role = factory(Role::class)->states('Admin')->create();
+        $user = factory(User::class)->states('Admin')->create();
         $photo = $file = UploadedFile::fake()->image('image2.jpg');
         $team=factory(Team::class)->create([
             'id'=> 1,
