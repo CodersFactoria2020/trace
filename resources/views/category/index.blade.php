@@ -87,6 +87,10 @@
                 @endif
             </table>
         </div>
+        <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+            <div><small>Mostrant {{ count($categories) }} de {{ $categories->total() }}</small></div>
+            <div> {{ $categories->links() }}</div>
+        </div>
     </div>
 </div>
 

@@ -85,5 +85,9 @@
 
         </table>
     </div>
+    <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+        <div class=""><small>Mostrant {{ count($activities) }} de {{ $activities->total() }}</small></div>
+        <div class=""> {{ $activities->links() }}</div>
+      </div>
 </div>
 @endsection

@@ -84,6 +84,10 @@
 
     </table>
   </div>
+  <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+    <div><small>Mostrant {{ count($transparencies) }} de {{ $transparencies->total() }}</small></div>
+    <div> {{ $transparencies->links() }}</div>
+</div>
 </div>
 
 @endsection
