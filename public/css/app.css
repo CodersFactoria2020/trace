@@ -12547,13 +12547,14 @@ section a {
   text-decoration: none;
 }
 
-.actions {
-  text-decoration: none;
-}
-
 .actions i {
   font-size: 18px;
   padding-right: 5px;
+}
+
+.actions a:hover {
+  color: #343a40 !important;
+  text-decoration: none;
 }
 
 .full-vertical-align {
@@ -12591,7 +12592,6 @@ section a {
   height: auto;
   border-radius: 50%;
   background-size: cover;
-<<<<<<< HEAD
 }
 
 .fixed-side {
@@ -12607,7 +12607,10 @@ section a {
   background-color: #f2f2f2;
   overflow-x: hidden;
   /* Disable horizontal scroll */
-=======
->>>>>>> fixing-front-end-details
+}
+
+.label-small {
+  font-size: 14px !important;
+  font-weight: 600 !important;
 }
 

@@ -61,9 +61,4 @@ class HomeController extends Controller
     {
         return view('collabora');
     }
-
-    public function collabora2()
-    {
-        return view('collabora2');
-    }
 }

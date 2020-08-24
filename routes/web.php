@@ -23,7 +23,6 @@ Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
 Route::get('/collabora', 'HomeController@collabora')->name('collabora');
-Route::get('/collabora2', 'HomeController@collabora2')->name('collabora2');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
