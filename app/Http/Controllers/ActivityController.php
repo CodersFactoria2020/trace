@@ -22,7 +22,7 @@ class ActivityController extends Controller
     public function index()
     {
         $this->authorize('view-any', Activity::class);
-        $activities = Activity::all();
+        $activities = Activity::paginate(8);
         $categories = Category::all();
         return view('activity.index', compact('activities'), compact('categories'));
     }
