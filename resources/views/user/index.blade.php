@@ -22,10 +22,11 @@
 
 
 @section('content')
-@include('custom.message')
+
 <div class="col">
+    @include('custom.message')
   <div class="dashboard-right-side">
-    <div class="float-left"><h2>Usuaris</h2></div>  
+    <div class="float-left"><h2>Usuaris</h2></div>
     @if (auth()->user()->role_id === "Admin")
     <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
     @include('user.create')
@@ -96,7 +97,7 @@
           @include('user.edit')
           @endcan
         </td>
-        <td class="actions">      
+        <td class="actions">
           @can('destroy', $user)
           <div class="danger">
             <a href="" data-toggle="modal" data-target="#destroy-user{{$user->id}}" class="danger" user="button">

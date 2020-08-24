@@ -14,27 +14,27 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom</label>
-                            <input type="text" name="first_name" class="form-control" placeholder="Nom"/>
+                            <input type="text" name="first_name" class="form-control" placeholder="Nom" required/>
                         </div>
                         <div class="form-group">
                             <label>Cognom</label>
-                            <input type="text" name="last_name" class="form-control" placeholder="Cognom"/>
+                            <input type="text" name="last_name" class="form-control" placeholder="Cognom" required/>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                            <input type="text" name="email" class="form-control" placeholder="Email"/>
+                            <input type="text" name="email" class="form-control" placeholder="Email" required/>
                         </div>
                         <div class="form-group">
                             <label>Contrasenya</label>
-                            <input type="text" name="password" class="form-control" placeholder="password"/>
+                            <input type="text" name="password" class="form-control" placeholder="Password" required/>
                         </div>
                         <div class="form-group">
                             <label>Telèfon</label>
-                            <input type="text" name="phone" class="form-control" placeholder="+34111222333"/>
+                            <input type="text" name="phone" class="form-control" placeholder="Telèfono" required/>
                         </div>
                         <div class="form-group">
                             <label>DNI</label>
-                            <input type="text" name="dni" class="form-control" placeholder="DNI"/>
+                            <input type="text" name="dni" class="form-control" placeholder="DNI" required/>
                         </div>
                         <div class="form-group">
                             <label>Tutor(a)</label>

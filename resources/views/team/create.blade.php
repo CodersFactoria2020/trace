@@ -13,15 +13,15 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nom</label>
-                            <input type="text" name="first_name" class="form-control" placeholder="First Name"/>
+                            <input type="text" name="first_name" class="form-control" placeholder="First Name" required/>
                         </div>
                         <div class="form-group">
                             <label for="name">Cognom</label>
-                            <input type="text" name="last_name" class="form-control" placeholder="Last Name"/>
+                            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required/>
                         </div>
                         <div class="form-group">
                             <label for="name">Posicio</label>
-                            <input type="text" name="position" class="form-control" placeholder="Position"/>
+                            <input type="text" name="position" class="form-control" placeholder="Position" required/>
                         </div>
                         <div class="form-group">
                             <label for="name">Imatge</label>

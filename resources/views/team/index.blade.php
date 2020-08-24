@@ -23,6 +23,7 @@
 
 @section('content')
 <div class="col">
+    @include('custom.message')
   <div class="dashboard-right-side">
     <div class="float-left">
       <h2>Gestió de l'Equip</h2>

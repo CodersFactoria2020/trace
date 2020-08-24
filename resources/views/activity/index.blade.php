@@ -21,8 +21,9 @@
 @endsection
 
 @section('content')
-@include('custom.message')
+
 <div class="col">
+    @include('custom.message')
     <div class="dashboard-right-side">
         <div class="float-left">
             <h2>Activitats</h2>
@@ -41,7 +42,6 @@
                     <td><small><b>Títol</b></small></td>
                     <td><small><b>Descripció</b></small></td>
                     <td><small><b>Professional</b></small></td>
-
                     <td colspan="3"><small><b>Accions<small><b></td>
                 </tr>
             </thead>
@@ -50,7 +50,6 @@
         @can('view-any', $activity)
         <tr>
             <td>
-                
                 {{$activity->id}}
             </td>
             <td class="icon-text primary-green">
@@ -58,9 +57,9 @@
                     <i class="icofont-attachment"></i>
                     {{$activity->title}}
                 </a>
-                @include('activity.show')     
+                @include('activity.show')
             </td>
-            <td>{{$activity->description}}</td>
+            <td>{{$activity->description = substr($activity->description, 0, 50) . '...' }}</td>
             <td>{{$activity->professional1}}</td>
             <td class="actions">
                 @can('update', $activity)
@@ -74,7 +73,7 @@
             <td class="actions">
                 @can('destroy', $activity)
                 <div class="danger">
-                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">     
+                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">
                         <i class="icofont-ui-delete"></i>
                     </a>
                 </div>
