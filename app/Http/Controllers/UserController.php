@@ -24,7 +24,7 @@ class UserController extends Controller
         $this->authorize('view-any', $user);
         $users = new User;
         $roles = Role::all();
-        $users_per_page = 8;
+        $users_per_page = 8; 
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
@@ -35,7 +35,7 @@ class UserController extends Controller
             'role_id' => request('role_id'),
             'sort' => request('sort'),
         ]);
-        return view('user.index', ['users' => $users], compact('roles'));
+        return view('user.index', compact('users', 'roles'));
     }
 
     public function create()
@@ -79,6 +79,15 @@ class UserController extends Controller
         $this->authorize('destroy', $user);
         $user->delete();
         return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
+    }
+
+    public function filter(Request $request)
+    {
+        $user = Auth::user();
+        $this->authorize('view-any', $user);
+        $users = User::filterByRole($request->role_id);
+        $roles = Role::all();
+        return view('user.index', compact('users', 'roles'));
     }
         
     public function dashboard()

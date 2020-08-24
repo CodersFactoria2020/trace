@@ -2,7 +2,7 @@
 
 @section('scripts')
 
-  <!-- Jquery -->  
+  <!-- Jquery -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
   <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
@@ -18,179 +18,71 @@
     integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
     crossorigin="anonymous"></script>
 
-<link rel="stylesheet" href="{{ asset('fullcalendar/lib/main.css') }}">
-<script src="{{ asset('fullcalendar/lib/main.js') }}" defer></script>
-<script src="{{ asset('fullcalendar/lib/locales-all.js') }}" defer></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var calendarEl = document.getElementById('calendar');
-      var calendar = new FullCalendar.Calendar(calendarEl, {
-        locale: 'ca',
-        initialView: 'dayGridMonth', // maybe change to 'timeGridWeek'
-        themeSystem: 'bootstrap',
-        headerToolbar: {
-          left: 'prev today next AddActivityButton',
-          center: 'title',
-          right: 'dayGridMonth,timeGridWeek,timeGridDay'
-        },
-        titleFormat: { year: 'numeric', month: 'long' },
-        dayHeaderFormat: { weekday: 'long', day: 'numeric' },
-        weekends: false, // hides Sunday and Saturday
-        allDaySlot: false,
-        slotDuration: '00:15:00',
-        slotMinTime: '09:00:00',
-        slotMaxTime: '19:00:00',
-        buttonIcons: false, // show the prev/next text
-        weekNumbers: false,
-        navLinks: false, // can click day/week names to navigate views
-        editable: true,
-        dayMaxEvents: true, // allow "more" link when too many events
-
-        customButtons: {
-          AddActivityButton: {
-            text: "Afegir activitat",
-            click: function () {
-              alert("Hola, mundo!");
-              $('#exampleModal').modal();
-            }
-          }
-        },
-        dateClick: function (info) {
-
-          $('#txtDate').val(info.dateStr);
-
-          $('#exampleModal').modal();
-          console.log(info);
-          calendar.addEvent({ title: "Evento X", date: info.dateStr });
-        },
-        eventClick: function(info) {
-          console.log(info);
-          console.log(info.event.title);
-          console.log(info.event.start);
-          
-          console.log(info.event.end);
-          console.log(info.event.textColor);
-          console.log(info.event.backgroundColor);
-          console.log(info.event.extendedProps.description);
-        },
-
-        events: [
-          {
-            title: "Mi evento 1",
-            start: "2020-08-05 10:00:00",
-            description: "Descripció de la activitat 1"
-          }, {
-            title: "Mi evento 2",
-            start: "2020-08-06 12:30:00",
-            end: "2020-08-07 12:30:00",
-            color: "#FFCCAA",
-            textColor: "#000000",
-            description: "Descripció de la activitat 2"
-          }
-        ]
-
-      });
-
-      calendar.render();
-
-      $('#btnAdd').click(function() {
-        gatherDataGUI("POST");
-      });
-
-      function gatherDataGUI(method) {
-
-        newEvent={
-          id: $('#txtID').val(),
-          title: $('#txtTitle').val(),
-          description: $('#txtDescription').val(),
-          color: $('#color').val(),
-          textColor: '#FFFFFF',
-          // professional1: $('#professional1').val(),
-          // professional2: $('#professional2').val(),
-          start: $('#txtDate').val()+ " "+$('#txtTime').val(),
-          end: $('#txtDate').val()+ " "+$('#txtTime').val(),
-          // category_id: $('#category_id').val(),
-
-          '_token': $("[name='_token']").attr("value"),
-          '_method': method
-        }
-        console.log(newEvent);
-
-      }
-
-    });
-  </script>
-
 @endsection
 
-
 @section('content')
-
+@include('custom.message')
 <div class="col">
   <div class="dashboard-right-side">
-    <div class="float-left">
-      <h2>Plans de treball</h2>
-    </div> 
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-activity">Afegir un pla de treball</button>
-</div>
-
-<div class="dashboard-right-side">
-  <div class="col">
-    <div id="calendar">
-    </div>
+    <div class="float-left"><h2>Plans de treball</h2></div>  
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-workplan">Afegir un pla de treball</button>
+    @include('workplans.create')
+  </div>
+  
+  <!-- TABLA -->
+  <div class="dashboard-right-side">
+    <table class="table table-striped table-borderless">
+      <thead class="thead text-uppercase">
+          <tr>
+            <td><small><b>Nom i cognom</b></small></td>
+            <td colspan="2"><small><b>Accions</b></small></td>
+        </tr>
+      </thead>
+      @if ($workplans)
+        @foreach($workplans as $workplan)
+        @can('view-any', $workplan)
+        <tr>
+        
+          <td class="icon-text">
+            <div class="primary-green">
+              <a href="" data-toggle="modal" data-target="#show-workplan{{$workplan->id}}" class="primary-green" user="button">
+              <i class="icofont-user-alt-3"></i>
+              
+              {{ $users[($workplan->user_id)-1]->first_name }} {{ $users[($workplan->user_id)-1]->last_name }}
+              </a>
+          </div>
+              @include('workplans.show')
+          </td>
+          <td class="actions">
+            @can('update', $workplan)
+            <div class="primary">
+              <a  href="" data-toggle="modal" data-target="#edit-workplan{{$workplan->id}}" class="primary-green" user="button">
+                <i class="icofont-ui-edit"></i>
+              </a>
+            </div>
+            @include('workplans.edit')
+            @endcan
+          </td>
+          <td class="actions">      
+            @can('destroy', $workplan)
+            <div class="danger">
+              <a href="" data-toggle="modal" data-target="#destroy-workplan{{$workplan->id}}" class="danger" user="button">
+                <i class="icofont-ui-delete"></i>
+              </a>
+            </div>
+            @include('workplans.destroy')
+            @endcan
+          </td>
+        </tr>
+        @endcan
+        @endforeach
+      @endif
+    </table>
+  </div>
+  <!-- PAGINADO -->
+  <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+    <div class=""><small>Mostrant {{ count($workplans) }} de {{ $workplans->total() }}</small></div>
+    <div class=""> {{ $workplans->links() }}</div>
   </div>
 </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Dades de la activitat </h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ID:
-        <input type="text" name="txtID" id="txtID">
-        <br>
-        Data:
-        <input type="text" name="txtDate" id="txtDate">
-        <br>
-        Títol:
-        <input type="text" name="txtTitle" id="txtTitle">
-        <br>
-        Hora de inici:
-        <input type="text" name="txtTime" id="txtTime">
-        <br>
-        {{-- Hora de finalització:
-        <input type="text" name="txtTime" id="txtTime">
-        <br>
-        Professional 1:
-        <input type="text" name="txtTProfessional1" id="txtProfessional1">
-        <br>
-        Professional 2:
-        <input type="text" name="txtTProfessional2" id="txtProfessional2">
-        <br> --}}
-        Descripció:
-        <textarea name="txtDescription" id="txtDescription" cols="30" rows="10"></textarea>
-        <br>
-        Color:
-        <input type="color" name="color" id="color">
-        <br>
-        {{-- Àrea:
-        <input type="text" name="category_id" id="category_id">
-        <br> --}}
-      </div>
-      <div class="modal-footer">
-        <button id="btnAdd" class="btn btn-success">Afegir</button>
-        <button id="btnEdit" class="btn btn-warning">Modificar</button>
-        <button id="btnDelete" class="btn btn-danger">Esborrar</button>
-        <button id="btnCancel" class="btn btn-secondary">Cancel·lar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 @endsection

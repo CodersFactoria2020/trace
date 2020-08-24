@@ -20,15 +20,16 @@ class WorkplanController extends Controller
     
     public function index()
     {
-        $workplans = Workplan::all()->paginate(8);
+        $user = Auth::user();
+        $this->authorize('view-any', $user);
+        $workplans = new Workplan;
         $users = User::all();
         $roles = Role::all();
         $activities = Activity::all();
         $categories = Category::all();
-        if (auth()->user()->role_id !== "Soci") {
-            return view('workplans.index', ['users' => $users], compact('roles'), compact('activities'), compact('categories'));
-        }
-        return view('workplans.soci');
+        $workplans_per_page = 8;
+        $workplans = $workplans->paginate($workplans_per_page);
+        return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
     public function create()
