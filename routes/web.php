@@ -9,7 +9,6 @@ Route::get('/', function () {
 Route::view('/legal', 'legal');
 
 Route::resource('/role', 'RoleController')->middleware('auth');
-Route::resource('/user', 'UserController')->middleware('auth');
 Route::resource('/workplans', 'WorkplanController')->middleware('auth');
 Route::get('/login', 'HomeController@login')->name('login');
 
@@ -24,6 +23,7 @@ Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
 Route::get('/collabora', 'HomeController@collabora')->name('collabora');
+Route::get('/collabora2', 'HomeController@collabora2')->name('collabora2');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
@@ -34,11 +34,9 @@ Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
 //Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
-Route::resource('/user', 'UserController')->names('user')->middleware('auth');
-Route::get('user/{id}/show/','UserController@show')->middleware('auth');
-Route::get('user/{id}/edit/','UserController@edit')->middleware('auth');
-Route::get('user/{id}/create/','UserController@create')->middleware('auth');
+Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
+Route::get('filter','UserController@filter')->name('user.filter')->middleware('auth');
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
@@ -60,3 +58,6 @@ Route::resource('/events', 'EventController')->middleware('auth');
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
 
+// Workplans routes
+Route::resource('/workplans', 'WorkplanController')->middleware('auth');
+Route::get('workplans/{id}/destroy/','WorkplanController@destroy')->middleware('auth');

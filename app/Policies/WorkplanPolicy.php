@@ -3,8 +3,6 @@
 namespace App\Policies;
 
 use App\Workplan;
-use App\Activity;
-use App\Category;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +13,7 @@ class WorkplanPolicy
 
     public function viewAny(User $user)
     {
-        if (Auth::user()->role_id === "Soci") {
+        if (Auth::user()->role_id !== "Admin") {
             return false;
         }
         return true;
@@ -23,12 +21,10 @@ class WorkplanPolicy
 
     public function view(User $user, Workplan $workplan)
     {
-        return true;
-    }
-        
-    public function edit(User $user, Workplan $workplan)
-    {
-        if (auth()->user()->role_id !== "Admin") {
+        if (Auth::user()->id !== $workplan->user_id) {
+            return false;
+        }
+        if (Auth::user()->role_id !== "Admin") {
             return false;
         }
         return true;
@@ -59,14 +55,6 @@ class WorkplanPolicy
     }
 
     public function restore(User $user, Workplan $workplan)
-    {
-        if (Auth::user()->role_id !== "Admin") {
-            return false;
-        }
-        return true;
-    }
-
-    public function forceDelete(User $user, Workplan $workplan)
     {
         if (Auth::user()->role_id !== "Admin") {
             return false;

@@ -35,11 +35,12 @@
   <div class="filter-views">
     <div class="float-left">
       <!-- {{ request()->is('home') ? 'active' : ''}} -->
-      <a href="/user" class="btn btn-outline-dark btn-sm active">Veure tots</a>
-      <a href="/user?role_id=1" class="btn btn-outline-dark btn-sm">Soci</a>
-      <a href="/user?role_id=2" class="btn btn-outline-dark btn-sm">Professional</a>
-      <a href="/user?role_id=3" class="btn btn-outline-dark btn-sm">Admin</a>
-
+      <form action="{{ Route('user.filter') }}">
+        <a href="/user" class="btn btn-outline-dark btn-sm active">Veure tots</a>
+        @foreach($roles as $role)
+        <a type="submit" href="/user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm">{{ $role->role_name }}</a>
+        @endforeach
+      </form>
     </div>
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>

@@ -40,7 +40,7 @@
 <div class="col">
   <div class="dashboard-right-side">
     <div class="float-left">
-      <h2>Plans de treball</h2>
+      <h2>Calendari d'activitats 2020 - 2021</h2>
     </div> 
   </div>
 

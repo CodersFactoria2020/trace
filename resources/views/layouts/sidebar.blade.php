@@ -29,7 +29,7 @@
         <li class="nav-item">
           <a class="nav-link primary-green" href="/areas">
             <span><i class="icofont-list"></i></span>
-            Àreas
+            Àrees
           </a>
         </li>
 
