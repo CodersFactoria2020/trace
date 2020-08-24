@@ -38,7 +38,6 @@
         <table class="table table-striped table-borderless">
             <thead class="thead text-uppercase">
                 <tr>
-                    <td><small><b>Nº</b></small></td>
                     <td><small><b>Títol</b></small></td>
                     <td><small><b>Descripció</b></small></td>
                     <td><small><b>Professional</b></small></td>
@@ -49,9 +48,6 @@
         @foreach($activities as $activity)
         @can('view-any', $activity)
         <tr>
-            <td>
-                {{$activity->id}}
-            </td>
             <td class="icon-text primary-green">
                 <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
                     <i class="icofont-attachment"></i>
