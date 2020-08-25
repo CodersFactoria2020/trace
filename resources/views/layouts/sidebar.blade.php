@@ -2,7 +2,7 @@
   <div class="sidebar-sticky fixed-side pt-3">
 
     <div class="nav-item fixed-top logo">
-      <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
+      <a href="{{url('/home')}}"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
     </div>
 
     <div class="nav-item full-vertical-align">
@@ -30,7 +30,7 @@
             <li class="nav-item">
               <a class="nav-link {{ request()->is('areas') ? 'active-black' : 'primary-green'}}" href="/areas">
                 <span><i class="icofont-list"></i></span>
-                Àreas
+                Àrees
               </a>
             </li>
             <li class="nav-item">
@@ -69,7 +69,6 @@
           </ul>
       </div>
     </div>
-
   </div>
 </nav>
 

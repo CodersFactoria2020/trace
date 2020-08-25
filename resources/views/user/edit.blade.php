@@ -22,15 +22,15 @@
                                 <input type="text" name="last_name" class="form-control" value="{{$user->last_name}}" required/>
                             </div>
                         </div>
-            
+
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Email</label>
                                 <input type="text" name="email" class="form-control" value="{{$user->email}}" required/>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>Telèfon</label>
-                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}" required/>
+                                <label>Contrasenya</label>
+                                <input type="text" name="dni" class="form-control" placeholder="Contrasenya" required/>
                             </div>
                         </div>
 
@@ -39,11 +39,12 @@
                                 <label>DNI</label>
                                 <input type="text" name="dni" class="form-control" value="{{$user->dni}}" required/>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label>Telèfon</label>
+                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}" required/>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Contrasenya</label>
-                            <input type="text" name="dni" class="form-control" placeholder="contrasenya" required/>
-                        </div>
+
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Rol</label>
@@ -57,7 +58,7 @@
                             <div class="form-group col-md-6">
                                 <label>Tutor(a)</label>
                                 <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"/>
-                            </div> 
+                            </div>
                         </div>
 
                     </div>

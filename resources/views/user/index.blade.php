@@ -36,14 +36,9 @@
   <div class="filter-views">
     <div class="float-left">
       <form action="{{ Route('user.filter') }}">
-
-      <a href="/user" class="btn btn-outline-dark btn-sm active">
-      <!--
-      class="{{ request()->is('user') ? 'btn btn-outline-dark btn-sm active' : 'btn btn-outline-dark btn-sm'}}">
-      -->
-      Veure tots</a>
+      <a href="{{url('/user')}}" class="btn btn-outline-dark btn-sm active"> Veure tots</a>
         @foreach($roles as $role)
-        <a type="submit" href="/user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm">{{ $role->role_name }}</a>
+        <a type="submit" href=" /user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm">{{ $role->role_name }}</a>
         @endforeach
       </form>
     </div>
