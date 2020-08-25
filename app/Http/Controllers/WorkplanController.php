@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Workplan;
 use App\User;
 use App\Activity;
-use App\Category;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -25,7 +24,6 @@ class WorkplanController extends Controller
         $workplans = new Workplan;
         $roles = Role::all();
         $activities = Activity::all();
-        $categories = Category::all();
         $users = new User;
         $users_per_page = 10;
         $users = $users->where('role_id','=', '1');
@@ -36,52 +34,58 @@ class WorkplanController extends Controller
             'role_id' => request('role_id'),
             'sort' => request('sort'),
         ]);
-        return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));
+        return view('workplans.index', compact('users','roles', 'activities', 'workplans'));
     }
 
     public function create()
     {
         $user = Auth::user();
-        $this->authorize('view-any', $user);
+        $this->authorize('create', $workplan);
         $workplans = new Workplan;
         $users = User::all();
         $roles = Role::all();
         $activities = Activity::all();
-        $categories = Category::all();
-        return view('workplans.create', compact('users','roles', 'activities', 'categories', 'workplans'));
+        return view('workplans.create', compact('users','roles', 'activities', 'workplans'));
     }
 
     public function store(Request $request)
     {
+        $user = Auth::user();
+        $this->authorize('create', $workplan);
         $workplan = Workplan::create($request->all());
-        return redirect('/workplans')->with('status_success',"S'ha creat el pla de treball correctament");
+        $workplan->activities()->sync($request->get('activity'));
+        return redirect('workplans.index')->with('status_success',"S'ha creat el pla de treball correctament");
     }
 
     public function show(Workplan $workplan)
     {
+        $user = Auth::user();
+        $this->authorize('view', $workplan);
         $workplans = Workplan::all();
-        return view('user.show', ['workplan' => $workplan]);
+        $activities = Activity::all();
+        return view('workplans.show', compact('users','roles', 'activities', 'workplans'));
     }
 
     public function edit(Workplan $workplan)
     {
-        $workplans = Role::all();
-        if (auth()->user()->can('edit', $workplan)) {
-            return view('workplan.edit', compact('users','roles', 'activities', 'categories', 'workplans'));
-        }
+        $this->authorize('update', $workplan);
+        $workplans = Workplan::all();
+        $activities = Activity::all();
+        return view('workplans.edit', compact('users','roles', 'activities', 'workplans'));
     }
 
     public function update(Request $request, Workplan $workplan)
     {
+        $this->authorize('update', $workplan);
         $workplan->update($request->all());
-        return redirect('/workplans')->with('status_success',"S'ha actualitzat el pla de treball correctament");
+        $workplan->activities()->sync($request->get('activity'));
+        return redirect('workplans.index')->with('status_success',"S'ha actualitzat el pla de treball correctament");
     }
 
     public function destroy(Workplan $workplan)
     {
-        if (auth()->user()->can('destroy', $workplan)) {
-            $workplan->delete();
-        }
-        return redirect('/workplans')->with('status_success',"S'ha esborrat el pla de treball correctament");
+        $this->authorize('destroy', $workplan);
+        $workplan->delete();
+        return redirect('workplans.index')->with('status_success',"S'ha esborrat el pla de treball correctament");
     }
 }
