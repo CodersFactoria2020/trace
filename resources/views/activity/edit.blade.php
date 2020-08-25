@@ -41,22 +41,10 @@
                                 </select>
                             </div>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Document adjunt</label>
-                                <div class="d-flex justify-content-start pb-3">
-                                    Nombre del documento adjuntado
-                                    <button type="button" class="close pl-2"><span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                
-                                <input type="file" name="file" id="fileToUpload"/>
-                            </div>
-                        </div>
+
                         <div class="form-group" >
                             Document adjunt
-                            <p class="form-control" >{{$activity->get_downloaded_file_name()}}</p>
+                            <p>{{$activity->get_downloaded_file_name()}}</p>
                         </div>
                         <div class="form-group" >
                             Adjunta document
