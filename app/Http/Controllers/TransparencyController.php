@@ -25,6 +25,7 @@ class TransparencyController extends Controller
     {
         $transparencies = Transparency::all();
         return view('transparency.create', compact('transparencies'));
+
     }
 
     public function store(Request $request)
@@ -37,7 +38,6 @@ class TransparencyController extends Controller
         ]);
         $transparency = Transparency::create($data,$validatedData);
         $this->upload_documents($request, $transparency);
-
         return redirect(route('transparency.index'));
     }
 

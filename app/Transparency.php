@@ -13,31 +13,30 @@ class Transparency extends Model
     ];
     public function upload_economic_document($economic_document)
     {
-        $name_document = $this->id . '_economic.pdf';
-        $economic_document->storeAs('transparency/', $name_document, ['disk'=>'public']);
+
+        $name_document = $this->date_name . '_economic.pdf';
+        $economic_document_path='/transparency/';
+        $economic_document->storeAs($economic_document_path, $name_document, ['disk'=>'public']);
+
 
     }
     public function upload_entity_document($entity_document)
     {
-        $name_document = $this->id . '_entity.pdf';
-        $entity_document->storeAs('transparency/', $name_document, ['disk'=>'public']);
+        $name_document = $this->date_name . '_entity.pdf';
+        $entity_document_path='/transparency/';
+        $entity_document->storeAs($entity_document_path, $name_document, ['disk'=>'public']);
     }
     public function get_economic_url()
     {
-        Return Storage::url('transparency/'.$this->id . '_economic.pdf');
+        $economic_document_name = $this->date_name . '_economic.pdf';
+        $path = storage_path($economic_document_name);
+        $economic_document_path = '/transparency/';
+        Return Storage::url($economic_document_path . $economic_document_name);
     }
     public function get_entity_url()
     {
-        Return Storage::url('transparency/'.$this->id . '_entity.pdf');
+        $entity_document_path='/transparency/';
+        Return Storage::url($entity_document_path . $this->date_name . '_entity.pdf');
     }
-
-
-    public function view_documents()
-    {
-        Storage::setVisibility('transparency/'.$this->id . '_entity.pdf');
-
-    }
-
-
 
 }
