@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Afegir l'activitat economica</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Afegir l'activitat econòmica</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -16,16 +16,16 @@
                             <input type="text" name="date_name" class="form-control" placeholder="Date Name"/>
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentació economica</label>
+                            <label for="name">Documentació econòmica</label>
                             <input type="file" name="economic_document" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentació economica d'entitats</label>
+                            <label for="name">Documentació econòmica d'entitats</label>
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
-                        <div class="text-right">
-                            <input type="submit" value="Crear" class="btn btn-primary">
+                        <div class="text-right mt-4">
+                            <input type="submit" value="Afegir  " class="cta">
                         </div>
                     </div>
                 </form>

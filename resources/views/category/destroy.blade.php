@@ -3,17 +3,19 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h4 class="modal-title">Esborrar l'àrea</h4>
+                <h5 class="modal-title">Esborrar l'àrea</h5>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
 
             <div class="modal-body">
                 <p>Segur que desitja esborrar aquesta àrea?</p>
-                <div style="padding:5px;">
-                    <h5>Nom: {{$category->name}}</h5>
+                <div>
+                    <small><b>Nom: </b></small>
+                    <p>{{$category->name}}</p>
                 </div>
-                <div style="padding:5px;">
-                    <h5>descripció: {{$category->description}}</h5>
+                <div>
+                    <small><b>Descripció: </b></small>
+                    <p>{{$category->description}}</p>
                 </div>
             </div>
 
@@ -22,7 +24,7 @@
                 <form action="{{Route('category.destroy', $category->id)}}" method="POST">
                     @csrf
                     @method('delete')
-                    <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
+                    <input type="submit" class="cta" value="Sí, esborrar!">
                 </form>
                </div>
         </div>

@@ -9,11 +9,13 @@
 
             <div class="modal-body">
                 <p>Segur que desitja esborrar aquest membre de l'equip?</p>
-                <div style="padding:5px;">
-                    <h5>Nom i Cognom: {{$team->first_name}}, {{$team->last_name}}</h5>
+                <div>
+                    <small><b>Nom i Cognom: </b></small>
+                    <p>{{$team->first_name}}, {{$team->last_name}}</p>
                 </div>
-                <div style="padding:5px;">
-                    <h5>Professio: {{$team->position}}</h5>
+                <div>
+                    <small><b>Professio: </b></small>
+                    <p>{{$team->position}}</p>
                 </div>
             </div>
 
@@ -22,7 +24,7 @@
                 <form action="{{Route('team.destroy', $team->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
+                    <input type="submit" class="cta" value="Sí, esborrar!">
                 </form>
                </div>
         </div>

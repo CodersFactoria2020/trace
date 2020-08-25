@@ -38,7 +38,6 @@
     <table class="table table-striped table-borderless">
       <thead class="thead text-uppercase">
         <tr>
-          <td><small><b>ID</b></small></td>
           <td><small><b>Imatge</b></small></td>
           <td><small><b>Nom i Cognom</b></small></td>
           <td><small><b>Professió</b></small></td>
@@ -48,7 +47,6 @@
       @foreach($teams as $team)
       @can('view-any', $team)
       <tr>
-        <td>{{$team->id}}</td>
         <td class="dashboard-team"><img src="{{$team->get_photo_url()}}"></td>
         <td class="icon-text">
           <div class="primary-green">

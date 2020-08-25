@@ -2,7 +2,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Editar Membre de l'Equip</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Editar activitat econòmica</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -17,20 +17,18 @@
                             <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici economic" value="{{$transparency->date_name}}"/>
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentacio d'activitat economica</label>
-                            <input type="file" name="economic_document" class="form-control"  >
+                            <label for="name">Documentació de l'activitat econòmica</label>
+                            <input type="file" name="economic_document" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentacio economica d'entitats</label>
+                            <label for="name">Documentació econòmica d'entitats</label>
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
-                        <div class="text-right">
-                            <div class="text-right">
-                                <a href="{{Route('transparency.update', $transparency->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
-                                </a>
-                            </div>
+                        <div class="text-right pt-4">
+                            <a href="{{Route('transparency.update', $transparency->id)}}" >
+                                <input type="submit" value="Actualitzar" class="cta">
+                            </a>
                         </div>
                     </div>
                 </form>

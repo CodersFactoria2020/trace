@@ -10,21 +10,21 @@
             <div class="modal-body">
                     @method('put')
                     <div class="card-body">
-                        <div style="padding:5px;">
-                            <h5>ID:</h5><p> {{$category->id}}</p>
+                        <div>
+                            <small><b>ID:</b></small>
+                            <p> {{$category->id}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Nom de l'àrea:</h5><p> {{$category->name}}</p>
+                        <div>
+                            <small><b>Nom de l'àrea:</b></small>
+                            <p> {{$category->name}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Descripció:</h5><p> {{$category->description}}</p>
+                        <div>
+                            <small><b> Descripció:</b></small>
+                            <p> {{$category->description}}</p>
                         </div>
-                        <div style="padding:5px;">
-                            <h5>Color de fons:</h5><p style="background-color:{{ $category['color'] }}; color:{{$category->color}}"> {{$category->color}} </p>
-                        </div>
-
-                        <div class="text-right">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Tancar</button>
+                        <div>
+                            <small><b>Color de fons:</b></small>
+                            <p style="background-color:{{ $category['color'] }}; color:{{$category->color}}"> {{$category->color}} </p>
                         </div>
                     </div>
                 </form>
