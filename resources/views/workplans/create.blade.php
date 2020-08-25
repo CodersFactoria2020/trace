@@ -24,19 +24,27 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            @foreach ($activities as $activity)
+                            <div class="row">
+                                @foreach ($activities as $activity)
+                                <div class="col-md-6">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox"
+                                            id="activity_{{$activity->id}}" value="{{$activity->id}}" name="activity[]">
+                                        <input class="custom-control-input" type="checkbox"
+                                            id="activity_{{$activity->id}}" value="{{$activity->id}}" name="activity[]">
+                                        <label class="custom-control-label"
+                                            for="activity_{{$activity->id}}">{{$activity->id}}
+                                            - {{$activity->title}}
+                                        </label>
 
-                            <div class="custom-control custom-checkbox">
-                                <input class="custom-control-input" type="checkbox" id="activity_{{$activity->id}}"
-                                    value="{{$activity->id}}" name="activity[]">
-                                <input class="custom-control-input" type="checkbox" id="activity_{{$activity->id}}"
-                                    value="{{$activity->id}}" name="activity[]">
-                                <label class="custom-control-label" for="activity_{{$activity->id}}">{{$activity->id}}
-                                    - {{$activity->title}}
-                                </label>
+                                    </div>
+                                </div>
+                                @if ($loop->iteration % 2 == 0)
                             </div>
-                            @endforeach
-
+                            <div class="row">
+                                @endif
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                     <div class="text-right mt-4">
