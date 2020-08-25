@@ -26,15 +26,17 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>     
+                        </div>
                         <div>
                             <small><b>Telèfon:</b></small>
                             <p>{{$user->phone}}</p>
                         </div>
-                        <div>
-                            <small><b>DNI:</b></small>
-                            <p>{{$user->dni}}</p>
-                        </div>
+                        @if (auth()->user()->role_id === "Admin")
+                            <div>
+                                <small><b>DNI:</b></small>
+                                <p>{{$user->dni}}</p>
+                            </div>
+                        @endif
                         <div>
                             <small><b>Tutor(a):</b></small>
                             <p>{{$user->tutor}}</p>
@@ -43,8 +45,6 @@
                             <small><b>Rol:</b></small>
                             <p>{{$user->role_id}}</p>
                         </div>
-                        
-        
                         </div>
                     </div>
             </div>
