@@ -23,26 +23,19 @@ class WorkplanController extends Controller
         $user = Auth::user();
         $this->authorize('view-any', $user);
         $workplans = new Workplan;
-        $users = User::all();
+        $users = new User;
         $roles = Role::all();
         $activities = Activity::all();
         $categories = Category::all();
-        
-        // $users_id = $this->removesDuplicatedUserIdInWorkplanIndex();
-        // foreach ($users_id as $user_id) {
-        //     $workplan
-        // }
-        $workplans_per_page = 8;
-        $workplans = $workplans->paginate($workplans_per_page);
-        // $users_id = [];
-        // foreach ($workplans as $workplan) {
-        //     if (!in_array($workplan->user_id, $users_id)) {
-        //         array_push($users_id, $workplan->user_id);
-        //     }
-        //     unset($workplans [$workplan->id]);
-        // }
-        
-        // $workplans = array_unique($workplans, SORT_REGULAR);
+        $users_per_page = 10;
+        $users = $users->where('role_id','=', '1');
+        if (request()->has('sort')) {
+            $users = $users->orderBy('last_name', request('sort'));
+        }
+        $users = $users->paginate($users_per_page)->appends([
+            'role_id' => request('role_id'),
+            'sort' => request('sort'),
+        ]);
         return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
@@ -70,14 +63,14 @@ class WorkplanController extends Controller
     public function show(Workplan $workplan)
     {
         $workplans = Workplan::all();
-        return view('user.show', ['workplan' => $workplan]);
+        return view('user.show', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
     public function edit(Workplan $workplan)
     {
         $workplans = Role::all();
         if (auth()->user()->can('edit', $workplan)) {
-            return view('workplan.edit', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
+            return view('workplan.edit', compact('users','roles', 'activities', 'categories', 'workplans'));
         }
     }
 
