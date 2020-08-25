@@ -23,20 +23,31 @@ class WorkplanController extends Controller
         $user = Auth::user();
         $this->authorize('view-any', $user);
         $workplans = new Workplan;
-        $users = User::all();
         $roles = Role::all();
         $activities = Activity::all();
         $categories = Category::all();
-        $workplans_per_page = 10;
-        $workplans = $workplans->paginate($workplans_per_page);
+        $users = new User;
+        $users_per_page = 10;
+        $users = $users->where('role_id','=', '1');
+        if (request()->has('sort')) {
+            $users = $users->orderBy('last_name', request('sort'));
+        }
+        $users = $users->paginate($users_per_page)->appends([
+            'role_id' => request('role_id'),
+            'sort' => request('sort'),
+        ]);
         return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
     public function create()
     {
-        if (auth()->user()->role_id === "Soci") {
-            return view('user.notauthorized');
-        }
+        $user = Auth::user();
+        $this->authorize('view-any', $user);
+        $workplans = new Workplan;
+        $users = User::all();
+        $roles = Role::all();
+        $activities = Activity::all();
+        $categories = Category::all();
         return view('workplans.create', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
