@@ -38,6 +38,10 @@
                             </select>
                         </div>
                         <div class="form-group" >
+                            Document adjunt
+                            <p class="form-control" >{{$activity->get_downloaded_file_name()}}</p>
+                        </div>
+                        <div class="form-group" >
                             Adjunta document
                             <input type="file" name="file" id="fileToUpload"/>
                         </div>

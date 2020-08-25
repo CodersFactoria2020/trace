@@ -62,7 +62,7 @@ class Activity extends Model
         return Storage::download('/activities/'.$this->get_saved_file_name(), $this->get_downloaded_file_name());
     }
 
-    private function get_saved_file_name(): string
+    public function get_saved_file_name(): string
     {
         return $this->id . '.' . $this->file;
     }
