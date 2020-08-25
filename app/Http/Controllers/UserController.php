@@ -7,6 +7,7 @@ use App\Activity;
 use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Crypt;
 
 class UserController extends Controller
 {
@@ -47,13 +48,36 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $this->authorize('create', $user);
-        $user = User::create($request->all());
+        $validated = $request->validate([
+            'first_name' => 'required|min:3',
+            'last_name' => 'required|min:3',
+            'email' => 'required|email',
+            'password' => 'required|min:3',
+            'phone' => 'required|min:9',
+            'dni' => 'required|min:9',
+            'role_id' => 'required'
+        ]);
+        $request->password = bcrypt(request('password'));
+        $user = new User;
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->phone = $request->phone;
+            $user->dni = $request->dni;
+            $user->tutor = $request->tutor;
+            $user->role_id = $request->role_id;
+            $user->save();
         return redirect('/user')->with('status_success',"S'ha creat l'usuari correctament");
     }
 
     public function show(User $user)
     {
         $this->authorize('view', $user);
+        $loggedUser = Auth::user();
+        if ($loggedUser->role_id === "Soci" && $user->role_id === "Soci"){
+            return redirect('/dashboard');
+        }
         $roles = Role::all();
         return view('user.show', ['user' => $user], compact('roles'));
     }
@@ -68,7 +92,25 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->authorize('update', $user);
-        $user->update($request->all());
+        $validated = $request->validate([
+            'first_name' => 'required|min:3',
+            'last_name' => 'required|min:3',
+            'email' => 'required|email',
+            'password' => 'required|min:3',
+            'phone' => 'required|min:9',
+            'dni' => 'required|min:9',
+            'role_id' => 'required'
+        ]);
+        $request->password = bcrypt(request('password'));
+            $user->first_name = $request->first_name;
+            $user->last_name = $request->last_name;
+            $user->email = $request->email;
+            $user->password = $request->password;
+            $user->phone = $request->phone;
+            $user->dni = $request->dni;
+            $user->tutor = $request->tutor;
+            $user->role_id = $request->role_id;
+            $user->save();
         return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");
     }
 

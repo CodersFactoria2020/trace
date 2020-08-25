@@ -15,6 +15,7 @@
                         <div class="form-group">
                             <label>Nom</label>
                             <input type="text" name="first_name" class="form-control" placeholder="Nom" required/>
+                            <div class="alert-danger">{{$errors->first('name')}}</div>
                         </div>
                         <div class="form-group">
                             <label>Cognom</label>
@@ -36,16 +37,17 @@
                             <label>DNI</label>
                             <input type="text" name="dni" class="form-control" placeholder="DNI" required/>
                         </div>
+
                         <div class="form-group">
                             <label>Tutor(a)</label>
                             <input type="text" name="tutor" class="form-control" placeholder="Tutor"/>
                         </div>
                         <div class="form-group">
                             <label>Rol</label>
-                            <select name="role_id" class="form-control">
+                            <select name="role_id" class="form-control" >
                                 <optgroup label="Selecciona un rol">
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
+                                    <option required value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
                                 @endforeach
                             </select>
                         </div>
