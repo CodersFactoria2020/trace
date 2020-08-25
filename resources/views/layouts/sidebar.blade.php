@@ -2,7 +2,7 @@
   <div class="sidebar-sticky fixed-side pt-3">
 
     <div class="nav-item fixed-top logo">
-      <a href="/home"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
+      <a href="{{url('/home')}}"><img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid"></a>
     </div>
 
     <div class="nav-item full-vertical-align">
