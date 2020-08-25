@@ -25,9 +25,16 @@
                         </div>
                         <div class="form-group">
                             @foreach ($activities as $activity)
-                            <p><input type="checkbox" id="$activity_id" name="activity[]" value="{{ $activity['id'] }}">
-                                {{ $activity['title'] }}
-                            </p>
+
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="activity_{{$activity->id}}"
+                                    value="{{$activity->id}}" name="activity[]">
+                                <input class="custom-control-input" type="checkbox" id="activity_{{$activity->id}}"
+                                    value="{{$activity->id}}" name="activity[]">
+                                <label class="custom-control-label" for="activity_{{$activity->id}}">{{$activity->id}}
+                                    - {{$activity->title}}
+                                </label>
+                            </div>
                             @endforeach
 
                         </div>
