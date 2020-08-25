@@ -18,7 +18,7 @@ class ActivityController extends Controller
     public function index()
     {
         $this->authorize('view-any', Activity::class);
-        $activities = Activity::paginate(8);
+        $activities = Activity::paginate(10);
         $categories = Category::all();
         return view('activity.index', compact('activities'), compact('categories'));
     }

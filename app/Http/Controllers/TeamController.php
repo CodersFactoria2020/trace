@@ -12,7 +12,7 @@ class TeamController extends Controller
     public function index()
     {
         $this->authorize('view-any', Team::class);
-        $teams = Team::paginate(8);
+        $teams = Team::paginate(10);
         return view('team.index', compact('teams'));
     }
 
