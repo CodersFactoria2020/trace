@@ -41,7 +41,6 @@
 
 
   @yield('scripts')
-
   </head>
 
   <body>
@@ -50,10 +49,10 @@
         @include('layouts.sidebar')
         @yield('content')
       </div>
-  </div>
+    </div>
 
   </body>
 
-<a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
 </html>

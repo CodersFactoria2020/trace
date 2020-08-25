@@ -14,11 +14,11 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Any de l'exercici</label>
-                            <input type="text" name="date_name" class="form-control" placeholder="First Name"/>
+                            <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici economic" value="{{$transparency->date_name}}"/>
                         </div>
                         <div class="form-group">
                             <label for="name">Documentacio d'activitat economica</label>
-                            <input type="file" name="economic_document" class="form-control" >
+                            <input type="file" name="economic_document" class="form-control"  >
                         </div>
                         <div class="form-group">
                             <label for="name">Documentacio economica d'entitats</label>

@@ -22,14 +22,19 @@ class Transparency extends Model
         $name_document = $this->id . '_entity.pdf';
         $entity_document->storeAs('transparency/', $name_document, ['disk'=>'public']);
     }
-    public function get_document_url()
+    public function get_economic_url()
     {
-        Return Storage::url('transparency/'.$this->id . '.pdf');
+        Return Storage::url('transparency/'.$this->id . '_economic.pdf');
+    }
+    public function get_entity_url()
+    {
+        Return Storage::url('transparency/'.$this->id . '_entity.pdf');
     }
 
 
-    public function view_documents($transparency)
+    public function view_documents()
     {
+        Storage::setVisibility('transparency/'.$this->id . '_entity.pdf');
 
     }
 

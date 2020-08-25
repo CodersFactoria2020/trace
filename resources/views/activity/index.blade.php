@@ -21,8 +21,9 @@
 @endsection
 
 @section('content')
-@include('custom.message')
+
 <div class="col">
+    @include('custom.message')
     <div class="dashboard-right-side">
         <div class="float-left">
             <h2>Activitats</h2>
@@ -37,11 +38,9 @@
         <table class="table table-striped table-borderless">
             <thead class="thead text-uppercase">
                 <tr>
-                    <td><small><b>Nº</b></small></td>
                     <td><small><b>Títol</b></small></td>
                     <td><small><b>Descripció</b></small></td>
                     <td><small><b>Professional</b></small></td>
-
                     <td colspan="3"><small><b>Accions<small><b></td>
                 </tr>
             </thead>
@@ -49,24 +48,22 @@
         @foreach($activities as $activity)
         @can('view-any', $activity)
         <tr>
-            <td>
-                
-                {{$activity->id}}
-            </td>
             <td class="icon-text primary-green">
                 <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
                     <i class="icofont-attachment"></i>
                     {{$activity->title}}
                 </a>
-                @include('activity.show')     
+                @include('activity.show')
             </td>
-            <td>{{$activity->description}}</td>
+            <td>{{$activity->description = substr($activity->description, 0, 40) . '...'}}</td>
             <td>{{$activity->professional1}}</td>
             <td class="actions">
                 @can('update', $activity)
-                <a href=""  data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="primary-green" activity="button">
-                    <i class="icofont-ui-edit"></i>
-                </a>
+                <div class="primary-green">
+                    <a href=""  data-toggle="modal" data-target="#edit-activity{{$activity->id}}" class="primary-green" activity="button">
+                        <i class="icofont-ui-edit"></i>
+                    </a>
+                </div>
                 @include('activity.edit')
                 @endcan
             </td>
@@ -74,7 +71,7 @@
             <td class="actions">
                 @can('destroy', $activity)
                 <div class="danger">
-                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">     
+                    <a href=""  data-toggle="modal" data-target="#destroy-activity{{$activity->id}}" class="danger" activity="button">
                         <i class="icofont-ui-delete"></i>
                     </a>
                 </div>
@@ -88,6 +85,9 @@
 
         </table>
     </div>
+    <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+        <div class=""><small>Mostrant {{ count($activities) }} de {{ $activities->total() }}</small></div>
+        <div class=""> {{ $activities->links() }}</div>
+      </div>
 </div>
-
 @endsection

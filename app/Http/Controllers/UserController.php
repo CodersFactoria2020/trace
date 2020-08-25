@@ -5,14 +5,12 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Activity;
 use App\Role;
-use App\Team;
-use App\Http\Resources\Role as RoleResource;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    
+
     public function __construct()
     {
         $this->middleware('auth');
@@ -24,7 +22,7 @@ class UserController extends Controller
         $this->authorize('view-any', $user);
         $users = new User;
         $roles = Role::all();
-        $users_per_page = 8; 
+        $users_per_page = 8;
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
@@ -89,7 +87,7 @@ class UserController extends Controller
         $roles = Role::all();
         return view('user.index', compact('users', 'roles'));
     }
-        
+
     public function dashboard()
     {
         $users = User::all();
@@ -99,7 +97,7 @@ class UserController extends Controller
         }
         return view('user.soci');
     }
-        
+
     public function workplans()
     {
         $users = User::all();
@@ -110,7 +108,7 @@ class UserController extends Controller
         }
         return view('workplans.soci');
     }
-        
+
     // public function team()
     // {
     //     $users = User::all();

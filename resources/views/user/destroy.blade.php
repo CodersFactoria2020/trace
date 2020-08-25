@@ -3,17 +3,17 @@
         <div class="modal-content">
              
             <div class="modal-header">
-                <h4 class="modal-title">Esborrar usuari</h4>
+                <h5 class="modal-title">Esborrar usuari</h5>
                 <button type="button" class="close" data-dismiss="modal">×</button>
             </div>
  
             <div class="modal-body">
                 <p>Segur que desitja esborrar aquest usuari?</p>
-                <div style="padding:5px;">
-                    <h5>Nom: {{$user->first_name}}</h5>
+                <div>
+                    <small><b>Nom: </b></small><p>{{$user->first_name}}</p>
                 </div>
-                <div style="padding:5px;">
-                    <h5>Cognom: {{$user->last_name}}</h5>
+                <div>
+                    <small><b>Cognom: </b></small><p>{{$user->last_name}}</p>
                 </div>
             </div>
  
@@ -22,7 +22,7 @@
                 <form action="{{Route('user.destroy', $user->id)}}" method="POST">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
+                    <input type="submit" class="cta" value="Sí, esborrar!">
                 </form>
                </div>
         </div>

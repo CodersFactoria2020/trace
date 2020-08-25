@@ -2,6 +2,7 @@
 
 namespace Tests\Unit;
 
+use App\Role;
 use App\Transparency;
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -16,9 +17,6 @@ class TransparencyTest extends TestCase
 
     public function test_economic_document_upload()
     {
-        $user = factory(User::class)->create();
-        $kilobytes=2222;
-        $file = UploadedFile::fake()->create('document.pdf', $kilobytes);
 
     }
 }

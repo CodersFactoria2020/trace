@@ -12,7 +12,7 @@ class TeamController extends Controller
     public function index()
     {
         $this->authorize('view-any', Team::class);
-        $teams = Team::all();
+        $teams = Team::paginate(8);
         return view('team.index', compact('teams'));
     }
 
@@ -34,7 +34,7 @@ class TeamController extends Controller
            $team->upload_photo($photo);
         }
 
-        return redirect(route('team.index'));
+        return redirect(route('team.index'))->with('status_success', 'El membre s\'ha creat correctament ');
     }
 
     public function show(Team $team)
@@ -58,7 +58,7 @@ class TeamController extends Controller
             $team->upload_photo($photo);
         }
 
-        return redirect('/team');
+        return redirect('/team')->with('status_success', 'El membre s\'ha actualitzat correctament ');
     }
 
     public function destroy(Team $team)
@@ -66,6 +66,6 @@ class TeamController extends Controller
         $this->authorize('destroy', Team::class);
         $team->delete();
         Storage::delete('images');
-        return redirect()->route('team.index');
+        return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
     }
 }

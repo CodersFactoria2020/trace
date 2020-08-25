@@ -23,6 +23,7 @@
 
 @section('content')
 <div class="col">
+    @include('custom.message')
   <div class="dashboard-right-side">
     <div class="float-left">
       <h2>Gestió de l'Equip</h2>
@@ -40,7 +41,7 @@
           <td><small><b>ID</b></small></td>
           <td><small><b>Imatge</b></small></td>
           <td><small><b>Nom i Cognom</b></small></td>
-          <td><small><b>Professio</b></small></td>
+          <td><small><b>Professió</b></small></td>
           <td colspan="2"><small><b>Accions</b></small></td>
         </tr>
       </thead>
@@ -50,18 +51,22 @@
         <td>{{$team->id}}</td>
         <td class="dashboard-team"><img src="{{$team->get_photo_url()}}"></td>
         <td class="icon-text">
-          <a style="color:white" data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
-          <i class="icofont-user-alt-3"></i>
-          {{$team->first_name}}, {{$team->last_name}}
+          <div class="primary-green">
+            <a data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
+              <i class="icofont-user-alt-3"></i>
+              {{$team->first_name}}, {{$team->last_name}}
+            </a>
+          </div>
           @include('team.show')
-          </a>
         </td>
         <td>{{$team->position}}</td>
         <td class="actions">
             @can('update', $team)
-            <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
-            <i class="icofont-ui-edit"></i>
-            </a>
+            <div class="primary-green">
+              <a href="" data-toggle="modal" data-target="#edit-team{{$team->id}}" class="primary-green" type="button">
+                <i class="icofont-ui-edit"></i>
+              </a>
+            </div>
             @include('team.edit')
             @endcan
         </td>
@@ -79,6 +84,10 @@
 
     </table>
   </div>
+  <div class="dashboard-right-side d-flex align-items-center justify-content-end">
+    <div><small>Mostrant {{ count($teams) }} de {{ $teams->total() }}</small></div>
+    <div> {{ $teams->links() }}</div>
+</div>
 </div>
 
 @endsection
