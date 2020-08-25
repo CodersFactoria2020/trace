@@ -30,7 +30,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Contrasenya</label>
-                                <input type="text" name="password" class="form-control" placeholder="Password" required/>
+                                <input type="text" name="password" class="form-control" placeholder="Contrasenya" required/>
                             </div>
                         </div>
 
