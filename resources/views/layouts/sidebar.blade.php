@@ -30,7 +30,7 @@
             <li class="nav-item">
               <a class="nav-link primary-green" href="{{url('/areas')}}">
                 <span><i class="icofont-list"></i></span>
-                Àreas
+                Àrees
               </a>
             </li>
             <li class="nav-item">
@@ -69,7 +69,6 @@
           </ul>
       </div>
     </div>
-
   </div>
 </nav>
 

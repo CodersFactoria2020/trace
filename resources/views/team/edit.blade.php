@@ -27,13 +27,11 @@
                         <div class="form-group">
                             <label for="name">Imatge</label>
                             <div class="d-flex justify-content-start pb-3">
-                                    Nombre de la imagen adjuntada
-                                    <button type="button" class="close pl-2"><span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
+                                <img src="{{$team->get_photo_url()}}" width="150" height="150">
+                            </div>
                             <input type="file" name="photo" class="form-control">
                         </div>
-                        
+
 
                         <div class="text-right">
                             <a href="{{Route('team.update', $team->id)}}" >

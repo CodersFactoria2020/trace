@@ -18,9 +18,11 @@ class Team extends Model
     }
     public function get_photo_url()
     {
-        Return Storage::url('team/'.$this->id . '.jpg');
+        if (! $this->photo) {
+            return '../img/avatar-team.jpg';
+        }
+
+        return Storage::url('team/'.$this->id . '.jpg');
     }
-
-
 
 }
