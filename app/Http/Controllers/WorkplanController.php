@@ -22,13 +22,27 @@ class WorkplanController extends Controller
     {
         $user = Auth::user();
         $this->authorize('view-any', $user);
-        // $workplans = new Workplan;
-        // $users = User::all();
-        // $roles = Role::all();
-        // $activities = Activity::all();
-        // $categories = Category::all();
+        $workplans = new Workplan;
+        $users = User::all();
+        $roles = Role::all();
+        $activities = Activity::all();
+        $categories = Category::all();
+        
+        // $users_id = $this->removesDuplicatedUserIdInWorkplanIndex();
+        // foreach ($users_id as $user_id) {
+        //     $workplan
+        // }
         $workplans_per_page = 8;
         $workplans = $workplans->paginate($workplans_per_page);
+        // $users_id = [];
+        // foreach ($workplans as $workplan) {
+        //     if (!in_array($workplan->user_id, $users_id)) {
+        //         array_push($users_id, $workplan->user_id);
+        //     }
+        //     unset($workplans [$workplan->id]);
+        // }
+        
+        // $workplans = array_unique($workplans, SORT_REGULAR);
         return view('workplans.index', compact('users','roles', 'activities', 'categories', 'workplans'));
     }
 
@@ -37,7 +51,14 @@ class WorkplanController extends Controller
         if (auth()->user()->role_id === "Soci") {
             return view('user.notauthorized');
         }
-        return view('workplans.create', ['users' => $users], compact('activities'), compact('categories'), compact('roles'));
+        $user = Auth::user();
+        $this->authorize('create', $user);
+        $workplans = new Workplan;
+        $users = User::all();
+        $roles = Role::all();
+        $activities = Activity::all();
+        $categories = Category::all();
+        return view('workplans.create', compact('users', 'activities', 'categories', 'roles', 'workplans'));
     }
 
     public function store(Request $request)
@@ -72,5 +93,20 @@ class WorkplanController extends Controller
             $workplan->delete();
         }
         return redirect('/workplans')->with('status_success',"S'ha esborrat el pla de treball correctament");
+    }
+
+    public function removesDuplicatedUserIdInWorkplanIndex()
+    {
+        $user = Auth::user();
+        $this->authorize('view-any', $user);
+        $workplans = Workplan::all();
+        $users = User::all();
+        $users_id = [];
+        foreach ($workplans as $workplan) {
+            if (!in_array($workplan->user_id, $users_id)) {
+            array_push($users_id, $workplan->user_id);
+            }
+        }        
+        return $users_id;
     }
 }
