@@ -12522,6 +12522,10 @@ section a {
   text-decoration: none;
 }
 
+.active-black {
+  color: #343a40 !important;
+}
+
 .danger a {
   color: #dc3545 !important;
 }
