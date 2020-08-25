@@ -43,12 +43,8 @@
                                 <label>DNI</label>
                                 <input type="text" name="dni" class="form-control" placeholder="DNI" required/>
                             </div>
-                        </div>  
+                        </div>
                         <div class="form-row">
-                            <div class="form-group col-md-6">
-                                <label>Tutor(a)</label>
-                                <input type="text" name="tutor" class="form-control" placeholder="Tutor"/>
-                            </div>
                             <div class="form-group col-md-6">
                                 <label>Rol</label>
                                 <select name="role_id" class="form-control">
@@ -58,11 +54,15 @@
                                     @endforeach
                                 </select>
                             </div>
+                            <div class="form-group col-md-6">
+                                <label>Tutor(a)</label>
+                                <input type="text" name="tutor" class="form-control" placeholder="Tutor"/>
+                            </div>
                         </div>
                         <div class="text-right mt-4">
                             <input type="submit" value="Afegir" class="cta">
                         </div>
-     
+
                     </form>
                 </div>
             </div>
