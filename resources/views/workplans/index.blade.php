@@ -28,7 +28,7 @@
   <div class="dashboard-right-side">
     <div class="float-left"><h2>Plans de treball</h2></div>
     @if (auth()->user()->role_id === "Admin")
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un pla de treball</button>
+    <button type="button" class="cta" data-toggle="modal" data-target="#create-workplan"> Afegir un pla de treball</button>
     @include('workplans.create')
     @endif
   </div>
