@@ -8,6 +8,7 @@
     <div class="nav-item full-vertical-align">
       <div class="side-bar-menu">
         <ul class="nav flex-column">
+            @if (auth()->user()->role_id != "Soci")
             <li class="nav-item">
               <a class="nav-link primary-green active" href="/dashboard">
                 <span><i class="icofont-home"></i></span>
@@ -26,34 +27,31 @@
                 Activitats
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link primary-green" href="/areas">
                 <span><i class="icofont-list"></i></span>
                 Àreas
               </a>
             </li>
-
             <li class="nav-item">
               <a class="nav-link primary-green" href="/workplans">
                 <span><i class="icofont-calendar"></i></span>
                 Plans de treball
               </a>
             </li>
-
-        <li class="nav-item">
-          <a class="nav-link primary-green" href="/team">
-            <span><i class="icofont-id"></i></span>
-            Gestió de l'Equip
-          </a>
-        </li>  
-
+            <li class="nav-item">
+              <a class="nav-link primary-green" href="/team">
+                <span><i class="icofont-id"></i></span>
+                Gestió de l'Equip
+              </a>
+            </li>  
             <li class="nav-item">
               <a class="nav-link primary-green" href="/transparency">
                 <span><i class="icofont-page"></i></span>
                 Transparència
               </a>
             </li>
+            @endif
             <li class="nav-item pt-3">
               <div class="nav-item logoutbtn">
                 <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
