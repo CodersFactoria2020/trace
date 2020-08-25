@@ -10,37 +10,37 @@
         <ul class="nav flex-column">
             @if (auth()->user()->role_id != "Soci")
             <li class="nav-item">
-              <a class="nav-link primary-green active" href="{{'/dashboard'}}">
+              <a class="nav-link primary-green active" href="{{url('/dashboard')}}">
                 <span><i class="icofont-home"></i></span>
                 Inici <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-green" href="{{'/user'}}">
+              <a class="nav-link primary-green" href="{{url('/user')}}">
                 <span><i class="icofont-users-alt-3"></i></span>
                 Usuaris
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-green" href="{{'/activity'}}">
+              <a class="nav-link primary-green" href="{{url('/activity')}}">
                 <span><i class="icofont-attachment"></i></span>
                 Activitats
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-green" href="{{'/areas'}}">
+              <a class="nav-link primary-green" href="{{url('/areas')}}">
                 <span><i class="icofont-list"></i></span>
                 Àreas
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-green" href="{{'/workplans'}}">
+              <a class="nav-link primary-green" href="{{url('/workplans')}}">
                 <span><i class="icofont-calendar"></i></span>
                 Plans de treball
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link primary-green" href="{{'/team'}}">
+              <a class="nav-link primary-green" href="{{url('/team')}}">
                 <span><i class="icofont-id"></i></span>
                 Gestió de l'Equip
               </a>
