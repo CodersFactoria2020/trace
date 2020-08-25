@@ -48,12 +48,14 @@
         @foreach($activities as $activity)
         @can('view-any', $activity)
         <tr>
-            <td class="icon-text primary-green">
-                <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
-                    <i class="icofont-attachment"></i>
-                    {{$activity->title}}
-                </a>
-                @include('activity.show')
+            <td class="icon-text">
+                <div class="primary-green">
+                    <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
+                        <i class="icofont-attachment"></i>
+                        {{$activity->title}}
+                    </a>
+                </div>
+                @include('activity.show')     
             </td>
             <td>{{$activity->description = substr($activity->description, 0, 40) . '...'}}</td>
             <td>{{$activity->professional1}}</td>

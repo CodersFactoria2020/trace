@@ -112,7 +112,7 @@
 
           <div class="mr auto">
             <a href="{{url('/home')}}">
-            <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="img-fluid" style="width:90px; heigh:auto"></a>
+            <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="logo img-fluid" style="width:90px; heigh:auto"></a>
           </div>
 
           <div>

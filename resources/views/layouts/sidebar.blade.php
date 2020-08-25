@@ -41,12 +41,12 @@
               </a>
             </li>
 
-            <li class="nav-item">
-              <a class="nav-link primary-green" href="/team">
-                <span><i class="icofont-id"></i></span>
-                Equip de gestió
-              </a>
-            </li>
+        <li class="nav-item">
+          <a class="nav-link primary-green" href="/team">
+            <span><i class="icofont-id"></i></span>
+            Gestió de l'Equip
+          </a>
+        </li>  
 
             <li class="nav-item">
               <a class="nav-link primary-green" href="/transparency">

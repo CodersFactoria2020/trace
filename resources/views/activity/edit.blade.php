@@ -1,5 +1,5 @@
 <div class="modal fade" id="edit-activity{{$activity->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Editar activitat</h5>
@@ -18,30 +18,47 @@
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
-                            <input type="text" name="description" class="form-control" value="{{$activity->description}}"/>
+                            <textarea type="text" name="description" class="form-control">{{$activity->description}}</textarea>
                         </div>
-                        <div class="form-group">
-                            <label>Professional</label>
-                            <input type="text" name="professional1" class="form-control" value="{{$activity->professional1}}"/>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Professional</label>
+                                <input type="text" name="professional1" class="form-control" value="{{$activity->professional1}}"/>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Professional de suport</label>
+                                <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Professional de suport</label>
-                            <input type="text" name="professional2" class="form-control" value="{{$activity->professional2}}"/>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Àrea:</label>
+                                <select name="category_id" class="form-control">
+                                    <optgroup label="Selecciona una àrea">
+                                    @foreach ($categories as $category)
+                                        <option value="{{ $category->id}}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Àrea:</label>
-                            <select name="category_id" class="form-control">
-                                <optgroup label="Selecciona una àrea">
-                                @foreach ($categories as $category)
-                                    <option value="{{ $category->id}}" style="background-color:{{ $category->color}}>{{ $category->name}}</option>
-                                @endforeach
-                            </select>
+                        
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Document adjunt</label>
+                                <div class="d-flex justify-content-start pb-3">
+                                    Nombre del documento adjuntado
+                                    <button type="button" class="close pl-2"><span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+                                
+                                <input type="file" name="file" id="fileToUpload"/>
+                            </div>
                         </div>
 
                         <div class="text-right">
                             <div class="text-right">
                                 <a href="{{Route('activity.update', $activity->id)}}" >
-                                    <input type="submit" value="Edit" class="btn btn-primary">
+                                    <input type="submit" value="Actualitzar" class="cta">
                                 </a>
                             </div>
                         </div>

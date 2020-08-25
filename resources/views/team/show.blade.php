@@ -10,26 +10,24 @@
             <div class="modal-body">
                 @method('put')
                 <div class="card-body">
-                    <div style="padding:5px;">
-                        <h5>ID:</h5><p> {{$team->id}}</p>
-                    </div>
-                    <div style="padding:5px;">
-                        <h5>Name i Cognom:</h5><p>{{$team->first_name}} {{$team->last_name}}</p>
-                    </div>
-                    <div style="padding:5px;">
-                        <h5>Description:</h5><p>{{$team->position}}</p>
-                    </div>
-                    <div style="padding:5px;">
-                        <h5>Imatge adjunt:</h5><p><img src="{{$team->get_photo_url()}}" width="150" height="150"></p>
-                    </div>
-
-                    <div class="text-right">
-                        <div class="text-right">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Tancar</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <small><b>Imatge adjunt:</b></small>
+                            <p><img src="{{$team->get_photo_url()}}" width="150" height="150"></p>
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <div>
+                                <small><b>Name i Cognom:</b></small>
+                                <p>{{$team->first_name}} {{$team->last_name}}</p>
+                            </div>
+                            <div>
+                                <small><b>Description:</b></small>
+                                <p>{{$team->position}}</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-                </form>
             </div>
         </div>
     </div>

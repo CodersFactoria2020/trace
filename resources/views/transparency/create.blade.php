@@ -24,8 +24,8 @@
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
-                        <div class="text-right">
-                            <input type="submit" value="Crear" class="btn btn-primary">
+                        <div class="text-right mt-4">
+                            <input type="submit" value="Afegir  " class="cta">
                         </div>
                     </div>
                 </form>

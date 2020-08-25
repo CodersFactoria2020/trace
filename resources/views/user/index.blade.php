@@ -50,8 +50,8 @@
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>
       <div>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm active">Ascendent</a>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm">Descendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm {{ request()->is('user') ? 'active' : ''}}">Ascendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm {{ request()->is('/user?sort=desc') ? 'active' : ''}}">Descendent</a>
       </div>
 
     </div>

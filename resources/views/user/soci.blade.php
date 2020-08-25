@@ -54,16 +54,7 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
     
-<!-- style -->
-<style>
-    .headerh2 {
-        color: #efca30;
-    }
-    .logoutContent {
-        color: white;
-    }
-    
-</style>
+
 
 </head>
 
