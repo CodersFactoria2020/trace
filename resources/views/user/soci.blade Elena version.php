@@ -54,57 +54,51 @@
     <!-- Scripts -->
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
     
-<!-- style -->
-<style>
-    .headerh2 {
-        color: #efca30;
-    }
-    .logoutContent {
-        color: white;
-    }
-    
-</style>
+
 
 </head>
 
 <body>
     <header>
-        <div id="topbar" class="d-none d-lg-block">
-            <div class="container d-flex align-items-center justify-content-between">
+    <div id="topbar" class="d-none d-lg-block">
+        <div class="container d-flex align-items-center justify-content-between">
 
-                <div>
-                    <img src="img/Logo-transparent_w96px_INVERT_no-small-text.png" alt="logo de la associació Trace" />
-                </div>
-                <div class="headerh2">
-                    <h2>Àrea privada de {{Auth::User()->first_name}}</h2>
-                </div>
-                <div class="text-right float-left btn btn-danger">
-                    <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"><i class="logouticon icofont-logout logoutContent"></i>
-                        <h5 class="logoutContent float-right"> Tancar sessió </h5>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
+            <div>
+                <img src="img/Logo-transparent_w96px_INVERT_no-small-text.png" alt="logo de la associació Trace" />
+            </div>
+            <div class="headerh2">
+                <h2>Àrea privada de {{Auth::User()->first_name}}</h2>
+            </div>
+            <div class="text-right float-left btn btn-danger">
+                <a href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();"><i class="logouticon icofont-logout logoutContent"></i>
+                    <h5 class="logoutContent float-right"> Tancar sessió </h5>
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main class="">
+<main class="">
 
         <div class="container d-flex justify-content-between align-items-center">
 
             <div class="mr auto">
                 <h2 class="">El meu pla de treball</h2>
+                
+            </div>
+
+            <div>
             </div>
 
         </div>
-        
-        @yield('content')
-    
-    </main>
 
+        <div>
+
+    </main>
 </body>
 
 <!-- Vendor JS Files -->
