@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('activity.update', $activity->id)}}" method="post">
+                <form action="{{Route('activity.update', $activity->id)}}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('put')
                     <div class="card-body">
@@ -53,6 +53,14 @@
                                 
                                 <input type="file" name="file" id="fileToUpload"/>
                             </div>
+                        </div>
+                        <div class="form-group" >
+                            Document adjunt
+                            <p class="form-control" >{{$activity->get_downloaded_file_name()}}</p>
+                        </div>
+                        <div class="form-group" >
+                            Adjunta document
+                            <input type="file" name="file" id="fileToUpload"/>
                         </div>
 
                         <div class="text-right">

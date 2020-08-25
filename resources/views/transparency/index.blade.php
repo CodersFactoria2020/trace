@@ -39,8 +39,8 @@
       <table class="table table-striped table-borderless">
         <thead class="thead text-uppercase">
           <td><small><b>Any</b></small></td>
-          <td><small><b>Documentacio Economica</b></small></td>
-          <td><small><b>Documentacio Economica d'entitats</b></small></td>
+          <td><small><b>Documentació Econòmica</b></small></td>
+          <td><small><b>Documentació Econòmica d'entitats</b></small></td>
           <td colspan="3"><small><b>Accions</b></small></td>
         </thead>
         @foreach($transparencies as $transparency)
