@@ -12035,10 +12035,10 @@ section a {
 }
 
 .team .team-grid .member {
-  padding: 0 40px 0 40px;
+  max-width: 300px;
+  padding: 0 30px 40px 30px;
   text-align: center;
   background: #fff;
-  max-width: 200px;
 }
 
 .team .team-grid .member img {

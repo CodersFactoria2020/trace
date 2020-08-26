@@ -349,10 +349,10 @@ section {
         max-width: 1400px;
 
         .member {
-            padding: 0 40px 0 40px;
+            max-width: 300px;
+            padding: 0 30px 40px 30px;
             text-align: center;
             background: $white;
-            max-width: 200px;
 
             img {
                 width: 160px;
