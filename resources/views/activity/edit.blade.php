@@ -41,13 +41,21 @@
                                 </select>
                             </div>
                         </div>
+                        @if($activity->has_file())
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Document adjunt: </label>
+                                <div class="d-flex justify-content-start pb-3">
+                                    {{$activity->get_downloaded_file_name()}}
+                                        <a type="submit" href="{{Route('destroy-file', $activity->id)}}" class="close pl-2">Eliminar arxiu
 
-                        <div class="form-group" >
-                            Document adjunt
-                            <p>{{$activity->get_downloaded_file_name()}}</p>
+                                        </a>
+                                    <!--TODO: cambiar enlace por formulario.-->
+                                </div>
+                            </div>
                         </div>
-                        <div class="form-group" >
-                            Adjunta document
+                        @endif
+                        <div>
                             <input type="file" name="file" id="fileToUpload"/>
                         </div>
 

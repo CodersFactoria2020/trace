@@ -41,7 +41,7 @@ Route::get('filter','UserController@filter')->name('user.filter')->middleware('a
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
-
+Route::get('/activity_file/{activity}', 'ActivityController@destroy_file')->name('destroy-file');
 Route::get('/activity/{activity}/download', 'ActivityController@download')->name('download-document');
 Route::get('/activitats', 'ActivityController@index')->name('activity.index')->middleware('auth');
 Route::get('activity/{id}/edit/','ActivityController@edit')->middleware('auth');

@@ -83,8 +83,19 @@ class ActivityController extends Controller
 
     public function destroy(Activity $activity)
     {
+
         $this->authorize('destroy', Activity::class);
         $activity->delete();
         return redirect('/activity')->with('status_success','L\'activitat s\'ha esborrat correctament');
     }
+    public function destroy_file(Activity $activity)
+    {
+
+        $this->authorize('destroy', Activity::class);
+        $activity->delete_file();
+        return redirect('/activity');
+    }
+
+
+
 }
