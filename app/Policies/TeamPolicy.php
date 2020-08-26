@@ -32,23 +32,17 @@ class TeamPolicy
         return true;
     }
 
-    public function update(User $user,Team $team)
+    public function update(User $user)
     {
         if ($user->role_id !== "Admin") {
-            return false;
-        }
-        if ($user->id === $team->id) {
             return false;
         }
         return true;
     }
 
-    public function destroy(User $user, Team $team)
+    public function destroy(User $user)
     {
         if ($user->role_id !== "Admin") {
-            return false;
-        }
-        if ($user->id === $team->id) {
             return false;
         }
         return true;
