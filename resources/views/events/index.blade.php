@@ -1,4 +1,4 @@
-@extends('layouts.app-dashboard')
+@extends('layouts.soci-navbar')
 
 @section('scripts')
 
@@ -40,7 +40,7 @@
 <div class="col">
   <div class="dashboard-right-side">
     <div class="float-left">
-      <h2>Calendari d'activitats 2020 - 2021</h2>
+      <!-- <h2>Calendari d'activitats 2020 - 2021</h2> -->
     </div> 
   </div>
 
@@ -57,7 +57,7 @@
             <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Datos del evento</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Dades del event</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

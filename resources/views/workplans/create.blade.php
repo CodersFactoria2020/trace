@@ -1,5 +1,6 @@
-<div class="modal fadeIn" id="create-workplan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fadeIn" id="create-workplan" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Nou pla de treball</h5>
@@ -13,13 +14,41 @@
 
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Títol</label>
-                            <input type="text" name="title" class="form-control" placeholder="Títol"/>
+                            <label>Soci</label>
+                            <select name="user_id" class="form-control">
+                                <optgroup label="Selecciona un soci">
+                                    @foreach ($users as $user)
+                                    <option value="{{ $user['id'] }}">{{ $user['first_name'] }} {{ $user['last_name'] }}
+                                    </option>
+                                    @endforeach
+                            </select>
                         </div>
+                        <div class="form-group">
+                            <div class="row">
+                                @foreach ($activities as $activity)
+                                <div class="col-md-6">
+                                    <div class="custom-control custom-checkbox">
+                                        <input class="custom-control-input" type="checkbox"
+                                            id="activity_{{$activity->id}}" value="{{$activity->id}}" name="activity[]">
+                                        <input class="custom-control-input" type="checkbox"
+                                            id="activity_{{$activity->id}}" value="{{$activity->id}}" name="activity[]">
+                                        <label class="custom-control-label"
+                                            for="activity_{{$activity->id}}">{{$activity->id}}
+                                            - {{$activity->title}}
+                                        </label>
 
+                                    </div>
+                                </div>
+                                @if ($loop->iteration % 2 == 0)
+                            </div>
+                            <div class="row">
+                                @endif
+                                @endforeach
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-footer text-right">
-                        <input type="submit" value="Desar" class="mybtn btn btn-primary">
+                    <div class="text-right mt-4">
+                        <input type="submit" value="Afegir" class="cta">
                     </div>
                 </form>
             </div>

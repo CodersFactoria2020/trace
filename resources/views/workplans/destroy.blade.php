@@ -1,4 +1,4 @@
-<div  class="modal fadeIn" id="destroy-workplan{{$workplan->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div  class="modal fadeIn" id="destroy-workplan{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
              

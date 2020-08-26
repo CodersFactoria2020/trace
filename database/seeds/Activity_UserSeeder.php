@@ -1,10 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Activity;
 use App\User;
+use App\Activity;
 
-class WorkplanSeeder extends Seeder
+class Activity_UserSeeder extends Seeder
 {
     public function run()
     {
