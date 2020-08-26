@@ -37,9 +37,7 @@ class TransparencyPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $transparency->id) {
-            return false;
-        }
+
         return true;
     }
 
@@ -48,9 +46,7 @@ class TransparencyPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $transparency->id) {
-            return false;
-        }
+
         return true;
     }
 }

@@ -26,7 +26,9 @@ Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
+
 Route::resource('team','TeamController')->middleware('auth');
+Route::get('public_equip','TeamController@public_equip')->name('public_equip');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
@@ -39,7 +41,7 @@ Route::get('filter','UserController@filter')->name('user.filter')->middleware('a
 
 // Activity routes
 Route::resource('/activity', 'ActivityController')->names('activity')->middleware('auth');
-
+Route::get('/activity_file/{activity}', 'ActivityController@destroy_file')->name('destroy-file');
 Route::get('/activity/{activity}/download', 'ActivityController@download')->name('download-document');
 Route::get('/activitats', 'ActivityController@index')->name('activity.index')->middleware('auth');
 Route::get('activity/{id}/edit/','ActivityController@edit')->middleware('auth');
