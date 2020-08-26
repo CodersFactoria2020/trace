@@ -75,5 +75,19 @@ class Activity extends Model
     {
         return Storage::exists('/activities/'.$this->get_saved_file_name());
     }
+    public function delete_file()
+    {
+        return Storage::delete('/activities/'.$this->get_saved_file_name());
+    }
+    public function delete()
+    {
+        $this->delete_file();
+        return parent::delete();
+    }
+    public function update(array $attributes = [], array $options = [])
+    {
+        $this->delete_file();
+        return parent::update($attributes, $options);
+    }
 
 }
