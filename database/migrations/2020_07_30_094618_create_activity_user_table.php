@@ -12,12 +12,11 @@ class CreateActivityUserTable extends Migration
         Schema::create('activity_user', function (Blueprint $table) {
             $table->foreignId('activity_id');
             $table->foreign('activity_id')->references('id')->on('activities')->onDelete('cascade');
-            
+
             $table->foreignId('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
-
 
     public function down()
     {

@@ -23,11 +23,21 @@
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Professional</label>
-                                    <input type="text" name="professional1" class="form-control" required>
+                                    <select name="user[]"  class="form-control"  required>
+                                        <option disabled selected value> Selecciona un professional </option>
+                                        @foreach ($users as $user)
+                                            <option id="user_{{$user->id}}" value="{{$user->id}}"">{{ $user->first_name}} {{ $user->last_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Professional de support</label>
-                                    <input type="text" name="professional2" class="form-control"/>
+                                    <select name="user[]"  class="form-control">
+                                            <option disabled selected value> Selecciona un professional </option>
+                                        @foreach ($users as $user)
+                                            <option id="user_{{$user->id}}" value="{{$user->id}}"">{{ $user->first_name}} {{ $user->last_name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
                             </div>
                             <div class="form-row">
@@ -36,7 +46,7 @@
                                     <select name="category_id" class="form-control" required>
                                         <optgroup label="Selecciona una àrea">
                                         @foreach ($categories as $category)
-                                            <option value="{{ $category['id'] }}" style="background-color:{{ $category['color'] }}">{{ $category['name'] }}</option>
+                                            <option value="{{ $category['id'] }}" style="background-color:{{ $category->color }}">{{ $category->name }}</option>
                                         @endforeach
                                     </select>
                                 </div>
