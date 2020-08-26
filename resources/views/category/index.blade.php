@@ -56,10 +56,10 @@
                             <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
                             <i class="icofont-list"></i>{{$category->name}}
                             </a>
-                        </div>   
+                        </div>
                         @include('category.show')
                         </td>
-                    <td>{{$category->description = substr($category->description, 0, 40) . '...'}}</td>
+                    <td>{{Str::limit($category->description, 40)}}</td>
                     <td class="actions">
                         @can('update', $category)
                         <div class="primary">

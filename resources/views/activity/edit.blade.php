@@ -8,17 +8,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('activity.update', $activity->id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{Route('activity.update', $activity->id)}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                     @csrf
                     @method('put')
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
-                            <input type="text" name="title" class="form-control" value="{{$activity->title}}"/>
+                            <input type="text" name="title" class="form-control" value="{{$activity->title}}" required/>
+                            <div class="invalid-feedback">
+                                L'activitat ha de tenir un nom
+                            </div>
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
-                            <textarea type="text" name="description" class="form-control">{{$activity->description}}</textarea>
+                            <textarea type="text" name="description" class="form-control" required>{{$activity->description}}</textarea>
+                            <div class="invalid-feedback">
+                                L'activitat ha de tenir una descripció
+                            </div>
                         </div>
                         <div class="form-row">
                                 <div class="form-group col-md-6">
@@ -29,6 +35,9 @@
                                             <option id="user_{{$user->id}}" value="{{$user->id}}">{{ $user->first_name}} {{ $user->last_name }}</option>
                                         @endforeach
                                     </select>
+                                    <div class="invalid-feedback">
+                                        L'activitat ha de tenir un professional assignat
+                                    </div>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Professional de support</label>
@@ -49,6 +58,9 @@
                                         <option value="{{ $category->id}}" style="background-color:{{ $category->color }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir una àrea assignada
+                                </div>
                             </div>
                         </div>
                         @if($activity->has_file())
@@ -82,3 +94,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+</script>
