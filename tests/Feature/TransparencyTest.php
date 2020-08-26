@@ -14,16 +14,14 @@ class TransparencyTest extends TestCase
 {
     use RefreshDatabase;
 
-
-
-    public function test_show_all_transparency()
+    public function test_admin_show_all_transparency()
     {
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
         $response = $this->actingAs($user)->get('/transparency');
 
         $response->assertStatus(200)
-        ->assertSee('Documentacio Econmica');
+        ->assertSee('Documentació econòmica');
     }
     public function test_admin_create_transparency_with_documents()
     {
@@ -45,7 +43,7 @@ class TransparencyTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
     }
-    public function test_admin_delete_economic_transparency()
+    public function test_admin_delete_transparency_with_document()
     {
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
@@ -74,7 +72,7 @@ class TransparencyTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
     }
-    public function test_admin_update_member_team_with_image()
+    public function test_admin_update_transparency__with_documents()
     {
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
@@ -100,5 +98,50 @@ class TransparencyTest extends TestCase
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
+    }
+
+    public function test_soci_cant_create_transparency_with_documents()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $economic_document = UploadedFile::fake()->create('_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('_entity.pdf');
+        $response = $this->actingAs($user)->post('/transparency', [
+            'date_name'=>'exercici 2015',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+
+        ]);
+        $response->assertStatus(403);
+
+    }
+    public function test_soci_cant_delete_transparency_with_document()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $economic_document = UploadedFile::fake()->create('exercici 2020_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('exercici 2020_entity.pdf');
+        $transparency=factory(Transparency::class)->create([
+            'id'=> 1 ,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+        ]);
+        $this->assertDatabaseHas('transparencies',[
+            'id'=> 1 ,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'exercici 2015_economic.pdf',
+            'entity_document'=>'exercici 2015_entity.pdf',
+        ]);
+        $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
+        $this->assertDatabaseMissing('transparencies',[
+            'id'=> 1 ,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'exercici 2015_economic.pdf',
+            'entity_document'=>'exercici 2015_entity.pdf',
+
+        ]);
+        $response->assertStatus(403);
+
     }
 }

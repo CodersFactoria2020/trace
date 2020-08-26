@@ -14,7 +14,9 @@ class TransparencyController extends Controller
     }
     public function index()
     {
-        $transparencies = Transparency::paginate(10);
+        $this->authorize('view-any', Transparency::class);
+        $transparencies = Transparency::paginate(8);
+
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
         }
@@ -23,13 +25,15 @@ class TransparencyController extends Controller
 
     public function create()
     {
+        $this->authorize('create', Transparency::class);
         $transparencies = Transparency::all();
         return view('transparency.create', compact('transparencies'));
+
     }
 
-    public function store(Request $request)
+    public function store(Request $request, Transparency $transparency)
     {
-
+        $this->authorize('create', $transparency);
         $data = $request->all();
         $validatedData = $request->validate([
             'economic_document'=> 'max:22560',
@@ -43,16 +47,19 @@ class TransparencyController extends Controller
 
     public function show(Transparency $transparency)
     {
+        $this->authorize('view', Transparency::class);
         return view('transparency.show',compact('transparency'));
     }
 
     public function edit(Transparency $transparency)
     {
+        $this->authorize('update', Transparency::class);
         return view('transparency.edit',compact('transparency'));
     }
 
     public function update(Request $request, Transparency $transparency)
     {
+        $this->authorize('update', $transparency);
         $data = $request->all();
         $validatedData = $request->validate([
             'economic_document'=> 'max:22560',
@@ -66,6 +73,7 @@ class TransparencyController extends Controller
 
     public function destroy(Transparency $transparency)
     {
+        $this->authorize('destroy', $transparency);
         $transparency->delete();
         Storage::delete(['entity_document', 'economic_document']);
         return redirect()->route('transparency.index');
