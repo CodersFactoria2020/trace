@@ -10,10 +10,12 @@ class TeamController extends Controller
 {
 
     public function index()
-    {
+    {   
+
         $this->authorize('view-any', Team::class);
         $teams = Team::paginate(10);
         return view('team.index', compact('teams'));
+        
     }
 
     public function create(Request $request)
@@ -67,5 +69,10 @@ class TeamController extends Controller
         $team->delete();
         Storage::delete('images');
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
+    }
+
+    public function viewVisitor(Team $team){
+        $teams = Team::all();
+        return view('/equip', compact('teams'));
     }
 }

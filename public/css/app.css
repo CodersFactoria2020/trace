@@ -11058,6 +11058,12 @@ header {
   width: 50%;
 }
 
+@media (max-width: 768px) {
+  .half {
+    width: 100%;
+  }
+}
+
 .right {
   padding-right: 50px;
 }
@@ -12018,39 +12024,45 @@ section a {
   padding-bottom: 20px;
 }
 
-.team .flex-container {
+.team .team-grid {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   text-align: center;
+  max-width: 1600px;
+  flex-wrap: wrap;
+  max-width: 1400px;
 }
 
-.team .flex-container .member {
+.team .team-grid .member {
+  padding: 0 40px 40px;
   text-align: center;
   background: #fff;
-  padding: 0 40px 30px;
+  max-width: 200px;
 }
 
-.team .flex-container .member img {
+.team .team-grid .member img {
   width: 160px;
+  height: auto;
   border-radius: 50%;
   margin: 0 0 20px 0;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
-.team .flex-container .member h4 {
+.team .team-grid .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
 }
 
-.team .flex-container .member span {
+.team .team-grid .member span {
   font-style: italic;
   display: block;
   font-size: 13px;
 }
 
-.team .flex-container .member p {
+.team .team-grid .member p {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;

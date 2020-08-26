@@ -16,7 +16,7 @@ Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dany_cerebral', 'HomeController@dany_cerebral')->name('dany_cerebral');
 Route::get('/qui_som', 'HomeController@qui_som')->name('qui_som');
-Route::get('/equip', 'HomeController@equip')->name('equip');
+Route::get('/equip', 'TeamController@viewVisitor')->name('equip');
 Route::get('/contacte', 'HomeController@contacte')->name('contacte');
 Route::get('/transparencia', 'HomeController@transparencia')->name('transparencia');
 Route::get('/recursos', 'HomeController@recursos')->name('recursos');

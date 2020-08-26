@@ -339,18 +339,24 @@ section {
         }
     }
 
-    .flex-container {
+    .team-grid {
+        margin-top: 20px;
         display: flex;
         justify-content: center;
         text-align: center;
+        max-width: 1600px;
+        flex-wrap: wrap;
+        max-width: 1400px;
 
         .member {
+            padding: 0 40px 40px;
             text-align: center;
             background: $white;
-            padding: 0 40px 30px;
+            max-width: 200px;
 
             img {
                 width: 160px;
+                height: auto;
                 border-radius: 50%;
                 margin: 0 0 20px 0;
                 -webkit-filter: grayscale(100%);

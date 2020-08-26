@@ -47,4 +47,9 @@ class TeamPolicy
         }
         return true;
     }
+
+    public function viewVisitor(User $user)
+    {
+        return true;
+    }
 }

@@ -47,7 +47,9 @@
       @foreach($teams as $team)
       @can('view-any', $team)
       <tr>
-        <td class="dashboard-team"><img src="{{$team->get_photo_url()}}"></td>
+        <td class="dashboard-team member">
+          <img src="{{$team->get_photo_url()}}">
+        </td>
         <td class="icon-text">
           <div class="primary-green">
             <a data-toggle="modal" data-target="#show-team{{$team->id}}" class="primary-green" type="button">
