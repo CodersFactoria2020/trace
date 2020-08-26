@@ -12370,6 +12370,7 @@ section a {
   background: #00865d;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 20px 20px 20px;
 }
 
@@ -12393,6 +12394,7 @@ section a {
 
 #footer .footer-top .social-links {
   display: flex;
+  padding-right: 20px;
 }
 
 #footer .footer-top .social-links a {
@@ -12419,6 +12421,8 @@ section a {
 }
 
 #footer .copyright {
+  display: flex;
+  justify-content: space-between;
   background: #006d4b;
   text-align: center;
   padding: 10px 20px;
@@ -12426,6 +12430,27 @@ section a {
 
 #footer .copyright p {
   font-size: 14px;
+}
+
+@media (max-width: 922px) {
+  .copyright {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .copyright div {
+    padding: 5px 0;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-links {
+    padding-top: 10px;
+    padding-left: 20px;
+  }
 }
 
 .slide-hero-1 {
