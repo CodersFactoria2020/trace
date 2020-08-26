@@ -21,17 +21,10 @@ class EventController extends Controller
         return view('events.index', compact('categories'), compact('activities'), compact('users'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request)
     {
         $eventData = request()->except(['_token', '_method']);
         Event::insert($eventData);
-        print_r($eventData);
-        //return redirect(route('events.index'));
     }
 
     public function show()
@@ -39,18 +32,12 @@ class EventController extends Controller
         $allEventsData['events'] = Event::all();
         return response()->json($allEventsData['events']);
     }
-    
-    public function edit($id)
-    {
-        //
-    }
    
     public function update(Request $request, $id)
     {
         $eventData = request()->except(['_token', '_method']);
         $response = Event::where('id','=',$id)->update($eventData);
         return response()->json($response);
-        //return redirect(route('events.index'));
         
     }
     

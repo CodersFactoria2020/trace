@@ -28,7 +28,7 @@
   var url_="{{ url('/events') }}";
   var url_show="{{ url('events/show') }}";
 </script>
-<script src="{{ asset('js/maincalendar.js') }}" defer></script>
+  <script src="{{ asset('js/maincalendar.js') }}" defer></script>
 <script>
 
   </script>
