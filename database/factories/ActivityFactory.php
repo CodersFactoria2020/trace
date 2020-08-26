@@ -10,7 +10,5 @@ $factory->define(Activity::class, function (Faker $faker) {
         'description' => $faker->text(100),
         'color' => $faker->colorName,
         'textColor' => $faker->hexcolor,
-        'professional1' => $faker->name,
-        'professional2' => $faker->optional()->name,
     ];
 });
