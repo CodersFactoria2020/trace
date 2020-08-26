@@ -20,7 +20,7 @@ class ActivityController extends Controller
         $this->authorize('view-any', Activity::class);
         $activities = Activity::paginate(10);
         $categories = Category::all();
-        return view('activity.index', compact('activities'), compact('categories'));
+        return view('activity.index', compact('activities','categories'));
     }
 
     public function create()
@@ -28,7 +28,7 @@ class ActivityController extends Controller
         $this->authorize('create', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        return view('activity.create', compact('activities'), compact('categories'));
+        return view('activity.create', compact('activities', 'categories'));
     }
 
     public function store(Request $request, Activity $activity)
@@ -56,7 +56,7 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $this->authorize('view', Activity::class);
-        return view('activity.show', compact('activities'), compact('categories'));
+        return view('activity.show', compact('activities', 'categories'));
     }
 
     public function edit(Activity $activity)
@@ -64,7 +64,7 @@ class ActivityController extends Controller
         $this->authorize('update', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        return view('activity.edit', compact('activities'), compact('categories'));
+        return view('activity.edit', compact('activities', 'categories'));
     }
 
     public function update(Request $request, Activity $activity)
