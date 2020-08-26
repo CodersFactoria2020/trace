@@ -51,7 +51,7 @@ class TeamController extends Controller
 
     public function update(Request $request, Team $team)
     {
-        $this->authorize('update', Team::class);
+        $this->authorize('update', $team);
         $team->update($request->all());
 
         if ($photo = $request->file('photo')) {
@@ -63,9 +63,14 @@ class TeamController extends Controller
 
     public function destroy(Team $team)
     {
-        $this->authorize('destroy', Team::class);
+        $this->authorize('destroy', $team);
         $team->delete();
-        Storage::delete('images');
+        Storage::disk('public')->delete('team/*.jpg');
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
+    }
+
+    public function public_equip(Team $team){
+        $team = Team::all();
+        return view('public_equip', compact('teams'));
     }
 }

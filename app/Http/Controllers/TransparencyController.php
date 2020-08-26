@@ -14,6 +14,7 @@ class TransparencyController extends Controller
     }
     public function index()
     {
+
         $transparencies = Transparency::paginate(8);
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
@@ -38,6 +39,7 @@ class TransparencyController extends Controller
         ]);
         $transparency = Transparency::create($data,$validatedData);
         $this->upload_documents($request, $transparency);
+
         return redirect(route('transparency.index'));
     }
 

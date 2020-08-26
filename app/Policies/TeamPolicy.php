@@ -37,9 +37,7 @@ class TeamPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $team->id) {
-            return false;
-        }
+
         return true;
     }
 
@@ -48,9 +46,7 @@ class TeamPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
-        if ($user->id === $team->id) {
-            return false;
-        }
+
         return true;
     }
 }
