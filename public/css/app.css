@@ -14,7 +14,7 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 40px;
 }
 
 h2 {
@@ -11458,7 +11458,8 @@ header {
 #hero {
   width: 100%;
   height: 70vh;
-  background-color: rgba(59, 59, 59, 0.8);
+  /*     background-color: rgba(darken($secondary, 10), 0.8);
+  */
   overflow: hidden;
   padding: 0;
   margin-bottom: -120px;
@@ -11475,8 +11476,8 @@ header {
   background-position: center center;
 }
 
-#hero .carousel-item h2 {
-  width: 70%;
+#hero .carousel-item h1 {
+  width: 75%;
 }
 
 #hero .carousel-item::before {
@@ -11508,12 +11509,11 @@ header {
   flex-direction: column;
 }
 
-#hero h2 {
+#hero h1 {
   margin: 0 auto 30px auto;
   text-align: center;
   color: #2e2e2e;
   margin-bottom: 30px;
-  font-size: 48px;
   font-weight: 700;
 }
 
@@ -11634,13 +11634,33 @@ header {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   #hero {
     height: 70vh;
   }
 
   #hero .carousel-item {
     height: 60vh;
+  }
+
+  #hero #hero h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero #hero h1 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  #hero #hero {
+    height: 430px;
+  }
+
+  #hero #hero h1 {
+    font-size: 20px;
   }
 }
 
@@ -12347,6 +12367,35 @@ section a {
 
 .login label {
   font-size: 18px;
+}
+
+#accordion {
+  background-color: none !important;
+}
+
+#accordion button {
+  color: #00865d !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+#accordion button:hover {
+  color: #545454 !important;
+  text-decoration: none !important;
+}
+
+#accordion .card {
+  border: none !important;
+}
+
+#accordion .card-body {
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    margin-top: 40px;
+  }
 }
 
 #footer {

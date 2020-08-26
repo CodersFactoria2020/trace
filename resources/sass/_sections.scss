@@ -683,3 +683,28 @@ section {
         font-size: 18px;
     }
 }
+
+#accordion {
+    button {
+        color: $primary !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+    }
+    button:hover {
+        color: $secondary !important;
+        text-decoration: none !important;
+    }
+    .card {
+        border: none !important;
+    }
+    .card-body {
+        border: none !important;
+    }
+    background-color: none !important;
+}
+
+@media (max-width: 768px) {
+    .accordion {
+        margin-top: 40px;
+    }
+}
