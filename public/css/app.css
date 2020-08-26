@@ -12035,7 +12035,7 @@ section a {
 }
 
 .team .team-grid .member {
-  padding: 0 40px 40px;
+  padding: 0 40px 0 40px;
   text-align: center;
   background: #fff;
   max-width: 200px;
