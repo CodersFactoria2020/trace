@@ -26,7 +26,7 @@ class TeamController extends Controller
 
     public function store(Request $request, Team $team)
     {
-        $this->authorize('create', Team::class);
+        $this->authorize('create', $team);
         $data = $request->all();
         $team = Team::create($data);
 
@@ -70,7 +70,7 @@ class TeamController extends Controller
     }
 
     public function public_equip(Team $team){
-        $team = Team::all();
-        return view('public_equip', compact('teams'));
+        $teams = Team::all();
+        return view('team.public_equip', compact('teams'));
     }
 }
