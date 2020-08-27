@@ -63,6 +63,7 @@
                                 </div>
                             </div>
                         </div>
+
                         @if($activity->has_file())
                         <div class="form-row">
                             <div class="form-group col-md-6">

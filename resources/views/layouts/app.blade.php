@@ -135,7 +135,7 @@
             </nav>
           </div>
 
-          <div>
+          <div id="collabora">
             <a href="{{url('/collabora/')}}" class="cta-line">Col·labora</a>
           </div>
 

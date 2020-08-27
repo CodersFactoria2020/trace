@@ -15,7 +15,7 @@ class TransparencyController extends Controller
     public function index()
     {
         $this->authorize('view-any', Transparency::class);
-        $transparencies = Transparency::paginate(8);
+        $transparencies = Transparency::paginate(10);
 
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
