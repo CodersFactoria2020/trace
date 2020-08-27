@@ -56,51 +56,51 @@
                             <div class="form-group col-md-6">
                                 <label>DNI</label>
                                 <input type="text" name="dni" class="form-control" value="{{$user->dni}}" required />
-                                <<div class="invalid-feedback">
+                                <div class="invalid-feedback">
                                     El DNI ha de tenir almenys 5 caràcters alfanumèrics
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Telèfon</label>
+                                <input type="text" name="phone" class="form-control" value="{{$user->phone}}" required
+                                    pattern="[0-9].{8,}" />
+                                <div class="invalid-feedback">
+                                    El telèfon ha de tenir almenys 9 números
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group col-md-6">
-                            <label>Telèfon</label>
-                            <input type="text" name="phone" class="form-control" value="{{$user->phone}}" required
-                                pattern="[0-9].{6,}" />
+
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Rol</label>
+                                <select name="role_id" class="form-control">
+                                    <optgroup label="Selecciona un rol">
+                                        @foreach ($roles as $role)
+                                        <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
+                                        @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label>Tutor(a)</label>
+                                <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"
+                                    pattern="[A-Za-z]" />
+                            </div>
                             <div class="invalid-feedback">
-                                El telèfon ha de tenir almenys 6 números
+                                El tutor ha de tenir solament lletras
                             </div>
                         </div>
+
                 </div>
 
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label>Rol</label>
-                        <select name="role_id" class="form-control">
-                            <optgroup label="Selecciona un rol">
-                                @foreach ($roles as $role)
-                                <option value="{{ $role['id'] }}">{{ $role['role_name'] }}</option>
-                                @endforeach
-                        </select>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label>Tutor(a)</label>
-                        <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"
-                            pattern="[A-Za-z]" />
-                    </div>
-                    <div class="invalid-feedback">
-                        El tutor ha de tenir solament lletras
-                    </div>
+                <div class="text-right mb-2">
+                    <a href="{{Route('user.update', $user->id)}}">
+                        <input type="submit" value="Actualitzar" class="cta">
+                    </a>
                 </div>
-
+                </form>
             </div>
-
-            <div class="text-right mb-2">
-                <a href="{{Route('user.update', $user->id)}}">
-                    <input type="submit" value="Actualitzar" class="cta">
-                </a>
-            </div>
-            </form>
         </div>
     </div>
-</div>
 </div>
 </div>
 
