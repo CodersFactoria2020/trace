@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Activity;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
 
 
@@ -20,7 +21,9 @@ class ActivityController extends Controller
         $this->authorize('view-any', Activity::class);
         $activities = Activity::paginate(10);
         $categories = Category::all();
-        return view('activity.index', compact('activities'), compact('categories'));
+        $users = User::where('role_id', 2)->get();
+
+        return view('activity.index', compact('activities','categories', 'users'));
     }
 
     public function create()
@@ -28,7 +31,9 @@ class ActivityController extends Controller
         $this->authorize('create', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        return view('activity.create', compact('activities'), compact('categories'));
+        $users = User::all();
+
+        return view('activity.create', compact('activities', 'categories', 'users'));
     }
 
     public function store(Request $request, Activity $activity)
@@ -37,6 +42,7 @@ class ActivityController extends Controller
         $data = $request->all();
 
         $activity = Activity::create($data);
+        $activity->users()->sync($request->get('user'));
 
         if($file = $request->file('file'))
         {
@@ -56,7 +62,7 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $this->authorize('view', Activity::class);
-        return view('activity.show', compact('activities'), compact('categories'));
+        return view('activity.show', compact('activities', 'categories'));
     }
 
     public function edit(Activity $activity)
@@ -64,13 +70,14 @@ class ActivityController extends Controller
         $this->authorize('update', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        return view('activity.edit', compact('activities'), compact('categories'));
+        return view('activity.edit', compact('activities', 'categories'));
     }
 
     public function update(Request $request, Activity $activity)
     {
         $this->authorize('update', Activity::class);
         $activity->update($request->all());
+        $activity->users()->sync($request->get('user'));
 
         if($file = $request->file('file'))
         {

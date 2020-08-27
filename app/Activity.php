@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'file', 'professional1', 'professional2', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
 
     public function Categories() {
 
@@ -86,7 +86,10 @@ class Activity extends Model
     }
     public function update(array $attributes = [], array $options = [])
     {
-        $this->delete_file();
+        if(isset($attributes['file'])){
+
+            $this->delete_file();
+        }
         return parent::update($attributes, $options);
     }
 

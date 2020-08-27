@@ -8,20 +8,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('transparency.update', $transparency->id)}}" method="post" enctype="multipart/form-data">
+                <form action="{{Route('transparency.update', $transparency->id)}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                     @csrf
                     @method('put')
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Any de l'exercici</label>
-                            <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici economic" value="{{$transparency->date_name}}"/>
+                            <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici economic" value="{{$transparency->date_name}}"  required>
+                        <div class="invalid-feedback">
+                            L'any de l'exercici ha de tenir un títol
+                        </div>
                         </div>
                         <div class="form-group">
                             <label for="name">Documentació de l'activitat econòmica</label>
                             <input type="file" name="economic_document" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentació econòmica d'entitats</label>
+                            <label for="name">Documentació econòmica de l'entitat</label>
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
@@ -36,3 +39,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+</script>

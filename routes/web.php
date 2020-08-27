@@ -16,9 +16,9 @@ Route::get('/login', 'HomeController@login')->name('login');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dany_cerebral', 'HomeController@dany_cerebral')->name('dany_cerebral');
 Route::get('/qui_som', 'HomeController@qui_som')->name('qui_som');
-Route::get('/equip', 'HomeController@equip')->name('equip');
+Route::get('/equip', 'TeamController@viewVisitor')->name('equip');
 Route::get('/contacte', 'HomeController@contacte')->name('contacte');
-Route::get('/transparencia', 'HomeController@transparencia')->name('transparencia');
+Route::get('/transparencia', 'TransparencyController@viewVisitor')->name('transparencia');
 Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
@@ -26,14 +26,11 @@ Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
-
 Route::resource('team','TeamController')->middleware('auth');
-Route::get('public_equip','TeamController@public_equip')->name('public_equip');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
-//Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
@@ -54,7 +51,6 @@ Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX
 Route::resource('/events', 'EventController')->middleware('auth');
-
 
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');

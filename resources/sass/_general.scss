@@ -95,10 +95,16 @@ header {
         }
     }
 }
-
 .half {
     width: 50%;
 }
+
+@media (max-width: 768px) {
+    .half {
+        width: 100%;
+    }
+}
+
 .right {
     padding-right: 50px;
 }

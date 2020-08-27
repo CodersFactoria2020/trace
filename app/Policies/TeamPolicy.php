@@ -18,6 +18,7 @@ class TeamPolicy
         }
         return true;
     }
+    
 
     public function view(User $user, Team $team)
     {
@@ -45,6 +46,11 @@ class TeamPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
+        return true;
+    }
+
+    public function viewVisitor(User $user)
+    {
         return true;
     }
 }

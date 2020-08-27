@@ -14,7 +14,7 @@ h6 {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 40px;
 }
 
 h2 {
@@ -11058,6 +11058,12 @@ header {
   width: 50%;
 }
 
+@media (max-width: 768px) {
+  .half {
+    width: 100%;
+  }
+}
+
 .right {
   padding-right: 50px;
 }
@@ -11339,6 +11345,12 @@ header {
   }
 }
 
+@media (max-width: 992px) {
+  #collabora {
+    padding-right: 60px;
+  }
+}
+
 /* Mobile Navigation */
 
 .mobile-nav-toggle {
@@ -11452,7 +11464,8 @@ header {
 #hero {
   width: 100%;
   height: 70vh;
-  background-color: rgba(59, 59, 59, 0.8);
+  /*     background-color: rgba(darken($secondary, 10), 0.8);
+  */
   overflow: hidden;
   padding: 0;
   margin-bottom: -120px;
@@ -11469,8 +11482,8 @@ header {
   background-position: center center;
 }
 
-#hero .carousel-item h2 {
-  width: 70%;
+#hero .carousel-item h1 {
+  width: 75%;
 }
 
 #hero .carousel-item::before {
@@ -11502,12 +11515,11 @@ header {
   flex-direction: column;
 }
 
-#hero h2 {
+#hero h1 {
   margin: 0 auto 30px auto;
   text-align: center;
   color: #2e2e2e;
   margin-bottom: 30px;
-  font-size: 48px;
   font-weight: 700;
 }
 
@@ -11600,7 +11612,7 @@ header {
   text-decoration: none;
 }
 
-@media (max-height: 70vh), (max-width: 4000px) {
+@media (max-height: 768px), (max-width: 4000px) {
   #hero {
     margin-bottom: 60px;
   }
@@ -11614,13 +11626,47 @@ header {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-height: 600px), (max-width: 768px) {
+  #hero {
+    margin-bottom: 60px;
+  }
+
+  #hero .carousel-container {
+    padding-bottom: 0;
+  }
+
+  #hero .carousel-indicators li {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 767px) {
   #hero {
     height: 70vh;
   }
 
   #hero .carousel-item {
     height: 60vh;
+  }
+
+  #hero #hero h1 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero #hero h1 {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  #hero #hero {
+    height: 430px;
+  }
+
+  #hero #hero h1 {
+    font-size: 20px;
   }
 }
 
@@ -11978,39 +12024,45 @@ section a {
   padding-bottom: 20px;
 }
 
-.team .flex-container {
+.team .team-grid {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
   text-align: center;
+  max-width: 1600px;
+  flex-wrap: wrap;
+  max-width: 1400px;
 }
 
-.team .flex-container .member {
+.team .team-grid .member {
+  max-width: 300px;
+  padding: 0 30px 40px 30px;
   text-align: center;
   background: #fff;
-  padding: 0 40px 30px;
 }
 
-.team .flex-container .member img {
+.team .team-grid .member img {
   width: 160px;
+  height: auto;
   border-radius: 50%;
   margin: 0 0 20px 0;
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
 }
 
-.team .flex-container .member h4 {
+.team .team-grid .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
 }
 
-.team .flex-container .member span {
+.team .team-grid .member span {
   font-style: italic;
   display: block;
   font-size: 13px;
 }
 
-.team .flex-container .member p {
+.team .team-grid .member p {
   padding-top: 10px;
   font-size: 14px;
   font-style: italic;
@@ -12329,6 +12381,35 @@ section a {
   font-size: 18px;
 }
 
+#accordion {
+  background-color: none !important;
+}
+
+#accordion button {
+  color: #00865d !important;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+}
+
+#accordion button:hover {
+  color: #545454 !important;
+  text-decoration: none !important;
+}
+
+#accordion .card {
+  border: none !important;
+}
+
+#accordion .card-body {
+  border: none !important;
+}
+
+@media (max-width: 768px) {
+  .accordion {
+    margin-top: 40px;
+  }
+}
+
 #footer {
   background: #00865d;
   color: #fff;
@@ -12350,6 +12431,7 @@ section a {
   background: #00865d;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 20px 20px 20px 20px;
 }
 
@@ -12373,6 +12455,7 @@ section a {
 
 #footer .footer-top .social-links {
   display: flex;
+  padding-right: 20px;
 }
 
 #footer .footer-top .social-links a {
@@ -12399,6 +12482,8 @@ section a {
 }
 
 #footer .copyright {
+  display: flex;
+  justify-content: space-between;
   background: #006d4b;
   text-align: center;
   padding: 10px 20px;
@@ -12406,6 +12491,27 @@ section a {
 
 #footer .copyright p {
   font-size: 14px;
+}
+
+@media (max-width: 922px) {
+  .copyright {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .copyright div {
+    padding: 5px 0;
+  }
+
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .social-links {
+    padding-top: 10px;
+    padding-left: 20px;
+  }
 }
 
 .slide-hero-1 {

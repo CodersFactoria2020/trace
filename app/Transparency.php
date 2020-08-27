@@ -13,26 +13,45 @@ class Transparency extends Model
     ];
     public function upload_economic_document($economic_document)
     {
-        $name_document = $this->date_name . '_economic.pdf';
-        $economic_document_path='/transparency/';
-        $economic_document->storeAs($economic_document_path, $name_document);
+        $this->economic_document= $economic_document->extension();
+        $name_economic_document = $this->get_saved_name_economic_document();
+        $this->save();
+        $economic_document->storeAs('transparency/', $name_economic_document, ['disk'=>'public']);
     }
     public function upload_entity_document($entity_document)
     {
-        $name_document = $this->date_name . '_entity.pdf';
-        $entity_document_path='/transparency/';
-        $entity_document->storeAs($entity_document_path, $name_document);
+        $this->entity_document= $entity_document->extension();
+        $name_entity_document = $this->get_saved_name_entity_document();
+        $this->save();
+        $entity_document->storeAs('transparency/', $name_entity_document, ['disk'=>'public']);
     }
     public function get_economic_url()
     {
-        $economic_document_name = $this->date_name . '_economic.pdf';
-        $economic_document_path = '/transparency/';
-        Return Storage::url($economic_document_path . $economic_document_name);
+        return Storage::url('transparency/'. $this->get_saved_name_economic_document());
     }
     public function get_entity_url()
     {
-        $entity_document_path='/transparency/';
-        Return Storage::url($entity_document_path . $this->date_name . '_entity.pdf');
+        return Storage::url('transparency/'. $this->get_saved_name_entity_document());
+    }
+
+    public function get_saved_name_economic_document(): string
+    {
+        return $this->date_name . '-' . 'Economic' . '.' . $this->economic_document;
+    }
+
+    public function get_saved_name_entity_document(): string
+    {
+        return $this->date_name . '-' . 'Entitat' . '.' . $this->entity_document;
+    }
+    
+    public function has_economic_document()
+    {
+        return Storage::disk('public')->exists('transparency/'.$this->get_saved_name_economic_document());
+    }
+    
+    public function has_entity_document()
+    {
+        return Storage::disk('public')->exists('transparency/'.$this->get_saved_name_entity_document());
     }
 
 }
