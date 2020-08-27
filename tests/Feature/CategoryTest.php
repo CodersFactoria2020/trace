@@ -12,6 +12,12 @@ class CategoryTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function test_user_not_logged_in_cannot_access_to_areas()
+    {
+        $response = $this->get('/areas');
+        $response->assertStatus(302);
+    }
+
     public function test_admin_can_view_all_categories()
     {
         $role = factory(Role::class)->states('Admin')->create();
