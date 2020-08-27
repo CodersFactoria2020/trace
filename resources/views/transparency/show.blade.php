@@ -11,15 +11,15 @@
                 @method('put')
                 <div class="card-body">
                     <div>
-                        <small><b>Any de l'exercsici:</b></small>
+                        <small><b>Any de l'exercici:</b></small>
                         <p>{{$transparency->date_name}}</p>
                     </div>
                     <div>
-                        <small><b>Documentacio Econmica:</b></small>
+                        <small><b>Documentació Econòmica:</b></small>
                         <p>{{$transparency->economic_document}}</p>
                     </div>
                     <div>
-                        <small><b>Documentacio Economica d'entitats:</b></small>
+                        <small><b>Documentació Econòmica de l'entitat:</b></small>
                         <p>{{$transparency->entity_document}}</p>
                     </div>
                 </div>

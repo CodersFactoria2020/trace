@@ -86,7 +86,10 @@ class Activity extends Model
     }
     public function update(array $attributes = [], array $options = [])
     {
-        $this->delete_file();
+        if(isset($attributes['file'])){
+
+            $this->delete_file();
+        }
         return parent::update($attributes, $options);
     }
 

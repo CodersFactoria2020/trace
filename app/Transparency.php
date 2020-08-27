@@ -27,22 +27,31 @@ class Transparency extends Model
     }
     public function get_economic_url()
     {
-        Return Storage::url('transparency/'. $this->get_saved_name_economic_document());
+        return Storage::url('transparency/'. $this->get_saved_name_economic_document());
     }
     public function get_entity_url()
     {
-        Return Storage::url('transparency/'. $this->get_saved_name_entity_document());
+        return Storage::url('transparency/'. $this->get_saved_name_entity_document());
     }
 
     public function get_saved_name_economic_document(): string
     {
-        return $this->date_name . 'Economic' . '.' . $this->economic_document;
+        return $this->date_name . '-' . 'Economic' . '.' . $this->economic_document;
     }
 
     public function get_saved_name_entity_document(): string
     {
-        return $this->date_name . 'Entitat' . '.' . $this->entity_document;
+        return $this->date_name . '-' . 'Entitat' . '.' . $this->entity_document;
     }
-
+    
+    public function has_economic_document()
+    {
+        return Storage::disk('public')->exists('transparency/'.$this->get_saved_name_economic_document());
+    }
+    
+    public function has_entity_document()
+    {
+        return Storage::disk('public')->exists('transparency/'.$this->get_saved_name_entity_document());
+    }
 
 }

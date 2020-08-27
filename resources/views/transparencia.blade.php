@@ -30,30 +30,24 @@
                 </p>
             </div>
             <div class="col-lg-6 content">
-                <h4>Informació económica i d’activitats</h4>
+                <h4>Informació econòmica i d’activitats</h4>
+                @foreach($transparencies as $transparency)
                 <div>
-                    <p>Exercici 2019:</p>
+                    <p>{{$transparency->date_name}}:</p>
                     <div class="box-cta">
-                        <a href=""><i class="icofont-download"></i>Memòria Económica 2019</a><br>
-                        <a href=""><i class="icofont-download"></i>Memòria d’activitats de l’Entitat 2019</a>
+                        <a href="{{$transparency->get_economic_url()}}" target=“_blank”>
+                            <i class="icofont-download"></i>
+                            {{$transparency->get_saved_name_economic_document()}}
+                        </a>
+                    </div>
+                    <div class="box-cta">
+                        <a href="{{$transparency->get_entity_url()}}" target=“_blank”>
+                            <i class="icofont-download"></i>
+                            {{$transparency->get_saved_name_entity_document()}}
+                        </a>     
                     </div>
                 </div>
-                <br>
-                <div>
-                    <p>Exercici 2018:</p>
-                    <div class="box-cta">
-                        <a href=""><i class="icofont-download"></i>Memòria Económica 2018</a><br>
-                        <a href=""><i class="icofont-download"></i>Memòria d’activitats de l’Entitat 2018</a>
-                    </div>
-                </div>
-                <br>
-                <div>
-                    <p>Exercici 2017:</p>
-                    <div class="box-cta">
-                        <a href=""><i class="icofont-download"></i>Memòria Económica 2017</a><br>
-                        <a href=""><i class="icofont-download"></i>Memòria d’activitats de l’Entitat 2017</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
