@@ -48,15 +48,6 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $this->authorize('create', $user);
-        $validated = $request->validate([
-            'first_name' => 'required|min:3',
-            'last_name' => 'required|min:3',
-            'email' => 'required|email',
-            'password' => 'required|min:3',
-            'phone' => 'required|min:9',
-            'dni' => 'required|min:9',
-            'role_id' => 'required'
-        ]);
         $request->password = bcrypt(request('password'));
         $user = new User;
             $user->first_name = $request->first_name;
@@ -92,15 +83,6 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->authorize('update', $user);
-        $validated = $request->validate([
-            'first_name' => 'required|min:3',
-            'last_name' => 'required|min:3',
-            'email' => 'required|email',
-            'password' => 'required|min:3',
-            'phone' => 'required|min:9',
-            'dni' => 'required|min:9',
-            'role_id' => 'required'
-        ]);
         $request->password = bcrypt(request('password'));
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
