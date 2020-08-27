@@ -57,13 +57,13 @@
         
           <td>
             @if($transparency->has_economic_document())
-              <a target=“_blank” href="{{$transparency->get_economic_url()}}">{{$transparency->get_saved_name_economic_document()}}</a>
+              <a class="primary-green" target=“_blank” href="{{$transparency->get_economic_url()}}">{{$transparency->get_saved_name_economic_document()}}</a>
             @endif
           </td>
 
           <td>
             @if($transparency->has_entity_document())
-              <a target=“_blank” href="{{$transparency->get_entity_url()}}">{{$transparency->get_saved_name_entity_document()}}</a>
+              <a class="primary-green" target=“_blank” href="{{$transparency->get_entity_url()}}">{{$transparency->get_saved_name_entity_document()}}</a>
             @endif 
           </td>
           <td class="actions">

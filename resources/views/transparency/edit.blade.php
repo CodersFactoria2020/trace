@@ -19,12 +19,18 @@
                             L'any de l'exercici ha de tenir un títol
                         </div>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pt-2">
                             <label for="name">Documentació de l'activitat econòmica</label>
+                            @if($transparency->has_economic_document())
+                            <p style="opacity: 0.7">{{$transparency->get_saved_name_economic_document()}}</p>
+                            @endif
                             <input type="file" name="economic_document" class="form-control" >
                         </div>
-                        <div class="form-group">
+                        <div class="form-group pt-2">
                             <label for="name">Documentació econòmica de l'entitat</label>
+                            @if($transparency->has_entity_document())
+                            <p style="opacity: 0.7">{{$transparency->get_saved_name_entity_document()}}</p>
+                            @endif
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
