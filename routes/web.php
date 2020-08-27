@@ -27,7 +27,6 @@ Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
 Route::resource('team','TeamController')->middleware('auth');
-Route::get('public_equip','TeamController@public_equip')->name('public_equip');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
