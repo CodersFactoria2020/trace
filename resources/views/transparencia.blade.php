@@ -32,7 +32,7 @@
             <div class="col-lg-6 content">
                 <h4>Informació econòmica i d’activitats</h4>
                 @foreach($transparencies as $transparency)
-                <div>
+                <div class="pt-4">
                     <p>{{$transparency->date_name}}:</p>
                     <div class="box-cta">
                         <a href="{{$transparency->get_economic_url()}}" target=“_blank”>

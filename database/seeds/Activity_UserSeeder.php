@@ -10,7 +10,7 @@ class Activity_UserSeeder extends Seeder
     {
         $activities = Activity::all();
         foreach ($activities as $activity) {
-            $users = User::where('role_id', 1)->inRandomOrder()->take(2)->get();
+            $users = User::where('role_id', 1)->inRandomOrder()->get();
             $activity->users()->sync([$users[0]->id, $users[1]->id]                
             );
         }

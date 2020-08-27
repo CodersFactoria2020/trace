@@ -12029,9 +12029,7 @@ section a {
   display: flex;
   justify-content: center;
   text-align: center;
-  max-width: 1600px;
   flex-wrap: wrap;
-  max-width: 1400px;
 }
 
 .team .team-grid .member {
@@ -12408,6 +12406,29 @@ section a {
   .accordion {
     margin-top: 40px;
   }
+}
+
+/*--------------------------------------------------------------
+# Map 
+--------------------------------------------------------------*/
+
+.map-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.map-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.soci input {
+  padding-right: 10px !important;
 }
 
 #footer {
