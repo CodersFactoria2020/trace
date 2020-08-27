@@ -16,14 +16,14 @@
                             <input type="text" name="date_name" class="form-control" placeholder="Date Name" required>
                         </div>
                         <div class="invalid-feedback">
-                            L'any d'exercici ha de tenir un títol
+                            L'any de l'exercici ha de tenir un títol
                         </div>
                         <div class="form-group">
                             <label for="name">Documentació econòmica</label>
                             <input type="file" name="economic_document" class="form-control" >
                         </div>
                         <div class="form-group">
-                            <label for="name">Documentació econòmica d'entitats</label>
+                            <label for="name">Documentació econòmica de l'entitat</label>
                             <input type="file" name="entity_document" class="form-control" >
                         </div>
 
