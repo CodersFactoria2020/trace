@@ -22,15 +22,51 @@
 
 @section('content')
 
-<div class="dashboard-right-side">
-    <main class="col">
-        <div class="mt-3">
-            <div class="float-right">
-                <h2>Hola {{Auth::User()->first_name}}</h2>
-                <h5>Benvingut/da a la teva àrea privada</h5>
+<div class="col">
+    <div class="dashboard-right-side">
+        <div class="col">
+            <div class="mt-3">
+                <div class="float-left">
+                    <h2>Hola {{Auth::User()->first_name}}</h2>
+                    <h5>Benvingut/da a la teva àrea privada</h5>
+                </div>
             </div>
         </div>
-    </main>
+    </div>
+  <!-- TABLA -->
+    <div class="dashboard-right-side">
+        <table class="table table-striped table-borderless">
+            <thead class="thead text-uppercase">
+                <tr>
+                    <td><small><b>Títol</b></small></td>
+                    <td><small><b>Descripció</b></small></td>
+                    <td><small><b>Professional</b></small></td>
+                </tr>
+            </thead>
+        @if ($activities)
+        @foreach($activities as $activity)
+        <tr>
+            <td class="icon-text">
+                <div class="primary-green">
+                    <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
+                        <i class="icofont-attachment"></i>
+                        {{$activity->title}}
+                    </a>
+                </div>
+                @include('activity.show')
+            </td>
+            <td>{{Str::limit($activity->description, 40)}}</td>
+            <td>
+            @foreach ($activity->users as $user)
+                <p>{{$user->first_name}} {{$user->last_name}} </p>
+            @endforeach
+            <td>
+        </tr>
+        @endforeach
+        @endif
+
+        </table>
+    </div>
 </div>
 
 @endsection

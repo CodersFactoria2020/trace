@@ -52,7 +52,17 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row">
+<!-- TODO -->
+                            <div class="form-row pl-1 pt-2">
+                                <div class="custom-checkbox soci">
+                                    <label>Socis:</label><br>
+                                        @foreach ($socis as $soci)
+                                        <input class="mr-1 mb-3" type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} <br>
+                                        @endforeach
+                                </div>
+                            </div>
+
+                            <div class="form-row pt-2">
                                 <div class="form-group col-md-6 pt-2">
                                     <label>Document adjunt:</label>
                                     <input type="file" name="file" id="fileToUpload"/>

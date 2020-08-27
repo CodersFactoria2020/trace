@@ -30,8 +30,8 @@
                             <div class="form-group col-md-6">
                                 <label>Professional</label>
                                 <select name="user[]"  class="form-control"  required>
-                                    @foreach ($activity->users as $user)
-                                        <option id="user_{{$user->id}}" value="{{$user->id}}" {{ $activity->user_id == $user->id ? 'selected' : '' }}">{{ $user->first_name}} {{ $user->last_name }}</option>
+                                    @foreach ($users as $user)
+                                        <option id="user_{{$user->id}}" value="{{$user->id}}" {{ $activity->user_id == $user->id ? 'selected' : '' }}>{{ $user->first_name}} {{ $user->last_name }}</option>
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback">
