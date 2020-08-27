@@ -12,46 +12,46 @@
                     @if (auth()->user()->role_id != "Soci")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
-                            href="/dashboard">
+                            href="{{url('/dashboard')}}">
                             <span><i class="icofont-home"></i></span>
                             Inici <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('user') ? 'active-black' : 'primary-green'}}" href="/user">
+                        <a class="nav-link {{ request()->is('user') ? 'active-black' : 'primary-green'}}" href="{{url('/user')}}">
                             <span><i class="icofont-users-alt-3"></i></span>
                             Usuaris
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('activity') ? 'active-black' : 'primary-green'}}"
-                            href="/activity">
+                            href="{{url('/activity')}}">
                             <span><i class="icofont-attachment"></i></span>
                             Activitats
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('areas') ? 'active-black' : 'primary-green'}}"
-                            href="/areas">
+                            href="{{url('/areas')}}">
                             <span><i class="icofont-list"></i></span>
                             Àrees
                         </a>
                     </li>
                     <!-- <li class="nav-item">
-            <a class="nav-link {{ request()->is('workplans') ? 'active-black' : 'primary-green'}}" href="/workplans">
+            <a class="nav-link {{ request()->is('workplans') ? 'active-black' : 'primary-green'}}" href="{{url('/workplans')}}">
                 <span><i class="icofont-calendar"></i></span>
                 Plans de treball
               </a>
             </li> -->
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="/team">
+                        <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="{{url('/team')}}">
                             <span><i class="icofont-id"></i></span>
                             Gestió de l'Equip
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
-                            href="/transparency">
+                            href="{{url('/transparency')}}">
                             <span><i class="icofont-page"></i></span>
                             Transparència
                         </a>
