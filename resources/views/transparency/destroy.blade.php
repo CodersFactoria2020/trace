@@ -17,7 +17,7 @@
                 <form action="{{Route('transparency.destroy', $transparency->id)}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('DELETE')
-                    <input type="submit" class="btn btn-danger" value="Sí, esborrar!">
+                    <input type="submit" class="cta" value="Sí, esborrar!">
                 </form>
             </div>
         </div>

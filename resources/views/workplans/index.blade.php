@@ -52,7 +52,7 @@
           <tr>
             <td><small><b>Nom i cognom</b></small></td>
             <td><small><b>Rol</b></small></td>
-            <td colspan="2"><small><b>Accions</b></small></td>
+            <td><small><b>Accions</b></small></td>
         </tr>
       </thead>
 
@@ -66,9 +66,10 @@
             <i class="icofont-user-alt-3"></i>
             {{$user->first_name}} {{$user->last_name}}
             </a>
-        </div>
+          </div>
             @include('workplans.show')
         </td>
+        <td></td>
         <td class="actions">
           @can('update', $user)
           @if ( $user->role_id === "Soci" )
