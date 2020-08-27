@@ -9,17 +9,23 @@
             </div>
             <div class="card-body">
                 <div class="modal-body">
-                    <form class="" action="{{Route('user.update', $user->id)}}" method="POST">
+                    <form class="" action="{{Route('user.update', $user->id)}}" method="POST" class="needs-validation" novalidate>
                         @csrf
                         @method('PUT')
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label class='label-small'>Nom</label>
                                 <input type="text" name="first_name" class="form-control" value="{{$user->first_name}}" required/>
+                                <div class="invalid-feedback">
+                                    El nom ha de tenir almenys 3 caràcters
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Cognom</label>
                                 <input type="text" name="last_name" class="form-control" value="{{$user->last_name}}" required/>
+                                <div class="invalid-feedback">
+                                    El cognom ha de tenir almenys 3 caràcters
+                                </div>
                             </div>
                         </div>
 
@@ -27,10 +33,16 @@
                             <div class="form-group col-md-6">
                                 <label>Email</label>
                                 <input type="text" name="email" class="form-control" value="{{$user->email}}" required/>
+                                <div class="invalid-feedback">
+                                    El email no és vàlid
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Contrasenya</label>
                                 <input type="text" name="dni" class="form-control" placeholder="Contrasenya" required/>
+                            </div>
+                            <div class="invalid-feedback">
+                                La contrasenya ha de tenir almenys 3 caràcters
                             </div>
                         </div>
 
@@ -38,6 +50,9 @@
                             <div class="form-group col-md-6">
                                 <label>DNI</label>
                                 <input type="text" name="dni" class="form-control" value="{{$user->dni}}" required/>
+                                <div class="invalid-feedback">
+                                    El DNI ha de tenir almenys 9 caràcters
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Telèfon</label>
@@ -74,3 +89,23 @@
         </div>
     </div>
 </div>
+
+<script>
+    (function() {
+      'use strict';
+      window.addEventListener('load', function() {
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.getElementsByClassName('needs-validation');
+        // Loop over them and prevent submission
+        var validation = Array.prototype.filter.call(forms, function(form) {
+          form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+          }, false);
+        });
+      }, false);
+    })();
+</script>
