@@ -14,7 +14,7 @@ class Team extends Model
     public function upload_photo($photo)
     {
          $this->photo= $photo->extension();
-         $name_photo = $this->id .'-'. $this->first_name . '.' . $this->photo;
+         $name_photo = $this->get_saved_name_photo();
          $this->save();
          $photo->storeAs('team/', $name_photo, ['disk'=>'public']);
     }
@@ -24,8 +24,15 @@ class Team extends Model
         if (! $this->photo) {
             return '../img/avatar-team.jpg';
         }
-        return Storage::url('team/' .$this->id .'-'. $this->first_name . '.' . $this->photo);
+        return Storage::url('team/' . $this->get_saved_name_photo());
     }
+
+
+    public function get_saved_name_photo(): string
+    {
+        return $this->id . '-' . $this->first_name . '.' . $this->photo;
+    }
+
 
 
 

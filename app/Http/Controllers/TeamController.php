@@ -66,8 +66,8 @@ class TeamController extends Controller
     public function destroy(Team $team)
     {
         $this->authorize('destroy', $team);
+        Storage::delete('/team/'. $team->get_saved_file_name());
         $team->delete();
-        Storage::disk('public')->delete('team/*.jpg');
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
     }
 
