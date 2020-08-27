@@ -60,7 +60,9 @@
             <td>{{Str::limit($activity->description, 40)}}</td>
             <td>
             @foreach ($activity->users as $user)
-                <p>{{$user->first_name}} {{$user->last_name}} </p>
+            @if ($user->role_id != 'Soci')
+                <p>{{$user->first_name}} {{$user->last_name}}</p>
+            @endif
             @endforeach
             <td>
             <td class="actions">

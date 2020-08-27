@@ -22,8 +22,15 @@ class ActivityController extends Controller
         $activities = Activity::paginate(10);
         $categories = Category::all();
         $users = User::where('role_id', 2)->get();
+        $professionals = User::where('role_id', 2)->get();
+        $socis = User::where('role_id', 1)->get();
 
-        return view('activity.index', compact('activities','categories', 'users'));
+        if (auth()->user()->role_id === "Soci") {
+            $activities = auth()->user()->activities;
+            return view('activity.index', compact('activities'));
+        }
+
+        return view('activity.index', compact('activities','categories', 'users', 'professionals', 'socis'));
     }
 
     public function create()
@@ -32,8 +39,10 @@ class ActivityController extends Controller
         $activities = Activity::all();
         $categories = Category::all();
         $users = User::all();
+        $professionals = User::all();
+        $socis = User::all();
 
-        return view('activity.create', compact('activities', 'categories', 'users'));
+        return view('activity.index', compact('activities','categories', 'users', 'professionals', 'socis'));
     }
 
     public function store(Request $request, Activity $activity)
@@ -43,6 +52,12 @@ class ActivityController extends Controller
 
         $activity = Activity::create($data);
         $activity->users()->sync($request->get('user'));
+        $socis = $request->socis;
+
+        foreach($socis as $soci){
+        $user = User::where('id', $soci)->first();
+        $user->activities()->attach($activity);
+        }
 
         if($file = $request->file('file'))
         {

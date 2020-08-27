@@ -34,7 +34,7 @@
                         <p>{{$activity->get_downloaded_file_name()}}</p>
                     </div>
                     <a href="{{Route('download-document', $activity->id)}}">
-                        <button type="button" class="btn btn-primary text-right">
+                        <button type="button" class="cta text-right">
                             Descarregar
                         </button>
                     </a>
