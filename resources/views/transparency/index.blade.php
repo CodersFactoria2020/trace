@@ -54,12 +54,16 @@
             </div>
             @include('transparency.show')
           </td>
+        
+          <td>
             
-          <td><a href="{{$transparency->get_economic_url()}}">{{$transparency->get_saved_name_economic_document()}}</a></td>
+              <a href="{{$transparency->get_economic_url()}}">{{$transparency->get_saved_name_economic_document()}}</a>
             
-            
-          <td><a href="{{$transparency->get_entity_url()}}">{{$transparency->get_saved_name_entity_document()}}</a></td>
-            
+          </td>
+
+          <td>
+              <a href="{{$transparency->get_entity_url()}}">{{$transparency->get_saved_name_entity_document()}}</a>
+          </td>
           <td class="actions">
               @can('update', $transparency)
               <div class="primary-green">
