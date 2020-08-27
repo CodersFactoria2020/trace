@@ -15,16 +15,16 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="validationCustom01">Nom</label>
-                                <input type="text" id="validationCustom01" name="first_name" class="form-control" placeholder="Nom" required/>
+                                <input type="text" id="validationCustom01" name="first_name" class="form-control" placeholder="Nom" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
-                                    El nom ha de tenir almenys 3 caràcters
+                                    El nom ha de tenir almenys 1 lletra
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Cognom</label>
-                                <input type="text" name="last_name" class="form-control" placeholder="Cognom" required/>
+                                <input type="text" name="last_name" class="form-control" placeholder="Cognom" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
-                                    El cognom ha de tenir almenys 3 caràcters
+                                    El cognom ha de tenir almenys 1 lletra
                                 </div>
                             </div>
                         </div>
@@ -32,30 +32,33 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Email</label>
-                                <input type="text" name="email" class="form-control" placeholder="Email" required/>
+                                <input type="text" name="email" class="form-control" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
                                 <div class="invalid-feedback">
-                                    El email no és vàlid
+                                    El email pot contenir lletres de llatí únic, números, '@' i '.'"
                                 </div>
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Contrasenya</label>
-                                <input type="text" name="password" class="form-control" placeholder="Contrasenya" required/>
+                                <input type="text" name="password" class="form-control" placeholder="Contrasenya" pattern=".{5,}" required/>
                                 <div class="invalid-feedback">
-                                    La contrasenya ha de tenir almenys 3 caràcters
+                                    La contrasenya ha de tenir almenys 5 caràcters
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group col-md-6">
-                                <label>Telèfon</label>
-                                <input type="text" name="phone" class="form-control" placeholder="Telèfono">
+                                <label>DNI</label>
+                                <input type="text" name="dni" class="form-control" placeholder="DNI" pattern="[A-Za-z0-9].{5,}" required/>
+                                <div class="invalid-feedback">
+                                    El DNI ha de tenir almenys 5 caràcters alfanumèrics
+                                </div>
                             </div>
                             <div class="form-group col-md-6">
-                                <label>DNI</label>
-                                <input type="text" name="dni" class="form-control" placeholder="DNI" required/>
+                                <label>Telèfon</label>
+                                <input type="text" name="phone" class="form-control" placeholder="Telèfon" pattern="[0-9].{6,}">
                                 <div class="invalid-feedback">
-                                    El DNI només ha de contenir caràcters alfanumèrics
+                                    El telèfon ha de tenir almenys 6 números
                                 </div>
                             </div>
                         </div>
@@ -71,7 +74,10 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Tutor(a)</label>
-                                <input type="text" name="tutor" class="form-control" placeholder="Tutor"/>
+                                <input type="text" name="tutor" class="form-control" placeholder="Tutor" pattern="[A-Za-z]"/>
+                            </div>
+                            <div class="invalid-feedback">
+                                El tutor ha de tenir solament lletras
                             </div>
                         </div>
                         <div class="text-right mt-4">
@@ -85,7 +91,6 @@
 </div>
 
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
       window.addEventListener('load', function() {

@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
@@ -13,7 +12,7 @@ class User extends Authenticatable
     use Notifiable;
 
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'phone', 'dni', 'tutor', 'role_id'
+        'first_name', 'last_name', 'email', 'password', 'shown_password', 'phone', 'dni', 'tutor', 'role_id'
     ];
 
     protected $hidden = [
@@ -35,7 +34,7 @@ class User extends Authenticatable
     {
         return $this->belongsTo(Role::class);
     }
-    
+
     public function activities()
     {
         return $this->belongsToMany(Activity::class);

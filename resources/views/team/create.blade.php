@@ -14,21 +14,21 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Nom</label>
-                                <input type="text" name="first_name" class="form-control" placeholder="First Name" required/>
+                                <input type="text" name="first_name" class="form-control" placeholder="Nom" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
                                     El membre de l'equip ha de tenir un nom
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Cognom</label>
-                                <input type="text" name="last_name" class="form-control" placeholder="Last Name" required/>
+                                <input type="text" name="last_name" class="form-control" placeholder="Cognom" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
                                     El membre de l'equip ha de tenir un cognom
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="name">Posicio</label>
-                                <input type="text" name="position" class="form-control" placeholder="Position" required/>
+                                <input type="text" name="position" class="form-control" placeholder="Posició" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
                                     El membre de l'equip ha de tenir una posicio
                                 </div>
