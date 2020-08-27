@@ -26,14 +26,12 @@ Route::get('/collabora', 'HomeController@collabora')->name('collabora');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 
-
 Route::resource('team','TeamController')->middleware('auth');
 Route::get('public_equip','TeamController@public_equip')->name('public_equip');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
-//Route::get('/team', 'UserController@team')->name('team')->middleware('auth');
 Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
@@ -54,7 +52,6 @@ Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
 // PROVISIONAL - EVENTS SANDBOX
 Route::resource('/events', 'EventController')->middleware('auth');
-
 
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
