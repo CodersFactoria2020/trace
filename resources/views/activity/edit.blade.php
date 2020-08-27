@@ -30,7 +30,7 @@
                                 <div class="form-group col-md-6">
                                     <label>Professional</label>
                                     <select name="user[]"  class="form-control"  required>
-                                        <option disabled selected value> {{ $user->first_name}} {{ $user->last_name }} </option>
+                                        <option disabled selected value> Selecciona un professional </option>
                                         @foreach ($users as $user)
                                             <option id="user_{{$user->id}}" value="{{$user->id}}">{{ $user->first_name}} {{ $user->last_name }}</option>
                                         @endforeach
