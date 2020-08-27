@@ -23,7 +23,7 @@ class UserController extends Controller
         $this->authorize('view-any', $user);
         $users = new User;
         $roles = Role::all();
-        $users_per_page = 8;
+        $users_per_page = 10;
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
