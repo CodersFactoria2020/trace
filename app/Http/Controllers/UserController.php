@@ -48,12 +48,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $this->authorize('create', $user);
+        $shown_password = $request->password;
         $request->password = bcrypt(request('password'));
         $user = new User;
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
             $user->email = $request->email;
             $user->password = $request->password;
+            $user->shown_password = $shown_password;
             $user->phone = $request->phone;
             $user->dni = $request->dni;
             $user->tutor = $request->tutor;
