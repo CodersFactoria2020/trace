@@ -30,8 +30,8 @@
                             <div class="form-group col-md-6">
                                 <label>Professional</label>
                                 <select name="user[]"  class="form-control"  required>
-                                    @foreach ($activity->users as $user)
-                                        <option id="user_{{$user->id}}" value="{{$user->id}}" {{ $activity->user_id == $user->id ? 'selected' : '' }}">{{ $user->first_name}} {{ $user->last_name }}</option>
+                                    @foreach ($users as $user)
+                                    <option id="user_{{$user->id}}" value="{{$user->id}}" {{$activity->user_id == $user->id ? 'selected' : ''}}>{{ $user->first_name}} {{ $user->last_name }}</option>
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback">
@@ -42,7 +42,7 @@
                                 <label>Àrea:</label>
                                 <select name="category_id" class="form-control">
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id}}" style="background-color:{{ $category->color }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id}}" style="background-color:{{ $category->color }}" {{$activity->category_id == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback">
