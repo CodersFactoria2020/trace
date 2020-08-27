@@ -83,7 +83,6 @@ class TransparencyController extends Controller
 
             $transparency->upload_entity_document($request->file('entity_document'));
         }
-
     }
 
     public function viewVisitor(Transparency $transparency){
