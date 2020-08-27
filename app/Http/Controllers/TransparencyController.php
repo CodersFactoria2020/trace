@@ -35,13 +35,9 @@ class TransparencyController extends Controller
     {
         $this->authorize('create', $transparency);
         $data = $request->all();
-        $validatedData = $request->validate([
-            'economic_document'=> 'max:22560',
-            'entity_document'=> 'max:22560',
-        ]);
-        $transparency = Transparency::create($data,$validatedData);
-        $this->upload_documents($request, $transparency);
 
+        $transparency = Transparency::create($data);
+        $this->upload_documents($request, $transparency);
         return redirect(route('transparency.index'));
     }
 
@@ -61,13 +57,11 @@ class TransparencyController extends Controller
     {
         $this->authorize('update', $transparency);
         $data = $request->all();
-        $validatedData = $request->validate([
-            'economic_document'=> 'max:22560',
-            'entity_document'=> 'max:22560',
-        ]);
-        $transparency->update($data,$validatedData);
+
+        $transparency->update($data);
 
         $this->upload_documents($request, $transparency);
+
         return redirect('/transparency');
     }
 
@@ -89,5 +83,7 @@ class TransparencyController extends Controller
 
             $transparency->upload_entity_document($request->file('entity_document'));
         }
+
     }
+
 }

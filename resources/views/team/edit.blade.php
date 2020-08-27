@@ -8,7 +8,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{Route('team.update', $team->id)}}" method="post" class="needs-validation" novalidate>
+                <form action="{{Route('team.update', $team->id)}}" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
                     @csrf
                     @method('put')
                     <div class="card-body">
