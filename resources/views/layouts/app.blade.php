@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
 
     <meta charset="utf-8">
@@ -14,7 +15,9 @@
     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -31,29 +34,14 @@
     <link href="color/default.css" rel="stylesheet" />
 
     <!-- Fav and touch icons -->
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="144x144"
-      href="ico/apple-touch-icon-144-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="114x114"
-      href="ico/apple-touch-icon-114-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      sizes="72x72"
-      href="ico/apple-touch-icon-72-precomposed.png"
-    />
-    <link
-      rel="apple-touch-icon-precomposed"
-      href="ico/apple-touch-icon-57-precomposed.png"
-    />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="ico/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="ico/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="ico/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
     <link rel="shortcut icon" href="ico/favicon.png" />
 
 
-      <!-- css -->
+    <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/bootstrap-responsive.css" rel="stylesheet" />
@@ -74,80 +62,95 @@
 
 <body>
 
-  <!-- START Bootstrap-Cookie-Alert -->
-  <div class="alert text-center cookiealert" role="alert">
-      &#x1F36A; Aquest web utilitza cookies pròpies i de tercers per optimitzar i adaptar-se a la vostra navegació i les vostres preferències, entre altres tasques. Si continueu navegant, entendrem que accepteu les nostres <a href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
+    <!-- START Bootstrap-Cookie-Alert -->
+    <div class="alert text-center cookiealert" role="alert">
+        &#x1F36A; Aquesta web utilitza cookies pròpies i de tercers per optimitzar i adaptar-se a la vostra navegació i
+        les vostres preferències, entre altres tasques. Si continueu navegant, entendrem que accepteu les nostres <a
+            href="{{'/legal'}}" target="_blank" style="color:yellow;">polítiques i cookies</a>
 
-      <button type="button" class="btn btn-primary btn-sm acceptcookies">
-          Acceptar
-      </button>
-  </div>
-<!-- END Bootstrap-Cookie-Alert -->
+        <button type="button" class="btn btn-primary btn-sm acceptcookies">
+            Acceptar
+        </button>
+    </div>
+    <!-- END Bootstrap-Cookie-Alert -->
 
     <div id="topbar" class="d-none d-lg-block">
         <div class="flex-container d-flex align-items-center justify-content-between">
 
-          <div class="contact-info d-flex align-items-center justify-content-between">
-              <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
-              <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
-              <div class="social-links">
-                <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i class="icofont-facebook"></i></a>
-                <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i class="icofont-twitter"></i></a>
-                <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i class="icofont-instagram"></i></a>
-                <a class="social-links" href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg" target="_blank"class=""><i class="icofont-youtube"></i></a>
-              </div>
-          </div>
+            <div class="contact-info d-flex align-items-center justify-content-between">
+                <a href="tel:+349332503636"><i class="icofont-phone"></i>933 250 3636</a>
+                <a href="mailto:info@tracecatalunya.org"><i class="icofont-envelope"></i>info@tracecatalunya.org</a>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/danycerebraltrace" target="_blank" class=""><i
+                            class="icofont-facebook"></i></a>
+                    <a href="https://twitter.com/tracecatalunya?lang=es" target="_blank" class=""><i
+                            class="icofont-twitter"></i></a>
+                    <a href="https://www.instagram.com/associaciotrace/" target="_blank" class=""><i
+                            class="icofont-instagram"></i></a>
+                    <a class="social-links" href="https://www.youtube.com/channel/UCEXJ-1eKKkl8gqsqOBxy5dg"
+                        target="_blank" class=""><i class="icofont-youtube"></i></a>
+                </div>
+            </div>
 
-          <div class="user">
-            <a href="{{Route('login')}}" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea usuari</a>
-          </div>
+            <div class="user">
+                <a href="{{Route('login')}}" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea
+                    usuari</a>
+            </div>
         </div>
     </div>
 
     <div id="header-sticky-wrapper">
 
-      <header id="header" >
+        <header id="header">
 
-        <div class="flex-container d-flex justify-content-between align-items-center">
+            <div class="flex-container d-flex justify-content-between align-items-center">
 
-          <div class="mr auto">
-            <a href="{{url('/home')}}">
-            <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="logo img-fluid" style="width:90px; heigh:auto"></a>
-          </div>
+                <div class="mr auto">
+                    <a href="{{url('/home')}}">
+                        <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="logo img-fluid"
+                            style="width:90px; heigh:auto"></a>
+                </div>
 
-          <div>
-            <nav class="nav-menu d-none d-lg-block">
-              <ul>
-                <li class="{{ request()->is('home') ? 'active' : ''}}"><a href="{{url('/home')}}">Inici</a></li>
-                <li class="{{ request()->is('dany_cerebral') ? 'active' : ''}}"><a href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
-                <li class="drop-down {{ request()->is('qui_som','filosofia','equip','transparencia') ? 'active' : ''}}"><a href="#">Coneix-nos</a>
-                  <ul>
-                    <li ><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
-                    <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
-                    <li><a href="{{url('/equip/')}}">Equip</a></li>
-                    <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
-                  </ul>
-                </li>
-                <li class="{{ request()->is('collaboradors') ? 'active' : ''}}"><a href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
-                <li class="{{ request()->is('recursos') ? 'active' : ''}}"><a href="{{url('/recursos/')}}">Recursos</a></li>
-                <li class="{{ request()->is('contacte') ? 'active' : ''}}"><a href="{{url('/contacte/')}}">Contacte</a></li>
-              </ul>
-            </nav>
-          </div>
+                <div>
+                    <nav class="nav-menu d-none d-lg-block">
+                        <ul>
+                            <li class="{{ request()->is('home') ? 'active' : ''}}"><a href="{{url('/home')}}">Inici</a>
+                            </li>
+                            <li class="{{ request()->is('dany_cerebral') ? 'active' : ''}}"><a
+                                    href="{{url('/dany_cerebral/')}}">Dany Cerebral</a></li>
+                            <li
+                                class="drop-down {{ request()->is('qui_som','filosofia','equip','transparencia') ? 'active' : ''}}">
+                                <a href="#">Coneix-nos</a>
+                                <ul>
+                                    <li><a href="{{url('/qui_som/')}}">Qui som i què fem</a></li>
+                                    <li><a href="{{url('/filosofia/')}}">Filosofia</a></li>
+                                    <li><a href="{{url('/equip/')}}">Equip</a></li>
+                                    <li><a href="{{url('/transparencia/')}}">Transparència</a></li>
+                                </ul>
+                            </li>
+                            <li class="{{ request()->is('collaboradors') ? 'active' : ''}}"><a
+                                    href="{{url('/collaboradors/')}}">Col·laboradors</a></li>
+                            <li class="{{ request()->is('recursos') ? 'active' : ''}}"><a
+                                    href="{{url('/recursos/')}}">Recursos</a></li>
+                            <li class="{{ request()->is('contacte') ? 'active' : ''}}"><a
+                                    href="{{url('/contacte/')}}">Contacte</a></li>
+                        </ul>
+                    </nav>
+                </div>
 
-          <div id="collabora">
-            <a href="{{url('/collabora/')}}" class="cta-line">Col·labora</a>
-          </div>
+                <div id="collabora">
+                    <a href="{{url('/collabora/')}}" class="cta-line">Col·labora</a>
+                </div>
 
-        </div>
+            </div>
 
-      </header>
+        </header>
 
-    <div>
+        <div>
 
-    <main class="">
-        @yield('content')
-    </main>
+            <main class="">
+                @yield('content')
+            </main>
 
 </body>
 
