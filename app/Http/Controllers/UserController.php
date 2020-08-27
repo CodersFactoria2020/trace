@@ -116,12 +116,15 @@ class UserController extends Controller
 
     public function dashboard()
     {
+        $user = Auth::user();
         $users = User::all();
         $roles = Role::all();
+        //$activities = Activity::where('user_id', $user->id);
+        $activities = $user->activities;
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
         }
-        return view('user.soci');
+        return view('user.soci', compact('activities'));
     }
 
     public function workplans()
