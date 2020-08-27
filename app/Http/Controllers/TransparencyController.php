@@ -86,4 +86,9 @@ class TransparencyController extends Controller
 
     }
 
+    public function viewVisitor(Transparency $transparency){
+        $transparencies = Transparency::all();
+        return view('/transparencia', compact('transparencies'));
+    }
+
 }
