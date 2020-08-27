@@ -18,6 +18,7 @@ class TeamPolicy
         }
         return true;
     }
+    
 
     public function view(User $user, Team $team)
     {

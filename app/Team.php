@@ -13,16 +13,20 @@ class Team extends Model
 
     public function upload_photo($photo)
     {
-        $name_photo = $this->id . '.jpg';
-        $photo->storeAs('team/', $name_photo, ['disk'=>'public']);
+         $this->photo= $photo->extension();
+         $name_photo = $this->id .'-'. $this->first_name . '.' . $this->photo;
+         $this->save();
+         $photo->storeAs('team/', $name_photo, ['disk'=>'public']);
     }
+
     public function get_photo_url()
     {
         if (! $this->photo) {
             return '../img/avatar-team.jpg';
         }
-
-        return Storage::url('team/'.$this->id . '.jpg');
+        return Storage::url('team/' .$this->id .'-'. $this->first_name . '.' . $this->photo);
     }
+
+
 
 }
