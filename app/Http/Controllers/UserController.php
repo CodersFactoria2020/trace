@@ -23,7 +23,7 @@ class UserController extends Controller
         $this->authorize('view-any', $user);
         $users = new User;
         $roles = Role::all();
-        $users_per_page = 8;
+        $users_per_page = 10;
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
@@ -48,21 +48,14 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $this->authorize('create', $user);
-        $validated = $request->validate([
-            'first_name' => 'required|min:3',
-            'last_name' => 'required|min:3',
-            'email' => 'required|email',
-            'password' => 'required|min:3',
-            'phone' => 'required|min:9',
-            'dni' => 'required|min:9',
-            'role_id' => 'required'
-        ]);
+        $shown_password = $request->password;
         $request->password = bcrypt(request('password'));
         $user = new User;
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;
             $user->email = $request->email;
             $user->password = $request->password;
+            $user->shown_password = $shown_password;
             $user->phone = $request->phone;
             $user->dni = $request->dni;
             $user->tutor = $request->tutor;
@@ -92,15 +85,6 @@ class UserController extends Controller
     public function update(Request $request, User $user)
     {
         $this->authorize('update', $user);
-        $validated = $request->validate([
-            'first_name' => 'required|min:3',
-            'last_name' => 'required|min:3',
-            'email' => 'required|email',
-            'password' => 'required|min:3',
-            'phone' => 'required|min:9',
-            'dni' => 'required|min:9',
-            'role_id' => 'required'
-        ]);
         $request->password = bcrypt(request('password'));
             $user->first_name = $request->first_name;
             $user->last_name = $request->last_name;

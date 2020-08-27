@@ -26,7 +26,7 @@
                     </div>
                     <div>
                         <small><b>Àrea: </b></small>
-                        <p>{{$activity->category_id}}</p>
+                        <p>{{$activity->category->name}}</p>
                     </div>
                     @if($activity->has_file())
                     <div>

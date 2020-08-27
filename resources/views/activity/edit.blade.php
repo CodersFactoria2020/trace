@@ -27,35 +27,22 @@
                             </div>
                         </div>
                         <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label>Professional</label>
-                                    <select name="user[]"  class="form-control"  required>
-                                        <option disabled selected value> {{ $user->first_name}} {{ $user->last_name }} </option>
-                                        @foreach ($users as $user)
-                                            <option id="user_{{$user->id}}" value="{{$user->id}}">{{ $user->first_name}} {{ $user->last_name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <div class="invalid-feedback">
-                                        L'activitat ha de tenir un professional assignat
-                                    </div>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label>Professional de support</label>
-                                    <select name="user[]"  class="form-control">
-                                            <option disabled selected value> Selecciona un professional </option>
-                                        @foreach ($users as $user)
-                                            <option id="user_{{$user->id}}" value="{{$user->id}}">{{ $user->first_name}} {{ $user->last_name }}</option>
-                                        @endforeach
-                                    </select>
+                            <div class="form-group col-md-6">
+                                <label>Professional</label>
+                                <select name="user[]"  class="form-control"  required>
+                                    @foreach ($users as $user)
+                                    <option id="user_{{$user->id}}" value="{{$user->id}}" {{$activity->user_id == $user->id ? 'selected' : ''}}>{{ $user->first_name}} {{ $user->last_name }}</option>
+                                    @endforeach
+                                </select>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir un professional assignat
                                 </div>
                             </div>
-                        <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label>Àrea:</label>
                                 <select name="category_id" class="form-control">
-                                    <optgroup label="Selecciona una àrea">
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id}}" style="background-color:{{ $category->color }}">{{ $category->name }}</option>
+                                        <option value="{{ $category->id}}" style="background-color:{{ $category->color }}" {{$activity->category_id == $category->id ? 'selected' : ''}}>{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback">

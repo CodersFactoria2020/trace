@@ -11,43 +11,14 @@ class Activity extends Model
 {
     protected $fillable = ['title', 'description', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
 
-    public function Categories() {
+    public function category() {
 
         return $this->belongsTo(Category::class);
-
     }
 
-    public function Users()
+    public function users()
     {
         return $this->belongsToMany(User::class);
-    }
-
-    public function getCategoryIdAttribute($value)
-    {
-        if ($value === 1)
-        {
-            return "Fisioteràpia neurològica";
-        }
-        if ($value === 2)
-        {
-            return "Neurologopèdia";
-        }
-        if ($value === 3)
-        {
-            return "Teràpia ocupacional";
-        }
-        if ($value === 4)
-        {
-            return "Teràpia ocupacional";
-        }
-        if ($value === 5)
-        {
-            return "GNPT i NEURONUP";
-        }
-        if ($value === 6)
-        {
-            return "Grupals";
-        }
     }
 
     public function upload_file($file)
