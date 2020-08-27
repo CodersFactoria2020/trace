@@ -40,27 +40,37 @@
                 <tr>
                     <td><small><b>Títol</b></small></td>
                     <td><small><b>Descripció</b></small></td>
-                    <td><small><b>Professional</b></small></td>
+                    <td colspan="2"><small><b>Professional</b></small></td>
                 </tr>
             </thead>
         @if ($activities)
         @foreach($activities as $activity)
         <tr>
             <td class="icon-text">
-                <div class="primary-green">
-                    <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
-                        <i class="icofont-attachment"></i>
+                <div class="">
                         {{$activity->title}}
                     </a>
                 </div>
                 @include('activity.show')
             </td>
             <td>{{Str::limit($activity->description, 40)}}</td>
+            
+            <td class="icon-text">
+                <div class="primary-green">
+                @foreach ($activity->users as $user)
+                @if ($user->role_id == 'Professional')
+                    <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
+                    <i class="icofont-send-mail" style="font-size:24px"></i>
+                    {{$user->first_name}} {{$user->last_name}}
+                    </a>
+                @endif
+                @endforeach
+                </div>
+            </td>
+            
             <td>
-            @foreach ($activity->users as $user)
-                <p>{{$user->first_name}} {{$user->last_name}} </p>
-            @endforeach
-            <td>
+                <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="cta" activity="button">Veure més</a>
+            </td>
         </tr>
         @endforeach
         @endif

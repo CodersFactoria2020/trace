@@ -55,7 +55,7 @@ class ActivityController extends Controller
         $socis = $request->socis;
 
         foreach($socis as $soci){
-        $user = User::where('id', $soci);
+        $user = User::where('id', $soci)->first();
         $user->activities()->attach($activity);
         }
 
