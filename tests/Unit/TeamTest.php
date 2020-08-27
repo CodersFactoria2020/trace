@@ -2,9 +2,7 @@
 
 namespace Tests\Unit;
 
-use App\Role;
-use App\Team;
-use App\User;
+
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Storage;
 use PHPUnit\Framework\TestCase;

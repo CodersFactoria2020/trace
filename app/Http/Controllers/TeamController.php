@@ -71,8 +71,4 @@ class TeamController extends Controller
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
     }
 
-    public function public_equip(Team $team){
-        $teams = Team::all();
-        return view('team.public_equip', compact('teams'));
-    }
 }

@@ -44,4 +44,5 @@ class Transparency extends Model
         return $this->date_name . 'Entitat' . '.' . $this->entity_document;
     }
 
+
 }
