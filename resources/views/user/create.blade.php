@@ -55,7 +55,7 @@
                                 <label>DNI</label>
                                 <input type="text" name="dni" class="form-control" placeholder="DNI" required/>
                                 <div class="invalid-feedback">
-                                    El DNI només ha de contenir caràcters alfanumèrics
+                                    El DNI ha de tenir almenys 9 caràcters
                                 </div>
                             </div>
                         </div>
@@ -85,7 +85,6 @@
 </div>
 
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
       window.addEventListener('load', function() {
