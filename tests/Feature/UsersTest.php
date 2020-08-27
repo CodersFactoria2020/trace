@@ -10,7 +10,7 @@ use App\Role;
 class UsersTest extends TestCase
 {
     use RefreshDatabase;
-    
+
     //*************************************************************************** Not logged in tests **************************************************************************
 
     public function test_if_user_not_logged_in_is_redirected_to_login_page_when_access_users_index()
@@ -73,7 +73,7 @@ class UsersTest extends TestCase
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
         $userRole = empty($user->role_id);
-        
+
         $expectedReturn = false;
 
         $this->assertEquals($userRole, $expectedReturn);
@@ -84,7 +84,7 @@ class UsersTest extends TestCase
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
         $response = $this->actingAs($user)->get('/dashboard');
-        
+
         $response->assertStatus(200);
         $response->assertSee('Selecciona en el panell');
     }
@@ -184,7 +184,7 @@ class UsersTest extends TestCase
         $role = factory(Role::class)->states('Professional')->create();
         $user = factory(User::class)->states('Professional')->create();
         $userRole = empty($user->role_id);
-        
+
         $expectedReturn = false;
 
         $this->assertEquals($userRole, $expectedReturn);
@@ -195,7 +195,7 @@ class UsersTest extends TestCase
         $role = factory(Role::class)->states('Professional')->create();
         $user = factory(User::class)->states('Professional')->create();
         $response = $this->actingAs($user)->get('/dashboard');
-        
+
         $response->assertStatus(200);
         $response->assertSee('Selecciona en el panell');
     }
@@ -294,17 +294,15 @@ class UsersTest extends TestCase
         $response->assertStatus(403);
     }
 
-
-
     //*************************************************************************** Soci tests **************************************************************************
     public function test_genuine_dashboard_page_displayed_to_soci_user()
     {
         $role = factory(Role::class)->states('Soci')->create();
         $user = factory(User::class)->states('Soci')->create();
         $response = $this->actingAs($user)->get('/dashboard');
-        
+
         $response->assertStatus(200);
-        $response->assertSee('El meu pla de treball');
+        $response->assertSee('Benvingut/da a la teva àrea privada');
     }
 
     public function test_if_user_logged_in_as_soci_cant_access_users_index()
@@ -315,15 +313,14 @@ class UsersTest extends TestCase
         $response->assertStatus(403);
     }
 
-    public function test_if_user_logged_in_as_soci_cant_access_users_show_to_othe_socis()
+    public function test_if_user_logged_in_as_soci_cant_access_users_show_to_other_socis()
     {
         $role = factory(Role::class)->states('Soci')->create();
         $user = factory(User::class)->states('Soci')->create();
         $userTwo = factory(User::class)->states('Soci')->create();
         $response = $this->actingAs($user)->get("/user/$userTwo->id");
-        $response->assertStatus(301);
-        $response->assertRedirect('/dashboard');
-    }//TOCA REFACTORIZAR, PUESTO QUE .... ¿QUEREMOS QUE UN SOCI PUEDA VER OTRO SOCI? ¿O SOLO A PROFESSIONALES Y ADMIN?
+        $response->assertStatus(403);
+    }
 
     public function test_if_user_logged_in_as_soci_cant_create_users_show()
     {
@@ -401,5 +398,5 @@ class UsersTest extends TestCase
         $response->assertStatus(403);
     }
 
-    
+
 }

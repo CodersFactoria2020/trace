@@ -20,11 +20,9 @@
                     </div>
                     <div>
                         <small><b>Professional responsable: </b></small>
-                        <p>{{$activity->professional1}}</p>
-                    </div>
-                    <div>
-                        <small><b>Professional de suport: </b></small>
-                        <p>{{$activity->professional2}}</p>
+                        @foreach ($activity->users as $user)
+                            <p>{{$user->first_name}} {{$user->last_name}} </p>
+                        @endforeach
                     </div>
                     <div>
                         <small><b>Àrea: </b></small>
@@ -42,7 +40,7 @@
                     </a>
                     @endif
                 </div>
-                
+
             </div>
         </div>
     </div>

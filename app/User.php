@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Role;
+use App\Activity;
 
 class User extends Authenticatable
 {
@@ -30,11 +31,16 @@ class User extends Authenticatable
         return $users;
     }
 
-    public function Role()
+    public function role()
     {
         return $this->belongsTo(Role::class);
     }
     
+    public function activities()
+    {
+        return $this->belongsToMany(Activity::class);
+    }
+
     public function getRoleIdAttribute($value)
     {
         if ($value === 1)

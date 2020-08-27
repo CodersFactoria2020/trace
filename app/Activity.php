@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'file', 'professional1', 'professional2', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
 
     public function Categories() {
 
@@ -17,9 +17,9 @@ class Activity extends Model
 
     }
 
-    public function User()
+    public function Users()
     {
-        return $this->hasMany(User::class);
+        return $this->belongsToMany(User::class);
     }
 
     public function getCategoryIdAttribute($value)
@@ -74,6 +74,20 @@ class Activity extends Model
     public function has_file()
     {
         return Storage::exists('/activities/'.$this->get_saved_file_name());
+    }
+    public function delete_file()
+    {
+        return Storage::delete('/activities/'.$this->get_saved_file_name());
+    }
+    public function delete()
+    {
+        $this->delete_file();
+        return parent::delete();
+    }
+    public function update(array $attributes = [], array $options = [])
+    {
+        $this->delete_file();
+        return parent::update($attributes, $options);
     }
 
 }

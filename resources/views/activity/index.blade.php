@@ -55,10 +55,14 @@
                         {{$activity->title}}
                     </a>
                 </div>
-                @include('activity.show')     
+                @include('activity.show')
             </td>
-            <td>{{$activity->description = substr($activity->description, 0, 40) . '...'}}</td>
-            <td>{{$activity->professional1}}</td>
+            <td>{{Str::limit($activity->description, 40)}}</td>
+            <td>
+            @foreach ($activity->users as $user)
+                <p>{{$user->first_name}} {{$user->last_name}} </p>
+            @endforeach
+            <td>
             <td class="actions">
                 @can('update', $activity)
                 <div class="primary-green">

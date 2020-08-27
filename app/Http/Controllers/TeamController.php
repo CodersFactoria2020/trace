@@ -28,7 +28,7 @@ class TeamController extends Controller
 
     public function store(Request $request, Team $team)
     {
-        $this->authorize('create', Team::class);
+        $this->authorize('create', $team);
         $data = $request->all();
         $team = Team::create($data);
 
@@ -53,21 +53,20 @@ class TeamController extends Controller
 
     public function update(Request $request, Team $team)
     {
-        $this->authorize('update', Team::class);
+        $this->authorize('update', $team);
         $team->update($request->all());
-
+      
         if ($photo = $request->file('photo')) {
             $team->upload_photo($photo);
         }
-
         return redirect('/team')->with('status_success', 'El membre s\'ha actualitzat correctament ');
     }
 
     public function destroy(Team $team)
     {
-        $this->authorize('destroy', Team::class);
+        $this->authorize('destroy', $team);
         $team->delete();
-        Storage::delete('images');
+        Storage::disk('public')->delete('team/*.jpg');
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
     }
 

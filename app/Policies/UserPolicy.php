@@ -20,12 +20,15 @@ class UserPolicy
 
     public function view(User $user, User $model)
     {
+        if ($user->role_id === "Soci") {
+            return false;
+        }
         return true;
     }
 
     public function create(User $user)
     {
-        if ($user->role_id != "Admin") {
+        if ($user->role_id !== "Admin") {
             return false;
         }
         return true;
