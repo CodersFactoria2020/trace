@@ -54,8 +54,8 @@
             </div>
             @include('transparency.show')
           </td>
-          <td><a href="{{$transparency->get_economic_url()}}">{{$transparency->date_name}} economic</a></td>
-          <td><a href="{{$transparency->get_entity_url()}}">{{$transparency->date_name}} entitats</a></td>
+          <td><a href="{{$transparency->get_economic_url()}}">{{$transparency->get_saved_name_economic_document()}}</a></td>
+          <td><a href="{{$transparency->get_entity_url()}}">{{$transparency->get_saved_name_entity_document()}}</a></td>
 
           <td class="actions">
               @can('update', $transparency)
