@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
 
     public function category() {
 
