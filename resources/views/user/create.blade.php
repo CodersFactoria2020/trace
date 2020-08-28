@@ -74,7 +74,7 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label>Tutor(a)</label>
-                                <input type="text" name="tutor" class="form-control" placeholder="Tutor" pattern="[A-Za-z]"/>
+                                <input type="text" name="tutor" class="form-control" placeholder="Tutor" pattern="[A-Za-z].{1,}"/>
                             </div>
                             <div class="invalid-feedback">
                                 El tutor ha de tenir solament lletras

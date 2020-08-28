@@ -83,7 +83,7 @@
                             <div class="form-group col-md-6">
                                 <label>Tutor(a)</label>
                                 <input type="text" name="tutor" class="form-control" value="{{$user->tutor}}"
-                                    pattern="[A-Za-z]" />
+                                pattern="[A-Za-z].{1,}" />
                             </div>
                             <div class="invalid-feedback">
                                 El tutor ha de tenir solament lletras
