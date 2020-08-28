@@ -8,10 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TransparencyController extends Controller
 {
-    public function __construct()
-    {
-    $this->middleware('auth');
-    }
+
     public function index()
     {
         $this->authorize('view-any', Transparency::class);
