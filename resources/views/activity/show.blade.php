@@ -1,5 +1,4 @@
-<div class="modal fade" id="show-activity{{$activity->id}}" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="show-activity{{$activity->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -22,12 +21,22 @@
                     <div>
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
-                        <p>{{$user->first_name}} {{$user->last_name}} </p>
+                        @if ($user->role_id == 'Professional')
+                            <p>{{$user->first_name}} {{$user->last_name}} </p>
+                        @endif
+                        @endforeach
+                    </div>
+                    <div>
+                        <small><b>Socis: </b></small>
+                        @foreach ($activity->users as $user)
+                        @if ($user->role_id == 'Soci')
+                        <p>{{$user->first_name}} {{$user->last_name}}</p>
+                        @endif
                         @endforeach
                     </div>
                     <div>
                         <small><b>Àrea: </b></small>
-                        <p>@isset($activity->category->name) {{$activity->category->name}} @endisset</p>
+                        <p>{{$activity->category->name}}</p>
                     </div>
                     @if($activity->has_file())
                     <div>
