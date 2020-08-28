@@ -21,7 +21,7 @@
                         </div>
                         <div class="form-group">
                             <label>Descripció</label>
-                            <input type="text" name="description" class="form-control" value="{{$category->description}}" required/>
+                            <textarea type="text" name="description" class="form-control" value="" required/>{{$category->description}}</textarea>
                             <div class="invalid-feedback">
                                 L'àrea ha de tenir una descripció
                             </div>
