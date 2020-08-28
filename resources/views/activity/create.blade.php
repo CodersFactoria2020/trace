@@ -26,6 +26,13 @@
                                     L'activitat ha de tenir una descripció
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label>Enllaç de l'activitat (opcional)</label>
+                                <input type="text" name="link" class="form-control" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir un enllaç
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Professional</label>
@@ -59,6 +66,9 @@
                                         @foreach ($socis as $soci)
                                         <input class="mr-1 mb-3" type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} <br>
                                         @endforeach
+                                </div>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir almenys un soci assignat
                                 </div>
                             </div>
 

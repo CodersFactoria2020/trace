@@ -19,6 +19,10 @@
                         <p>{{$activity->description}}</p>
                     </div>
                     <div>
+                        <small><b>Enllaç de l'activitat: </b></small><br>
+                        <a href="{{("$activity->link")}}" target="_blank" class="primary-green">{{$activity->link}}</a>
+                    </div>
+                    <div>
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
                         @if ($user->role_id == 'Professional')
@@ -36,7 +40,9 @@
                     </div>
                     <div>
                         <small><b>Àrea: </b></small>
-                        <p>{{$activity->category->name}}</p>
+                        @isset($activity->category->name)
+                            <p>{{$activity->category->name}}</p>
+                        @endisset
                     </div>
                     @if($activity->has_file())
                     <div>
