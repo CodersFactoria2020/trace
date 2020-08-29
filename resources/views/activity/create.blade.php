@@ -59,16 +59,22 @@
                                     </div>
                                 </div>
                             </div>
-<!-- TODO -->
-                            <div class="form-row pl-1 pt-2">
-                                <div class="custom-checkbox soci">
+
+                            <div class="form-row">
+                                <div class="col-md-6">
                                     <label>Socis:</label><br>
-                                        @foreach ($socis as $soci)
-                                        <input class="mr-1 mb-3" type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} <br>
-                                        @endforeach
-                                </div>
-                                <div class="invalid-feedback">
-                                    L'activitat ha de tenir almenys un soci assignat
+                                    <div class="dropdown">
+                                        <button style="padding-left:0px" class="btn form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                                            <span class="glyphicon glyphicon-menu-down"></span>
+                                            Selecciona un soci
+                                            <i style="padding-left:125px" class="fas fa-angle-down"></i>
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                            @foreach ($socis as $soci)
+                                            <input class="mr-1 mb-3 ml-3" type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} <br>
+                                            @endforeach
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -91,7 +97,7 @@
 </div>
 
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
+
     (function() {
       'use strict';
       window.addEventListener('load', function() {
@@ -108,5 +114,6 @@
           }, false);
         });
       }, false);
-    })();
+    });
+
 </script>
