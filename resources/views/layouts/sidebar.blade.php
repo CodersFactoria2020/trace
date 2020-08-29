@@ -49,6 +49,7 @@
                             Gestió de l'Equip
                         </a>
                     </li>
+                    @if (auth()->user()->role_id == "Admin")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/transparency')}}">
@@ -56,6 +57,7 @@
                             Transparència
                         </a>
                     </li>
+                    @endif
                     @endif
                     <li class="nav-item pt-3">
                         <div class="nav-item logoutbtn">
