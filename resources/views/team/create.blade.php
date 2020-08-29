@@ -35,7 +35,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Imatge</label>
-                                <input type="file" name="photo" class="form-control" >
+                                <input type="file" name="photo" class="form-control" required>
+                                <div class="invalid-feedback">
+                                    El membre de l'equip ha de tenir una imatge
+                                </div>
                             </div>
 
                             <div class="text-right mt-4">
