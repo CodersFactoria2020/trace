@@ -106,6 +106,16 @@ class TeamTest extends TestCase
         $response->assertStatus(302);
         $response->assertRedirect('/team');
     }
+
+    public function test_professional_cant_view_all_teams()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $response = $this->actingAs($user)->get('/team');
+
+        $response->assertStatus(200);
+    }
+
     public function test_soci_cant_update_member_team_with_image(){
         $role = factory(Role::class)->states('Soci')->create();
         $user = factory(User::class)->states('Soci')->create();
