@@ -1,4 +1,4 @@
-@extends('layouts.soci-navbar')
+@extends('layouts.sidebar')
 
 @section('scripts')
 
