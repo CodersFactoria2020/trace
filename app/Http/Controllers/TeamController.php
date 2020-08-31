@@ -14,6 +14,10 @@ class TeamController extends Controller
 
         $this->authorize('view-any', Team::class);
         $teams = Team::paginate(10);
+        
+        if (auth()->user()->role_id != "Admin") {
+            return view('user.notauthorized');
+        }
 
         return view('team.index', compact('teams'));
         
