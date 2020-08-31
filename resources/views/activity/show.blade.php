@@ -18,7 +18,7 @@
                         <small><b>Descripció: </b></small>
                         <p>{{$activity->description}}</p>
                     </div>
-                    <div>
+                    <div class="mb-3">
                         <small><b>Enllaç de l'activitat: </b></small><br>
                         <a href="{{("$activity->link")}}" target="_blank" class="primary-green">{{$activity->link}}</a>
                     </div>
