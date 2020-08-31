@@ -29,7 +29,7 @@
                     cap remuneració pel seu càrrec.
                 </p>
                 <div class="box-cta">
-                    <a href="https://tracecatalunya.org/wp-content/uploads/2019/09/CAT%C3%80LEG-2019-2020-compressed.pdf" class="cta-line" target="_blank">
+                    <a href="/files/codi_etic_TRACE.pdf" class="cta-line" target="_blank">
                         <i class="icofont-download"></i>Codi étic
                     </a>
                 </div>
