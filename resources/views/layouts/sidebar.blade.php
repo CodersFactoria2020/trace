@@ -43,12 +43,15 @@
                 Plans de treball
               </a>
             </li> -->
+                    @if (auth()->user()->role_id == "Admin")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="{{url('/team')}}">
                             <span><i class="icofont-id"></i></span>
                             Gestió de l'Equip
                         </a>
                     </li>
+                    @endif
+                    @if (auth()->user()->role_id == "Admin")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/transparency')}}">
@@ -56,6 +59,7 @@
                             Transparència
                         </a>
                     </li>
+                    @endif
                     @endif
                     <li class="nav-item pt-3">
                         <div class="nav-item logoutbtn">

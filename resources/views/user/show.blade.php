@@ -38,8 +38,10 @@
                             </div>
                         @endif
                         <div>
+                            @if($user->tutor !== null)
                             <small><b>Tutor(a):</b></small>
                             <p>{{$user->tutor}}</p>
+                            @endif
                         </div>
                         <div>
                             <small><b>Rol:</b></small>

@@ -28,11 +28,16 @@
                     Els membres de la Junta escollits democràticament, no reben
                     cap remuneració pel seu càrrec.
                 </p>
+                <div class="box-cta">
+                    <a href="https://tracecatalunya.org/wp-content/uploads/2019/09/CAT%C3%80LEG-2019-2020-compressed.pdf" class="cta-line" target="_blank">
+                        <i class="icofont-download"></i>Codi étic
+                    </a>
+                </div>
             </div>
             <div class="col-lg-6 content">
                 <h4>Informació econòmica i d’activitats</h4>
                 @foreach($transparencies as $transparency)
-                <div class="pt-4">
+                <div class="pt-1">
                     <p>{{$transparency->date_name}}:</p>
                     <div class="box-cta">
                         <a href="{{$transparency->get_economic_url()}}" target=“_blank”>
@@ -44,7 +49,7 @@
                         <a href="{{$transparency->get_entity_url()}}" target=“_blank”>
                             <i class="icofont-download"></i>
                             {{$transparency->get_saved_name_entity_document()}}
-                        </a>     
+                        </a>
                     </div>
                 </div>
                 @endforeach

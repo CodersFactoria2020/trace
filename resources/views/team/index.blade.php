@@ -28,12 +28,12 @@
     <div class="float-left">
       <h2>Gestió de l'Equip</h2>
     </div>
-    {{-- @can('create') --}}
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-team">Afegir un membre de l'equip</button>
-    @include('team.create')
-            {{-- @endcan --}}
+        @if (auth()->user()->role_id === "Admin")
+            <button type="button" class="cta" data-toggle="modal" data-target="#create-team">Afegir un membre de l'equip</button>
+            @include('team.create')
+        @endif
   </div>
-    <!-- Contenido que se desee -->
+  
   <div class="dashboard-right-side">
     <table class="table table-striped table-borderless">
       <thead class="thead text-uppercase">
