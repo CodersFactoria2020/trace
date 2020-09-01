@@ -10,6 +10,16 @@
             <div class="modal-body">
                 @method('put')
                 <div class="card-body">
+                    <div class="card-body">
+                        <div class="col-md-6">
+                            <small><b>Inici de l'activitat: </b></small>
+                            <p>{{$activity->showStart}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <small><b>Finalització de l'activitat: </b></small>
+                            <p>{{$activity->showEnd}}</p>
+                        </div>
+                    </div>
                     <div>
                         <small><b>Nom de l'activitat: </b></small>
                         <p>{{$activity->title}}</p>
