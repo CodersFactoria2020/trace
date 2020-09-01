@@ -337,6 +337,7 @@ section {
             color: $secondary;
             padding-bottom: 20px;
         }
+
     }
 
     .team-grid {
@@ -354,6 +355,7 @@ section {
 
             img {
                 width: 160px;
+                height: 160px !important;
                 height: auto;
                 border-radius: 50%;
                 margin: 0 0 20px 0;
@@ -713,7 +715,7 @@ section {
     }
 }
 /*--------------------------------------------------------------
-# Map 
+# Map
 --------------------------------------------------------------*/
 
 .map-responsive {
