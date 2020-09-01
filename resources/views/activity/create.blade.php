@@ -91,7 +91,8 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div><div class="form-row pt-2">
+                            </div>
+                            <div class="form-row pt-2">
                                 <div class="form-group col-md-6 pt-2">
                                     <label>Document adjunt:</label>
                                     <input type="file" name="file" id="fileToUpload"/>

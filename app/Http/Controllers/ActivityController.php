@@ -38,11 +38,8 @@ class ActivityController extends Controller
         $this->authorize('create', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        $users = User::all();
-        $professionals = User::all();
-        $socis = User::all();
 
-        return view('activity.index', compact('activities','categories', 'users', 'professionals', 'socis'));
+        return view('activity.index', compact('activities','categories'));
     }
 
     public function store(Request $request, Activity $activity)
@@ -93,6 +90,7 @@ class ActivityController extends Controller
     {
         $this->authorize('update', Activity::class);
         $activity->update($request->all());
+        $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
 
         if($file = $request->file('file'))
