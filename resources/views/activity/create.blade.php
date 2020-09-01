@@ -50,7 +50,7 @@
                                 <label>Enllaç de l'activitat (opcional)</label>
                                 <input type="text" name="link" class="form-control" pattern="https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)">
                                 <div class="invalid-feedback">
-                                    L'activitat ha de tenir un enllaç
+                                L'activitat ha de tenir un enllaç que comenci per http:// o https://
                                 </div>
                             </div>
                             <div class="form-row">
