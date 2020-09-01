@@ -18,10 +18,12 @@
                         <small><b>Descripció: </b></small>
                         <p>{{$activity->description}}</p>
                     </div>
+                    @if ($activity->link)
                     <div class="mb-3">
                         <small><b>Enllaç de l'activitat: </b></small><br>
                         <a href="{{("$activity->link")}}" target="_blank" class="primary-green">{{$activity->link}}</a>
                     </div>
+                    @endif
                     <div>
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
