@@ -1,11 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
-    <script type="text/javascript" src="js/moment/ca.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 
     <!-- Font Awesome CSS -->
     <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
@@ -121,15 +117,6 @@
         </div>
     </div>
 </div>
-<!-- Datepicker Script -->
-<script type="text/javascript">
-    $(function(){
-    $('#datetimepicker1').datetimepicker({
-        locale:'ca'});
-    $('#datetimepicker2').datetimepicker({
-        locale:'ca'});
-    });
-</script>
 
 <!-- Socis List filter Script -->
 <script>
