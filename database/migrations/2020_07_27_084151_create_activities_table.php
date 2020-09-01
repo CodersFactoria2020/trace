@@ -17,7 +17,9 @@ class CreateActivitiesTable extends Migration
             $table->string('textColor',20)->default('#000000');
             $table->mediumText('file')->nullable();
             $table->string('start')->nullable();
+            $table->string('showStart')->nullable();
             $table->string('end')->nullable();
+            $table->string('showEnd')->nullable();
             $table->foreignId('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
