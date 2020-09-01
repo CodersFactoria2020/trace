@@ -40,7 +40,6 @@
             <table class="table table-striped table-borderless">
                 <thead class="thead text-uppercase">
                     <tr>
-                        <td><small><b>ID</b></small></td>
                         <td><small><b>Nom de l'àrea</b></small></td>
                         <td><small><b>Descripció de l'àrea</b></small></td>
                         <td colspan="3"><small><b>Accions</b></small></td>
@@ -50,7 +49,6 @@
                 @foreach($categories as $category)
                 @can('view-any', $category)
                 <tr>
-                    <td>{{$category->id}} </td>
                     <td class="icon-text">
                         <div class="primary-green">
                             <a href="" data-toggle="modal" data-target="#show-category{{$category->id}}" class="primary-green" category="button">
