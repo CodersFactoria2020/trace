@@ -51,6 +51,7 @@ class ActivityController extends Controller
         $data = $request->all();
 
         $activity = Activity::create($data);
+        $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
         $socis = $request->socis;
 
@@ -63,7 +64,7 @@ class ActivityController extends Controller
         {
             $activity->upload_file($file);
         }
-
+        
         return redirect('/activity')->with('status_success', 'L\'activitat s\'ha creat correctament ');
     }
 

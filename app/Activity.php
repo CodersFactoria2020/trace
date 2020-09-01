@@ -64,4 +64,13 @@ class Activity extends Model
         return parent::update($attributes, $options);
     }
 
+    public function remove_t_from_date()
+    {
+        $start = $this->start;
+        $this->start = str_replace("T", " ", $start);
+        $end = $this->end;
+        $this->end = str_replace("T", " ", $end);
+        $this->update();
+    }
+
 }
