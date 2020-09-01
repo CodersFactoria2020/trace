@@ -36,8 +36,14 @@
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
                         @if ($user->role_id == 'Professional')
-                            <p>{{$user->first_name}} {{$user->last_name}} </p>
-                        @endif
+                        <div class="icon-text mb-3">
+                                <div class="primary-green">
+                                    <a href="mailto:{{$user->email}}?subject={{$activity->title}}&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
+                                    <i class="icofont-send-mail" style="font-size:24px"></i>
+                                    {{$user->email}}
+                                    </a>
+                                </div>
+                            </div>@endif
                         @endforeach
                     </div>
                     <div>
