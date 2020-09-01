@@ -1,3 +1,17 @@
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js"></script>
+<script type="text/javascript" src="js/moment/ca.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+
+    <!-- Font Awesome CSS -->
+    <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+
+
+</head>
 <div class="modal fade" id="create-activity" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
@@ -12,6 +26,36 @@
                     <form action="{{Route('activity.store')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="card-body">
+                            <div class="form-row" style="justify-content: space-between;">
+                                <div class="form-group input-append date col-md-6">
+                                    <div class="form-group">
+                                        <label>Data d'inici:</label>
+                                        <div class="input-group" name="start" id="datetimepicker1">
+                                            <input type="text" class="form-control" required>
+                                                <span class="input-group-addon">
+                                                    <span><i class="fa fa-calendar"></i></span>
+                                                </span>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            L'activitat ha de tenir una data d'inici
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group input-append date col-md-6">
+                                    <div class="form-group">
+                                        <label>Data de finalització:</label>
+                                        <div class="input-group" name="end" id="datetimepicker2">
+                                            <input type="text" class="form-control" required>
+                                                <span class="input-group-addon">
+                                                    <span><i class="fa fa-calendar"></i></span>
+                                                </span>
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            L'activitat ha de tenir una data de finalització
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="form-group">
                                 <label>Nom de l'activitat</label>
                                 <input type="text" name="title" class="form-control" required>
@@ -59,26 +103,19 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="form-row">
                                 <div class="col-md-6">
                                     <label>Socis:</label><br>
-                                    <div class="dropdown">
-                                        <button style="padding-left:0px" class="btn form-control" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                                            <span class="glyphicon glyphicon-menu-down"></span>
-                                            Selecciona un soci
-                                            <i style="padding-left:125px" class="fas fa-angle-down"></i>
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <div>
+                                    <input class="form-control" id="myInput" type="text" placeholder="Buscar...">
+                                        <ul aria-labelledby="dropdownMenuButton"  id="socisList">
                                             @foreach ($socis as $soci)
-                                            <input class="mr-1 mb-3 ml-3" type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} <br>
+                                            <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display:none;"><input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }}</li>
                                             @endforeach
-                                        </div>
+                                        </ul>
                                     </div>
                                 </div>
-                            </div>
-
-                            <div class="form-row pt-2">
+                            </div><div class="form-row pt-2">
                                 <div class="form-group col-md-6 pt-2">
                                     <label>Document adjunt:</label>
                                     <input type="file" name="file" id="fileToUpload"/>
@@ -95,6 +132,25 @@
         </div>
     </div>
 </div>
+<!-- Datepicker Script -->
+<script type="text/javascript">
+$(function(){
+ $('#datetimepicker1').datetimepicker({locale:'ca'});
+ $('#datetimepicker2').datetimepicker({locale:'ca'});
+});
+</script>
+
+<!-- Socis List filter Script -->
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#socisList li").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 
 <script>
 

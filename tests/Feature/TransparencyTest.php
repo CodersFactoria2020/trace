@@ -100,6 +100,15 @@ class TransparencyTest extends TestCase
         $response->assertRedirect('/transparency');
     }
 
+    public function test_soci_cant_show_all_transparency()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $response = $this->actingAs($user)->get('/transparency');
+
+        $response->assertStatus(403);
+    }
+
     public function test_soci_cant_create_transparency_with_documents()
     {
         $role = factory(Role::class)->states('Soci')->create();
@@ -119,29 +128,142 @@ class TransparencyTest extends TestCase
     {
         $role = factory(Role::class)->states('Soci')->create();
         $user = factory(User::class)->states('Soci')->create();
-        $economic_document = UploadedFile::fake()->create('exercici 2020_economic.pdf');
-        $entity_document = UploadedFile::fake()->create('exercici 2020_entity.pdf');
+        $economic_document = UploadedFile::fake()->create('exercici_2020_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('exercici_2020_entity.pdf');
         $transparency=factory(Transparency::class)->create([
-            'id'=> 1 ,
-            'date_name'=>'exercici 2015',
+            
+            'date_name'=>'exercici 2020',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
         $this->assertDatabaseHas('transparencies',[
-            'id'=> 1 ,
-            'date_name'=>'exercici 2015',
-            'economic_document'=>'exercici 2015_economic.pdf',
-            'entity_document'=>'exercici 2015_entity.pdf',
+        
+            'date_name'=>'exercici 2020',
+            'economic_document'=>'exercici_2020_economic.pdf',
+            'entity_document'=>'exercici_2020_entity.pdf',
         ]);
         $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
         $this->assertDatabaseMissing('transparencies',[
-            'id'=> 1 ,
-            'date_name'=>'exercici 2015',
-            'economic_document'=>'exercici 2015_economic.pdf',
-            'entity_document'=>'exercici 2015_entity.pdf',
+            'id'=> 1,
+            'date_name'=>'exercici 2020',
+            'economic_document'=>'exercici_2020_economic.pdf',
+            'entity_document'=>'exercici_2020_entity.pdf',
+            "created_at"=> "2020-08-31 13:11:13",
+            "updated_at"=> "2020-08-31 13:11:13",
 
         ]);
         $response->assertStatus(403);
 
+    }
+
+    public function test_soci_cant_update_transparency_with_documents()
+    {
+        $role = factory(Role::class)->states('Soci')->create();
+        $user = factory(User::class)->states('Soci')->create();
+        $economic_document = UploadedFile::fake()->create('_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('_entity.pdf');
+        $transparency=factory(Transparency::class)->create([
+            'id'=>1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+        ]);
+        $response = $this->actingAs($user)->patch('/transparency/'. $transparency->id, [
+            'id'=> 1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'_economic.pdf',
+            'entity_document'=>'_entity.pdf',
+        ]);
+        $this->assertDatabaseHas('transparencies',[
+            'id'=> 1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'_economic.pdf',
+            'entity_document'=>'_entity.pdf',
+        ]);
+        $response->assertStatus(403);
+    }
+
+    public function test_professional_show_all_transparency()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $response = $this->actingAs($user)->get('/transparency');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_professional_cant_create_transparency_with_documents()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $economic_document = UploadedFile::fake()->create('_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('_entity.pdf');
+        $response = $this->actingAs($user)->post('/transparency', [
+            'date_name'=>'exercici 2015',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+
+        ]);
+        $response->assertStatus(403);
+
+    }
+
+    public function test_professional_cant_delete_transparency_with_document()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $economic_document = UploadedFile::fake()->create('exercici_2020_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('exercici_2020_entity.pdf');
+        $transparency=factory(Transparency::class)->create([
+            
+            'date_name'=>'exercici 2020',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+        ]);
+        $this->assertDatabaseHas('transparencies',[
+        
+            'date_name'=>'exercici 2020',
+            'economic_document'=>'exercici_2020_economic.pdf',
+            'entity_document'=>'exercici_2020_entity.pdf',
+        ]);
+        $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
+        $this->assertDatabaseMissing('transparencies',[
+            'id'=> 1,
+            'date_name'=>'exercici 2020',
+            'economic_document'=>'exercici_2020_economic.pdf',
+            'entity_document'=>'exercici_2020_entity.pdf',
+            "created_at"=> "2020-08-31 13:11:13",
+            "updated_at"=> "2020-08-31 13:11:13",
+
+        ]);
+        $response->assertStatus(403);
+
+    }
+
+    public function test_professional_cant_update_transparency_with_documents()
+    {
+        $role = factory(Role::class)->states('Professional')->create();
+        $user = factory(User::class)->states('Professional')->create();
+        $economic_document = UploadedFile::fake()->create('_economic.pdf');
+        $entity_document = UploadedFile::fake()->create('_entity.pdf');
+        $transparency=factory(Transparency::class)->create([
+            'id'=>1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>$economic_document->name,
+            'entity_document'=>$entity_document->name,
+        ]);
+        $response = $this->actingAs($user)->patch('/transparency/'. $transparency->id, [
+            'id'=> 1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'_economic.pdf',
+            'entity_document'=>'_entity.pdf',
+        ]);
+        $this->assertDatabaseHas('transparencies',[
+            'id'=> 1,
+            'date_name'=>'exercici 2015',
+            'economic_document'=>'_economic.pdf',
+            'entity_document'=>'_entity.pdf',
+        ]);
+        $response->assertStatus(403);
     }
 }
