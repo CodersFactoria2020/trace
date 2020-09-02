@@ -21,7 +21,8 @@ class ActivityController extends Controller
         $this->authorize('view-any', Activity::class);
         $activities = Activity::paginate(10);
         $categories = Category::all();
-        $users = User::where('role_id', 2)->get();
+        $users = User::all();
+        $admins = User::where('role_id', 3)->get();
         $professionals = User::where('role_id', 2)->get();
         $socis = User::where('role_id', 1)->get();
 

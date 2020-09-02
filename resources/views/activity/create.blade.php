@@ -65,7 +65,9 @@
                                     <select name="user[]"  class="form-control"  required>
                                         <option disabled selected value> Selecciona un professional </option>
                                         @foreach ($users as $user)
+                                        @if($user->role_id !== "Soci")
                                             <option id="user_{{$user->id}}" value="{{$user->id}}">{{ $user->first_name}} {{ $user->last_name }}</option>
+                                        @endif
                                         @endforeach
                                     </select>
                                     <div class="invalid-feedback">
