@@ -92,13 +92,11 @@
                                         @foreach ($socis as $soci)
                                         <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display: none;">
                                         <input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"
-                                        <?php 
-                                        foreach($activity->users as $user){
-                                            if (in_array($soci->first_name, $user->toArray()) == true) {
-                                                echo "checked";
-                                            }
-                                        } 
-                                        ?> >
+                                        @foreach($activity->users as $user)
+                                            @if (in_array($soci->first_name, $user->toArray()) == true) 
+                                                checked
+                                            @endif                                         
+                                        @endforeach >
                                         {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
                                         @endforeach
                                     </ul>
