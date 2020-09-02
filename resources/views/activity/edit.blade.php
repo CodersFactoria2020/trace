@@ -90,7 +90,7 @@
                                 <input class="form-control" id="myInputEdit" type="text" placeholder="Buscar...">
                                     <ul aria-labelledby="dropdownMenuButton"  id="socisListEdit">
                                         @foreach ($socis as $soci)
-                                        <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display:none;"><input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} {{ $soci['last_name'] }}</li>
+                                        <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display:none;"><input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"> {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
                                         @endforeach
                                     </ul>
                                 </div>

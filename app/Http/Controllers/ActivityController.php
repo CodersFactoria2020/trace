@@ -92,6 +92,12 @@ class ActivityController extends Controller
         $activity->update($request->all());
         $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
+        $socis = $request->socis;
+
+        foreach($socis as $soci){
+            $user = User::where('id', $soci)->first();
+            $user->activities()->attach($activity);
+            }
 
         if($file = $request->file('file'))
         {
