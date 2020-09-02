@@ -11,10 +11,6 @@
                     @method('put')
                     <div class="card-body">
                         <div>
-                            <small><b>ID:</b></small>
-                            <p> {{$category->id}}</p>
-                        </div>
-                        <div>
                             <small><b>Nom de l'àrea:</b></small>
                             <p> {{$category->name}}</p>
                         </div>

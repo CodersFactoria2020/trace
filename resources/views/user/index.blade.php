@@ -59,7 +59,9 @@
             <td><small><b>Nom i cognom</b></small></td>
             <td><small><b>Rol</b></small></td>
             <td><small><b>E-mail</b></small></td>
+            @if (auth()->user()->role_id === "Admin")
             <td colspan="2"><small><b>Accions</b></small></td>
+            @endif
         </tr>
       </thead>
 
