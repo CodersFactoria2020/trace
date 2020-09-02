@@ -33,6 +33,12 @@
                                 </div>
                             </div>
                             <div class="form-group">
+                                <label>Marqui aquesta casella si l'activitat es repeteix cada setmana:</label>
+                                    <input type="hidden" name="weekly" value="0" />
+                                    <label class="w3-validate" style="padding-left: 1rem;"></label>
+                                    <input id="weekly" class="w3-radio" type="checkbox" name="weekly" value="1">
+                            </div>
+                            <div class="form-group">
                                 <label>Nom de l'activitat</label>
                                 <input type="text" name="title" class="form-control" required>
                                 <div class="invalid-feedback">

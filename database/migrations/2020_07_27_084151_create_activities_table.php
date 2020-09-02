@@ -18,6 +18,7 @@ class CreateActivitiesTable extends Migration
             $table->mediumText('file')->nullable();
             $table->string('start')->nullable();
             $table->string('showStart')->nullable();
+            $table->boolean('weekly')->default(true);
             $table->string('end')->nullable();
             $table->string('showEnd')->nullable();
             $table->foreignId('category_id')->nullable();

@@ -10,7 +10,7 @@
             <div class="modal-body">
                 @method('put')
                 <div class="card-body">
-                    <div class="card-body">
+                    <div class="form-row">
                         <div class="col-md-6">
                             <small><b>Inici de l'activitat: </b></small>
                             <p>{{$activity->showStart}}</p>
@@ -19,6 +19,10 @@
                             <small><b>Finalització de l'activitat: </b></small>
                             <p>{{$activity->showEnd}}</p>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <small><b>L'activitat es repeteix cada setmana:</b></small>
+                        <p> {{ $activity->weekly == "Sí" ? "Sí" : "No" }}</p>
                     </div>
                     <div>
                         <small><b>Nom de l'activitat: </b></small>

@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'weekly', 'category_id', 'color', 'txtColor'];
 
     public function category() {
 
@@ -71,6 +71,18 @@ class Activity extends Model
         $end = $this->end;
         $this->showEnd = str_replace("T", " ", $end);
         $this->update();
+    }
+
+    public function getWeeklyAttribute($value)
+    {
+        if ($value === 1)
+        {
+            return "Sí";
+        }
+        if ($value === 0)
+        {
+            return "No";
+        }
     }
 
 }

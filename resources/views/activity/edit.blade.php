@@ -12,26 +12,32 @@
                     @csrf
                     @method('put')
                     <div class="card-body">
-                    <div class="form-row" style="justify-content: space-between;">
-                                <div class="form-group col-md-6">
-                                <label>Data d'inici:</label>
-                                    <div class="input-group">
-                                        <input type="datetime-local" name="start" class="form-control" value="{{ $activity->start }}" required>
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        L'activitat ha de tenir una data d'inici
-                                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Data d'inici:</label>
+                                <div class="input-group">
+                                    <input type="datetime-local" name="start" class="form-control" value="{{ $activity->start }}" required>
                                 </div>
-                                <div class="form-group col-md-6">
-                                <label>Data de finalització:</label>
-                                    <div class="input-group">
-                                        <input type="datetime-local" name="end" class="form-control" value="{{ $activity->end }}"required>
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        L'activitat ha de tenir una data de finalització
-                                    </div>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir una data d'inici
                                 </div>
                             </div>
+                            <div class="form-group col-md-6">
+                            <label>Data de finalització:</label>
+                                <div class="input-group">
+                                    <input type="datetime-local" name="end" class="form-control" value="{{ $activity->end }}"required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir una data de finalització
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Marqui aquesta casella si l'activitat es repeteix cada setmana:</label>
+                                <input type="hidden" name="weekly" value="0" />
+                                <label class="w3-validate" style="padding-left: 1rem;"></label>
+                                <input type="checkbox" name="weekly" value="1" <?php if($activity->weekly == "Sí") echo "checked"; ?>/>
+                        </div>
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
                             <input type="text" name="title" class="form-control" value="{{$activity->title}}" required/>
