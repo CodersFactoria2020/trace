@@ -52,6 +52,9 @@
                 <div class="primary-green">
                     <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="primary-green" activity="button">
                         <i class="icofont-attachment"></i>
+                        @isset ($activity->category_id)
+                        <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
+                        @endisset
                         {{$activity->title}}
                     </a>
                 </div>

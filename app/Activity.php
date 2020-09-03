@@ -85,4 +85,12 @@ class Activity extends Model
         }
     }
 
+    public function getCategoryColor()
+    {
+        $category_id = $this->category_id;
+        $category = Category::where('id', $category_id)->first();
+        $color = ($category['color']);
+        return $color;
+    }
+
 }
