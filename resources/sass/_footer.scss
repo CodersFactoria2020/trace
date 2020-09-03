@@ -4,7 +4,8 @@
     font-size: 14px;
     bottom: 0;
     width: 100%;
-
+    position: absolute;
+    margin-bottom: -150px;
     a {
         color: $yellow;
         &:hover {
