@@ -4,6 +4,8 @@
 body {
     font-family: $font-default;
     color: $default;
+    position: relative;
+    min-height: 100vh;
 }
 
 a {
