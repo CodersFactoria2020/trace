@@ -10,6 +10,20 @@
             <div class="modal-body">
                 @method('put')
                 <div class="card-body">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <small><b>Inici de l'activitat: </b></small>
+                            <p>{{$activity->showStart}}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <small><b>Finalització de l'activitat: </b></small>
+                            <p>{{$activity->showEnd}}</p>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <small><b>L'activitat es repeteix cada setmana:</b></small>
+                        <p> {{ $activity->weekly == "Sí" ? "Sí" : "No" }}</p>
+                    </div>
                     <div>
                         <small><b>Nom de l'activitat: </b></small>
                         <p>{{$activity->title}}</p>
@@ -26,8 +40,14 @@
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
                         @if ($user->role_id == 'Professional')
-                            <p>{{$user->first_name}} {{$user->last_name}} </p>
-                        @endif
+                        <div class="icon-text mb-3">
+                                <div class="primary-green">
+                                    <a href="mailto:{{$user->email}}?subject={{$activity->title}}&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
+                                    <i class="icofont-send-mail" style="font-size:24px"></i>
+                                    {{$user->email}}
+                                    </a>
+                                </div>
+                            </div>@endif
                         @endforeach
                     </div>
                     <div>

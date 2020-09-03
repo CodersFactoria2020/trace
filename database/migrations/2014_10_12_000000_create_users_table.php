@@ -12,13 +12,13 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('shown_password')->nullable();
             $table->rememberToken();
             $table->string('phone')->nullable();
-            $table->string('dni')->unique();
+            $table->string('dni');
             $table->string('tutor')->nullable();
             $table->foreignId('role_id')->default(3);
             $table->foreign('role_id')->references('id')->on('roles');

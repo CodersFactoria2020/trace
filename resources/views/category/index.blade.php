@@ -42,7 +42,9 @@
                     <tr>
                         <td><small><b>Nom de l'àrea</b></small></td>
                         <td><small><b>Descripció de l'àrea</b></small></td>
+                        @if (auth()->user()->role_id === "Admin")
                         <td colspan="3"><small><b>Accions</b></small></td>
+                        @endif
                     </tr>
                 </thead>
                 @if ($categories)

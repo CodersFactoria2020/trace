@@ -40,16 +40,20 @@
                 <div class="pt-1">
                     <p>{{$transparency->date_name}}:</p>
                     <div class="box-cta">
+                    @if($transparency->has_economic_document())
                         <a href="{{$transparency->get_economic_url()}}" target=“_blank”>
                             <i class="icofont-download"></i>
                             {{$transparency->get_saved_name_economic_document()}}
                         </a>
+                    @endif
                     </div>
                     <div class="box-cta">
+                    @if($transparency->has_entity_document())
                         <a href="{{$transparency->get_entity_url()}}" target=“_blank”>
                             <i class="icofont-download"></i>
                             {{$transparency->get_saved_name_entity_document()}}
                         </a>
+                    @endif
                     </div>
                 </div>
                 @endforeach

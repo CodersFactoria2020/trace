@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'weekly', 'category_id', 'color', 'txtColor'];
 
     public function category() {
 
@@ -62,6 +62,35 @@ class Activity extends Model
             $this->delete_file();
         }
         return parent::update($attributes, $options);
+    }
+
+    public function remove_t_from_date()
+    {
+        $start = $this->start;
+        $this->showStart = str_replace("T", " ", $start);
+        $end = $this->end;
+        $this->showEnd = str_replace("T", " ", $end);
+        $this->update();
+    }
+
+    public function getWeeklyAttribute($value)
+    {
+        if ($value === 1)
+        {
+            return "Sí";
+        }
+        if ($value === 0)
+        {
+            return "No";
+        }
+    }
+
+    public function getCategoryColor()
+    {
+        $category_id = $this->category_id;
+        $category = Category::where('id', $category_id)->first();
+        $color = ($category['color']);
+        return $color;
     }
 
 }

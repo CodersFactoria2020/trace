@@ -12,6 +12,32 @@
                     @csrf
                     @method('put')
                     <div class="card-body">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label>Data d'inici:</label>
+                                <div class="input-group">
+                                    <input type="datetime-local" name="start" class="form-control" value="{{ $activity->start }}" required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir una data d'inici
+                                </div>
+                            </div>
+                            <div class="form-group col-md-6">
+                            <label>Data de finalització:</label>
+                                <div class="input-group">
+                                    <input type="datetime-local" name="end" class="form-control" value="{{ $activity->end }}"required>
+                                </div>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir una data de finalització
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Marqui aquesta casella si l'activitat es repeteix cada setmana:</label>
+                                <input type="hidden" name="weekly" value="0" />
+                                <label class="w3-validate" style="padding-left: 1rem;"></label>
+                                <input type="checkbox" name="weekly" value="1" <?php if($activity->weekly == "Sí") echo "checked"; ?>/>
+                        </div>
                         <div class="form-group">
                             <label>Nom de l'activitat</label>
                             <input type="text" name="title" class="form-control" value="{{$activity->title}}" required/>
@@ -38,7 +64,9 @@
                                 <label>Professional</label>
                                 <select name="user[]"  class="form-control"  required>
                                     @foreach ($users as $user)
+                                    @if($user->role_id !== "Soci")
                                         <option id="user_{{$user->id}}" value="{{$user->id}}" {{$activity->user_id == $user->id ? 'selected' : ''}}>{{ $user->first_name}} {{ $user->last_name }}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                                 <div class="invalid-feedback">
@@ -54,6 +82,26 @@
                                 </select>
                                 <div class="invalid-feedback">
                                     L'activitat ha de tenir una àrea assignada
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <label>Socis:</label><br>
+                            <div>
+                                <input class="form-control" id="myInputEdit" type="text" placeholder="Buscar...">
+                                    <ul aria-labelledby="dropdownMenuButton"  id="socisListEdit">
+                                        @foreach ($socis as $soci)
+                                        <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display: none;">
+                                        <input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"
+                                        @foreach($activity->users as $user)
+                                            @if (in_array($soci->first_name, $user->toArray()) == true) 
+                                                checked
+                                            @endif                                         
+                                        @endforeach >
+                                        {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -87,6 +135,18 @@
         </div>
     </div>
 </div>
+
+<!-- Socis List filter Script -->
+<script>
+    $(document).ready(function(){
+    $("#myInputEdit").on("keyup", function() {
+        var value = $(this).val().toLowerCase();
+        $("#socisListEdit li").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+    });
+</script>
 
 <script>
     // Example starter JavaScript for disabling form submissions if there are invalid fields

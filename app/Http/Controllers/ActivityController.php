@@ -21,7 +21,8 @@ class ActivityController extends Controller
         $this->authorize('view-any', Activity::class);
         $activities = Activity::paginate(10);
         $categories = Category::all();
-        $users = User::where('role_id', 2)->get();
+        $users = User::all();
+        $admins = User::where('role_id', 3)->get();
         $professionals = User::where('role_id', 2)->get();
         $socis = User::where('role_id', 1)->get();
 
@@ -38,11 +39,8 @@ class ActivityController extends Controller
         $this->authorize('create', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
-        $users = User::all();
-        $professionals = User::all();
-        $socis = User::all();
 
-        return view('activity.index', compact('activities','categories', 'users', 'professionals', 'socis'));
+        return view('activity.index', compact('activities','categories'));
     }
 
     public function store(Request $request, Activity $activity)
@@ -51,19 +49,22 @@ class ActivityController extends Controller
         $data = $request->all();
 
         $activity = Activity::create($data);
+        $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
         $socis = $request->socis;
-
-        foreach($socis as $soci){
-        $user = User::where('id', $soci)->first();
-        $user->activities()->attach($activity);
-        }
+        
+        if (isset($socis) == true) {
+            foreach($socis as $soci){
+                $user = User::where('id', $soci)->first();
+                $user->activities()->attach($activity);
+                }
+        }    
 
         if($file = $request->file('file'))
         {
             $activity->upload_file($file);
         }
-
+        
         return redirect('/activity')->with('status_success', 'L\'activitat s\'ha creat correctament ');
     }
 
@@ -92,7 +93,14 @@ class ActivityController extends Controller
     {
         $this->authorize('update', Activity::class);
         $activity->update($request->all());
+        $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
+        $socis = $request->socis;
+
+        foreach($socis as $soci){
+            $user = User::where('id', $soci)->first();
+            $user->activities()->attach($activity);
+            }
 
         if($file = $request->file('file'))
         {
