@@ -52,19 +52,19 @@ class ActivityController extends Controller
         $activity->remove_t_from_date();
         $activity->users()->sync($request->get('user'));
         $socis = $request->socis;
-        
+
         if (isset($socis) == true) {
             foreach($socis as $soci){
                 $user = User::where('id', $soci)->first();
                 $user->activities()->attach($activity);
                 }
-        }    
+        }
 
         if($file = $request->file('file'))
         {
             $activity->upload_file($file);
         }
-        
+
         return redirect('/activity')->with('status_success', 'L\'activitat s\'ha creat correctament ');
     }
 

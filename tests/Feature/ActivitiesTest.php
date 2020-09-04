@@ -49,17 +49,15 @@ class ActivitiesTest extends TestCase
         $file = UploadedFile::fake()->create('document.pdf', 22);
         $response = $this->actingAs($user)->post('/activity', [
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'textColor'=> "#000000",
-            'professional1'=>'Paca',
             'file' => $file->name,
         ]);
 
         $this->assertDatabaseHas('activities', [
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'textColor'=> "#000000",
-            'professional1'=>'Paca',
             'file'=> $file->name,
         ]);
         $response->assertStatus(302);
@@ -73,28 +71,25 @@ class ActivitiesTest extends TestCase
         $activity = factory(Activity::class)->create([
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'color'=> 'Turquoise',
             'textColor'=> '#000000',
-            'professional1'=>'Paca',
 
         ]);
         $this->assertDatabaseHas('activities', [
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'color'=> 'Turquoise',
             'textColor'=> '#000000',
-            'professional1'=>'Paca',
 
         ]);
         $response = $this->actingAs($user)->delete('/activity/'.$activity->id);
         $this->assertDatabaseMissing('activities', [
             'id'=> 1,
             'title'=>'Natació', '
-            description'=>'descipció',
+            description'=>'descripció',
             'textColor'=> '#000000',
-            'professional1'=>'Paca',
             ]);
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
@@ -107,26 +102,20 @@ class ActivitiesTest extends TestCase
         $activity = factory(Activity::class)->create([
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
-        ]);
-        $this->assertDatabaseHas('activities', [
-            'id'=> 1,
-            'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
+
         ]);
         $response = $this->actingAs($user)->patch('/activity/'.$activity->id, [
             'id'=> 1,
             'title'=>'Equitació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
+            'socis'=>[]
         ]);
         $this->assertDatabaseHas('activities', [
             'id'=> 1,
             'title'=>'Equitació',
-            'description'=>'descipció',
-            'professional1'=>'Paca',
+            'description'=>'descripció',
+
             ]);
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
@@ -157,17 +146,15 @@ class ActivitiesTest extends TestCase
         $file = UploadedFile::fake()->create('document.pdf', 22);
         $response = $this->actingAs($user)->post('/activity', [
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'textColor'=> "#000000",
-            'professional1'=>'Paca',
             'file' => $file->name,
         ]);
 
         $this->assertDatabaseHas('activities', [
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'textColor'=> "#000000",
-            'professional1'=>'Paca',
             'file'=> $file->name,
         ]);
         $response->assertStatus(302);
@@ -181,19 +168,17 @@ class ActivitiesTest extends TestCase
         $activity = factory(Activity::class)->create([
             'id' => 1,
             'title' => 'Natació',
-            'description' => 'descipció',
+            'description' => 'descripció',
             'color' => 'Turquoise',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
 
         ]);
         $this->assertDatabaseHas('activities', [
             'id' => 1,
             'title' => 'Natació',
-            'description' => 'descipció',
+            'description' => 'descripció',
             'color' => 'Turquoise',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
 
         ]);
         $response = $this->actingAs($user)->delete('/activity/' . $activity->id);
@@ -202,7 +187,7 @@ class ActivitiesTest extends TestCase
             'title' => 'Natació', '
             description' => 'descipció',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
+
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
@@ -210,30 +195,24 @@ class ActivitiesTest extends TestCase
     public function test_professional_can_update_activity()
     {
         $role = factory(Role::class)->states('Professional')->create();
-        $user = factory(User::class)->states('Professional')->create();
+        $user1 = factory(User::class)->states('Professional')->create();
+        $user2 = factory(User::class)->states('Professional')->create();
         $activity = factory(Activity::class)->create([
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
         ]);
-        $this->assertDatabaseHas('activities', [
-            'id'=> 1,
-            'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
-        ]);
-        $response = $this->actingAs($user)->patch('/activity/'.$activity->id, [
+
+        $response = $this->actingAs($user1)->patch('/activity/'.$activity->id, [
             'id'=> 1,
             'title'=>'Equitació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
+            'socis'=>[$user1->id, $user2->id],
         ]);
         $this->assertDatabaseHas('activities', [
             'id'=> 1,
             'title'=>'Equitació',
-            'description'=>'descipció',
-            'professional1'=>'Paca',
+            'description'=>'descripció',
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/activity');
@@ -263,9 +242,8 @@ class ActivitiesTest extends TestCase
         $file = UploadedFile::fake()->create('document.pdf', 22);
         $response = $this->actingAs($user)->post('/activity', [
             'title'=>'Natació',
-            'description'=>'descipció',
+            'description'=>'descripció',
             'textColor'=> "#000000",
-            'professional1'=>'Paca',
             'file' => $file->name,
         ]);
 
@@ -279,20 +257,17 @@ class ActivitiesTest extends TestCase
         $activity = factory(Activity::class)->create([
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
         ]);
         $response = $this->actingAs($user)->patch('/activity/'.$activity->id, [
             'id'=> 1,
             'title'=>'Equitació',
-            'description'=>'descipció',
-            'professional1'=>'Paca'
+            'description'=>'descripció',
         ]);
         $this->assertDatabaseHas('activities', [
             'id'=> 1,
             'title'=>'Natació',
-            'description'=>'descipció',
-            'professional1'=>'Paca',
+            'description'=>'descripció',
         ]);
         $response->assertStatus(403);
 
@@ -304,28 +279,26 @@ class ActivitiesTest extends TestCase
         $activity = factory(Activity::class)->create([
             'id' => 1,
             'title' => 'Natació',
-            'description' => 'descipció',
+            'description' => 'descripció',
             'color' => 'Turquoise',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
 
         ]);
         $this->assertDatabaseHas('activities', [
             'id' => 1,
             'title' => 'Natació',
-            'description' => 'descipció',
+            'description' => 'descripció',
             'color' => 'Turquoise',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
 
         ]);
         $response = $this->actingAs($user)->delete('/activity/' . $activity->id);
         $this->assertDatabaseMissing('activities', [
             'id' => 1,
             'title' => 'Natació', '
-            description' => 'descipció',
+            description' => 'descripció',
             'textColor' => '#000000',
-            'professional1' => 'Paca',
+
         ]);
         $response->assertStatus(403);
     }
