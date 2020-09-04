@@ -166,14 +166,16 @@
     }
 
     @media (max-width: 767px) {
-        height: 70vh;
-        .carousel-item {
-            height: 60vh;
+    }
+
+    @media (min-width: 1024px) {
+        p {
+            width: 50%;
         }
-        #hero {
-            h1 {
-                font-size: 20px;
-            }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
         }
     }
 
@@ -181,8 +183,11 @@
         #hero {
             .carousel-container {
                 h1 {
-                    font-size: 20px;
+                    font-size: 20px !important;
                 }
+            }
+            .carousel-item {
+                height: 60vh;
             }
         }
     }
@@ -195,17 +200,6 @@
                     font-size: 20px;
                 }
             }
-        }
-    }
-
-    @media (min-width: 1024px) {
-        p {
-            width: 50%;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-            width: 5%;
         }
     }
 }

@@ -11641,23 +11641,24 @@ header {
   }
 }
 
-@media (max-width: 767px) {
-  #hero {
-    height: 70vh;
+@media (min-width: 1024px) {
+  #hero p {
+    width: 50%;
   }
 
-  #hero .carousel-item {
-    height: 60vh;
-  }
-
-  #hero #hero h1 {
-    font-size: 20px;
+  #hero .carousel-control-prev,
+  #hero .carousel-control-next {
+    width: 5%;
   }
 }
 
 @media (max-width: 768px) {
   #hero #hero .carousel-container h1 {
-    font-size: 20px;
+    font-size: 20px !important;
+  }
+
+  #hero #hero .carousel-item {
+    height: 60vh;
   }
 }
 
@@ -11668,17 +11669,6 @@ header {
 
   #hero #hero .carousel-container h1 {
     font-size: 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  #hero p {
-    width: 50%;
-  }
-
-  #hero .carousel-control-prev,
-  #hero .carousel-control-next {
-    width: 5%;
   }
 }
 
