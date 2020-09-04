@@ -88,18 +88,21 @@
                         <div class="form-row">
                             <div class="col-md-6">
                                 <label>Socis:</label><br>
-                            <div>
-                                <input class="form-control" id="myInputEdit" type="text" placeholder="Buscar...">
-                                    <ul aria-labelledby="dropdownMenuButton"  id="socisListEdit">
+                                <div>
+                                    <input class="form-control" id="socisEdit{{$activity->id}}" type="text" placeholder="Buscar...">
+                                    <ul aria-labelledby="dropdownMenuButton"  id="socisListEdit{{$activity->id}}">
                                         @foreach ($socis as $soci)
-                                        <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display: none;">
-                                        <input type="checkbox" value="{{ $soci['id'] }}" name="socis[]"
-                                        @foreach($activity->users as $user)
-                                            @if (in_array($soci->first_name, $user->toArray()) == true) 
-                                                checked
-                                            @endif                                         
-                                        @endforeach >
-                                        {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
+                                            @foreach($activity->users as $user)
+                                                @if (in_array($soci->first_name, $user->toArray()) == true) 
+                                                    <li class="mr-1 mb-3 ml-3" style="list-style-type: none;">
+                                                    <input type="checkbox" value="{{ $soci['id'] }}" name="socis[]" checked>
+                                                {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
+                                                @endif                                         
+                                            @endforeach
+                                            <li class="mr-1 mb-3 ml-3" style="list-style-type: none;display:
+                                            {{isset($activity->users->id) ? 'block' : 'none'}}">
+                                            <input type="checkbox" value="{{ $soci['id'] }}" name="socis[]">
+                                            {{ $soci['first_name'] }} {{ $soci['last_name'] }} </li>
                                         @endforeach
                                     </ul>
                                 </div>
@@ -139,9 +142,9 @@
 <!-- Socis List filter Script -->
 <script>
     $(document).ready(function(){
-    $("#myInputEdit").on("keyup", function() {
+    $("#socisEdit{{$activity->id}}").on("keyup", function() {
         var value = $(this).val().toLowerCase();
-        $("#socisListEdit li").filter(function() {
+        $("#socisListEdit{{$activity->id}} li").filter(function() {
         $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
         });
     });
