@@ -156,9 +156,9 @@
     }
 
     @media (max-width: 768px) {
-        height: 90vh;
+        height: 70vh;
         .carousel-item {
-            height: 90vh;
+            height: 70vh;
             h1 {
                 font-size: 32px;
             }
@@ -166,7 +166,9 @@
     }
 
     @media (max-width: 500px) {
+        height: 60vh !important;
         .carousel-item {
+            height: 60vh;
             h1 {
                 font-size: 24px;
             }

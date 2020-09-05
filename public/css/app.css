@@ -11628,11 +11628,11 @@ header {
 
 @media (max-width: 768px) {
   #hero {
-    height: 90vh;
+    height: 70vh;
   }
 
   #hero .carousel-item {
-    height: 90vh;
+    height: 70vh;
   }
 
   #hero .carousel-item h1 {
@@ -11641,6 +11641,14 @@ header {
 }
 
 @media (max-width: 500px) {
+  #hero {
+    height: 60vh !important;
+  }
+
+  #hero .carousel-item {
+    height: 60vh;
+  }
+
   #hero .carousel-item h1 {
     font-size: 24px;
   }
