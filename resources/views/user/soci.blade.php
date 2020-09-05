@@ -63,8 +63,8 @@
                     {{$activity->title}}
                 </div>
             </td>
-            <td style="font-weight: bold;">{{$activity->showStart}} - {{substr($activity->showEnd, 10)}} </td>
-            
+            <td style="font-weight: bold;">{{$activity->start}} {{substr($activity->showStart, 10)}} - {{substr($activity->showEnd, 10)}} </td>
+
             <td class="icon-text">
                 <div class="primary-green">
                 @foreach ($activity->users as $user)
@@ -77,7 +77,7 @@
                 @endforeach
                 </div>
             </td>
-            
+
             <td>
                 <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="cta" activity="button">Veure més</a>
                 @include('activity.show')
