@@ -125,18 +125,16 @@ class UserController extends Controller
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
         }
-        $activities = Activity::filter_todays_activities_at_any_day_of_year($activities)->sortBy('start');
-
-
+        $activities = Activity::filter_todays_activities_at_any_day_of_year($activities);
 
         foreach($activities as $activity)
         {
-            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd');
             $activity->showStart = substr($activity->showStart, 11);
-            //dd($activity->showStart);
+            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd' . ' ' . 'HH' . 'mm' );
         }
-        $activities->sortBy('showStart');
-
+        $activities = $activities->sortBy('showStart');
+        $activities->values()->all();
+        
         return view('user.soci', compact('activities'));
     }
 

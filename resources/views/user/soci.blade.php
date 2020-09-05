@@ -63,7 +63,7 @@
                     {{$activity->title}}
                 </div>
             </td>
-            <td style="font-weight: bold;">{{$activity->start}} {{substr($activity->showStart, 10)}} - {{substr($activity->showEnd, 10)}} </td>
+            <td style="font-weight: bold;">{{$activity->start}} {{substr($activity->showStart, 8)}} - {{substr($activity->showEnd, 10)}} </td>
 
             <td class="icon-text">
                 <div class="primary-green">
