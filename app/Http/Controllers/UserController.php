@@ -40,6 +40,7 @@ class UserController extends Controller
 
     public function create()
     {
+        $user = Auth::user();
         $this->authorize('create', $user);
         $roles = Role::all();
         return view('user.create', compact('roles'));
