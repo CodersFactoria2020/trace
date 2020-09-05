@@ -124,6 +124,10 @@ class UserController extends Controller
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
         }
+        // if (request()->has('all')) {
+        //     $users = $users->where('role_id', request('role_id'));
+        // }
+        
         return view('user.soci', compact('activities'));
     }
 

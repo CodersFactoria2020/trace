@@ -93,4 +93,27 @@ class Activity extends Model
         return $color;
     }
 
+    static public function filter_todays_activities($activities)
+    {
+        foreach ($activities as $activity) {
+            $activities->toArray();
+            $activity_date = $activity->start;
+            $activity_day = substr($activity_date,8,2);
+            // dd($activity_day);
+            $current_date = date(DATE_ATOM);
+            $current_day = substr($current_date,8,2);
+            // dd($current_day);
+            dd($activities);
+            foreach ($activities as $activity) {
+                if ($activity_day !== $current_day) {
+                    $key = array_search($activity, $activities);
+                    // dd($key);
+                    unset($activities[$key]); // CHECK INDEX
+                    return $activities;
+                }
+                return $activities;
+            }
+        }
+    }
+
 }
