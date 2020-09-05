@@ -11613,7 +11613,7 @@ header {
   text-decoration: none;
 }
 
-@media (max-height: 768px), (max-width: 4000px) {
+@media (max-height: 768px), (max-width: 1200px) {
   #hero {
     margin-bottom: 60px;
   }
@@ -11627,17 +11627,13 @@ header {
   }
 }
 
-@media (max-height: 600px), (max-width: 768px) {
+@media (max-width: 768px) {
   #hero {
-    margin-bottom: 60px;
+    height: 90vh;
   }
 
-  #hero .carousel-container {
-    padding-bottom: 0;
-  }
-
-  #hero .carousel-indicators li {
-    margin-bottom: 0;
+  #hero .carousel-item {
+    height: 90vh;
   }
 }
 
@@ -11649,26 +11645,6 @@ header {
   #hero .carousel-control-prev,
   #hero .carousel-control-next {
     width: 5%;
-  }
-}
-
-@media (max-width: 768px) {
-  #hero #hero .carousel-container h1 {
-    font-size: 20px !important;
-  }
-
-  #hero #hero .carousel-item {
-    height: 60vh;
-  }
-}
-
-@media (min-width: 320px) and (max-width: 767px) {
-  #hero #hero {
-    height: 430px;
-  }
-
-  #hero #hero .carousel-container h1 {
-    font-size: 20px;
   }
 }
 
