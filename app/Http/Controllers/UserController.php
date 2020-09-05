@@ -8,6 +8,7 @@ use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
+use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -39,6 +40,7 @@ class UserController extends Controller
 
     public function create()
     {
+        $user = Auth::user();
         $this->authorize('create', $user);
         $roles = Role::all();
         return view('user.create', compact('roles'));
@@ -119,11 +121,20 @@ class UserController extends Controller
         $user = Auth::user();
         $users = User::all();
         $roles = Role::all();
-        //$activities = Activity::where('user_id', $user->id);
         $activities = $user->activities;
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
         }
+        $activities = Activity::filter_todays_activities_at_any_day_of_year($activities);
+
+        foreach($activities as $activity)
+        {
+            $activity->showStart = substr($activity->showStart, 11);
+            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd' . ' ' . 'HH' . 'mm' );
+        }
+        $activities = $activities->sortBy('showStart');
+        $activities->values()->all();
+        
         return view('user.soci', compact('activities'));
     }
 

@@ -33,13 +33,22 @@
             </div>
         </div>
     </div>
+    <!-- ACTIVITIES  -- TODAY OR ALL FILTER -->
+    <div class="filter-views">
+        <div class="float-left">
+            <form action="">
+                <a href="" class="btn btn-outline-dark btn-sm  'active'"> AVUI</a>
+                <a type="submit" href="" value="{{ $activities}}" class="btn btn-outline-dark btn-sm ">Veure totes les meves activitats</a>
+            </form>
+        </div>
+    </div>
   <!-- TABLA -->
     <div class="dashboard-right-side">
         <table class="table table-striped table-borderless">
             <thead class="thead text-uppercase">
                 <tr>
                     <td><small><b>Títol</b></small></td>
-                    <td><small><b>Descripció</b></small></td>
+                    <td><small><b>Horari</b></small></td>
                     <td colspan="2"><small><b>Professional</b></small></td>
                 </tr>
             </thead>
@@ -47,14 +56,15 @@
         @foreach($activities as $activity)
         <tr>
             <td class="icon-text">
-                <div class="">
-                        {{$activity->title}}
-                    </a>
+                <div class="primary-green">
+                    @isset ($activity->category_id)
+                        <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
+                    @endisset
+                    {{$activity->title}}
                 </div>
-                @include('activity.show')
             </td>
-            <td>{{Str::limit($activity->description, 40)}}</td>
-            
+            <td style="font-weight: bold;">{{$activity->start}} {{substr($activity->showStart, 8)}} - {{substr($activity->showEnd, 10)}} </td>
+
             <td class="icon-text">
                 <div class="primary-green">
                 @foreach ($activity->users as $user)
@@ -67,9 +77,10 @@
                 @endforeach
                 </div>
             </td>
-            
+
             <td>
                 <a href="" data-toggle="modal" data-target="#show-activity{{$activity->id}}" class="cta" activity="button">Veure més</a>
+                @include('activity.show')
             </td>
         </tr>
         @endforeach

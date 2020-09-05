@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Category;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 
 class Activity extends Model
 {
@@ -91,6 +92,33 @@ class Activity extends Model
         $category = Category::where('id', $category_id)->first();
         $color = ($category['color']);
         return $color;
+    }
+
+    // public function replace_start_date_with_weekday_name($activities)
+    // {
+    //     $user_activities = [];
+    //     foreach ($activities as $activity) {
+    //         $activity->start = Carbon::parse($activity->start)->dayOfWeek;
+    //         array_push($user_activities, $activity);
+    //     }
+    //     $user_activities = collect($todays_activities);
+    //     // dd($todays_activities);
+    //     return $user_activities;
+    // }
+
+    static public function filter_todays_activities_at_any_day_of_year($activities)
+    {
+        $todays_activities = [];
+        $current_day_week = Carbon::now()->dayOfWeek;
+        foreach ($activities as $activity) {
+            $activity_date = $activity->start;
+            $activity_day_week = Carbon::parse($activity_date)->dayOfWeek;
+            if ($activity_day_week == $current_day_week) {
+                array_push($todays_activities, $activity);
+                }                
+            }
+        $todays_activities = collect($todays_activities);
+        return $todays_activities;
     }
 
 }
