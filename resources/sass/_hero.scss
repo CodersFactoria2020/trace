@@ -159,6 +159,17 @@
         height: 90vh;
         .carousel-item {
             height: 90vh;
+            h1 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    @media (max-width: 500px) {
+        .carousel-item {
+            h1 {
+                font-size: 24px;
+            }
         }
     }
 

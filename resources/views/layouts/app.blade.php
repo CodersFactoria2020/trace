@@ -60,7 +60,7 @@
 
 </head>
 
-<body>
+<header>
 
     <!-- START Bootstrap-Cookie-Alert -->
     <div class="alert text-center cookiealert" role="alert">
@@ -93,15 +93,17 @@
             </div>
 
             <div class="user">
-                <a href="{{Route('login')}}" target="_blank" class="cta"><i class="icofont-user-alt-3"></i></i>Àrea
-                    usuari</a>
+                <a href="{{Route('login')}}" target="_blank" class="cta">
+                    <i class="icofont-user-alt-3"></i></i>
+                    Àrea usuari
+                </a>
             </div>
         </div>
     </div>
 
     <div id="header-sticky-wrapper">
 
-        <header id="header">
+        <div id="header">
 
             <div class="flex-container d-flex justify-content-between align-items-center">
 
@@ -144,7 +146,7 @@
 
             </div>
 
-        </header>
+</div>
 
         <div>
 
@@ -152,7 +154,7 @@
                 @yield('content')
             </main>
 
-</body>
+</header>
 
 <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js">
 window.addEventListener("cookieAlertAccept", function() {

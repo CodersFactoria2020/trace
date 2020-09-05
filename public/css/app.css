@@ -10971,7 +10971,7 @@ a:hover {
 }
 
 header {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .cta {
@@ -11196,7 +11196,6 @@ header {
 --------------------------------------------------------------*/
 
 #header {
-  height: 80px;
   transition: all 0.5s;
   z-index: 997;
   transition: all 0.5s;
@@ -11347,8 +11346,8 @@ header {
 }
 
 @media (max-width: 992px) {
-  #collabora {
-    padding-right: 60px;
+  #collabora a {
+    margin-right: 45px;
   }
 }
 
@@ -11634,6 +11633,16 @@ header {
 
   #hero .carousel-item {
     height: 90vh;
+  }
+
+  #hero .carousel-item h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 500px) {
+  #hero .carousel-item h1 {
+    font-size: 24px;
   }
 }
 
