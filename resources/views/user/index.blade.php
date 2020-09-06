@@ -110,7 +110,7 @@
   </div>
   <!-- PAGINADO -->
   <div class="dashboard-right-side d-flex align-items-center justify-content-end">
-    <div class=""><small>Mostrant {{ count($users) }} de {{ $users->total() }}</small></div>
+    <div class=""><small>Total: {{ $users->total() }} usuaris</small></div>
     <div class=""> {{ $users->links() }}</div>
   </div>
 </div>
