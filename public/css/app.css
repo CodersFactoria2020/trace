@@ -11612,7 +11612,7 @@ header {
   text-decoration: none;
 }
 
-@media (max-height: 768px), (max-width: 1200px) {
+@media (max-height: 768px), (max-width: 4000px) {
   #hero {
     margin-bottom: 60px;
   }
