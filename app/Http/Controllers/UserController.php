@@ -120,9 +120,11 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $activities = $user->activities;
+        $users = User::all();
+        $roles = Role::all();
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
-        }        
+        }
         $activities = Activity::filter_todays_activities_at_any_day_of_year($activities);
         $activities = Activity::replace_start_date_with_weekday_name($activities);
         return view('user.soci', compact('activities'));
