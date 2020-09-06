@@ -64,14 +64,14 @@
                     @if (auth()->user()->role_id == "Soci")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
-                            href="{{url('/dashboard')}}" style="font-size: 1.2rem;">
+                            href="{{url('/dashboard')}}">
                             <span><i class="icofont-clock-time"></i></span>
                             Activitats d'AVUI
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
-                            href="{{url('/soci-all-activities')}}" style="font-size: 1.2rem;">
+                            href="{{url('/soci-all-activities')}}">
                             <span><i class="icofont-calendar"></i></span>
                             Totes les activitats
                         </a>
