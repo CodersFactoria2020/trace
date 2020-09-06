@@ -59,7 +59,7 @@
             <td class="icon-text">
                 <div class="primary-green">
                 @foreach ($activity->users as $user)
-                @if ($user->role_id == 'Professional')
+                @if ($user->role_id !== 'Soci')
                     <a href="mailto:{{$user->email}}?subject=Assumpte...&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
                     <i class="icofont-send-mail" style="font-size:24px"></i>
                     {{$user->first_name}} {{$user->last_name}}

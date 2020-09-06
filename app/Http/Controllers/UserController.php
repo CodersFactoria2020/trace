@@ -140,25 +140,4 @@ class UserController extends Controller
         return view('user.soci', compact('activities'));
     }
 
-    public function workplans()
-    {
-        $users = User::all();
-        $roles = Role::all();
-        $activities = Activity::all();
-        if (auth()->user()->role_id != "Soci") {
-            return view('workplans.index', ['users' => $users], compact('roles'), compact('activities'));
-        }
-        return view('workplans.soci');
-    }
-
-    // public function team()
-    // {
-    //     $users = User::all();
-    //     $roles = Role::all();
-    //     $teams = Team::all();
-    //     if (auth()->user()->role_id != "Admin") {
-    //         return view('user.notauthorized');
-    //     }
-    //     return view('team.index', compact('teams'));
-    // }
 }

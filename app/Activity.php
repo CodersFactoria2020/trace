@@ -110,15 +110,21 @@ class Activity extends Model
     {
         $todays_activities = [];
         $current_day_week = Carbon::now()->dayOfWeek;
+        $current_date = Carbon::now();
         foreach ($activities as $activity) {
             $activity_date = $activity->start;
             $activity_day_week = Carbon::parse($activity_date)->dayOfWeek;
-            if ($activity_day_week == $current_day_week) {
+            if ($activity_day_week == $current_day_week && $activity->weekly == 'Sí')
+            {
                 array_push($todays_activities, $activity);
-                }                
             }
+            
+            if ($current_date->format('Y-m-d') == Carbon::parse($activity_date)->format('Y-m-d') && $activity->weekly == 'No')
+            {
+                array_push($todays_activities, $activity);
+            }
+        }
         $todays_activities = collect($todays_activities);
         return $todays_activities;
     }
-
 }
