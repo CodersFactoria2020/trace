@@ -13,11 +13,21 @@
                     <div class="form-row">
                         <div class="col-md-6">
                             <small><b>Inici de l'activitat: </b></small>
+                            @if (Auth::User()->role_id == 'Soci')                            
+                            <p>{{$activity->start}} {{substr($activity->showStart, 8)}}</p>
+                            @endif
+                            @if (Auth::User()->role_id !== 'Soci')
                             <p>{{$activity->showStart}}</p>
+                            @endif
                         </div>
                         <div class="col-md-6">
                             <small><b>Finalització de l'activitat: </b></small>
+                            @if (Auth::User()->role_id == 'Soci')                            
+                            <p>{{substr($activity->start,0,-5)}} {{substr($activity->showEnd, 10)}}</p>
+                            @endif
+                            @if (Auth::User()->role_id !== 'Soci')
                             <p>{{$activity->showEnd}}</p>
+                            @endif
                         </div>
                     </div>
                     <div class="form-group">
@@ -41,7 +51,7 @@
                     <div>
                         <small><b>Professional responsable: </b></small>
                         @foreach ($activity->users as $user)
-                        @if ($user->role_id == 'Professional')
+                        @if ($user->role_id !== 'Soci')
                         <div class="icon-text mb-3">
                                 <div class="primary-green">
                                     <a href="mailto:{{$user->email}}?subject={{$activity->title}}&body=Hola, {{$user->first_name}}!" target="_blank" class="primary-green">
