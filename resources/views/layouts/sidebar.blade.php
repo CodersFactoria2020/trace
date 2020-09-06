@@ -65,15 +65,15 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/dashboard')}}" style="font-size: 1.2rem;">
-                            <span><i class="icofont-page"></i></span>
-                            Avui
+                            <span><i class="icofont-clock-time"></i></span>
+                            Activitats d'AVUI
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/soci-all-activities')}}" style="font-size: 1.2rem;">
-                            <span><i class="icofont-page"></i></span>
-                            Totes les<br> meves activitats
+                            <span><i class="icofont-calendar"></i></span>
+                            Totes les activitats
                         </a>
                     </li>
                     @endif
