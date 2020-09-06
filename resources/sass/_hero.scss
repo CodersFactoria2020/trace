@@ -1,8 +1,6 @@
 #hero {
     width: 100%;
     height: 70vh;
-    /*     background-color: rgba(darken($secondary, 10), 0.8);
- */
     overflow: hidden;
     padding: 0;
     margin-bottom: -120px;
@@ -18,6 +16,7 @@
         background-position: center center;
         h1 {
             width: 75%;
+            text-align: center;
         }
     }
 
@@ -60,7 +59,6 @@
 
     p {
         width: 80%;
-
         animation-delay: 0.4s;
         margin: 0 auto 30px auto;
         color: arken($secondary, 15);
@@ -119,6 +117,7 @@
         border-radius: 50px;
         margin-bottom: 180px;
         opacity: 0.2;
+        margin: 10px;
         &.active {
             opacity: 1;
         }
@@ -146,51 +145,32 @@
         }
     }
 
-    @media (max-height: 768px), (max-width: 4000px) {
+    @media (max-height: 768px), (max-width: 1200px) {
         margin-bottom: 60px;
         .carousel-container {
             padding-bottom: 0;
         }
         .carousel-indicators li {
             margin-bottom: 0;
-        }
-    }
-
-    @media (max-height: 600px), (max-width: 768px) {
-        margin-bottom: 60px;
-        .carousel-container {
-            padding-bottom: 0;
-        }
-        .carousel-indicators li {
-            margin-bottom: 0;
-        }
-    }
-
-    @media (max-width: 767px) {
-        height: 70vh;
-        .carousel-item {
-            height: 60vh;
-        }
-        #hero {
-            h1 {
-                font-size: 20px;
-            }
         }
     }
 
     @media (max-width: 768px) {
-        #hero {
+        height: 70vh;
+        .carousel-item {
+            height: 70vh;
             h1 {
-                font-size: 20px;
+                font-size: 32px;
             }
         }
     }
 
-    @media (min-width: 320px) and (max-width: 767px) {
-        #hero {
-            height: 430px;
+    @media (max-width: 500px) {
+        height: 60vh !important;
+        .carousel-item {
+            height: 60vh;
             h1 {
-                font-size: 20px;
+                font-size: 24px;
             }
         }
     }
@@ -199,7 +179,6 @@
         p {
             width: 50%;
         }
-
         .carousel-control-prev,
         .carousel-control-next {
             width: 5%;

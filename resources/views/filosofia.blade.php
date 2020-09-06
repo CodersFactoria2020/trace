@@ -65,4 +65,4 @@
     </div>
 </section>
 @endsection
- @extends('layouts.app')
+@extends('layouts.app')

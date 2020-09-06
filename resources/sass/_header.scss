@@ -87,7 +87,6 @@
 # Header
 --------------------------------------------------------------*/
 #header {
-    height: 80px;
     transition: all 0.5s;
     z-index: 997;
     transition: all 0.5s;
@@ -243,9 +242,12 @@
         }
     }
 }
+
 @media (max-width: 992px) {
     #collabora {
-        padding-right: 60px;
+        a {
+            margin-right: 45px;
+        }
     }
 }
 
