@@ -40,7 +40,6 @@
     <link rel="apple-touch-icon-precomposed" href="ico/apple-touch-icon-57-precomposed.png" />
     <link rel="shortcut icon" href="ico/favicon.png" />
 
-
     <!-- css -->
     <link href="https://fonts.googleapis.com/css?family=Handlee|Open+Sans:300,400,600,700,800" rel="stylesheet">
     <link href="css/bootstrap.css" rel="stylesheet" />
@@ -53,9 +52,6 @@
     <!-- Cookie alert -->
     <link rel="stylesheet" href="{{ asset('css/cookies-alert.css') }}">
 
-    <!-- LARAVEL -->
-    <!-- CSRF Token -->
-    <!-- Scripts -->
     <link rel="stylesheet" href="myProjects/webProject/icofont/css/icofont.min.css">
 
 </head>
@@ -102,7 +98,6 @@
     </div>
 
     <div id="header-sticky-wrapper">
-
         <div id="header">
 
             <div class="flex-container d-flex justify-content-between align-items-center">
@@ -146,15 +141,15 @@
 
             </div>
 
-</div>
-
-        <div>
-
-            <main class="">
-                @yield('content')
-            </main>
+        </div>
+    </div>
 
 </header>
+
+<main class="">
+    @yield('content')
+</main>
+
 
 <script src="https://cdn.jsdelivr.net/gh/Wruczek/Bootstrap-Cookie-Alert@gh-pages/cookiealert.js">
 window.addEventListener("cookieAlertAccept", function() {
