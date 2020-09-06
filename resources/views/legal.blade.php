@@ -1,5 +1,4 @@
 @extends('parts.footer')
-
     @section('content')
         <section id="resources" class="resources">
             <div class="container d-flex pt-5">
@@ -111,5 +110,4 @@
             </div>
         </section>
     @endsection
-
- @extends('layouts.app')
+@extends('layouts.app')
