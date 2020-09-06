@@ -10,7 +10,7 @@ class Role extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'role_name'=>$this->role_name
+            'name'=>$this->name
         ];
     }
 }

@@ -67,6 +67,7 @@ class UsersTest extends TestCase
         ]);
         $response->assertRedirect('/login');
     }
+
     //*************************************************************************** Logged as Admin tests **************************************************************************
     public function test_user_role_is_not_empty()
     {
@@ -122,6 +123,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $this->assertDatabaseHas('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -131,6 +133,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/user');
     }
@@ -150,6 +153,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $this->assertDatabaseHas('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -159,6 +163,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/user');
     }
@@ -172,10 +177,10 @@ class UsersTest extends TestCase
         $this->assertDatabaseMissing('users',[
             'first_name'=>$userTwo->first_name,
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/user');
     }
-
 
 
     //*************************************************************************** Profesional tests **************************************************************************
@@ -232,6 +237,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '1'
         ]);
+
         $this->assertDatabaseMissing('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -241,6 +247,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '1'
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -259,6 +266,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $this->assertDatabaseHas('users',[
             'first_name'=>$userTwo->first_name,
             'last_name'=>$userTwo->last_name,
@@ -266,6 +274,7 @@ class UsersTest extends TestCase
             'phone' =>$userTwo->phone,
             'dni'=>$userTwo->dni,
         ]);
+
         $this->assertDatabaseMissing('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -275,6 +284,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -291,6 +301,7 @@ class UsersTest extends TestCase
             'phone' =>$userTwo->phone,
             'dni'=>$userTwo->dni,
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -336,6 +347,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '1'
         ]);
+
         $this->assertDatabaseMissing('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -345,6 +357,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '1'
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -363,6 +376,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $this->assertDatabaseHas('users',[
             'first_name'=>$userTwo->first_name,
             'last_name'=>$userTwo->last_name,
@@ -370,6 +384,7 @@ class UsersTest extends TestCase
             'phone' =>$userTwo->phone,
             'dni'=>$userTwo->dni,
         ]);
+
         $this->assertDatabaseMissing('users',[
             'first_name'=>'Pep',
             'last_name'=>'Vilanova',
@@ -379,6 +394,7 @@ class UsersTest extends TestCase
             'tutor' =>'Selma',
             'role_id' => '3'
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -395,8 +411,7 @@ class UsersTest extends TestCase
             'phone' =>$userTwo->phone,
             'dni'=>$userTwo->dni,
         ]);
+
         $response->assertStatus(403);
     }
-
-
 }

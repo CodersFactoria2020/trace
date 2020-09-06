@@ -14,23 +14,23 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Nom</label>
-                            <input type="text" name="first_name" class="form-control" placeholder="First Name" value="{{$team->first_name}}" required>
+                            <input type="text" name="first_name" class="form-control" placeholder="Nom" value="{{$team->first_name}}" required>
                             <div class="invalid-feedback">
                                 El membre de l'equip ha de tenir un nom
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="name">Cognom</label>
-                            <input type="text" name="last_name" class="form-control" placeholder="Last Name" value="{{$team->last_name}}" required>
+                            <input type="text" name="last_name" class="form-control" placeholder="Cognom" value="{{$team->last_name}}" required>
                             <div class="invalid-feedback">
                                 El membre de l'equip ha de tenir un cognom
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="name">Posicio</label>
-                            <input type="text" name="position" class="form-control" placeholder="Position" value="{{$team->position}}" required>
+                            <label for="name">Posició</label>
+                            <input type="text" name="position" class="form-control" placeholder="Posició" value="{{$team->position}}" required>
                             <div class="invalid-feedback">
-                                El membre de l'equip ha de tenir una posicio
+                                El membre de l'equip ha de tenir una posició
                             </div>
                         </div>
                         <div class="form-group">
@@ -40,7 +40,6 @@
                             </div>
                             <input type="file" name="photo" class="form-control">
                         </div>
-
 
                         <div class="text-right">
                             <a href="{{Route('team.update', $team->id)}}" >

@@ -22,6 +22,7 @@ class CategoryTest extends TestCase
     {
         $role = factory(Role::class)->states('Admin')->create();
         $user = factory(User::class)->states('Admin')->create();
+
         $response = $this->actingAs($user)->get('/areas');
 
         $response->assertStatus(200);
@@ -94,8 +95,8 @@ class CategoryTest extends TestCase
     {
         $role = factory(Role::class)->states('Professional')->create();
         $user = factory(User::class)->states('Professional')->create();
-        $response = $this->actingAs($user)->get('/areas');
 
+        $response = $this->actingAs($user)->get('/areas');
         $response->assertStatus(200);
     }
 
@@ -104,8 +105,8 @@ class CategoryTest extends TestCase
         $role = factory(Role::class)->states('Professional')->create();
         $user = factory(User::class)->states('Professional')->create();
         $category = factory(Category::class)->create();
-        $response = $this->get('/category/' . $category->id);
 
+        $response = $this->get('/category/' . $category->id);
         $response->assertStatus(302);
     }
 

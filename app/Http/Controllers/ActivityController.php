@@ -70,8 +70,6 @@ class ActivityController extends Controller
 
     public function download(Request $request, Activity $activity)
     {
-
-        //$this->authorize('view', Activity::class);
         return $activity->download_file();
     }
 
@@ -86,6 +84,7 @@ class ActivityController extends Controller
         $this->authorize('update', Activity::class);
         $activities = Activity::all();
         $categories = Category::all();
+
         return view('activity.edit', compact('activities', 'categories'));
     }
 
@@ -106,26 +105,23 @@ class ActivityController extends Controller
         {
             $activity->upload_file($file);
         }
-
+        
         return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha actualitzat correctament ');
-
     }
 
     public function destroy(Activity $activity)
     {
-
         $this->authorize('destroy', Activity::class);
         $activity->delete();
+
         return redirect('/activity')->with('status_success','L\'activitat s\'ha esborrat correctament');
     }
+
     public function destroy_file(Activity $activity)
     {
-
         $this->authorize('destroy', Activity::class);
         $activity->delete_file();
+
         return redirect('/activity');
     }
-
-
-
 }

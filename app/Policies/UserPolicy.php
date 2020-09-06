@@ -4,7 +4,6 @@ namespace App\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
 class UserPolicy
 {
@@ -15,6 +14,7 @@ class UserPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -23,6 +23,7 @@ class UserPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -31,6 +32,7 @@ class UserPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
+
         return true;
     }
 
@@ -39,9 +41,11 @@ class UserPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
+
         if ($user->id === $model->id) {
             return false;
-            }
+        }
+
         return true;
     }
 
@@ -50,9 +54,11 @@ class UserPolicy
         if ($user->role_id !== "Admin") {
             return false;
         }
+        
         if ($user->id === $model->id) {
             return false;
-            }
+        }
+
         return true;
     }
 }

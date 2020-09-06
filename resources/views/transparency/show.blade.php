@@ -17,13 +17,13 @@
                     </div>
                     <div>
                         @if($transparency->has_economic_document())
-                        <small><b>Documentació Econòmica:</b></small>
+                        <small><b>Documentació econòmica:</b></small>
                         <p>{{$transparency->get_saved_name_economic_document()}}</p>
                         @endif
                     </div>
                     <div>
                         @if($transparency->has_entity_document())
-                        <small><b>Documentació Econòmica de l'entitat:</b></small>
+                        <small><b>Documentació econòmica de l'entitat:</b></small>
                         <p>{{$transparency->get_saved_name_entity_document()}}</p>
                         @endif
                     </div>

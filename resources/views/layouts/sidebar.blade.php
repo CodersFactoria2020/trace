@@ -37,12 +37,6 @@
                             Àrees
                         </a>
                     </li>
-                    <!-- <li class="nav-item">
-            <a class="nav-link {{ request()->is('workplans') ? 'active-black' : 'primary-green'}}" href="{{url('/workplans')}}">
-                <span><i class="icofont-calendar"></i></span>
-                Plans de treball
-              </a>
-            </li> -->
                     @if (auth()->user()->role_id == "Admin")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="{{url('/team')}}">

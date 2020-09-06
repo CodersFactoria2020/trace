@@ -8,7 +8,6 @@ use App\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Crypt;
-use Carbon\Carbon;
 
 class UserController extends Controller
 {
@@ -25,16 +24,20 @@ class UserController extends Controller
         $users = new User;
         $roles = Role::all();
         $users_per_page = 10;
+
         if (request()->has('role_id')) {
             $users = $users->where('role_id', request('role_id'));
         }
+
         if (request()->has('sort')) {
             $users = $users->orderBy('last_name', request('sort'));
         }
+
         $users = $users->paginate($users_per_page)->appends([
             'role_id' => request('role_id'),
             'sort' => request('sort'),
         ]);
+
         return view('user.index', compact('users', 'roles'));
     }
 
@@ -43,6 +46,7 @@ class UserController extends Controller
         $user = Auth::user();
         $this->authorize('create', $user);
         $roles = Role::all();
+
         return view('user.create', compact('roles'));
     }
 
@@ -63,6 +67,7 @@ class UserController extends Controller
             $user->tutor = $request->tutor;
             $user->role_id = $request->role_id;
             $user->save();
+
         return redirect('/user')->with('status_success',"S'ha creat l'usuari correctament");
     }
 
@@ -70,18 +75,21 @@ class UserController extends Controller
     {
         $this->authorize('view', $user);
         $loggedUser = Auth::user();
+
         if ($loggedUser->role_id === "Soci" && $user->role_id === "Soci"){
             return redirect('/dashboard');
         }
+
         $roles = Role::all();
-        return view('user.show', ['user' => $user], compact('roles'));
+
+        return view('user.show', compact('user', 'roles'));
     }
 
     public function edit(User $user)
     {
         $this->authorize('update', $user);
         $roles = Role::all();
-        return view('user.edit', ['user' => $user], compact('roles'));
+        return view('user.edit', compact('user', 'roles'));
     }
 
     public function update(Request $request, User $user)
@@ -97,6 +105,7 @@ class UserController extends Controller
             $user->tutor = $request->tutor;
             $user->role_id = $request->role_id;
             $user->save();
+
         return redirect('/user')->with('status_success',"S'ha actualitzat l'usuari correctament");
     }
 
@@ -104,6 +113,7 @@ class UserController extends Controller
     {
         $this->authorize('destroy', $user);
         $user->delete();
+
         return redirect('/user')->with('status_success',"S'ha esborrat l'usuari correctament");
     }
 
@@ -113,6 +123,7 @@ class UserController extends Controller
         $this->authorize('view-any', $user);
         $users = User::filterByRole($request->role_id);
         $roles = Role::all();
+
         return view('user.index', compact('users', 'roles'));
     }
 
@@ -122,11 +133,13 @@ class UserController extends Controller
         $activities = $user->activities;
         $users = User::all();
         $roles = Role::all();
+
         if (auth()->user()->role_id != "Soci") {
-            return view('user.dashboard', ['users' => $users], compact('roles'));
+            return view('user.dashboard', compact('users', 'roles'));
         }
         $activities = Activity::filter_todays_activities_at_any_day_of_year($activities);
         $activities = Activity::replace_start_date_with_weekday_name($activities);
+
         return view('user.soci', compact('activities'));
     }
 
@@ -141,6 +154,7 @@ class UserController extends Controller
         $friday_activities = Activity::filter_activities_by_day($activities, 5);
         $saturday_activities = Activity::filter_activities_by_day($activities, 6);
         $sunday_activities = Activity::filter_activities_by_day($activities, 0);
+        
         return view('user.soci-all-activities', compact('monday_activities', 'tuesday_activities', 'wednesday_activities', 'thursday_activities', 'friday_activities', 'saturday_activities', 'sunday_activities',));
     }
 

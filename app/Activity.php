@@ -10,7 +10,7 @@ use Carbon\Carbon;
 
 class Activity extends Model
 {
-    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'weekly', 'category_id', 'color', 'txtColor'];
+    protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'weekly', 'category_id'];
 
     public function category()
     {
@@ -29,7 +29,7 @@ class Activity extends Model
         $file_name = $this->get_saved_file_name();
         $file->storeAs('activities/', $file_name);
     }
-    
+
     public function download_file()
     {
         return Storage::download('/activities/'.$this->get_saved_file_name(), $this->get_downloaded_file_name());
@@ -66,6 +66,7 @@ class Activity extends Model
         if(isset($attributes['file'])){
             $this->delete_file();
         }
+
         return parent::update($attributes, $options);
     }
 
@@ -84,6 +85,7 @@ class Activity extends Model
         {
             return "Sí";
         }
+
         if ($value === 0)
         {
             return "No";
@@ -94,7 +96,8 @@ class Activity extends Model
     {
         $category_id = $this->category_id;
         $category = Category::where('id', $category_id)->first();
-        $color = ($category['color']);
+        $color = ($category->color);
+
         return $color;
     }
 
@@ -107,6 +110,7 @@ class Activity extends Model
         }
         $activities = $activities->sortBy('showStart');
         $activities->values()->all();
+
         return $activities;
     }
 
@@ -115,20 +119,24 @@ class Activity extends Model
         $todays_activities = [];
         $current_day_week = Carbon::now()->dayOfWeek;
         $current_date = Carbon::now();
+
         foreach ($activities as $activity) {
             $activity_date = $activity->start;
             $activity_day_week = Carbon::parse($activity_date)->dayOfWeek;
+
             if ($activity_day_week == $current_day_week && $activity->weekly == 'Sí')
             {
                 array_push($todays_activities, $activity);
             }
-            
+
             if ($current_date->format('Y-m-d') == Carbon::parse($activity_date)->format('Y-m-d') && $activity->weekly == 'No')
             {
                 array_push($todays_activities, $activity);
             }
         }
+
         $todays_activities = collect($todays_activities);
+
         return $todays_activities;
     }
 
@@ -142,6 +150,7 @@ class Activity extends Model
             }
         }
         $day_activities = collect($day_activities);
+
         return $day_activities;
     }
 }

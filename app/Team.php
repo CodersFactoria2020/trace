@@ -7,9 +7,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Team extends Model
 {
-    protected $fillable = [
-        'first_name','last_name', 'position', 'photo'
-    ];
+    protected $fillable = ['first_name','last_name', 'position', 'photo'];
 
     public function upload_photo($photo)
     {
@@ -24,6 +22,7 @@ class Team extends Model
         if (! $this->photo) {
             return '../img/avatar-team.jpg';
         }
+
         return Storage::url('team/' . $this->get_saved_name_photo());
     }
 
@@ -32,8 +31,4 @@ class Team extends Model
     {
         return $this->id . '-' . $this->first_name . '.' . $this->photo;
     }
-
-
-
-
 }

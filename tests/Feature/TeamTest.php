@@ -33,12 +33,14 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
     ]);
+
         $this->assertDatabaseHas('teams',[
         "first_name"=> "Kevin",
         "last_name"=> "Hidalgo",
         "position"=> "Doctor",
         "photo"=> "image.jpg",
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/team');
     }
@@ -55,6 +57,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
             ]);
+
         $this->assertDatabaseHas('teams',[
             'id'=> 1 ,
             "first_name"=> "Kevin",
@@ -70,7 +73,6 @@ class TeamTest extends TestCase
             "last_name"=> "Hidalgo",
             "position"=> "Scrum Master",
             "photo"=> 'image.jpg',
-
         ]);
 
         $response->assertStatus(302);
@@ -89,6 +91,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/team/'. $team->id, [
             'id'=> 1 ,
             'first_name'=>'Kevin',
@@ -96,6 +99,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>'image2.jpg',
         ]);
+
         $this->assertDatabaseHas('teams',[
             "id"=> 1 ,
             "first_name"=> "Kevin",
@@ -103,6 +107,7 @@ class TeamTest extends TestCase
             "position"=> "Doctor",
             "photo"=> "image2.jpg",
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/team');
     }
@@ -127,6 +132,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/team/'. $team->id, [
             'id'=> 1 ,
             'first_name'=>'Kevin',
@@ -134,6 +140,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>'image2.jpg',
         ]);
+
         $this->assertDatabaseHas('teams',[
             "id"=> 1 ,
             "first_name"=> "Kevin",
@@ -141,6 +148,7 @@ class TeamTest extends TestCase
             "position"=> "Doctor",
             "photo"=> "image2.jpg",
         ]);
+
         $response->assertStatus(403);
     }
     public function test_soci_cant_delete_member_team_with_image(){
@@ -154,6 +162,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
         ]);
+
         $this->assertDatabaseHas('teams',[
             'id'=> 1 ,
             "first_name"=> "Kevin",
@@ -169,7 +178,6 @@ class TeamTest extends TestCase
             "last_name"=> "Hidalgo",
             "position"=> "Scrum Master",
             "photo"=> 'image.jpg',
-
         ]);
 
         $response->assertStatus(403);
@@ -201,6 +209,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/team/'. $team->id, [
             'id'=> 1 ,
             'first_name'=>'Kevin',
@@ -208,6 +217,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>'image2.jpg',
         ]);
+
         $this->assertDatabaseHas('teams',[
             "id"=> 1 ,
             "first_name"=> "Kevin",
@@ -229,6 +239,7 @@ class TeamTest extends TestCase
             'position' =>'Doctor',
             'photo'=>$photo->name,
         ]);
+
         $this->assertDatabaseHas('teams',[
             'id'=> 1 ,
             "first_name"=> "Kevin",
@@ -244,7 +255,6 @@ class TeamTest extends TestCase
             "last_name"=> "Hidalgo",
             "position"=> "Scrum Master",
             "photo"=> 'image.jpg',
-
         ]);
 
         $response->assertStatus(403);

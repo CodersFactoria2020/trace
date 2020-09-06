@@ -12,6 +12,13 @@
                     <form action="{{Route('activity.store')}}" method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
                         @csrf
                         <div class="card-body">
+                            <div class="form-group">
+                                <label>Nom de l'activitat</label>
+                                <input type="text" name="title" class="form-control" required>
+                                <div class="invalid-feedback">
+                                    L'activitat ha de tenir un nom
+                                </div>
+                            </div>
                             <div class="form-row" style="justify-content: space-between;">
                                 <div class="form-group col-md-6">
                                 <label>Data d'inici:</label>
@@ -34,16 +41,9 @@
                             </div>
                             <div class="form-group">
                                 <label>Marqui aquesta casella si l'activitat es repeteix cada setmana:</label>
-                                    <input type="hidden" name="weekly" value="0" />
-                                    <label class="w3-validate" style="padding-left: 1rem;"></label>
-                                    <input id="weekly" class="w3-radio" type="checkbox" name="weekly" value="1">
-                            </div>
-                            <div class="form-group">
-                                <label>Nom de l'activitat</label>
-                                <input type="text" name="title" class="form-control" required>
-                                <div class="invalid-feedback">
-                                    L'activitat ha de tenir un nom
-                                </div>
+                                <input type="hidden" name="weekly" value="0" />
+                                <label class="w3-validate" style="padding-left: 1rem;"></label>
+                                <input id="weekly" class="w3-radio" type="checkbox" name="weekly" value="1">
                             </div>
                             <div class="form-group">
                                 <label>Descripció</label>
@@ -109,7 +109,7 @@
                             </div>
 
                             <div class="text-right">
-                                    <input type="submit" value="Afegir" class="cta" required>
+                                <input type="submit" value="Afegir" class="cta" required>
                             </div>
                         </div>
                     </form>
@@ -136,9 +136,7 @@
     (function() {
       'use strict';
       window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function(form) {
           form.addEventListener('submit', function(event) {
             if (form.checkValidity() === false) {
