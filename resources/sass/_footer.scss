@@ -94,3 +94,8 @@
         padding-left: 20px;
     }
 }
+@media (max-width: 768px) {
+    #footer {
+        margin-bottom: -250px;
+    }
+}
