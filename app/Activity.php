@@ -12,8 +12,8 @@ class Activity extends Model
 {
     protected $fillable = ['title', 'description', 'link', 'file', 'start', 'end', 'weekly', 'category_id', 'color', 'txtColor'];
 
-    public function category() {
-
+    public function category()
+    {
         return $this->belongsTo(Category::class);
     }
 
@@ -29,6 +29,7 @@ class Activity extends Model
         $file_name = $this->get_saved_file_name();
         $file->storeAs('activities/', $file_name);
     }
+    
     public function download_file()
     {
         return Storage::download('/activities/'.$this->get_saved_file_name(), $this->get_downloaded_file_name());
@@ -43,23 +44,26 @@ class Activity extends Model
     {
         return $this->title . '.' . $this->file;
     }
+
     public function has_file()
     {
         return Storage::exists('/activities/'.$this->get_saved_file_name());
     }
+
     public function delete_file()
     {
         return Storage::delete('/activities/'.$this->get_saved_file_name());
     }
+
     public function delete()
     {
         $this->delete_file();
         return parent::delete();
     }
+
     public function update(array $attributes = [], array $options = [])
     {
         if(isset($attributes['file'])){
-
             $this->delete_file();
         }
         return parent::update($attributes, $options);
