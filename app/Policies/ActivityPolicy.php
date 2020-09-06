@@ -15,6 +15,7 @@ class ActivityPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -28,6 +29,7 @@ class ActivityPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -36,6 +38,7 @@ class ActivityPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -44,6 +47,7 @@ class ActivityPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+        
         return true;
     }
 }

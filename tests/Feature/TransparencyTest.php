@@ -20,8 +20,8 @@ class TransparencyTest extends TestCase
         $user = factory(User::class)->states('Admin')->create();
         $response = $this->actingAs($user)->get('/transparency');
 
-        $response->assertStatus(200)
-        ->assertSee('Documentació econòmica');
+        $response->assertStatus(200);
+        $response->assertSee('Documentació econòmica');
     }
     public function test_admin_create_transparency_with_documents()
     {
@@ -33,13 +33,14 @@ class TransparencyTest extends TestCase
             'date_name'=>'exercici 2015',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
-
         ]);
+
         $this->assertDatabaseHas('transparencies',[
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
     }
@@ -55,20 +56,22 @@ class TransparencyTest extends TestCase
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $this->assertDatabaseHas('transparencies',[
             'id'=> 1 ,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
         $this->assertDatabaseMissing('transparencies',[
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
-
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
     }
@@ -84,18 +87,21 @@ class TransparencyTest extends TestCase
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/transparency/'. $transparency->id, [
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $this->assertDatabaseHas('transparencies',[
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $response->assertStatus(302);
         $response->assertRedirect('/transparency');
     }
@@ -119,8 +125,8 @@ class TransparencyTest extends TestCase
             'date_name'=>'exercici 2015',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
-
         ]);
+
         $response->assertStatus(403);
 
     }
@@ -131,17 +137,17 @@ class TransparencyTest extends TestCase
         $economic_document = UploadedFile::fake()->create('exercici_2020_economic.pdf');
         $entity_document = UploadedFile::fake()->create('exercici_2020_entity.pdf');
         $transparency=factory(Transparency::class)->create([
-            
             'date_name'=>'exercici 2020',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $this->assertDatabaseHas('transparencies',[
-        
             'date_name'=>'exercici 2020',
             'economic_document'=>'exercici_2020_economic.pdf',
             'entity_document'=>'exercici_2020_entity.pdf',
         ]);
+
         $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
         $this->assertDatabaseMissing('transparencies',[
             'id'=> 1,
@@ -150,10 +156,9 @@ class TransparencyTest extends TestCase
             'entity_document'=>'exercici_2020_entity.pdf',
             "created_at"=> "2020-08-31 13:11:13",
             "updated_at"=> "2020-08-31 13:11:13",
-
         ]);
-        $response->assertStatus(403);
 
+        $response->assertStatus(403);
     }
 
     public function test_soci_cant_update_transparency_with_documents()
@@ -168,18 +173,21 @@ class TransparencyTest extends TestCase
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/transparency/'. $transparency->id, [
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $this->assertDatabaseHas('transparencies',[
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $response->assertStatus(403);
     }
 
@@ -202,10 +210,9 @@ class TransparencyTest extends TestCase
             'date_name'=>'exercici 2015',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
-
         ]);
-        $response->assertStatus(403);
 
+        $response->assertStatus(403);
     }
 
     public function test_professional_cant_delete_transparency_with_document()
@@ -215,17 +222,17 @@ class TransparencyTest extends TestCase
         $economic_document = UploadedFile::fake()->create('exercici_2020_economic.pdf');
         $entity_document = UploadedFile::fake()->create('exercici_2020_entity.pdf');
         $transparency=factory(Transparency::class)->create([
-            
             'date_name'=>'exercici 2020',
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $this->assertDatabaseHas('transparencies',[
-        
             'date_name'=>'exercici 2020',
             'economic_document'=>'exercici_2020_economic.pdf',
             'entity_document'=>'exercici_2020_entity.pdf',
         ]);
+
         $response = $this->actingAs($user)->delete('transparency/'.$transparency->id);
         $this->assertDatabaseMissing('transparencies',[
             'id'=> 1,
@@ -234,10 +241,9 @@ class TransparencyTest extends TestCase
             'entity_document'=>'exercici_2020_entity.pdf',
             "created_at"=> "2020-08-31 13:11:13",
             "updated_at"=> "2020-08-31 13:11:13",
-
         ]);
-        $response->assertStatus(403);
 
+        $response->assertStatus(403);
     }
 
     public function test_professional_cant_update_transparency_with_documents()
@@ -252,18 +258,21 @@ class TransparencyTest extends TestCase
             'economic_document'=>$economic_document->name,
             'entity_document'=>$entity_document->name,
         ]);
+
         $response = $this->actingAs($user)->patch('/transparency/'. $transparency->id, [
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $this->assertDatabaseHas('transparencies',[
             'id'=> 1,
             'date_name'=>'exercici 2015',
             'economic_document'=>'_economic.pdf',
             'entity_document'=>'_entity.pdf',
         ]);
+
         $response->assertStatus(403);
     }
 }

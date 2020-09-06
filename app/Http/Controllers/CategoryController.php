@@ -40,7 +40,6 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         $this->authorize('view', Category::class);
-
         return view('category.show', compact('categories'));
     }
 

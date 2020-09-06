@@ -13,7 +13,7 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="name">Any de l'exercici</label>
-                            <input type="text" name="date_name" class="form-control" placeholder="Date Name" required>
+                            <input type="text" name="date_name" class="form-control" placeholder="Any de l'exercici" required>
                         </div>
                         <div class="invalid-feedback">
                             L'any de l'exercici ha de tenir un títol
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="text-right mt-4">
-                            <input type="submit" value="Afegir  " class="cta">
+                            <input type="submit" value="Afegir" class="cta">
                         </div>
                     </div>
                 </form>
@@ -38,13 +38,10 @@
 </div>
 
 <script>
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function() {
       'use strict';
       window.addEventListener('load', function() {
-        // Fetch all the forms we want to apply custom Bootstrap validation styles to
         var forms = document.getElementsByClassName('needs-validation');
-        // Loop over them and prevent submission
         var validation = Array.prototype.filter.call(forms, function(form) {
           form.addEventListener('submit', function(event) {
             if (form.checkValidity() === false) {

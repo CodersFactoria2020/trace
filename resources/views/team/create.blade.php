@@ -27,10 +27,10 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="name">Posicio</label>
+                                <label for="name">Posició</label>
                                 <input type="text" name="position" class="form-control" placeholder="Posició" pattern="[A-Za-z].{1,}" required/>
                                 <div class="invalid-feedback">
-                                    El membre de l'equip ha de tenir una posicio
+                                    El membre de l'equip ha de tenir una posició
                                 </div>
                             </div>
                             <div class="form-group">

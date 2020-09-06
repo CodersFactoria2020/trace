@@ -76,7 +76,6 @@ class ActivityController extends Controller
     public function show(Activity $activity)
     {
         $this->authorize('view', Activity::class);
-
         return view('activity.show', compact('activities', 'categories'));
     }
 
@@ -106,6 +105,7 @@ class ActivityController extends Controller
         {
             $activity->upload_file($file);
         }
+        
         return redirect('/activity')->with('status_succes', 'L\'activitat s\'ha actualitzat correctament ');
     }
 

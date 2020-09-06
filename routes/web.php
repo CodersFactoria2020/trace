@@ -1,14 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\gate;
 
 Route::get('/', function () {
     return view('home');
 });
-Route::view('/legal', 'legal');
 
-Route::resource('/role', 'RoleController')->middleware('auth');
 Route::get('/login', 'HomeController@login')->name('login');
 
 // Front-visitor routes
@@ -22,10 +19,9 @@ Route::get('/recursos', 'HomeController@recursos')->name('recursos');
 Route::get('/collaboradors', 'HomeController@collaboradors')->name('collaboradors');
 Route::get('/filosofia', 'HomeController@filosofia')->name('filosofia');
 Route::get('/collabora', 'HomeController@collabora')->name('collabora');
+Route::view('/legal', 'legal');
 
 Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
-
-Route::resource('team','TeamController')->middleware('auth');
 
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
@@ -48,6 +44,8 @@ Route::resource('/category', 'CategoryController')->names('category')->middlewar
 Route::get('/areas', 'CategoryController@index')->name('category.index')->middleware('auth');
 Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
-// transparency routes
+// Transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
 
+// Team routes
+Route::resource('team','TeamController')->middleware('auth');

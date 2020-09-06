@@ -10,25 +10,23 @@ class TeamController extends Controller
 {
 
     public function index()
-    {   
-
+    {
         $this->authorize('view-any', Team::class);
         $teams = Team::paginate(10);
-        
+
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
         }
 
         return view('team.index', compact('teams'));
-        
     }
 
     public function create(Request $request)
     {
         $this->authorize('create', Team::class);
         $teams = Team::all();
-        return view('team.create', compact('teams'));
 
+        return view('team.create', compact('teams'));
     }
 
     public function store(Request $request, Team $team)
@@ -36,11 +34,12 @@ class TeamController extends Controller
         $this->authorize('create', Team::class);
         $data = $request->all();
         $team = Team::create($data);
-
+        
         if ($photo = $request->file('photo'))
         {
            $team->upload_photo($photo);
         }
+
         return redirect(route('team.index'))->with('status_success', 'El membre s\'ha creat correctament ');
     }
 
@@ -65,6 +64,7 @@ class TeamController extends Controller
         if ($photo = $request->file('photo')) {
             $team->upload_photo($photo);
         }
+
         return redirect('/team')->with('status_success', 'El membre s\'ha actualitzat correctament ');
     }
 
@@ -73,10 +73,12 @@ class TeamController extends Controller
         $this->authorize('destroy', $team);
         $team->delete();
         Storage::disk('public')->delete('photo');
+
         return redirect()->route('team.index')->with('status_success','El membre s\'ha esborrat correctament');
     }
 
-    public function viewVisitor(Team $team){
+    public function viewVisitor(Team $team)
+    {
         $teams = Team::all();
         return view('/equip', compact('teams'));
     }
