@@ -64,9 +64,9 @@
                                     <label>Professional</label>
                                     <select name="user[]"  class="form-control"  required>
                                         @foreach ($users as $user)
-                                        @if($user->role_id !== "Soci")
-                                            <option id="user_{{$user->id}}" value="{{$user->id}}" {{$activity->user_id == $user->id ? 'selected' : ''}}>{{ $user->first_name}} {{ $user->last_name }}</option>
-                                        @endif
+                                            @if($user->role_id !== "Soci")
+                                                <option id="user_{{$user->id}}" value="{{$user->id}}" {{$activity->users->contains($user) == true ? 'selected' : ''}}>{{ $user->first_name}} {{ $user->last_name }}</option>
+                                            @endif
                                         @endforeach
                                     </select>
                                     <div class="invalid-feedback">
