@@ -94,17 +94,17 @@ class Activity extends Model
         return $color;
     }
 
-    // public function replace_start_date_with_weekday_name($activities)
-    // {
-    //     $user_activities = [];
-    //     foreach ($activities as $activity) {
-    //         $activity->start = Carbon::parse($activity->start)->dayOfWeek;
-    //         array_push($user_activities, $activity);
-    //     }
-    //     $user_activities = collect($todays_activities);
-    //     // dd($todays_activities);
-    //     return $user_activities;
-    // }
+    static public function replace_start_date_with_weekday_name($activities)
+    {
+        foreach($activities as $activity)
+        {
+            $activity->showStart = substr($activity->showStart, 11);
+            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd' . ' ' . 'HH' .  ':' . 'mm' );
+        }
+        $activities = $activities->sortBy('showStart');
+        $activities->values()->all();
+        return $activities;
+    }
 
     static public function filter_todays_activities_at_any_day_of_year($activities)
     {

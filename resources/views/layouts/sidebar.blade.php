@@ -61,6 +61,22 @@
                     </li>
                     @endif
                     @endif
+                    @if (auth()->user()->role_id == "Soci")
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/dashboard')}}" style="font-size: 1.2rem;">
+                            <span><i class="icofont-page"></i></span>
+                            Avui
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/soci-all-activities')}}" style="font-size: 1.2rem;">
+                            <span><i class="icofont-page"></i></span>
+                            Totes les<br> meves activitats
+                        </a>
+                    </li>
+                    @endif
                     <li class="nav-item pt-3">
                         <div class="nav-item logoutbtn">
                             <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();

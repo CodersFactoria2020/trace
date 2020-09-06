@@ -31,7 +31,7 @@ Route::resource('team','TeamController')->middleware('auth');
 // User routes
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
-Route::get('/workplans', 'UserController@workplans')->name('workplans')->middleware('auth');
+Route::get('/soci-all-activities', 'UserController@soci_all_activities')->name('soci-all-activities')->middleware('auth');
 Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 Route::get('filter','UserController@filter')->name('user.filter')->middleware('auth');
