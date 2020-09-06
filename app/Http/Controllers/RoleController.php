@@ -13,6 +13,7 @@ class RoleController extends Controller
     {
         Gate::authorize('haveaccess', 'role.index');
         $roles=role::all();
+
         return view('role.index',compact('roles'));
     }
 
@@ -20,6 +21,7 @@ class RoleController extends Controller
     {
         Gate::authorize('haveaccess', 'role.create');
         $permissions=Permission::all();
+        
         return view('role.create',['permissions'=>$permissions]);
     }
 

@@ -9,7 +9,6 @@ Route::get('/', function () {
 Route::view('/legal', 'legal');
 
 Route::resource('/role', 'RoleController')->middleware('auth');
-Route::resource('/workplans', 'WorkplanController')->middleware('auth');
 Route::get('/login', 'HomeController@login')->name('login');
 
 // Front-visitor routes
@@ -49,12 +48,6 @@ Route::resource('/category', 'CategoryController')->names('category')->middlewar
 Route::get('/areas', 'CategoryController@index')->name('category.index')->middleware('auth');
 Route::get('category/{id}/edit/','CategoryController@edit')->middleware('auth');
 
-// PROVISIONAL - EVENTS SANDBOX
-Route::resource('/events', 'EventController')->middleware('auth');
-
 // transparency routes
 Route::resource('/transparency', 'TransparencyController')->names('transparency')->middleware('auth');
 
-// Workplans routes
-Route::resource('/workplans', 'WorkplanController')->middleware('auth');
-Route::get('workplans/{id}/destroy/','WorkplanController@destroy')->middleware('auth');

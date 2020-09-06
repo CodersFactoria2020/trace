@@ -17,6 +17,7 @@ class CategoryController extends Controller
     {
         $this->authorize('view-any', Category::class);
         $categories = Category::paginate(10);
+
         return view('category.index', compact('categories'));
     }
 
@@ -24,6 +25,7 @@ class CategoryController extends Controller
     {
         $this->authorize('create', Category::class);
         $categories = Category::all();
+
         return view('category.create', compact('categories'));
     }
 
@@ -31,12 +33,14 @@ class CategoryController extends Controller
     {
         $this->authorize('create', Category::class);
         Category::create($request->all());
+
         return redirect('/areas')->with('status_success',"S'ha creat la categoria correctament");
     }
 
     public function show(Category $category)
     {
         $this->authorize('view', Category::class);
+
         return view('category.show', compact('categories'));
     }
 
@@ -44,6 +48,7 @@ class CategoryController extends Controller
     {
         $this->authorize('update', Category::class);
         $categories = Category::all();
+
         return view('category.edit', compact('categories'));
     }
 
@@ -51,6 +56,7 @@ class CategoryController extends Controller
     {
         $this->authorize('update', Category::class);
         $category->update($request->all());
+
         return redirect('/areas')->with('status_success',"S'ha actualitzat la categoria correctament");
     }
 
@@ -58,7 +64,7 @@ class CategoryController extends Controller
     {
         $this->authorize('destroy', Category::class);
         $category->delete();
+
         return redirect('/areas')->with('status_success',"S'ha suprimit la categoria correctament");
     }
 }
-
