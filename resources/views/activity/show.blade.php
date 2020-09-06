@@ -10,30 +10,31 @@
             <div class="modal-body">
                 @method('put')
                 <div class="card-body">
+
+                    @if (Auth::User()->role_id !== 'Soci')
                     <div class="form-row">
                         <div class="col-md-6">
                             <small><b>Inici de l'activitat: </b></small>
-                            @if (Auth::User()->role_id == 'Soci')                            
-                            <p>{{$activity->start}} {{substr($activity->showStart, 8)}}</p>
-                            @endif
                             @if (Auth::User()->role_id !== 'Soci')
-                            <p>{{$activity->showStart}}</p>
+                                <p>{{$activity->showStart}}</p>
                             @endif
                         </div>
                         <div class="col-md-6">
                             <small><b>Finalització de l'activitat: </b></small>
-                            @if (Auth::User()->role_id == 'Soci')                            
-                            <p>{{substr($activity->start,0,-5)}} {{substr($activity->showEnd, 10)}}</p>
-                            @endif
                             @if (Auth::User()->role_id !== 'Soci')
-                            <p>{{$activity->showEnd}}</p>
+                                <p>{{$activity->showEnd}}</p>
                             @endif
                         </div>
                     </div>
-                    <div class="form-group">
-                        <small><b>L'activitat es repeteix cada setmana:</b></small>
-                        <p> {{ $activity->weekly == "Sí" ? "Sí" : "No" }}</p>
-                    </div>
+                    @endif
+
+                    @if (Auth::User()->role_id !== 'Soci')
+                        <div class="form-group">
+                            <small><b>L'activitat es repeteix cada setmana:</b></small>
+                            <p> {{ $activity->weekly == "Sí" ? "Sí" : "No" }}</p>
+                        </div>
+                    @endif
+                    
                     <div>
                         <small><b>Nom de l'activitat: </b></small>
                         <p>{{$activity->title}}</p>
