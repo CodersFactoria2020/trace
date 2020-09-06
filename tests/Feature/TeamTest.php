@@ -113,7 +113,7 @@ class TeamTest extends TestCase
         $user = factory(User::class)->states('Soci')->create();
         $response = $this->actingAs($user)->get('/team');
 
-        $response->assertStatus(200);
+        $response->assertStatus(403);
     }
 
     public function test_soci_cant_update_member_team_with_image(){
