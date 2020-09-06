@@ -119,8 +119,6 @@ class UserController extends Controller
     public function dashboard()
     {
         $user = Auth::user();
-        $users = User::all();
-        $roles = Role::all();
         $activities = $user->activities;
         if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', ['users' => $users], compact('roles'));
@@ -133,11 +131,15 @@ class UserController extends Controller
     public function soci_all_activities()
     {
         $user = Auth::user();
-        $users = User::all();
-        $roles = Role::all();
         $activities = $user->activities;
-        $activities = Activity::replace_start_date_with_weekday_name($activities);
-        return view('user.soci', compact('activities'));
+        $monday_activities = Activity::filter_activities_by_day($activities, 1);
+        $tuesday_activities = Activity::filter_activities_by_day($activities, 2);
+        $wednesday_activities = Activity::filter_activities_by_day($activities, 3);
+        $thursday_activities = Activity::filter_activities_by_day($activities, 4);
+        $friday_activities = Activity::filter_activities_by_day($activities, 5);
+        $saturday_activities = Activity::filter_activities_by_day($activities, 6);
+        $sunday_activities = Activity::filter_activities_by_day($activities, 0);
+        return view('user.soci-all-activities', compact('monday_activities', 'tuesday_activities', 'wednesday_activities', 'thursday_activities', 'friday_activities', 'saturday_activities', 'sunday_activities',));
     }
 
 }

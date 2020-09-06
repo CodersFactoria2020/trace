@@ -127,4 +127,17 @@ class Activity extends Model
         $todays_activities = collect($todays_activities);
         return $todays_activities;
     }
+
+    static public function filter_activities_by_day($activities, $day)
+    {
+        $day_activities = [];
+        foreach ($activities as $activity)
+        {
+            if (Carbon::parse($activity->start)->dayOfWeek == $day) {
+                array_push($day_activities, $activity);
+            }
+        }
+        $day_activities = collect($day_activities);
+        return $day_activities;
+    }
 }
