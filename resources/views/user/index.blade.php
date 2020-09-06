@@ -41,8 +41,8 @@
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>
       <div>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm">Ascendent</a>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm">Descendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm {{ request()->sort == 'asc' ? 'active' : ''}}">Ascendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm {{ request()->sort == 'desc' ? 'active' : ''}}">Descendent</a>
       </div>
 
     </div>
