@@ -33,15 +33,6 @@
             </div>
         </div>
     </div>
-    <!-- ACTIVITIES  -- TODAY OR ALL FILTER -->
-    <div class="filter-views">
-        <div class="float-left">
-            <form action="">
-                <a href="" class="btn btn-outline-dark btn-sm  'active'"> AVUI</a>
-                <a type="submit" href="" value="{{ $activities}}" class="btn btn-outline-dark btn-sm ">Veure totes les meves activitats</a>
-            </form>
-        </div>
-    </div>
   <!-- TABLA -->
     <div class="dashboard-right-side">
         <table class="table table-striped table-borderless">
