@@ -11,17 +11,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'shown_password', 'phone', 'dni', 'tutor', 'role_id'
-    ];
+    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'shown_password', 'phone', 'dni', 'tutor', 'role_id'];
 
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = ['email_verified_at' => 'datetime'];
 
 
     public static function filterByRole($id)
@@ -46,10 +40,12 @@ class User extends Authenticatable
         {
             return "Soci";
         }
+
         if ($value === 2)
         {
             return "Professional";
         }
+
         if ($value === 3)
         {
             return "Admin";

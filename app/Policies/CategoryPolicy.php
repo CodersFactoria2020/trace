@@ -5,7 +5,6 @@ namespace App\Policies;
 use App\Category;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Illuminate\Support\Facades\Auth;
 
 class CategoryPolicy
 {
@@ -16,6 +15,7 @@ class CategoryPolicy
         if ($user->role_id === "Soci") {
             return false;
         }
+
         return true;
     }
 
@@ -29,6 +29,7 @@ class CategoryPolicy
         if ($user->role_id != "Admin") {
             return false;
         }
+
         return true;
     }
 
@@ -37,6 +38,7 @@ class CategoryPolicy
         if ($user->role_id != "Admin") {
             return false;
         }
+
         return true;
     }
 
@@ -45,6 +47,7 @@ class CategoryPolicy
         if ($user->role_id != "Admin") {
             return false;
         }
+        
         return true;
     }
 }

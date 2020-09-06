@@ -17,6 +17,7 @@ class TransparencyController extends Controller
         if (auth()->user()->role_id != "Admin") {
             return view('user.notauthorized');
         }
+
         return view('transparency.index', compact('transparencies'));
     }
 
@@ -24,17 +25,17 @@ class TransparencyController extends Controller
     {
         $this->authorize('create', Transparency::class);
         $transparencies = Transparency::all();
-        return view('transparency.create', compact('transparencies'));
 
+        return view('transparency.create', compact('transparencies'));
     }
 
     public function store(Request $request, Transparency $transparency)
     {
         $this->authorize('create', $transparency);
         $data = $request->all();
-
         $transparency = Transparency::create($data);
         $this->upload_documents($request, $transparency);
+
         return redirect(route('transparency.index'));
     }
 
@@ -54,9 +55,7 @@ class TransparencyController extends Controller
     {
         $this->authorize('update', $transparency);
         $data = $request->all();
-
         $transparency->update($data);
-
         $this->upload_documents($request, $transparency);
 
         return redirect('/transparency');
@@ -67,24 +66,24 @@ class TransparencyController extends Controller
         $this->authorize('destroy', $transparency);
         $transparency->delete();
         Storage::delete(['entity_document', 'economic_document']);
+
         return redirect()->route('transparency.index');
     }
 
     private function upload_documents(Request $request, Transparency $transparency): void
     {
         if ($request->file('economic_document')) {
-
             $transparency->upload_economic_document($request->file('economic_document'));
         }
-        if ($request->file('entity_document')) {
 
+        if ($request->file('entity_document')) {
             $transparency->upload_entity_document($request->file('entity_document'));
         }
     }
 
-    public function viewVisitor(Transparency $transparency){
+    public function viewVisitor(Transparency $transparency)
+    {
         $transparencies = Transparency::all();
         return view('/transparencia', compact('transparencies'));
     }
-
 }

@@ -8,7 +8,7 @@ use App\Permission;
 
 class Role extends Model
 {
-    protected $fillable = ['role_name']; 
+    protected $fillable = ['name'];
 
     static $admin_id = 3;
     static $professional_id = 2;
@@ -19,7 +19,7 @@ class Role extends Model
         return $this->hasMany(User::class);
     }
 
-    public function permissions() 
+    public function permissions()
     {
         return $this->belongsToMany(Permission::class);
     }

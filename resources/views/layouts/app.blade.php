@@ -99,13 +99,12 @@
 
     <div id="header-sticky-wrapper">
         <div id="header">
-
             <div class="flex-container d-flex justify-content-between align-items-center">
-
                 <div class="mr auto">
                     <a href="{{url('/home')}}">
                         <img src="img/Logo_transparente_sin_texto.png" alt="logotipo de traCE" class="logo img-fluid"
-                            style="width:90px; heigh:auto"></a>
+                            style="width:90px; heigh:auto">
+                    </a>
                 </div>
 
                 <div>
@@ -138,12 +137,9 @@
                 <div id="collabora">
                     <a href="{{url('/collabora/')}}" class="cta-line">Col·labora</a>
                 </div>
-
             </div>
-
         </div>
     </div>
-
 </header>
 
 <main class="">
@@ -169,7 +165,6 @@ window.addEventListener("cookieAlertAccept", function() {
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/venobox/venobox.min.js"></script>
 <script src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" data-auto-a11y="true"></script>
-
 
 <!-- Template Main JS File -->
 <script src="js/main.js"></script>

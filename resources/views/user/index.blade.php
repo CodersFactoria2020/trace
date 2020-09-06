@@ -2,21 +2,17 @@
 
 @section('scripts')
 
-  <!-- Jquery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-  <!-- Bootstrap CSS --  SI SE QUITA ESTE ENLACE, EL BOTÓN PRIMARY TOMA FONDO VERDE-->
-  <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
-  <!-- Font Awesome CSS -->
-  <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
+    <link href='https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.css' rel='stylesheet' />
+    <link href='https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.1/css/all.css' rel='stylesheet'>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
-    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
-    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
 
 @endsection
 
@@ -27,26 +23,26 @@
     @include('custom.message')
   <div class="dashboard-right-side">
     <div class="float-left"><h2>Usuaris</h2></div>
-    @if (auth()->user()->role_id === "Admin")
-    <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
-    @include('user.create')
-    @endif
-  </div>
+        @if (auth()->user()->role_id === "Admin")
+            <button type="button" class="cta" data-toggle="modal" data-target="#create-user"> Afegir un usuari</button>
+            @include('user.create')
+        @endif
+    </div>
   <!-- ORDEN ASCENDENTE BY DEFAULT -->
   <div class="filter-views">
     <div class="float-left">
       <form action="{{ Route('user.filter') }}">
         <a href="{{url('/user')}}" class="btn btn-outline-dark btn-sm  {{ !request()->role_id ? 'active' : ''}}"> Veure tots</a>
         @foreach($roles as $role)
-        <a type="submit" href="/user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm {{ request()->role_id == $role->id ? 'active' : ''}}">{{ $role->role_name }}</a>
+        <a type="submit" href="/user?role_id={{ $role->id }}" value="{{ $role->id }}" class="btn btn-outline-dark btn-sm {{ request()->role_id == $role->id ? 'active' : ''}}">{{ $role->name }}</a>
         @endforeach
       </form>
     </div>
     <div class="float-right d-flex align-items-center">
       <small class="pr-2">Ordenar per cognom:</small>
       <div>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm">Ascendent</a>
-        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm">Descendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'asc']) }}" class="btn btn-outline-dark btn-sm {{ request()->sort == 'asc' ? 'active' : ''}}">Ascendent</a>
+        <a href="{{ route('user.index', ['role_id' => request('role_id'), 'sort' => 'desc']) }}" class="btn btn-outline-dark btn-sm {{ request()->sort == 'desc' ? 'active' : ''}}">Descendent</a>
       </div>
 
     </div>
@@ -114,7 +110,7 @@
   </div>
   <!-- PAGINADO -->
   <div class="dashboard-right-side d-flex align-items-center justify-content-end">
-    <div class=""><small>Mostrant {{ count($users) }} de {{ $users->total() }}</small></div>
+    <div class=""><small>Total: {{ $users->total() }} usuaris</small></div>
     <div class=""> {{ $users->links() }}</div>
   </div>
 </div>
