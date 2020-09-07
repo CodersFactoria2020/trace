@@ -1,0 +1,744 @@
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+    padding: 0 0 80px 0;
+    a {
+        font-weight: 700;
+    }
+}
+
+.section-bg {
+    background-color: lighten($gray, 70);
+}
+
+.section-title {
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 30px;
+    h2 {
+        font-size: 28px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        position: relative;
+        font-family: $font-secondary;
+    }
+
+    h2::after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: $primary;
+        bottom: 0;
+        left: calc(50% - 25px);
+    }
+
+    p {
+        margin-bottom: 0;
+        padding-bottom: 10px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+    padding: 20px 0 20px 0;
+    background: lighten($secondary, 64);
+    border-bottom: 1px solid lighten($secondary, 60);
+    margin-bottom: 40px;
+    font-size: 14px;
+
+    ol {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        padding: 0 0 5px 0;
+        margin: 0;
+        font-size: 14px;
+
+        li + li {
+            padding-left: 10px;
+        }
+
+        li + li::before {
+            display: inline-block;
+            padding-right: 10px;
+            color: lighten($secondary, 10);
+            content: "/";
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Featured
+--------------------------------------------------------------*/
+.featured {
+    position: relative;
+    z-index: 2;
+
+    .icon-box {
+        padding: 40px 30px;
+        box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+        border-radius: 10px;
+        background: #fff;
+        transition: all ease-in-out 0.3s;
+
+        i {
+            color: $primary;
+            font-size: 42px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h3 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 20px;
+            a {
+                color: $secondary;
+                transition: 0.3s;
+            }
+        }
+
+        p {
+            color: $secondary;
+            line-height: 24px;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        &:hover {
+            background: $primary;
+            i,
+            h3 a,
+            p {
+                color: #fff;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about {
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .box-cta {
+        padding-top: 10px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Our Services
+--------------------------------------------------------------*/
+.services {
+    .flex-container {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+
+        .box {
+            text-align: center;
+            padding: 30px;
+        }
+    }
+
+    .icon-box {
+        width: 300px;
+        text-align: center;
+        transition: all ease-in-out 0.3s;
+
+        .icon {
+            margin: 0 auto;
+            width: 64px;
+            height: 64px;
+            background: $primary;
+            border-radius: 5px;
+            transition: all 0.3s ease-out 0s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            transform-style: preserve-3d;
+
+            i {
+                color: #fff;
+                font-size: 32px;
+            }
+
+            &::before {
+                position: absolute;
+                content: "";
+                left: -8px;
+                top: -8px;
+                height: 100%;
+                width: 100%;
+                transition: all 0.3s ease-out 0s;
+                transform: translateZ(-1px);
+            }
+        }
+
+        h4 {
+            font-weight: 300;
+            margin-bottom: 15px;
+            a {
+                color: $secondary;
+            }
+        }
+
+        p {
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Our Clients
+--------------------------------------------------------------*/
+.clients {
+    text-align: center;
+    .flex-container {
+        img {
+            width: auto;
+            height: 120px;
+            padding: 10px;
+        }
+    }
+    background-color: $white;
+}
+
+/*--------------------------------------------------------------
+# Counts
+--------------------------------------------------------------*/
+.counts {
+    .count-box {
+        padding: 30px;
+
+        span {
+            font-size: 42px;
+            line-height: 24px;
+            display: block;
+            font-weight: 200;
+            color: $primary;
+        }
+
+        p {
+            padding: 30px 0 0 0;
+            margin: 0;
+            font-family: $font-primary;
+            font-size: 14px;
+        }
+
+        a {
+            font-weight: 600;
+            display: block;
+            margin-top: 20px;
+            color: lighten($secondary, 15);
+            font-size: 15px;
+            font-family: $font-secondary;
+            transition: ease-in-out 0.3s;
+            &:hover {
+                color: lighten($secondary, 30);
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Testimonials
+--------------------------------------------------------------*/
+.testimonials {
+    .testimonial-item {
+        box-sizing: content-box;
+        padding: 40px;
+        box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+        position: relative;
+        background: $white;
+
+        .testimonial-img {
+            width: 90px;
+            border-radius: 50px;
+            border: 6px solid #fff;
+            float: left;
+            margin: 0 10px 0 0;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 10px 0 5px 0;
+            color: #111;
+        }
+
+        h4 {
+            font-size: 14px;
+            color: #999;
+            margin: 0;
+        }
+
+        .quote-icon-left,
+        .quote-icon-right {
+            color: lighten($primary, 40);
+            font-size: 26px;
+        }
+
+        .quote-icon-left {
+            display: inline-block;
+            left: -5px;
+            position: relative;
+        }
+
+        .quote-icon-right {
+            display: inline-block;
+            right: -5px;
+            position: relative;
+            top: 10px;
+        }
+
+        p {
+            font-style: italic;
+            margin: 15px 0 0 0;
+            padding: 0;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Team
+--------------------------------------------------------------*/
+.team {
+    .content {
+        h2 {
+            font-weight: 600 !important;
+            font-size: 26px !important;
+            color: $secondary !important;
+            padding-bottom: 20px !important;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+    }
+
+    .team-grid {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-wrap: wrap;
+
+        .member {
+            max-width: 300px;
+            padding: 0 30px 40px 30px;
+            text-align: center;
+            background: $white;
+
+            img {
+                width: 160px;
+                height: 160px !important;
+                height: auto;
+                border-radius: 50%;
+                margin: 0 0 20px 0;
+                -webkit-filter: grayscale(100%);
+                filter: grayscale(100%);
+            }
+
+            h4 {
+                font-weight: 700;
+                margin-bottom: 2px;
+                font-size: 18px;
+            }
+
+            span {
+                font-style: italic;
+                display: block;
+                font-size: 13px;
+            }
+
+            p {
+                padding-top: 10px;
+                font-size: 14px;
+                font-style: italic;
+                color: lighten($default, 40);
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact {
+    h3 {
+        font-weight: 600;
+        font-size: 26px;
+        color: $secondary;
+        padding-bottom: 20px;
+    }
+    ul {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    a {
+        padding: 10px 0;
+    }
+    i {
+        padding-right: 10px;
+    }
+
+    .info-box {
+        color: $default;
+        text-align: center;
+        box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+        padding: 20px 0 30px 0;
+
+        i {
+            font-size: 32px;
+            color: $primary;
+            border-radius: 50%;
+            padding: 8px;
+            border: 2px dotted lighten($primary, 35);
+        }
+
+        h3 {
+            font-size: 20px;
+            color: lighten($default, 20);
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        p {
+            padding: 0;
+            line-height: 24px;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+    }
+
+    .php-email-form {
+        padding: 30px;
+
+        .validate {
+            display: none;
+            color: red;
+            margin: 0 0 15px 0;
+            font-weight: 400;
+            font-size: 13px;
+        }
+
+        .error-message {
+            display: none;
+            color: #fff;
+            background: #ed3c0d;
+            text-align: left;
+            padding: 15px;
+            font-weight: 600;
+            & br + br {
+                margin-top: 25px;
+            }
+        }
+
+        .sent-message {
+            display: none;
+            color: #fff;
+            background: #18d26e;
+            text-align: center;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .loading {
+            display: none;
+            background: #fff;
+            text-align: center;
+            padding: 15px;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                border-radius: 50%;
+                width: 24px;
+                height: 24px;
+                margin: 0 10px -6px 0;
+                border: 3px solid #18d26e;
+                border-top-color: #eee;
+                animation: animate-loading 1s linear infinite;
+            }
+        }
+
+        input,
+        textarea {
+            border-radius: 0;
+            box-shadow: none;
+            font-size: 14px;
+            &::focus {
+                background-color: $primary;
+            }
+        }
+
+        input {
+            padding: 20px 15px;
+        }
+
+        textarea {
+            padding: 12px 15px;
+        }
+
+        button[type="submit"] {
+            background: $primary;
+            border: 0;
+            border-radius: 50px;
+            padding: 10px 24px;
+            color: #fff;
+            float: right;
+            transition: 0.4s;
+            &:hover {
+                background: darken($primary, 5);
+            }
+        }
+    }
+
+    @keyframes animate-loading {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Collabora
+--------------------------------------------------------------*/
+
+.collabora {
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 18px !important;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+        li {
+            font-size: 16px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Collaborators
+--------------------------------------------------------------*/
+
+.collaborators {
+    img {
+        width: auto;
+        height: 120px;
+        padding: 10px 0;
+    }
+    h3 {
+        font-weight: 600;
+        font-size: 26px;
+        color: #545454;
+    }
+}
+
+/*--------------------------------------------------------------
+# Resources
+--------------------------------------------------------------*/
+
+.resources {
+    h3 {
+        font-weight: 600;
+        font-size: 26px;
+        color: $secondary;
+        padding-bottom: 20px;
+    }
+    ul {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    a {
+        padding: 10px 0;
+    }
+    i {
+        padding-right: 10px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Philosophy
+--------------------------------------------------------------*/
+
+.philosophy {
+    padding: 0 !important;
+
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .box-cta {
+        padding-top: 10px;
+    }
+
+    .quote {
+        font-size: 24px;
+        font-weight: lighter;
+        font-style: italic;
+        margin-left: 20px;
+    }
+
+    .quote-author {
+        font-weight: bold;
+        margin-left: 20px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Transparency
+--------------------------------------------------------------*/
+
+.transparency {
+    .content {
+        h3 {
+            font-weight: 600;
+            font-size: 26px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+        h4 {
+            font-weight: 600;
+            font-size: 18px !important;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+
+        ul {
+            font-weight: 600;
+            font-size: 18px;
+            color: $secondary;
+            padding-bottom: 20px;
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+# Login
+--------------------------------------------------------------*/
+
+.login {
+    h2 {
+        text-align: center;
+        color: $primary;
+        margin-top: 100px;
+        padding-bottom: 30px;
+        font-weight: 600;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        margin: 20px 0;
+    }
+
+    .card {
+        border: none !important;
+        box-shadow: 0 rgba(0, 0, 0, 0.3) !important;
+        transition: 0.3s !important;
+    }
+
+    label {
+        font-size: 18px;
+    }
+}
+
+#accordion {
+    button {
+        color: $primary !important;
+        font-size: 18px !important;
+        font-weight: 600 !important;
+    }
+    button:hover {
+        color: $secondary !important;
+        text-decoration: none !important;
+    }
+    .card {
+        border: none !important;
+    }
+    .card-body {
+        border: none !important;
+    }
+    background-color: none !important;
+}
+
+@media (max-width: 768px) {
+    .accordion {
+        margin-top: 40px;
+    }
+}
+/*--------------------------------------------------------------
+# Map
+--------------------------------------------------------------*/
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive {
+    iframe {
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
+}
+
+.soci {
+    input {
+        padding-right: 10px !important;
+    }
+}

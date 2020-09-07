@@ -2,38 +2,53 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\Role;
+use App\Activity;
 
 class User extends Authenticatable
 {
     use Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name', 'email', 'password',
-    ];
+    protected $fillable = ['first_name', 'last_name', 'email', 'password', 'shown_password', 'phone', 'dni', 'tutor', 'role_id'];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    protected $hidden = ['password', 'remember_token'];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    protected $casts = ['email_verified_at' => 'datetime'];
+
+
+    public static function filterByRole($id)
+    {
+        $users = User::where('role_id', '=', $id)->get();
+        return $users;
+    }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+    public function activities()
+    {
+        return $this->belongsToMany(Activity::class);
+    }
+
+    public function getRoleIdAttribute($value)
+    {
+        if ($value === 1)
+        {
+            return "Soci";
+        }
+
+        if ($value === 2)
+        {
+            return "Professional";
+        }
+
+        if ($value === 3)
+        {
+            return "Admin";
+        }
+    }
 }

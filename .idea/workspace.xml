@@ -1,0 +1,261 @@
+<<<<<<< HEAD
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Activity.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Activity.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ActivityController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/activity/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/activity/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/activity/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/destroy.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/transparency/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/vendor/facade/flare-client-php" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition-contracts" />
+      <path value="$PROJECT_DIR$/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/facade/ignition" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php70" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-php73" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-iconv" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/vendor/spatie/laravel-cookie-consent" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1gP5o4haz7eqxiQhLnC2j2LGf7y" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RunManager" selected="PHPUnit.ActivitiesTest.test_professional_can_delete_activity">
+    <configuration name="ActivitiesTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_admin_can_delete_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_admin_can_delete_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_admin_can_update_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_admin_can_update_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_professional_can_create_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_professional_can_create_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ActivitiesTest.test_professional_can_delete_activity" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="PHP 7.3" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <TestRunner class="Tests\Feature\ActivitiesTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ActivitiesTest.php" method="test_professional_can_delete_activity" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHPUnit.ActivitiesTest.test_professional_can_delete_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_professional_can_create_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_admin_can_update_activity" />
+        <item itemvalue="PHPUnit.ActivitiesTest.test_admin_can_delete_activity" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b97d0672-249b-4ffd-b9a0-b6b66b5002c1" name="Default Changelist" comment="" />
+      <created>1598003558920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598003558920</updated>
+      <workItem from="1598003560222" duration="3113000" />
+      <workItem from="1598249864885" duration="2874000" />
+      <workItem from="1598256717894" duration="1508000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="52" key="GridCell.Tab.0.bottom" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.bottom/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.bottom/0.23.1440.795@0.23.1440.795" timestamp="1598262798852" />
+    <state width="1398" height="203" key="GridCell.Tab.0.bottom/0.23.1440.798@0.23.1440.798" timestamp="1598261221404" />
+    <state width="1398" height="451" key="GridCell.Tab.0.bottom/0.23.1440.801@0.23.1440.801" timestamp="1598269506253" />
+    <state width="1398" height="52" key="GridCell.Tab.0.bottom/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state width="1398" height="52" key="GridCell.Tab.0.center" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.center/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.center/0.23.1440.795@0.23.1440.795" timestamp="1598262798850" />
+    <state width="1398" height="203" key="GridCell.Tab.0.center/0.23.1440.798@0.23.1440.798" timestamp="1598261221402" />
+    <state width="1398" height="451" key="GridCell.Tab.0.center/0.23.1440.801@0.23.1440.801" timestamp="1598269506252" />
+    <state width="1398" height="52" key="GridCell.Tab.0.center/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state width="1398" height="52" key="GridCell.Tab.0.left" timestamp="1598272533509">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.left/0.23.1440.793@0.23.1440.793" timestamp="1598264111198" />
+    <state width="1398" height="2" key="GridCell.Tab.0.left/0.23.1440.795@0.23.1440.795" timestamp="1598262798850" />
+    <state width="1398" height="203" key="GridCell.Tab.0.left/0.23.1440.798@0.23.1440.798" timestamp="1598261221399" />
+    <state width="1398" height="451" key="GridCell.Tab.0.left/0.23.1440.801@0.23.1440.801" timestamp="1598269506251" />
+    <state width="1398" height="52" key="GridCell.Tab.0.left/0.23.1440.806@0.23.1440.806" timestamp="1598272533509" />
+    <state width="1398" height="52" key="GridCell.Tab.0.right" timestamp="1598272533510">
+      <screen x="0" y="23" width="1440" height="806" />
+    </state>
+    <state width="1398" height="260" key="GridCell.Tab.0.right/0.23.1440.793@0.23.1440.793" timestamp="1598264111199" />
+    <state width="1398" height="2" key="GridCell.Tab.0.right/0.23.1440.795@0.23.1440.795" timestamp="1598262798851" />
+    <state width="1398" height="203" key="GridCell.Tab.0.right/0.23.1440.798@0.23.1440.798" timestamp="1598261221403" />
+    <state width="1398" height="451" key="GridCell.Tab.0.right/0.23.1440.801@0.23.1440.801" timestamp="1598269506252" />
+    <state width="1398" height="52" key="GridCell.Tab.0.right/0.23.1440.806@0.23.1440.806" timestamp="1598272533510" />
+    <state x="385" y="142" width="670" height="686" key="search.everywhere.popup" timestamp="1598271022959">
+      <screen x="0" y="23" width="1440" height="804" />
+    </state>
+    <state x="385" y="140" width="670" height="676" key="search.everywhere.popup/0.23.1440.793@0.23.1440.793" timestamp="1598251216506" />
+    <state x="385" y="141" width="670" height="680" key="search.everywhere.popup/0.23.1440.797@0.23.1440.797" timestamp="1598257115707" />
+    <state x="385" y="142" width="670" height="686" key="search.everywhere.popup/0.23.1440.804@0.23.1440.804" timestamp="1598271022959" />
+  </component>
+</project>
+=======
+>>>>>>> develop
