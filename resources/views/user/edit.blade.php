@@ -76,7 +76,7 @@
                                 <select name="role_id" class="form-control">
                                     <optgroup label="Selecciona un rol">
                                         @foreach ($roles as $role)
-                                        <option value="{{ $role->id }}">{{ $role->name }}</option>
+                                        <option value="{{$role->id}}" {{$user->role_id == $role->name ? 'selected' : ''}}>{{ $role->name }}</option>
                                         @endforeach
                                 </select>
                             </div>
