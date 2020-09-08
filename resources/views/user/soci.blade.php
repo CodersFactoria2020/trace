@@ -74,6 +74,16 @@
 
         </table>
     </div>
+    <div>
+        @if (count($activities) == 0)
+        <div class="primary-green col-md-12">
+            <h5>Avui no tens cap activitat programada
+            <br>
+            Pots veure les activitats de tota la setmana prement a "Totes les activitats" a l'esquerra.
+            </h5>
+        </div>
+        @endif
+    </div>
 </div>
 
 @endsection
