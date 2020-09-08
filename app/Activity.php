@@ -81,12 +81,12 @@ class Activity extends Model
 
     public function getWeeklyAttribute($value)
     {
-        if ($value === 1)
+        if ($value === "1")
         {
             return "Sí";
         }
 
-        if ($value === 0)
+        if ($value === "0")
         {
             return "No";
         }
@@ -119,11 +119,11 @@ class Activity extends Model
         $todays_activities = [];
         $current_day_week = Carbon::now()->dayOfWeek;
         $current_date = Carbon::now();
-
+    
         foreach ($activities as $activity) {
+            
             $activity_date = $activity->start;
             $activity_day_week = Carbon::parse($activity_date)->dayOfWeek;
-
             if ($activity_day_week == $current_day_week && $activity->weekly == 'Sí')
             {
                 array_push($todays_activities, $activity);
@@ -145,7 +145,7 @@ class Activity extends Model
         $day_activities = [];
         foreach ($activities as $activity)
         {
-            if (Carbon::parse($activity->start)->dayOfWeek == $day) {
+            if (Carbon::parse($activity->start)->dayOfWeek == $day ) {
                 array_push($day_activities, $activity);
             }
         }
