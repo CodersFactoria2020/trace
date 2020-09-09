@@ -134,9 +134,9 @@ class UserController extends Controller
         $users = User::all();
         $roles = Role::all();
 
-        if (auth()->user()->role_id != "Soci") {
+       /*  if (auth()->user()->role_id != "Soci") {
             return view('user.dashboard', compact('users', 'roles'));
-        }
+        } */
         $activities = Activity::filter_todays_activities_at_any_day_of_year($activities);
         $activities = Activity::replace_start_date_with_weekday_name($activities);
 
@@ -158,4 +158,13 @@ class UserController extends Controller
         return view('user.soci-all-activities', compact('monday_activities', 'tuesday_activities', 'wednesday_activities', 'thursday_activities', 'friday_activities', 'saturday_activities', 'sunday_activities',));
     }
 
+    public function soci_today()
+    {
+        $user = Auth::user();
+        $activities = $user->activities;
+        $users = User::all();
+        $roles = Role::all();
+                
+        return view('user.soci-today', compact('users', 'roles', 'activities'));
+    }
 }

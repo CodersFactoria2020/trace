@@ -27,6 +27,9 @@ Auth::routes(['register'=>false, 'reset'=>false, 'verify'=>false]);
 Route::get('/usuaris', 'UserController@index')->name('user.index')->middleware('auth');
 Route::get('/dashboard', 'UserController@dashboard')->name('dashboard')->middleware('auth');
 Route::get('/soci-all-activities', 'UserController@soci_all_activities')->name('soci-all-activities')->middleware('auth');
+
+Route::get('/soci-today', 'UserController@soci_today')->name('soci-today')->middleware('auth');
+
 Route::resource('/user', 'UserController')->middleware('auth');
 Route::get('user/{id}/destroy/','UserController@destroy')->middleware('auth');
 Route::get('filter','UserController@filter')->name('user.filter')->middleware('auth');
