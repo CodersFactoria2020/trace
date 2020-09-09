@@ -22,7 +22,8 @@
 <div class="col">
     <div class="dashboard-right-side">
         <div class="float-left">
-            <h2>Activitats de la setmana de {{Auth::User()->first_name}}</h2>
+            <h2>Benvingut/da {{Auth::User()->first_name}}</h2>
+            <h4 class="bold pt-2">ACTIVITATS DE LA SETMANA</h4>
         </div>
     </div>
     <div class="dashboard-right-side">
