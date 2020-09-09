@@ -42,8 +42,8 @@
                 </tr>
                 @foreach($monday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -78,8 +78,8 @@
                 </tr>
                 @foreach($tuesday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -114,8 +114,8 @@
                 </tr>
                 @foreach($wednesday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -150,8 +150,8 @@
                 </tr>
                 @foreach($thursday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -186,8 +186,8 @@
                 </tr>
                 @foreach($friday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -222,8 +222,8 @@
                 </tr>
                 @foreach($saturday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset
@@ -258,8 +258,8 @@
                 </tr>
                 @foreach($sunday_activities as $activity)
                     <tr>
-                        <td class="icon-text">
-                            <div class="primary-green">
+                        <td>
+                            <div>
                                 @isset ($activity->category_id)
                                     <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                                 @endisset

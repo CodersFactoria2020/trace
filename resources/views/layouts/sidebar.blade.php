@@ -7,7 +7,7 @@
         </div>
 
         <div class="nav-item full-vertical-align">
-            <div class="side-bar-menu">
+            <div class="side-bar-menu-dashboard">
                 <ul class="nav flex-column">  
                     @if (auth()->user()->role_id != "Soci")
                     <li class="nav-item">
@@ -46,7 +46,7 @@
                     </li>
                     @endif
                     @if (auth()->user()->role_id == "Admin")
-                    <li class="nav-item">
+                    <li class="nav-item ">
                         <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/transparency')}}">
                             <span><i class="icofont-page"></i></span>
@@ -69,16 +69,17 @@
                     </li>
                     @endif
                     @endif
+                    
                     @if (auth()->user()->role_id == "Soci")
                     <li class="nav-item soci-menu">
-                        <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
+                        <a class="nav-link {{ request()->is('dashboard') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/dashboard')}}">
                             <span><i class="icofont-clock-time"></i></span>
                             Avui
                         </a>
                     </li>
                     <li class="nav-item soci-menu">
-                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
+                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/soci-all-activities')}}">
                             <span><i class="icofont-calendar"></i></span>
                             La setmana

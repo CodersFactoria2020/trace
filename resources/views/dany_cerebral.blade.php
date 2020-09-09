@@ -353,8 +353,6 @@
 <script src="vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="vendor/venobox/venobox.min.js"></script>
 
-<!-- Template Main JS File -->
-
 @extends('layouts.app')
 
 

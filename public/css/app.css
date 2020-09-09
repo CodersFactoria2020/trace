@@ -12651,6 +12651,11 @@ section a {
   color: #343a40 !important;
 }
 
+.active-soci {
+  color: white !important;
+  background-color: #545454;
+}
+
 .danger a {
   color: #dc3545 !important;
 }
@@ -12743,6 +12748,7 @@ section a {
 
 .soci-menu a {
   font-size: 18px !important;
+  padding: 20px;
 }
 
 .soci-menu i {
@@ -12753,5 +12759,9 @@ section a {
   background-color: white !important;
   color: #343a40 !important;
   border-bottom: 1px solid #343a40;
+}
+
+.side-bar-menu-dashboard {
+  width: 100%;
 }
 
