@@ -34,21 +34,15 @@ class User extends Authenticatable
         return $this->belongsToMany(Activity::class);
     }
 
-    public function getRoleIdAttribute($value)
-    {
-        if ($value === "1")
-        {
+    public function getRoleIdAttribute($value) {
+        if ($value === "1" || $value === 1) {
             return "Soci";
         }
 
-        if ($value === "2")
-        {
+        if ($value === "2" || $value === 2) {
             return "Professional";
         }
-        
-        if ($value === "3")
-        {
-            
+        if ($value === "3" || $value === 3) {
             return "Admin";
         }
     }
