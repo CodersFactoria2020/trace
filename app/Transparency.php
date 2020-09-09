@@ -15,7 +15,7 @@ class Transparency extends Model
         $this->economic_document= $economic_document->extension();
         $name_economic_document = $this->get_saved_name_economic_document();
         $this->save();
-        $economic_document->storeAs('transparency/', $name_economic_document);
+        $economic_document->storeAs('transparency/', $name_economic_document, ['disk'=>'public']);
     }
 
     public function upload_entity_document($entity_document)
@@ -23,7 +23,7 @@ class Transparency extends Model
         $this->entity_document= $entity_document->extension();
         $name_entity_document = $this->get_saved_name_entity_document();
         $this->save();
-        $entity_document->storeAs('transparency/', $name_entity_document);
+        $entity_document->storeAs('transparency/', $name_entity_document, ['disk'=>'public']);
     }
 
     public function get_economic_url()
