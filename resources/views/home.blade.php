@@ -21,7 +21,3 @@
     <script src="js/main.js"></script>
     
  @extends('layouts.app')
-
-
-
-

@@ -14,7 +14,7 @@ class Team extends Model
          $this->photo= $photo->extension();
          $name_photo = $this->get_saved_name_photo();
          $this->save();
-         $photo->storeAs('team/', $name_photo, ['disk'=>'public']);
+         $photo->storeAs('team/', $name_photo);
     }
 
     public function get_photo_url()
