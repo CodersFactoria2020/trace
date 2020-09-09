@@ -10989,6 +10989,7 @@ header {
 }
 
 .cta:hover {
+  text-decoration: none;
   background: #343a40;
   color: #fff;
 }

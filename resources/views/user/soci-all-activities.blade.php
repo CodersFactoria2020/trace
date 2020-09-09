@@ -22,7 +22,7 @@
 <div class="col">
     <div class="dashboard-right-side">
         <div class="float-left">
-            <h2>Activitats de la setmana</h2>
+            <h2>Activitats de la setmana de {{Auth::User()->first_name}}</h2>
         </div>
     </div>
     <div class="dashboard-right-side">
