@@ -7,7 +7,3 @@
     @extends('parts.description-section')
     @extends('parts.hero')
  @extends('layouts.app')
-
-
-
-

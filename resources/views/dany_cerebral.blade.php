@@ -354,7 +354,6 @@
 <script src="vendor/venobox/venobox.min.js"></script>
 
 <!-- Template Main JS File -->
-<script src="js/main.js"></script>
 
 @extends('layouts.app')
 
