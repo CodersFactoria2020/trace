@@ -81,12 +81,12 @@ class Activity extends Model
 
     public function getWeeklyAttribute($value)
     {
-        if ($value === "1")
+        if ($value == "1")
         {
             return "Sí";
         }
 
-        if ($value === "0")
+        if ($value == "0")
         {
             return "No";
         }
