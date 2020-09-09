@@ -112,6 +112,11 @@
     color: $black !important;
 }
 
+.active-soci {
+    color: white !important;
+    background-color: $secondary;
+}
+
 .danger {
     a {
         color: $red !important;
@@ -208,4 +213,24 @@
 .label-small {
     font-size: 14px !important;
     font-weight: 600 !important;
+}
+
+.soci-menu {
+    a {
+        font-size: 18px !important;
+        padding: 20px;
+    }
+    i {
+        font-size: 24px !important;
+    }
+}
+
+.header-weekly-table {
+    background-color: white !important;
+    color: #343a40 !important;
+    border-bottom: 1px solid #343a40;
+}
+
+.side-bar-menu-dashboard {
+    width: 100%;
 }

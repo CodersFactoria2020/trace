@@ -20,29 +20,28 @@
 
 <div class="col">
     <div class="dashboard-right-side">
-        <div class="col">
-            <div class="mt-3">
-                <div class="float-left">
-                    <h2>Hola {{Auth::User()->first_name}}</h2>
-                    <h5>Benvingut/da a la teva àrea privada</h5>
-                </div>
-            </div>
+        <div class="float-left">
+            <h2>Benvingut/da {{Auth::User()->first_name}}</h2>
+            <h4 class="bold pt-2">ACTIVITATS D'AVUI</h4>
         </div>
+        
     </div>
     <div class="dashboard-right-side">
-        <table class="table table-striped table-borderless">
-            <thead class="thead text-uppercase">
-                <tr>
-                    <td><small><b>Títol</b></small></td>
-                    <td><small><b>Horari</b></small></td>
-                    <td colspan="2"><small><b>Professional</b></small></td>
-                </tr>
-            </thead>
+        @if (count($activities) != 0)
+            <table class="table table-striped table-borderless">
+                <thead class="thead text-uppercase">
+                    <tr>
+                        <td><small><b>Títol</b></small></td>
+                        <td><small><b>Horari</b></small></td>
+                        <td colspan="2"><small><b>Professional</b></small></td>
+                    </tr>
+                </thead>
+        @endif
         @if ($activities)
             @foreach($activities as $activity)
             <tr>
-                <td class="icon-text">
-                    <div class="primary-green">
+                <td>
+                    <div>
                         @isset ($activity->category_id)
                             <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                         @endisset
@@ -74,16 +73,14 @@
 
         </table>
     </div>
-    <div>
-        @if (count($activities) == 0)
-        <div class="primary-green col-md-12">
-            <h5>Avui no tens cap activitat programada
-            <br>
-            Pots veure les activitats de tota la setmana prement a "Totes les activitats" a l'esquerra.
-            </h5>
+    @if (count($activities) == 0)
+    <div class="dashboard-right-side">
+        <div class="float-left">
+            <h4>Avui no tens cap activitat programada.</h4>
+            <p>Pots veure les activitats de tota la setmana prement a "La setmana" a l'esquerra.</p>
         </div>
-        @endif
     </div>
+    @endif
 </div>
 
 @endsection

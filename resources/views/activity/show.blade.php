@@ -7,7 +7,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body ">
                 @method('put')
                 <div class="card-body">
                     <div>
@@ -90,6 +90,7 @@
                     @endif
                 </div>
             </div>
+
         </div>
     </div>
 </div>
