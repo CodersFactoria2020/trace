@@ -70,7 +70,7 @@
                         @endif
                     @endif
                     
-                    @if (auth()->user()->role_id == "Soci")
+                    @if (auth()->user()->role_id == "Soci" || auth()->user()->role_id == "1")
                     <li class="nav-item soci-menu">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/dashboard')}}">
