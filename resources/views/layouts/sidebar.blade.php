@@ -53,6 +53,7 @@
                             Transparència
                         </a>
                     </li>
+                    @endif
                     <li class="nav-item pt-3">
                         <div class="nav-item logoutbtn">
                             <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
@@ -67,7 +68,6 @@
                             </form>
                         </div>
                     </li>
-                    @endif
                     @endif
                     @if (auth()->user()->role_id == "Soci")
                     <li class="nav-item soci-menu">
