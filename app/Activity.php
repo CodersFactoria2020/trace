@@ -81,12 +81,12 @@ class Activity extends Model
 
     public function getWeeklyAttribute($value)
     {
-        if ($value === 1)
+        if ($value == "1")
         {
             return "Sí";
         }
 
-        if ($value === 0)
+        if ($value == "0")
         {
             return "No";
         }
@@ -106,7 +106,7 @@ class Activity extends Model
         foreach($activities as $activity)
         {
             $activity->showStart = substr($activity->showStart, 11);
-            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd' . ' ' . 'HH' .  ':' . 'mm' );
+            $activity->start = Carbon::parse($activity->start)->isoFormat('dddd' . ' ' . 'HH' .  ':' . 'mm');
         }
         $activities = $activities->sortBy('showStart');
         $activities->values()->all();

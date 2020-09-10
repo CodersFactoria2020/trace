@@ -63,7 +63,6 @@
 
       @foreach($users as $user)
       @can('view-any', $user)
-
       <tr>
         <td class="icon-text">
           <div class="primary-green">
