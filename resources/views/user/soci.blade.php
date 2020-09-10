@@ -23,8 +23,8 @@
         <div class="col">
             <div class="mt-3">
                 <div class="float-left">
-                    <h2>Hola {{Auth::User()->first_name}}</h2>
-                    <h5>Benvingut/da a la teva àrea privada</h5>
+                    <h2>Benvingut/da {{Auth::User()->first_name}}</h2>
+                    <h4 class="bold pt-2">ACTIVITATS D'AVUI</h4>
                 </div>
             </div>
         </div>
