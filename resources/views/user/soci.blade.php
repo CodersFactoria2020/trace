@@ -20,11 +20,14 @@
 
 <div class="col">
     <div class="dashboard-right-side">
-        <div class="float-left">
-            <h2>Benvingut/da {{Auth::User()->first_name}}</h2>
-            <h4 class="bold pt-2">ACTIVITATS D'AVUI</h4>
-        </div>
-        
+        <div class="col">
+            <div class="mt-3">
+                <div class="float-left">
+                    <h2>Benvingut/da {{Auth::User()->first_name}}</h2>
+                    <h4 class="bold pt-2">ACTIVITATS D'AVUI</h4>
+                </div>
+            </div>
+        </div>       
     </div>
     <div class="dashboard-right-side">
         @if (count($activities) != 0)

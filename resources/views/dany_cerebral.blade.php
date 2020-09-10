@@ -354,7 +354,3 @@
 <script src="vendor/venobox/venobox.min.js"></script>
 
 @extends('layouts.app')
-
-
-
-

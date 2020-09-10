@@ -6,8 +6,8 @@
                     class="img-fluid"></a>
         </div>
 
-        <div class="nav-item fixed-top full-vertical-align">
-            <div class="side-bar-menu-dashboard">
+        <div class="nav-item full-vertical-align">
+            <div class="side-bar-menu">
                 <ul class="nav flex-column">  
                     @if (auth()->user()->role_id != "Soci")
                     <li class="nav-item">
@@ -37,40 +37,39 @@
                             Àrees
                         </a>
                     </li>
-                        @if (auth()->user()->role_id == "Admin")
-                        <li class="nav-item">
-                            <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="{{url('/team')}}">
-                                <span><i class="icofont-id"></i></span>
-                                Gestió de l'Equip
-                            </a>
-                        </li>
-                        @endif
-                        @if (auth()->user()->role_id == "Admin")
-                            <li class="nav-item ">
-                                <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
-                                    href="{{url('/transparency')}}">
-                                    <span><i class="icofont-page"></i></span>
-                                    Transparència
-                                </a>
-                            </li>
-                            <li class="nav-item pt-3">
-                                <div class="nav-item logoutbtn">
-                                    <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                                        <span>
-                                            <i class="icofont-logout"></i></i>
-                                        </span>
-                                        Tancar sessió
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endif
+                    @if (auth()->user()->role_id == "Admin")
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('team') ? 'active-black' : 'primary-green'}}" href="{{url('/team')}}">
+                            <span><i class="icofont-id"></i></span>
+                            Gestió de l'Equip
+                        </a>
+                    </li>
                     @endif
-                    
-                    @if (auth()->user()->role_id == "Soci" || auth()->user()->role_id == "1")
+                    @if (auth()->user()->role_id == "Admin")
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('transparency') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/transparency')}}">
+                            <span><i class="icofont-page"></i></span>
+                            Transparència
+                        </a>
+                    </li>
+                    @endif
+                    <li class="nav-item pt-3">
+                        <div class="nav-item logoutbtn">
+                            <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                                <span>
+                                    <i class="icofont-logout"></i></i>
+                                </span>
+                                Tancar sessió
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endif
+                    @if (auth()->user()->role_id == "Soci")
                     <li class="nav-item soci-menu">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/dashboard')}}">
@@ -100,7 +99,6 @@
                         </div>
                     </li>
                     @endif
-
                 </ul>
             </div>
         </div>

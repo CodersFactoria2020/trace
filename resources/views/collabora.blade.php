@@ -55,7 +55,7 @@
                 </div>
                 <div class="col pt-4">
                     <p> Si vols fer-te voluntari/a de la nostra entitat envia'ns el teu currículum a
-                        <a href="mailto:yolanda@tracecatalunya.org">yolanda@tracecatalunya.org</a> o truca al <a href="tel:+349332503636">933 250 3636</a>.
+                        <a href="mailto:yolanda@tracecatalunya.org">yolanda@tracecatalunya.org</a> o truca al <a href="tel:+34933250363">933 250 363</a>.
                         <br>
                         Nosaltres et donarem d’alta com a voluntari, et formarem i, a més,
                         et farem una assegurança per a voluntaris.
