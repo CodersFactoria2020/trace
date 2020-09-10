@@ -313,7 +313,7 @@ class UsersTest extends TestCase
         $response = $this->actingAs($user)->get('/dashboard');
 
         $response->assertStatus(200);
-        $response->assertSee('Benvingut/da a la teva àrea privada');
+        $response->assertSee('ACTIVITATS D');
     }
 
     public function test_if_user_logged_in_as_soci_cant_access_users_index()
