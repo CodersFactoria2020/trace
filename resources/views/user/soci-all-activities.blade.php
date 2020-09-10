@@ -39,7 +39,7 @@
                 </tr>
             </thead>
             @if (count($monday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DILLUNS</b></td>
                 </tr>
                 @foreach($monday_activities as $activity)
@@ -75,7 +75,7 @@
                 @endforeach
             @endif
             @if (count($tuesday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DIMARTS</b></td>
                 </tr>
                 @foreach($tuesday_activities as $activity)
@@ -111,7 +111,7 @@
                 @endforeach
             @endif
             @if (count($wednesday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DIMECRES</b></td>
                 </tr>
                 @foreach($wednesday_activities as $activity)
@@ -147,7 +147,7 @@
                 @endforeach
             @endif
             @if (count($thursday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DIJOUS</b></td>
                 </tr>
                 @foreach($thursday_activities as $activity)
@@ -183,7 +183,7 @@
                 @endforeach
             @endif
             @if (count($friday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DIVENDRES</b></td>
                 </tr>
                 @foreach($friday_activities as $activity)
@@ -219,7 +219,7 @@
                 @endforeach
             @endif
             @if (count($saturday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DISSABTE</b></td>
                 </tr>
                 @foreach($saturday_activities as $activity)
@@ -255,7 +255,7 @@
                 @endforeach
             @endif
             @if (count($sunday_activities) !== 0)
-                <tr>
+                <tr class="header-weekly-table">
                 <td colspan="4"><b>DIUMENGE</b></td>
                 </tr>
                 @foreach($sunday_activities as $activity)

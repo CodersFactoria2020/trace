@@ -8,7 +8,7 @@
 
         <div class="nav-item full-vertical-align">
             <div class="side-bar-menu">
-                <ul class="nav flex-column">
+                <ul class="nav flex-column">  
                     @if (auth()->user()->role_id != "Soci")
                     <li class="nav-item">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
@@ -53,24 +53,6 @@
                             Transparència
                         </a>
                     </li>
-                    @endif
-                    @endif
-                    @if (auth()->user()->role_id == "Soci")
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
-                            href="{{url('/dashboard')}}">
-                            <span><i class="icofont-clock-time"></i></span>
-                            Activitats d'AVUI
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
-                            href="{{url('/soci-all-activities')}}">
-                            <span><i class="icofont-calendar"></i></span>
-                            Totes les activitats
-                        </a>
-                    </li>
-                    @endif
                     <li class="nav-item pt-3">
                         <div class="nav-item logoutbtn">
                             <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
@@ -85,6 +67,45 @@
                             </form>
                         </div>
                     </li>
+                    @endif
+                    @endif
+                    @if (auth()->user()->role_id == "Soci")
+                    <li class="nav-item soci-menu">
+                        <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/dashboard')}}">
+                            <span><i class="icofont-home"></i></span>
+                            Inici <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item soci-menu">
+                        <a class="nav-link {{ request()->is('soci-today') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/soci-today')}}">
+                            <span><i class="icofont-clock-time"></i></span>
+                            Avui
+                        </a>
+                    </li>
+                    <li class="nav-item soci-menu">
+                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
+                            href="{{url('/soci-all-activities')}}">
+                            <span><i class="icofont-calendar"></i></span>
+                            La setmana
+                        </a>
+                    </li>
+                    <li class="nav-item soci-menu pt-3">
+                        <div class="nav-item logoutbtn">
+                            <a class="nav-link" href="{{ route('logout') }}" target="_blank" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">
+                                <span>
+                                    <i class="icofont-logout"></i></i>
+                                </span>
+                                Tancar sessió
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        </div>
+                    </li>
+                    @endif
                 </ul>
             </div>
         </div>
