@@ -71,14 +71,14 @@
                     @endif
                     @if (auth()->user()->role_id == "Soci")
                     <li class="nav-item soci-menu">
-                        <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
+                        <a class="nav-link {{ request()->is('dashboard') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/dashboard')}}">
                             <span><i class="icofont-clock-time"></i></span>
                             Avui
                         </a>
                     </li>
                     <li class="nav-item soci-menu">
-                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-black' : 'primary-green'}}"
+                        <a class="nav-link {{ request()->is('soci-all-activities') ? 'active-soci' : 'primary-green'}}"
                             href="{{url('/soci-all-activities')}}">
                             <span><i class="icofont-calendar"></i></span>
                             La setmana

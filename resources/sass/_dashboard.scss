@@ -112,6 +112,11 @@
     color: $black !important;
 }
 
+.active-soci {
+    color: white !important;
+    background-color: $secondary;
+}
+
 .danger {
     a {
         color: $red !important;
@@ -213,6 +218,7 @@
 .soci-menu {
     a {
         font-size: 18px !important;
+        padding: 20px;
     }
     i {
         font-size: 24px !important;
