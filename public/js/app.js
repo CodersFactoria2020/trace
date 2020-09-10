@@ -37320,7 +37320,7 @@ window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+throw new Error("Module build failed (from ./node_modules/css-loader/index.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\nSassError: File to import not found or unreadable: D:\\PHPprojects\\trace\\resources\\sass\\_images.scss.\n        on line 16 of D:\\PHPprojects\\trace\\resources\\sass\\app.scss\n>> @import \"images\";\r\n   ^\n\n    at D:\\PHPprojects\\trace\\node_modules\\webpack\\lib\\NormalModule.js:316:20\n    at D:\\PHPprojects\\trace\\node_modules\\loader-runner\\lib\\LoaderRunner.js:367:11\n    at D:\\PHPprojects\\trace\\node_modules\\loader-runner\\lib\\LoaderRunner.js:233:18\n    at context.callback (D:\\PHPprojects\\trace\\node_modules\\loader-runner\\lib\\LoaderRunner.js:111:13)\n    at Object.callback (D:\\PHPprojects\\trace\\node_modules\\sass-loader\\dist\\index.js:73:7)\n    at Object.done [as callback] (D:\\PHPprojects\\trace\\node_modules\\neo-async\\async.js:8069:18)\n    at options.error (D:\\PHPprojects\\trace\\node_modules\\node-sass\\lib\\index.js:294:32)");
 
 /***/ }),
 
