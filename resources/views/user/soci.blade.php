@@ -41,8 +41,8 @@
         @if ($activities)
             @foreach($activities as $activity)
             <tr>
-                <td class="icon-text">
-                    <div class="primary-green">
+                <td>
+                    <div>
                         @isset ($activity->category_id)
                             <i class="fa fa-circle" style="font-size:20px;color:{{$activity->getCategoryColor()}}"></i>
                         @endisset
