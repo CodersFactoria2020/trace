@@ -5,5 +5,5 @@
     @extends('parts.team-section')
     @extends('parts.services-section')
     @extends('parts.description-section')
-    @extends('parts.hero'
+    @extends('parts.hero')
  @extends('layouts.app')
