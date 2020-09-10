@@ -11,8 +11,8 @@
                             Tens molts dubtes i necessites assessorament? Truca'ns
                         </p>
                         <ul class="list-group">
-                            <a href="tel:+349332503636">
-                                <i class="icofont-phone"></i>933 250 3636</a
+                            <a href="tel:+34933250363">
+                                <i class="icofont-phone"></i>933 250 363</a
                             >
                             <a href="mailto:info@tracecatalunya.org"
                                 ><i class="icofont-envelope"></i>info@tracecatalunya.org
