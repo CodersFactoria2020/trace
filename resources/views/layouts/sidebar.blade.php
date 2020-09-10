@@ -73,13 +73,6 @@
                     <li class="nav-item soci-menu">
                         <a class="nav-link {{ request()->is('dashboard') ? 'active-black' : 'primary-green'}}"
                             href="{{url('/dashboard')}}">
-                            <span><i class="icofont-home"></i></span>
-                            Inici <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item soci-menu">
-                        <a class="nav-link {{ request()->is('soci-today') ? 'active-black' : 'primary-green'}}"
-                            href="{{url('/soci-today')}}">
                             <span><i class="icofont-clock-time"></i></span>
                             Avui
                         </a>
