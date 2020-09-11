@@ -32,7 +32,7 @@
                 <div class="box-cta">
                     <p class="quote">
                         “La vida és com una bicicleta, per a mantenir
-                        l'equilibri has que seguirendavant”
+                        l'equilibri has que seguir endavant”
                     </p>
                     <p class="quote-author">
                         Albert Einstein

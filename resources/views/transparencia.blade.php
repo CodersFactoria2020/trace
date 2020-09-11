@@ -22,15 +22,15 @@
                             Transparència
                         </h3>
                         <p>
-                            Trace és una entitat sense ànim de lucre. El finançament,
-                            prové un % dels serveis que oferim % de les quotes de socis
-                            i un % de les subvencions que ens atorga l’Administració.
+                            Trace és una entitat sense ànim de lucre. El finançament
+                            prové un 80,8% dels serveis que oferim, un 9,2% de les quotes de socis
+                            i un 10% de les subvencions que ens atorga l’Administració.
                             Els membres de la Junta escollits democràticament, no reben
                             cap remuneració pel seu càrrec.
                         </p>
                         <div class="box-cta">
                             <a href="/files/codi_etic_TRACE.pdf" class="cta-line" target="_blank">
-                                <i class="icofont-download"></i>Codi étic
+                                <i class="icofont-download"></i>Codi ètic
                             </a>
                         </div>
                     </div>
