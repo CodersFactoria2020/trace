@@ -71,7 +71,7 @@
 
                     <div class="col-lg-6">
                         <img
-                            src="img/coneix-nos/que_fem.jpg"
+                            src="img/recursos.jpg"
                             class="img-fluid"
                             alt=""
                         />
