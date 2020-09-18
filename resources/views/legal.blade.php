@@ -13,7 +13,7 @@
                         Les nostres dades identificatives són:<br>
                         </p>
                         <p>CIF <b>G58904574</b><br>
-                            Domicili: <a href="https://goo.gl/maps/B7NKYv2Wz9AQDspU7" starget="_blank"> C/ Lançà 42, 08015, Barcelona </a><br>
+                            Domicili: <a href="https://goo.gl/maps/B7NKYv2Wz9AQDspU7" starget="_blank"> C/ Llançà 42, 08015, Barcelona </a><br>
                             Tel: <a href="tel:+34933250363">+34 933 250 363</a><br>
                             Mail: <a href="mailto:info@tracecatalunya.org">info@tracecatalunya.org</a><br>
                             Delegada de Protecció de Dades: <a href="mailto:dpd@tracecatalunya">dpd@tracecatalunya</a> o <a href="mailto:dpd@tracecatalunya">yolanda@tracecatalunya.org</a>.<br>

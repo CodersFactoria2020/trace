@@ -23,7 +23,7 @@
                                 starget="_blank"
                             >
                                 <i class="icofont-location-pin"></i>
-                                Carrer de Lança, 42, 08015, Barcelona
+                                Carrer de Llançà, 42, 08015, Barcelona
                             </a>
                         </ul>
                         <div class="map-responsive">
