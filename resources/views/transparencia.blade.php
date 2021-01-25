@@ -33,6 +33,11 @@
                                 <i class="icofont-download"></i>Codi ètic
                             </a>
                         </div>
+                        <div class="box-cta">
+                            <a href="/files/Desembre2020_Pla-dIgualtat1_comprimido.pdf" class="cta-line" target="_blank">
+                                <i class="icofont-download"></i>Pla d'igualtat
+                            </a>
+                        </div>
                     </div>
                     <div class="col-lg-6 content">
                         <h4>Informació econòmica i d’activitats</h4>
