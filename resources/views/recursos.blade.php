@@ -21,6 +21,9 @@
                                 ><i class="icofont-download"></i>Agenda de recursos
                                 TraCE</a
                             >
+                            <a href="/files/recursos-basics-per-a-familiars-21-22_compressed.pdf" target="_blank"
+                                ><i class="icofont-download"></i>Recursos bàsics per a familiars</a
+                            >
                             <a href="https://fedace.org/" target="_blank"
                                 ><i class="icofont-link"></i>Federación Española de Daño
                                 Cerebral</a
