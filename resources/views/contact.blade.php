@@ -19,16 +19,16 @@
                             </a>
 
                             <a
-                                href="https://goo.gl/maps/B7NKYv2Wz9AQDspU7"
+                                href="https://goo.gl/maps/voBcaCJ6GAybnu1F6"
                                 starget="_blank"
                             >
                                 <i class="icofont-location-pin"></i>
-                                Carrer de Llançà, 42, 08015, Barcelona
+                                Carrer de Llançà, 34, 08015, Barcelona
                             </a>
                         </ul>
                         <div class="map-responsive">
                             <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2993.756243285726!2d2.1443872154255437!3d41.37938037926494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27fbb4cacad%3A0xe217355ea7a6cd15!2sCarrer%20de%20Llan%C3%A7a%2C%2042%2C%2008015%20Barcelona!5e0!3m2!1sen!2ses!4v1596821127763!5m2!1sen!2ses"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1496.8844782816664!2d2.1458565759950377!3d41.3791041947908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4a27faf3ba73f%3A0xe630fb622a9b7893!2sCarrer%20de%20Llan%C3%A7a%2C%2036%2C%2008015%20Barcelona!5e0!3m2!1ses!2ses!4v1648151611806!5m2!1ses!2ses"
                                 width="550"
                                 height="400"
                                 frameborder="0"
